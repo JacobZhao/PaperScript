@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.8.2)  6 AUG 2018 18:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.8.2)  6 AUG 2018 18:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **\nonstopmode\input main.tex
 (./main.tex (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -735,30 +735,77 @@ Package: esint
 )
 Package: systeme 2018/01/01 v0.31 Mise en forme de systemes d'equations (CT)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/blindtext/blindtext.sty
-Package: blindtext 2012/01/06 V2.0 blindtext-Package
+(/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+Package: algorithm2e 2017/07/18 v5.2 algorithms environments
+\c@AlgoLine=\count291
+\algocf@hangindent=\skip62
 
+(/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count292
+)
 (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-\c@blindtext=\count291
-\c@Blindtext=\count292
-\c@blind@countparstart=\count293
-\blind@countxx=\count294
-\blindtext@numBlindtext=\count295
-\blind@countyy=\count296
-\c@blindlist=\count297
-\c@blindlistlevel=\count298
-\c@blindlist@level=\count299
-\blind@listitem=\count300
-\c@blind@listcount=\count301
-\c@blind@levelcount=\count302
-\blind@mathformula=\count303
-\blind@Mathformula=\count304
-\c@blind@randomcount=\count305
-\c@blind@randommax=\count306
-\c@blind@pangramcount=\count307
-\c@blind@pangrammax=\count308
+(/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+\skiptotal=\skip63
+\skiplinenumber=\skip64
+\skiprule=\skip65
+\skiphlne=\skip66
+\skiptext=\skip67
+\skiplength=\skip68
+\algomargin=\skip69
+\skipalgocfslide=\skip70
+\algowidth=\dimen123
+\inoutsize=\dimen124
+\inoutindent=\dimen125
+\interspacetitleruled=\dimen126
+\interspacealgoruled=\dimen127
+\interspacetitleboxruled=\dimen128
+\algocf@ruledwidth=\skip71
+\algocf@inoutbox=\box28
+\algocf@inputbox=\box29
+\AlCapSkip=\skip72
+\AlCapHSkip=\skip73
+\algoskipindent=\skip74
+\algocf@nlbox=\box30
+\algocf@hangingbox=\box31
+\algocf@untilbox=\box32
+\algocf@skipuntil=\skip75
+\algocf@capbox=\box33
+\algocf@lcaptionbox=\skip76
+\algoheightruledefault=\skip77
+\algoheightrule=\skip78
+\algotitleheightruledefault=\skip79
+\algotitleheightrule=\skip80
+\c@algocfline=\count293
+\c@algocfproc=\count294
+\c@algocf=\count295
+\algocf@algoframe=\box34
+\algocf@algobox=\box35
+)
+(/usr/share/texlive/texmf-dist/tex/latex/blindtext/blindtext.sty
+Package: blindtext 2012/01/06 V2.0 blindtext-Package
+\c@blindtext=\count296
+\c@Blindtext=\count297
+\c@blind@countparstart=\count298
+\blind@countxx=\count299
+\blindtext@numBlindtext=\count300
+\blind@countyy=\count301
+\c@blindlist=\count302
+\c@blindlistlevel=\count303
+\c@blindlist@level=\count304
+\blind@listitem=\count305
+\c@blind@listcount=\count306
+\c@blind@levelcount=\count307
+\blind@mathformula=\count308
+\blind@Mathformula=\count309
+\c@blind@randomcount=\count310
+\c@blind@randommax=\count311
+\c@blind@pangramcount=\count312
+\c@blind@pangrammax=\count313
 )
 (/usr/share/texlive/texmf-dist/tex/latex/minted/minted.sty
 Package: minted 2017/07/19 v2.5 Yet another Pygments shim for LaTeX
@@ -772,11 +819,11 @@ Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
 <2008/02/07> (tvz)
-\FV@CodeLineNo=\count309
+\FV@CodeLineNo=\count314
 \FV@InFile=\read2
-\FV@TabBox=\box28
-\c@FancyVerbLine=\count310
-\FV@StepNumber=\count311
+\FV@TabBox=\box36
+\c@FancyVerbLine=\count315
+\FV@StepNumber=\count316
 \FV@OutFile=\write5
 )
 (/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty
@@ -785,56 +832,56 @@ tim
 )
 (/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
-\linenopenalty=\count312
+\linenopenalty=\count317
 \output=\toks26
-\linenoprevgraf=\count313
-\linenumbersep=\dimen123
-\linenumberwidth=\dimen124
-\c@linenumber=\count314
-\c@pagewiselinenumber=\count315
-\c@LN@truepage=\count316
-\c@internallinenumber=\count317
-\c@internallinenumbers=\count318
-\quotelinenumbersep=\dimen125
-\bframerule=\dimen126
-\bframesep=\dimen127
-\bframebox=\box29
+\linenoprevgraf=\count318
+\linenumbersep=\dimen129
+\linenumberwidth=\dimen130
+\c@linenumber=\count319
+\c@pagewiselinenumber=\count320
+\c@LN@truepage=\count321
+\c@internallinenumber=\count322
+\c@internallinenumbers=\count323
+\quotelinenumbersep=\dimen131
+\bframerule=\dimen132
+\bframesep=\dimen133
+\bframebox=\box37
 LaTeX Info: Redefining \\ on input line 3056.
 )
-\c@FV@TrueTabGroupLevel=\count319
-\c@FV@TrueTabCounter=\count320
-\FV@TabBox@Group=\box30
-\FV@TmpLength=\skip62
-\c@FV@HighlightLinesStart=\count321
-\c@FV@HighlightLinesStop=\count322
-\FV@LoopCount=\count323
-\FV@NCharsBox=\box31
-\FV@BreakIndent=\dimen128
-\FV@BreakIndentNChars=\count324
-\FV@BreakSymbolSepLeft=\dimen129
-\FV@BreakSymbolSepLeftNChars=\count325
-\FV@BreakSymbolSepRight=\dimen130
-\FV@BreakSymbolSepRightNChars=\count326
-\FV@BreakSymbolIndentLeft=\dimen131
-\FV@BreakSymbolIndentLeftNChars=\count327
-\FV@BreakSymbolIndentRight=\dimen132
-\FV@BreakSymbolIndentRightNChars=\count328
-\c@FancyVerbLineBreakLast=\count329
-\FV@LineBox=\box32
-\FV@LineIndentBox=\box33
+\c@FV@TrueTabGroupLevel=\count324
+\c@FV@TrueTabCounter=\count325
+\FV@TabBox@Group=\box38
+\FV@TmpLength=\skip81
+\c@FV@HighlightLinesStart=\count326
+\c@FV@HighlightLinesStop=\count327
+\FV@LoopCount=\count328
+\FV@NCharsBox=\box39
+\FV@BreakIndent=\dimen134
+\FV@BreakIndentNChars=\count329
+\FV@BreakSymbolSepLeft=\dimen135
+\FV@BreakSymbolSepLeftNChars=\count330
+\FV@BreakSymbolSepRight=\dimen136
+\FV@BreakSymbolSepRightNChars=\count331
+\FV@BreakSymbolIndentLeft=\dimen137
+\FV@BreakSymbolIndentLeftNChars=\count332
+\FV@BreakSymbolIndentRight=\dimen138
+\FV@BreakSymbolIndentRightNChars=\count333
+\c@FancyVerbLineBreakLast=\count334
+\FV@LineBox=\box40
+\FV@LineIndentBox=\box41
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count330
-\calc@Bcount=\count331
-\calc@Adimen=\dimen133
-\calc@Bdimen=\dimen134
-\calc@Askip=\skip63
-\calc@Bskip=\skip64
+\calc@Acount=\count335
+\calc@Bcount=\count336
+\calc@Adimen=\dimen139
+\calc@Bdimen=\dimen140
+\calc@Askip=\skip82
+\calc@Bskip=\skip83
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count332
-\calc@Cskip=\skip65
+\calc@Ccount=\count337
+\calc@Cskip=\skip84
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty
 Package: shellesc 2016/06/07 v0.02a unified shell escape interface for LaTeX
@@ -852,27 +899,27 @@ Package ifplatform Warning:
 
 ) (/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip66
-\fb@frw=\dimen135
-\fb@frh=\dimen136
-\FrameRule=\dimen137
-\FrameSep=\dimen138
+\OuterFrameSep=\skip85
+\fb@frw=\dimen141
+\fb@frh=\dimen142
+\FrameRule=\dimen143
+\FrameSep=\dimen144
 )
 (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count333
+\c@float@type=\count338
 \float@exts=\toks27
-\float@box=\box34
+\float@box=\box42
 \@float@everytoks=\toks28
-\@floatcapt=\box35
+\@floatcapt=\box43
 )
 \minted@appexistsfile=\read3
-\minted@bgbox=\box36
+\minted@bgbox=\box44
 \minted@code=\write6
-\c@minted@FancyVerbLineTemp=\count334
-\c@minted@pygmentizecounter=\count335
+\c@minted@FancyVerbLineTemp=\count339
+\c@minted@pygmentizecounter=\count340
 \@float@every@listing=\toks29
-\c@listing=\count336
+\c@listing=\count341
 )
 runsystem(mkdir -p _minted-main)...disabled (restricted).
 
@@ -884,7 +931,7 @@ See the minted package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.16 \usepackage
+l.17 \usepackage
                 {stackengine}
 Pass the -shell-escape flag to LaTeX. Refer to the minted.sty documentation for
  more information.
@@ -895,21 +942,21 @@ ways
 
 (/usr/share/texlive/texmf-dist/tex/generic/listofitems/listofitems.sty
 (/usr/share/texlive/texmf-dist/tex/generic/listofitems/listofitems.tex
-\loi_nestcnt=\count337
+\loi_nestcnt=\count342
 )
 Package: listofitems 2018/01/13 v1.52 Grab items in lists using user-specified 
 sep char (CT)
 )
-\c@@stackindex=\count338
-\@boxshift=\skip67
-\stack@tmplength=\skip68
-\temp@stkl=\skip69
-\@stackedboxwidth=\skip70
-\@addedbox=\box37
-\@anchorbox=\box38
-\stackedbox=\box39
-\@centerbox=\box40
-\c@ROWcellindex@=\count339
+\c@@stackindex=\count343
+\@boxshift=\skip86
+\stack@tmplength=\skip87
+\temp@stkl=\skip88
+\@stackedboxwidth=\skip89
+\@addedbox=\box45
+\@anchorbox=\box46
+\stackedbox=\box47
+\@centerbox=\box48
+\c@ROWcellindex@=\count344
 )
 (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
@@ -921,17 +968,17 @@ Package ifvtex Info: VTeX not detected.
 (/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count340
-\Gm@cntv=\count341
-\c@Gm@tempcnt=\count342
-\Gm@bindingoffset=\dimen139
-\Gm@wd@mp=\dimen140
-\Gm@odd@mp=\dimen141
-\Gm@even@mp=\dimen142
-\Gm@layoutwidth=\dimen143
-\Gm@layoutheight=\dimen144
-\Gm@layouthoffset=\dimen145
-\Gm@layoutvoffset=\dimen146
+\Gm@cnth=\count345
+\Gm@cntv=\count346
+\c@Gm@tempcnt=\count347
+\Gm@bindingoffset=\dimen145
+\Gm@wd@mp=\dimen146
+\Gm@odd@mp=\dimen147
+\Gm@even@mp=\dimen148
+\Gm@layoutwidth=\dimen149
+\Gm@layoutheight=\dimen150
+\Gm@layouthoffset=\dimen151
+\Gm@layoutvoffset=\dimen152
 \Gm@dimlist=\toks30
 )
 Package biblatex Info: Trying to load language 'english'...
@@ -940,8 +987,8 @@ Package biblatex Info: ... file 'english.lbx' found.
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2017/12/19 v3.10 biblatex localization (PK/JW/AB)
 )
-\@quotelevel=\count343
-\@quotereset=\count344
+\@quotelevel=\count348
+\@quotereset=\count349
 
 (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
@@ -971,7 +1018,7 @@ See the minted package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.23 \begin{document}
+l.24 \begin{document}
                      
 Refer to the installation instructions in the minted documentation for more inf
 ormation.
@@ -992,30 +1039,30 @@ LaTeX Warning: Label `equ:Lmarg' multiply defined.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count345
-\scratchdimen=\dimen147
-\scratchbox=\box41
-\nofMPsegments=\count346
-\nofMParguments=\count347
+\scratchcounter=\count350
+\scratchdimen=\dimen153
+\scratchbox=\box49
+\nofMPsegments=\count351
+\nofMParguments=\count352
 \everyMPshowfont=\toks31
-\MPscratchCnt=\count348
-\MPscratchDim=\dimen148
-\MPnumerator=\count349
-\makeMPintoPDFobject=\count350
+\MPscratchCnt=\count353
+\MPscratchDim=\dimen154
+\MPnumerator=\count354
+\makeMPintoPDFobject=\count355
 \everyMPtoPDFconversion=\toks32
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1049,8 +1096,8 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' not found.
 
 No file main.bbl.
-Package biblatex Info: Reference section=0 on input line 23.
-Package biblatex Info: Reference segment=0 on input line 23.
+Package biblatex Info: Reference section=0 on input line 24.
+Package biblatex Info: Reference segment=0 on input line 24.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1070,12 +1117,12 @@ Package biblatex Info: Reference segment=0 on input line 23.
 * \topmargin=-73.135pt
 * \headheight=12.0pt
 * \headsep=25.0pt
-* \topskip=10.0pt
+* \topskip=12.0pt
 * \footskip=30.0pt
 * \marginparwidth=4.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -1085,16 +1132,16 @@ Package biblatex Info: Reference segment=0 on input line 23.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 24.
+LaTeX Font Info:    Try loading font information for U+msa on input line 25.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 24.
+LaTeX Font Info:    Try loading font information for U+msb on input line 25.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+esint on input line 24.
+LaTeX Font Info:    Try loading font information for U+esint on input line 25.
 
 (/usr/share/texlive/texmf-dist/tex/latex/esint/uesint.fd
 File: uesint.fd 
@@ -1106,7 +1153,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.27 \\A
+l.28 \\A
         s the world of fossil energy constantly exhausted and the increasing...
 
 Your command was ignored.
@@ -1114,1266 +1161,637 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-LaTeX Warning: Citation 'hayes' on page 1 undefined on input line 34.
+LaTeX Warning: Citation 'hayes' on page 1 undefined on input line 33.
 
 
-LaTeX Warning: Citation 'cons' on page 1 undefined on input line 35.
+LaTeX Warning: Citation 'cons' on page 1 undefined on input line 34.
 
 
-LaTeX Warning: Citation 'hayes' on page 1 undefined on input line 36.
+LaTeX Warning: Citation 'hayes' on page 1 undefined on input line 35.
 
 
-LaTeX Warning: Citation 'wilk' on page 1 undefined on input line 37.
+LaTeX Warning: Citation 'wilk' on page 1 undefined on input line 36.
 
 
-LaTeX Warning: Citation 'consensusPlus' on page 1 undefined on input line 39.
+LaTeX Warning: Citation 'consensusPlus' on page 1 undefined on input line 38.
 
 
-LaTeX Warning: Citation 'TCGA' on page 1 undefined on input line 41.
+LaTeX Warning: Citation 'TCGA' on page 1 undefined on input line 40.
 
 
-LaTeX Warning: Citation 'wilk' on page 1 undefined on input line 44.
+LaTeX Warning: Citation 'wilk' on page 1 undefined on input line 43.
 
 
-LaTeX Warning: Citation 'castro' on page 1 undefined on input line 49.
+LaTeX Warning: Citation 'castro' on page 1 undefined on input line 48.
 
 
-LaTeX Warning: Citation 'sharma' on page 1 undefined on input line 54.
+LaTeX Warning: Citation 'sharma' on page 1 undefined on input line 53.
 
 
-LaTeX Warning: Citation 'pages' on page 1 undefined on input line 55.
+LaTeX Warning: Citation 'pages' on page 1 undefined on input line 54.
 
 
-LaTeX Warning: Citation 'mullner' on page 1 undefined on input line 56.
-
-
-LaTeX Warning: Citation 'raftery' on page 1 undefined on input line 60.
-
-
-LaTeX Warning: Citation 'bishop' on page 1 undefined on input line 61.
-
-
-LaTeX Warning: Citation 'murphy' on page 1 undefined on input line 62.
-
-
-LaTeX Warning: Citation 'shedden' on page 1 undefined on input line 67.
-
-
-LaTeX Warning: Citation 'TCGA' on page 1 undefined on input line 67.
-
-
-LaTeX Warning: Citation 'annot' on page 1 undefined on input line 68.
+LaTeX Warning: Citation 'mullner' on page 1 undefined on input line 55.
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
 
-LaTeX Warning: Citation 'hayes' on page 2 undefined on input line 85.
+LaTeX Warning: Citation 'raftery' on page 2 undefined on input line 59.
 
 
-LaTeX Warning: Citation 'wilk' on page 2 undefined on input line 85.
+LaTeX Warning: Citation 'bishop' on page 2 undefined on input line 60.
 
-<img/SampleS_box.png, id=11, 481.8pt x 481.8pt>
+
+LaTeX Warning: Citation 'murphy' on page 2 undefined on input line 61.
+
+
+Underfull \hbox (badness 1215) in paragraph at lines 59--62
+\OT1/cmr/m/n/12 pro-vided us use-ful in-sights to Bayesian in-fer-
+ []
+
+
+Underfull \hbox (badness 3312) in paragraph at lines 59--62
+\OT1/cmr/m/n/12 a-lyt-i-cally tractable so-lu-tion in our Gaus-sian
+ []
+
+
+LaTeX Warning: Citation 'shedden' on page 2 undefined on input line 66.
+
+
+LaTeX Warning: Citation 'TCGA' on page 2 undefined on input line 66.
+
+
+LaTeX Warning: Citation 'annot' on page 2 undefined on input line 67.
+
+
+LaTeX Warning: Citation 'hayes' on page 2 undefined on input line 84.
+
+
+LaTeX Warning: Citation 'wilk' on page 2 undefined on input line 84.
+
+<img/SampleS_box.png, id=8, 481.8pt x 481.8pt>
 File: img/SampleS_box.png Graphic file (type png)
 <use img/SampleS_box.png>
-Package pdftex.def Info: img/SampleS_box.png  used on input line 91.
+Package pdftex.def Info: img/SampleS_box.png  used on input line 90.
 (pdftex.def)             Requested size: 115.627pt x 115.63243pt.
 
-Overfull \hbox (10.58104pt too wide) in paragraph at lines 91--92
+Overfull \hbox (10.58104pt too wide) in paragraph at lines 90--91
  [][] 
  []
 
-<img/result.png, id=12, 481.8pt x 481.8pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--91
+[]\OT1/cmr/m/n/10.95 (a) |Box plots of
+ []
+
+<img/result.png, id=9, 481.8pt x 481.8pt>
 File: img/result.png Graphic file (type png)
 <use img/result.png>
-Package pdftex.def Info: img/result.png  used on input line 97.
+Package pdftex.def Info: img/result.png  used on input line 96.
 (pdftex.def)             Requested size: 115.627pt x 115.63243pt.
 
-Overfull \hbox (10.58104pt too wide) in paragraph at lines 97--99
+Overfull \hbox (10.58104pt too wide) in paragraph at lines 96--98
  [][] 
  []
 
 
-LaTeX Warning: Citation 'TCGA' on page 2 undefined on input line 105.
+Underfull \hbox (badness 1281) in paragraph at lines 98--98
+[]\OT1/cmr/m/n/10.95 (b) |MA-plot of dis-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--98
+\OT1/cmr/m/n/10.95 eased pa-tients and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--98
+\OT1/cmr/m/n/10.95 healthy ones (con-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--98
+\OT1/cmr/m/n/10.95 red dots rep-re-sent
+ []
+
+
+LaTeX Warning: Citation 'TCGA' on page 2 undefined on input line 104.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 108.
+               Default added (so using `!tbp') on input line 107.
 
-<img/adenodatasets.png, id=13, 630.85687pt x 198.7425pt>
+<img/adenodatasets.png, id=10, 630.85687pt x 198.7425pt>
 File: img/adenodatasets.png Graphic file (type png)
 <use img/adenodatasets.png>
-Package pdftex.def Info: img/adenodatasets.png  used on input line 110.
+Package pdftex.def Info: img/adenodatasets.png  used on input line 109.
 (pdftex.def)             Requested size: 252.33827pt x 79.49557pt.
-[2 <./img/SampleS_box.png> <./img/result.png> <./img/adenodatasets.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 130.
+[2]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 129.
 
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 130.
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 129.
 
-Underfull \hbox (badness 10000) in paragraph at lines 131--132
-[]\OT1/cmr/m/n/10 Nominal: Gen-er-al-i-sa-tion of the bi-nary
+Underfull \hbox (badness 5756) in paragraph at lines 130--131
+[]\OT1/cmr/m/n/12 Nominal: Gen-er-al-i-sa-tion of the bi-nary
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 131--132
-\OT1/cmr/m/n/10 case for K cat-e-gories, i.e: Race (Aus-
+Underfull \hbox (badness 2809) in paragraph at lines 130--131
+\OT1/cmr/m/n/12 case for K cat-e-gories, i.e: Race (Aus-
  []
 
-<img/HC.png, id=23, 1121.18875pt x 900.36375pt>
+
+Overfull \hbox (11.05327pt too wide) in paragraph at lines 130--131
+\OT1/cmr/m/n/12 traloid/Capoid/Caucasoid/Mongoloid/Negroid) 
+ []
+
+<img/HC.png, id=18, 1121.18875pt x 900.36375pt>
 File: img/HC.png Graphic file (type png)
 <use img/HC.png>
-Package pdftex.def Info: img/HC.png  used on input line 141.
+Package pdftex.def Info: img/HC.png  used on input line 140.
 (pdftex.def)             Requested size: 224.23378pt x 180.06955pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--148
+Underfull \hbox (badness 1946) in paragraph at lines 134--147
+\OT1/cmr/m/n/12 be-cause the math-e-mat-i-cal tools we ap-ply to
+ []
+
+
+Underfull \hbox (badness 5359) in paragraph at lines 134--147
+\OT1/cmr/m/n/12 (MALE/FEMALE), to num-bers (1/2), even
+ []
+
+
+Underfull \hbox (badness 1460) in paragraph at lines 134--147
+\OT1/cmr/m/n/12 vari-ables will be as-sumed to fol-low Gaus-sian
+ []
+
+
+Underfull \hbox (badness 1057) in paragraph at lines 134--147
+\OT1/cmr/m/n/12 dis-tri-bu-tions (close to a Gaus-sian dis-tri-bu-tion
+ []
+
+
+Underfull \hbox (badness 2828) in paragraph at lines 134--147
+\OT1/cmr/m/n/12 ones multi-no-mial dis-tri-bu-tions, which change
+ []
+
+
+Underfull \hbox (badness 1178) in paragraph at lines 134--147
+\OT1/cmr/m/n/12 com-par-i-son method. A very sim-ple dis-tance
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--147
+
+ []
+
+[3 <./img/SampleS_box.png> <./img/result.png> <./img/adenodatasets.png>]
+Underfull \hbox (badness 1147) in paragraph at lines 150--153
+\OT1/cmr/m/n/12 of di-men-sion D. The choice of the met-ric is
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 150--153
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--154
+Underfull \hbox (badness 10000) in paragraph at lines 155--157
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 156--158
+LaTeX Warning: Citation 'maechler' on page 4 undefined on input line 163.
+
+
+Underfull \hbox (badness 1122) in paragraph at lines 170--174
+\OT1/cmr/m/n/12 The Ward's method looks for min-imis-ing the
+ []
+
+
+LaTeX Warning: Citation 'burnham' on page 4 undefined on input line 180.
+
+
+LaTeX Warning: Citation 'bishop' on page 4 undefined on input line 187.
+
+[4 <./img/HC.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 204--208
 
  []
 
 
-LaTeX Warning: Citation 'maechler' on page 3 undefined on input line 164.
-
-
-LaTeX Warning: Citation 'burnham' on page 3 undefined on input line 181.
-
-
-LaTeX Warning: Citation 'bishop' on page 3 undefined on input line 188.
-
-[3 <./img/HC.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 205--209
+Underfull \hbox (badness 10000) in paragraph at lines 211--212
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 212--213
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
 
  []
 
 
-Underfull \hbox (badness 2065) in paragraph at lines 216--217
-[]\OT1/cmr/m/n/10 Furthermore, from the sum rule, the de-nom-i-na-tor
+Underfull \hbox (badness 1968) in paragraph at lines 223--227
+\OT1/cmr/m/n/12 Now that we have es-tab-lished the ba-sics of
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 216--217
+Underfull \hbox (badness 1448) in paragraph at lines 228--228
+[]\OT1/cmr/bx/n/14.4 Model com-par-i-son us-ing the
+ []
+
+
+LaTeX Warning: Citation 'raftery' on page 5 undefined on input line 232.
+
+[5]
+Underfull \hbox (badness 4254) in paragraph at lines 245--246
+\OT1/cmr/m/n/12 Then, if we wish to com-pare two mod-els
+ []
+
+
+LaTeX Warning: Citation 'raftery' on page 6 undefined on input line 255.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 253--256
 
  []
 
 
-LaTeX Warning: Citation 'raftery' on page 4 undefined on input line 233.
-
-
-LaTeX Warning: Citation 'raftery' on page 4 undefined on input line 256.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 254--257
-
- []
-
-[4]
-
-LaTeX Warning: Citation 'raftery' on page 5 undefined on input line 274.
+LaTeX Warning: Citation 'raftery' on page 6 undefined on input line 273.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 278.
+               Default added (so using `!tbp') on input line 277.
 
-<img/BFratios.jpg, id=35, 334.24875pt x 114.4275pt>
+<img/BFratios.jpg, id=36, 334.24875pt x 114.4275pt>
 File: img/BFratios.jpg Graphic file (type jpg)
 <use img/BFratios.jpg>
-Package pdftex.def Info: img/BFratios.jpg  used on input line 280.
+Package pdftex.def Info: img/BFratios.jpg  used on input line 279.
 (pdftex.def)             Requested size: 200.55078pt x 68.65701pt.
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 308.
+Underfull \hbox (badness 2717) in paragraph at lines 284--284
+[]\OT1/cmr/bx/n/14.4 Application of the Bayesian
+ []
 
-<img/gaussDist.jpg, id=36, 274.02374pt x 184.43906pt>
+[6 <./img/BFratios.jpg>]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!tbp') on input line 307.
+
+<img/gaussDist.jpg, id=41, 274.02374pt x 184.43906pt>
 File: img/gaussDist.jpg Graphic file (type jpg)
 <use img/gaussDist.jpg>
-Package pdftex.def Info: img/gaussDist.jpg  used on input line 312.
+Package pdftex.def Info: img/gaussDist.jpg  used on input line 311.
 (pdftex.def)             Requested size: 128.84552pt x 86.72377pt.
-<img/distVar.jpg, id=37, 324.46219pt x 431.36156pt>
+<img/distVar.jpg, id=42, 324.46219pt x 431.36156pt>
 File: img/distVar.jpg Graphic file (type jpg)
 <use img/distVar.jpg>
-Package pdftex.def Info: img/distVar.jpg  used on input line 317.
+Package pdftex.def Info: img/distVar.jpg  used on input line 316.
 (pdftex.def)             Requested size: 65.22794pt x 86.72377pt.
 
-Overfull \hbox (4.99998pt too wide) in paragraph at lines 310--320
+Overfull \hbox (4.99998pt too wide) in paragraph at lines 309--319
  [][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 326--329
+Underfull \hbox (badness 10000) in paragraph at lines 325--328
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 332--333
+Underfull \hbox (badness 10000) in paragraph at lines 331--332
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 334--336
+Underfull \hbox (badness 10000) in paragraph at lines 333--335
 
  []
 
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 336.
+(amsmath)                 on input line 335.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 346--347
-
- []
-
-[5 <./img/BFratios.jpg> <./img/gaussDist.jpg> <./img/distVar.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 349--352
-
+Underfull \hbox (badness 1565) in paragraph at lines 345--346
+[]$\OML/cmm/m/it/12 ^^N$ \OT1/cmr/m/n/12 is the Dirac delta func-tion de-fined 
+as
  []
 
 
-Underfull \hbox (badness 1728) in paragraph at lines 360--362
-\OT1/cmr/m/n/10 Concerning the prior for the cat-e-gor-i-cal vari-ables, a
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 360--362
+Underfull \hbox (badness 10000) in paragraph at lines 345--346
 
  []
 
 
-LaTeX Warning: Citation 'murphy' on page 6 undefined on input line 375.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 391--394
+Underfull \hbox (badness 10000) in paragraph at lines 348--351
 
  []
 
 
-LaTeX Warning: Citation 'murphy' on page 6 undefined on input line 406.
+Underfull \hbox (badness 10000) in paragraph at lines 359--361
+
+ []
+
+[7 <./img/gaussDist.jpg> <./img/distVar.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 371--371
+[]\OT1/cmr/bx/n/12 Likelihood marginal-i-sa-tion and
+ []
 
 
-Overfull \hbox (8.02287pt too wide) detected at line 433
+LaTeX Warning: Citation 'murphy' on page 8 undefined on input line 374.
+
+
+Overfull \hbox (37.06693pt too wide) detected at line 384
+\OMS/cmsy/m/n/12 L[]  \OT1/cmr/m/n/12 =  [] [][\OMS/cmsy/m/n/12 N\OT1/cmr/m/n/1
+2 (\OML/cmm/m/it/12 x[]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 ^^V; ^^[[]\OT1/cmr/m/
+n/12 )]\OMS/cmsy/m/n/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^V\OMS/cmsy/m/n/12 
+j\OML/cmm/m/it/12 m; ^^[[]\OT1/cmr/m/n/12 ) [] \OML/cmm/m/it/12 P[]\OT1/cmr/m/n
+/12 ]\OML/cmm/m/it/12 d^^Vd^^^
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 390--393
+
+ []
+
+
+Overfull \hbox (2.60179pt too wide) detected at line 399
+\OMS/cmsy/m/n/12 L[]  \OT1/cmr/m/n/12 =  [] [] [][\OMS/cmsy/m/n/12 N\OT1/cmr/m/
+n/12 (\OML/cmm/m/it/12 x[]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 ^^V[]; ^^[[]\OT1/c
+mr/m/n/12 )]\OMS/cmsy/m/n/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^V[]\OMS/cmsy/
+m/n/12 j\OML/cmm/m/it/12 m; ^^[[]\OT1/cmr/m/n/12 )]\OML/cmm/m/it/12 d^^V[]
+ []
+
+
+LaTeX Warning: Citation 'murphy' on page 8 undefined on input line 405.
+
+
+Overfull \hbox (5.92662pt too wide) detected at line 423
 []
  []
 
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 433--436
+
+Overfull \hbox (50.6634pt too wide) detected at line 432
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 432--435
+
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 444--446
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 445--447
+Underfull \hbox (badness 10000) in paragraph at lines 449--450
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 450--451
+Underfull \hbox (badness 10000) in paragraph at lines 453--454
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 454--455
+Underfull \hbox (badness 10000) in paragraph at lines 457--458
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--459
-
+Overfull \hbox (15.99788pt too wide) detected at line 458
+[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 N[]; N[]\OT1/cmr/m/n/10.95 )  =  []  
+=  []
  []
 
 
-Underfull \hbox (badness 1590) in paragraph at lines 486--488
-\OT1/cmr/m/n/9 Notice that the marginal like-li-hood ex-pres-sions are given
+Overfull \hbox (8.34027pt too wide) detected at line 471
+\OMS/cmsy/m/n/10.95 L[] \OT1/cmr/m/n/10.95 = [] [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 486--488
-
+Overfull \hbox (33.69576pt too wide) detected at line 478
+[]
  []
 
 
-Underfull \hbox (badness 2418) in paragraph at lines 512--512
-[]\OT1/cmr/bx/n/10 Hierarchical Bottom-Up clus-ter-ing Al-go-
+Underfull \hbox (badness 10000) in paragraph at lines 485--487
+
  []
 
-[7]
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 523.
+[9]
+Underfull \hbox (badness 1622) in paragraph at lines 511--511
+[]\OT1/cmr/bx/n/12 Hierarchical Bottom-Up clus-ter-ing
+ []
 
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 522.
 
-LaTeX Warning: Command \c invalid in math mode on input line 529.
-
-! Undefined control sequence.
-l.556 \RestyleAlgo
-                  {boxruled}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! LaTeX Error: Environment algorithm undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.557 \begin{algorithm}
-                       [!]
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Undefined control sequence.
-l.558  \SetKwFunction
-                     {UpdateMatrix}{updateMatrix}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.559  \SetKwInOut
-                  {Input}{input}\SetKwInOut{Output}{output}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.559  \SetKwInOut{Input}{input}\SetKwInOut
-                                           {Output}{output}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.560  \Input
-             {$Dt = (N,D+L)$, $\sigma^2$, prior hyper-parameters (HP)}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.561  \Output
-              {A list of cluster solutions associated with respective BF}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.562  \BlankLine
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<recently read> \tcp 
-                     
-l.566  \tcp
-           {Create the first marginal likelihood matrix}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.567  $L_{Mat}\ \leftarrow$ call \UpdateMatrix
-                                               {$Cl,\ N_k,\ Dt,\ \sigma^2$, ...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<recently read> \BlankLine 
-                           
-l.569  \BlankLine
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.570  \While
-             {we have more than one cluster}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<recently read> \UpdateMatrix 
-                              
-l.578         \UpdateMatrix
-                           {$Cl,\ N_k,\ Dt,\ \sigma^2$, hyper-parameters}\\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! Package caption Error: \caption outside float.
-
-See the caption package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.583  \caption
-               {BF\_HC\_Asc}
-If you do not understand this error, please take a closer look
-at the documentation of the `caption' package, especially the
-section about errors.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: \begin{document} ended by \end{algorithm}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.584 \end{algorithm}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Undefined control sequence.
-l.585 \RestyleAlgo
-                  {boxruled}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! LaTeX Error: Environment algorithm undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.586 \begin{algorithm}
-                       [!]
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Undefined control sequence.
-l.587 \SetKwInOut
-                 {Input}{input}\SetKwInOut{Output}{output}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.587 \SetKwInOut{Input}{input}\SetKwInOut
-                                          {Output}{output}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.588  \Input
-             {Cl,$N_k$,$Dt = (N,D)$, $\sigma^2$,HP}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.589  \KwData
-              {List of clusters, each sample value vector}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.590  \KwResult
-                {Marginal likelihood matrix}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.591  \tcp
-           {Create a matrix filled with NAs}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<recently read> \For 
-                     
-l.593  \For
-           {i in 1 to the number of clusters-1}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.595         \For
-                  {j in i+1 to the number of cluster}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<recently read> \tcp 
-                     
-l.598             \tcp
-                      {Put the value into the corresponding index of the new...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! Package caption Error: \caption outside float.
-
-See the caption package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.603  \caption
-               {UpdateMatrix}
-If you do not understand this error, please take a closer look
-at the documentation of the `caption' package, especially the
-section about errors.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: \begin{document} ended by \end{algorithm}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.604 \end{algorithm}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-Underfull \hbox (badness 3375) in paragraph at lines 551--607
-\OT1/cmr/m/n/9 Re-turn Re-sult   boxruled [!] In-putin-putOut-putout-put
+Underfull \hbox (badness 5817) in paragraph at lines 522--523
+[]$\OML/cmm/m/it/10.95 a \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 ^^@[]\OML/cmm
+/m/it/10.95 ln\OT1/cmr/m/n/10.95 (2\OML/cmm/m/it/10.95 ^^Y\OT1/cmr/m/n/10.95 ) 
++ [][][[]\OML/cmm/m/it/10.95 ln\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^[[]\OT
+1/cmr/m/n/10.95 ) +
  []
 
 
-Underfull \vbox (badness 3815) has occurred while \output is active []
-
- [8]
-! Undefined control sequence.
-l.637 \RestyleAlgo
-                  {boxruled}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+LaTeX Warning: Command \c invalid in math mode on input line 528.
 
 
-! LaTeX Error: Environment algorithm undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.638 \begin{algorithm}
-                       [!]
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Undefined control sequence.
-l.639  \SetKwInOut
-                  {Input}{input}\SetKwInOut{Output}{output}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.639  \SetKwInOut{Input}{input}\SetKwInOut
-                                           {Output}{output}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.640  \Input
-             {$Dt = (N,D+L)$, $\sigma^2$, prior hyper-parameters (HP), numbe...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.641  \Output
-              {A list of cluster solutions associated with respective BF}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.642  \BlankLine
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<recently read> \tcp 
-                     
-l.645  \tcp
-           {K accounts for the number of clusters, 1 at first}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<recently read> \BlankLine 
-                           
-l.647  \BlankLine
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.648  \While
-             {We haven't reached the desired number of clusters}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<recently read> \tcp 
-                     
-l.652         \tcp
-                  {sort the values by decreasing order}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<recently read> \For 
-                     
-l.655         \For
-                  {i in indices}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<recently read> \tcp 
-                     
-l.662             \tcp
-                      {Marginal likelihood of model k}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<recently read> \tcp 
-                     
-l.664             \tcp
-                      {$old.L_M$ equates $L_{Marg}^{M_{K-1}}$}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! Package caption Error: \caption outside float.
-
-See the caption package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.671  \caption
-               {BF\_HC\_Desc}
-If you do not understand this error, please take a closer look
-at the documentation of the `caption' package, especially the
-section about errors.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: \begin{document} ended by \end{algorithm}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.672 \end{algorithm}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-Underfull \hbox (badness 6110) in paragraph at lines 636--674
-\OT1/cmr/m/n/9 sort the val-ues by de-creas-ing or-der gower.max.ord $\OMS/cmsy
-/m/n/9  $
+Overfull \hbox (25.12505pt too wide) detected at line 536
+\OMS/cmsy/m/n/10.95 L[]  \OT1/cmr/m/n/10.95 =  \OML/cmm/m/it/10.95 N\OMS/cmsy/m
+/n/10.95 ^^A \OML/cmm/m/it/10.95 a\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 N[] \
+OT1/cmr/m/n/10.95 = 1)  +  [] \OML/cmm/m/it/10.95 b\OT1/cmr/m/n/10.95 (\OML/cmm
+/m/it/10.95 x[]\OT1/cmr/m/n/10.95 )  +  [] \OML/cmm/m/it/10.95 c\OT1/cmr/m/n/10
+.95 (\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 )  +  [] \OML/cmm/m/it/10.95 d\O
+T1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 )
  []
 
-! Undefined control sequence.
-l.699 \RestyleAlgo
-                  {boxruled}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+
+Overfull \hbox (16.55469pt too wide) detected at line 541
+[]
+ []
 
 
-! LaTeX Error: Environment algorithm undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.700 \begin{algorithm}
-                       [!]
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Undefined control sequence.
-l.701  \SetKwFunction
-                     {UpdateMatrix}{updateMatrix}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.702  \SetKwFunction
-                     {MergeBoth}{mergeBoth}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.703  \SetKwFunction
-                     {MergeOne}{mergeOne}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.704  \SetKwInOut
-                  {Input}{input}\SetKwInOut{Output}{output}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.704  \SetKwInOut{Input}{input}\SetKwInOut
-                                           {Output}{output}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.705  \Input
-             {$Dt = (N,D+L)$, $\sigma^2$, prior hyper-parameters (HP), numbe...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.706  \Output
-              {A cluster solution associated with its BF}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.707  \BlankLine
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.711  $L_{mat}\ \leftarrow$ \UpdateMatrix
-                                          {Cl,$N_k$,Dt,$\sigma^2$,HP}\\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<recently read> \tcp 
-                     
-l.712  \tcp
-           {List containing the general cluster solution, will be update at ...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<recently read> \BlankLine 
-                           
-l.714  \BlankLine
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.715  \While
-             {We haven't reached the desired number of clusters}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<recently read> \tcp 
-                     
-l.718        \tcp
-                 {if we note i and j indices of the current maximum}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<recently read> \If 
-                    
-l.720        \If
-                {both samples already in Cl.sol}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.722         Cl.sol $\leftarrow$ \MergeBoth
-                                            {Cl.sol,samples}\\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.724        \uElseIf
-                     {Only one sample already in Cl.sol}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.726         CL.sol $\leftarrow$ \MergeOne
-                                           {Cl.sol,samples}\\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.728        \Else
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.730         \tcp
-                  {None of the samples are already in Cl.sol}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! Package caption Error: \caption outside float.
-
-See the caption package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.738  \caption
-               {BF\_HC\_Asc\_s}
-If you do not understand this error, please take a closer look
-at the documentation of the `caption' package, especially the
-section about errors.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: \begin{document} ended by \end{algorithm}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.739 \end{algorithm}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Undefined control sequence.
-l.740 \RestyleAlgo
-                  {boxruled}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! LaTeX Error: Environment algorithm undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.741 \begin{algorithm}
-                       [!]
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Undefined control sequence.
-l.742  \SetKwInOut
-                  {Input}{input}\SetKwInOut{Output}{output}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.742  \SetKwInOut{Input}{input}\SetKwInOut
-                                           {Output}{output}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.743  \Input
-             {Cluster list, two samples to add}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.744  \Output
-              {A new list containing all clusters}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.745  \BlankLine
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.746  \For
-           {loop on each element of the clusters list}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.748   \If
-           {one of the samples is in the current cluster}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.752   \Else
-             
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! Package caption Error: \caption outside float.
-
-See the caption package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.759  \caption
-               {MergeBoth}
-If you do not understand this error, please take a closer look
-at the documentation of the `caption' package, especially the
-section about errors.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: \begin{document} ended by \end{algorithm}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.761 \end{algorithm}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-LaTeX Warning: Citation 'source1' on page 9 undefined on input line 769.
-
-
-LaTeX Warning: Citation 'source2' on page 9 undefined on input line 769.
+Overfull \hbox (31.38756pt too wide) detected at line 545
+[]
+ []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 772.
+               Default added (so using `!htbp') on input line 556.
 
-<img/dataSets.png, id=62, 182.93344pt x 607.51968pt>
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!htbp') on input line 585.
+
+
+Underfull \hbox (badness 6016) in paragraph at lines 607--607
+[]\OT1/cmr/bx/n/12 Hierarchical Top-Down clus-ter-ing
+ []
+
+[10] [11]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!htbp') on input line 637.
+
+
+Underfull \hbox (badness 2573) in paragraph at lines 674--674
+[]\OT1/cmr/bx/n/12 Simplified hi-er-ar-chi-cal Bottom-Up
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!htbp') on input line 699.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!htbp') on input line 740.
+
+
+LaTeX Warning: Citation 'source1' on page 12 undefined on input line 768.
+
+
+LaTeX Warning: Citation 'source2' on page 12 undefined on input line 768.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!tbp') on input line 771.
+
+<img/dataSets.png, id=65, 182.93344pt x 607.51968pt>
 File: img/dataSets.png Graphic file (type png)
 <use img/dataSets.png>
-Package pdftex.def Info: img/dataSets.png  used on input line 774.
+Package pdftex.def Info: img/dataSets.png  used on input line 773.
 (pdftex.def)             Requested size: 73.17207pt x 243.00356pt.
+[12] [13 <./img/dataSets.png>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 786.
+               Default added (so using `!tbp') on input line 785.
 
-<img/ResultsTable.png, id=63, 485.56406pt x 867.99281pt>
+<img/ResultsTable.png, id=74, 485.56406pt x 867.99281pt>
 File: img/ResultsTable.png Graphic file (type png)
 <use img/ResultsTable.png>
-Package pdftex.def Info: img/ResultsTable.png  used on input line 788.
+Package pdftex.def Info: img/ResultsTable.png  used on input line 787.
 (pdftex.def)             Requested size: 169.94997pt x 303.80203pt.
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 796.
+               Default added (so using `!tbp') on input line 795.
 
-<img/BFplot.png, id=64, 752.8125pt x 1047.915pt>
+<img/BFplot.png, id=75, 752.8125pt x 1047.915pt>
 File: img/BFplot.png Graphic file (type png)
 <use img/BFplot.png>
-Package pdftex.def Info: img/BFplot.png  used on input line 798.
+Package pdftex.def Info: img/BFplot.png  used on input line 797.
 (pdftex.def)             Requested size: 225.84549pt x 314.37692pt.
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 804.
+               Default added (so using `!tbp') on input line 803.
 
-<img/BFplotNotBelowZero.png, id=65, 752.8125pt x 1047.915pt>
+<img/BFplotNotBelowZero.png, id=76, 752.8125pt x 1047.915pt>
 File: img/BFplotNotBelowZero.png Graphic file (type png)
 <use img/BFplotNotBelowZero.png>
-Package pdftex.def Info: img/BFplotNotBelowZero.png  used on input line 806.
+Package pdftex.def Info: img/BFplotNotBelowZero.png  used on input line 805.
 (pdftex.def)             Requested size: 225.84549pt x 314.37692pt.
-[9]
-Underfull \vbox (badness 6608) has occurred while \output is active []
-
- [10 <./img/dataSets.png> <./img/ResultsTable.png> <./img/BFplot.png>]
+[14 <./img/ResultsTable.png> <./img/BFplot.png>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 824.
+               Default added (so using `!tbp') on input line 823.
 
-<img/AccTable.png, id=74, 478.03593pt x 566.115pt>
+<img/AccTable.png, id=81, 478.03593pt x 566.115pt>
 File: img/AccTable.png Graphic file (type png)
 <use img/AccTable.png>
-Package pdftex.def Info: img/AccTable.png  used on input line 826.
+Package pdftex.def Info: img/AccTable.png  used on input line 825.
 (pdftex.def)             Requested size: 191.21098pt x 226.44199pt.
 
-LaTeX Warning: Citation 'hayes' on page 11 undefined on input line 836.
+LaTeX Warning: Citation 'hayes' on page 15 undefined on input line 835.
 
 
-LaTeX Warning: Citation 'wilk' on page 11 undefined on input line 836.
+LaTeX Warning: Citation 'wilk' on page 15 undefined on input line 835.
 
 
-LaTeX Warning: Citation 'TCGA' on page 11 undefined on input line 836.
+LaTeX Warning: Citation 'TCGA' on page 15 undefined on input line 835.
 
 
-LaTeX Warning: Citation 'TCGA' on page 11 undefined on input line 837.
+LaTeX Warning: Citation 'TCGA' on page 15 undefined on input line 836.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 838.
+               Default added (so using `!tbp') on input line 837.
 
-<img/ResultsAdeno.png, id=75, 491.58656pt x 614.295pt>
+<img/ResultsAdeno.png, id=82, 491.58656pt x 614.295pt>
 File: img/ResultsAdeno.png Graphic file (type png)
 <use img/ResultsAdeno.png>
-Package pdftex.def Info: img/ResultsAdeno.png  used on input line 840.
+Package pdftex.def Info: img/ResultsAdeno.png  used on input line 839.
 (pdftex.def)             Requested size: 196.63113pt x 245.71364pt.
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 844.
+               Default added (so using `!tbp') on input line 843.
 
-<img/AccAdeno.png, id=76, 767.86874pt x 475.7775pt>
+<img/AccAdeno.png, id=83, 767.86874pt x 475.7775pt>
 File: img/AccAdeno.png Graphic file (type png)
 <use img/AccAdeno.png>
-Package pdftex.def Info: img/AccAdeno.png  used on input line 846.
+Package pdftex.def Info: img/AccAdeno.png  used on input line 845.
 (pdftex.def)             Requested size: 230.3624pt x 142.73434pt.
-[11 <./img/BFplotNotBelowZero.png> <./img/AccTable.png> <./img/ResultsAdeno.png
-> <./img/AccAdeno.png>]
+[15 <./img/BFplotNotBelowZero.png> <./img/AccTable.png> <./img/ResultsAdeno.png
+>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 875.
+               Default added (so using `!tbp') on input line 874.
 
-<img/runTime.png, id=81, 461.47406pt x 394.47375pt>
+<img/runTime.png, id=88, 461.47406pt x 394.47375pt>
 File: img/runTime.png Graphic file (type png)
 <use img/runTime.png>
-Package pdftex.def Info: img/runTime.png  used on input line 877.
+Package pdftex.def Info: img/runTime.png  used on input line 876.
 (pdftex.def)             Requested size: 184.58635pt x 157.7867pt.
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 881.
+               Default added (so using `!tbp') on input line 880.
 
-<img/ObsTime.png, id=82, 752.8125pt x 1044.15094pt>
+<img/ObsTime.png, id=89, 752.8125pt x 1044.15094pt>
 File: img/ObsTime.png Graphic file (type png)
 <use img/ObsTime.png>
-Package pdftex.def Info: img/ObsTime.png  used on input line 883.
+Package pdftex.def Info: img/ObsTime.png  used on input line 882.
 (pdftex.def)             Requested size: 225.84549pt x 313.2477pt.
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 887.
+               Default added (so using `!tbp') on input line 886.
 
-<img/VarTime.png, id=83, 752.8125pt x 1044.15094pt>
+<img/VarTime.png, id=90, 752.8125pt x 1044.15094pt>
 File: img/VarTime.png Graphic file (type png)
 <use img/VarTime.png>
-Package pdftex.def Info: img/VarTime.png  used on input line 889.
+Package pdftex.def Info: img/VarTime.png  used on input line 888.
 (pdftex.def)             Requested size: 225.84549pt x 313.2477pt.
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 893.
+               Default added (so using `!tbp') on input line 892.
 
-<img/bothTime.png, id=84, 752.8125pt x 1044.15094pt>
+<img/bothTime.png, id=91, 752.8125pt x 1044.15094pt>
 File: img/bothTime.png Graphic file (type png)
 <use img/bothTime.png>
-Package pdftex.def Info: img/bothTime.png  used on input line 895.
+Package pdftex.def Info: img/bothTime.png  used on input line 894.
 (pdftex.def)             Requested size: 225.84549pt x 313.2477pt.
-[12 <./img/runTime.png> <./img/ObsTime.png> <./img/VarTime.png>]
+[16 <./img/AccAdeno.png> <./img/runTime.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Empty bibliography on input line 927.
+ [17 <./img/ObsTime.png> <./img/VarTime.png> <./img/bothTime.png>]
 
-[13 <./img/bothTime.png>] (./main.aux)
+LaTeX Warning: Empty bibliography on input line 926.
+
+[18
+
+] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -2390,40 +1808,34 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 14362 strings out of 492982
- 249011 string characters out of 6134897
- 719104 words of memory out of 5000000
- 17669 multiletter control sequences out of 15000+600000
- 20347 words of font info for 80 fonts, out of 8000000 for 9000
+ 15278 strings out of 492982
+ 264009 string characters out of 6134897
+ 742593 words of memory out of 5000000
+ 18585 multiletter control sequences out of 15000+600000
+ 21426 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,14n,40p,839b,1075s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,16n,40p,839b,1075s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
-2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
-9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb
->
-Output written on main.pdf (13 pages, 748615 bytes).
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/esint-type1/esint10.pfb>
+Output written on main.pdf (18 pages, 690784 bytes).
 PDF statistics:
- 171 PDF objects out of 1000 (max. 8388607)
- 104 compressed objects within 2 object streams
+ 161 PDF objects out of 1000 (max. 8388607)
+ 96 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  91 words of extra memory for PDF output out of 10000 (max. 10000000)
 

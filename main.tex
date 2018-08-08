@@ -43,8 +43,13 @@ component, formatting, style, styling, insert
 
 \section{Introduction}
 
-\\As the world of fossil energy constantly exhausted and the increasingly serious environmental pollution, the research and utilization of renewable energy and green energy have become maintain necessary means of survival and development of the human. Photovoltaic (PV) energy received significant attention since it has unlimited energy and easy to be scaled up. Thanks to extensive technology and research on photovoltaic energy generation, large scale photovoltaic energy generation system have been deployed into many practical application. But due to PV arrays are senstive to shading and PV cell's fault or aging. That means when interconnection of PV cells or modules do no have identical properties or experience different conditions from one another.PV arrays are in mismatch condition. In order to avoid mismatch condition damage PV cells, we proposed an algorithm that can re-configurate photovoltaic arrays to minimize mismatch loss.
-\\In this paper, we using non-uniform irradiance levels to represent mismatch condition and analysis the efficiency of a PV system under different shaded working condition is presented.When photovoltaic arrays operating in non-uniform irradiance levels may present multiple local maxmimum power points (MPPs) \cite{b1}, which been genearated by turning on bypass diodes.
+As the world of fossil energy constantly exhausted and the increasingly serious environmental pollution, the research and utilization of renewable energy and green energy have become maintain necessary means of survival and development of the human. Photovoltaic (PV) energy received significant attention since it has unlimited energy and easy to be scaled up. Thanks to extensive technology and research on photovoltaic energy generation, large scale photovoltaic energy generation system have been deployed into many practical application. But due to PV arrays are senstive to shading and PV cell's fault or aging. That means when interconnection of PV cells or modules do no have identical properties or experience different conditions from one another.PV arrays are in mismatch condition. In order to avoid mismatch condition damage PV cells, we proposed an algorithm that can re-configurate photovoltaic arrays to minimize mismatch loss.
+
+In this paper, we using non-uniform irradiance levels to represent mismatch condition and analysis the efficiency of a PV system under different shaded working condition is presented. When photovoltaic arrays operating in non-uniform irradiance levels may present multiple local maxmimum power points (MPPs) \cite{b1}, which been genearated by turning on bypass diodes. By changing electrical connection among the panels to prevent activate bypass diodes is a recent appealing solution\cite{b2}.
+
+This procedure enables to detect panel's operating conditions, in more than two-strings, receiving different irradiance levels. The reconfiguration algorithm will analysis panels' working conditions and reorganizes panels into different strings by different irradiance levels. However, in sparse of mismatching conditions, distribution of panels among different irradiance levels are not significant. For that, by increasing number of strings in the PV array and using exhaustive search can be a solution\cite{b3}.
+
+The main difficulty facing the reconfiguration problem is 
 
 \section{Ease of Use}
 
@@ -230,7 +235,7 @@ acknowledgments in the unnumbered footnote on the first page.
 \section*{References}
 
 Please number citations consecutively within brackets . The 
-sentence punctuation follows the bracket \cite{b2}. Refer simply to the reference 
+sentence punctuation follows the bracket. Refer simply to the reference 
 number, as in \cite{b3}---do not use ``Ref. \cite{b3}'' or ``reference \cite{b3}'' except at 
 the beginning of a sentence: ``Reference \cite{b3} was the first $\ldots$''
 
@@ -250,8 +255,8 @@ citation first, followed by the original foreign-language citation \cite{b6}.
 
 \begin{thebibliography}{00}
 \bibitem{b1} Koutroulis, Eftichios, and Frede Blaabjerg. "A new technique for tracking the global maximum power point of PV arrays operating under partial-shading conditions." IEEE Journal of Photovoltaics 2.2 (2012): 184-190.
-\bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
-\bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
+\bibitem{b2} La Manna, Damiano, et al. "Reconfigurable electrical interconnection strategies for photovoltaic arrays: A review." Renewable and Sustainable Energy Reviews 33 (2014): 412-426.
+\bibitem{b3}Storey, Jonathan, Peter R. Wilson, and Darren Bagnall. "The optimized-string dynamic photovoltaic array." IEEE Transactions on Power Electronics 29.4 (2014): 1768-1776.
 \bibitem{b4} K. Elissa, ``Title of paper if known,'' unpublished.
 \bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
 \bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].

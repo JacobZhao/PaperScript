@@ -1923,40 +1923,6 @@
     <bcf:datasource type="file" datatype="bibtex">biblio.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">hayes</bcf:citekey>
-    <bcf:citekey order="2">cons</bcf:citekey>
-    <bcf:citekey order="3">hayes</bcf:citekey>
-    <bcf:citekey order="4">wilk</bcf:citekey>
-    <bcf:citekey order="5">consensusPlus</bcf:citekey>
-    <bcf:citekey order="6">TCGA</bcf:citekey>
-    <bcf:citekey order="7">wilk</bcf:citekey>
-    <bcf:citekey order="8">castro</bcf:citekey>
-    <bcf:citekey order="9">sharma</bcf:citekey>
-    <bcf:citekey order="10">pages</bcf:citekey>
-    <bcf:citekey order="11">mullner</bcf:citekey>
-    <bcf:citekey order="12">raftery</bcf:citekey>
-    <bcf:citekey order="13">bishop</bcf:citekey>
-    <bcf:citekey order="14">murphy</bcf:citekey>
-    <bcf:citekey order="15">shedden</bcf:citekey>
-    <bcf:citekey order="16">TCGA</bcf:citekey>
-    <bcf:citekey order="17">annot</bcf:citekey>
-    <bcf:citekey order="18">hayes</bcf:citekey>
-    <bcf:citekey order="19">wilk</bcf:citekey>
-    <bcf:citekey order="20">TCGA</bcf:citekey>
-    <bcf:citekey order="21">maechler</bcf:citekey>
-    <bcf:citekey order="22">burnham</bcf:citekey>
-    <bcf:citekey order="23">bishop</bcf:citekey>
-    <bcf:citekey order="24">raftery</bcf:citekey>
-    <bcf:citekey order="25">raftery</bcf:citekey>
-    <bcf:citekey order="26">raftery</bcf:citekey>
-    <bcf:citekey order="27">murphy</bcf:citekey>
-    <bcf:citekey order="28">murphy</bcf:citekey>
-    <bcf:citekey order="29">source1</bcf:citekey>
-    <bcf:citekey order="30">source2</bcf:citekey>
-    <bcf:citekey order="31">hayes</bcf:citekey>
-    <bcf:citekey order="32">wilk</bcf:citekey>
-    <bcf:citekey order="33">TCGA</bcf:citekey>
-    <bcf:citekey order="34">TCGA</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

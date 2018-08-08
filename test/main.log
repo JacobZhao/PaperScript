@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.8.2)  8 AUG 2018 13:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.8.2)  8 AUG 2018 16:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -958,6 +958,15 @@ sep char (CT)
 \@centerbox=\box48
 \c@ROWcellindex@=\count344
 )
+(/usr/share/texlive/texmf-dist/tex/latex/apacite/apacite.sty
+Package: apacite 2013/07/21 v6.03 APA citation
+\c@BibCnt=\count345
+\bibleftmargin=\skip90
+\bibindent=\skip91
+\bibparsep=\skip92
+\bibitemsep=\skip93
+\biblabelsep=\skip94
+)
 (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
@@ -968,9 +977,9 @@ Package ifvtex Info: VTeX not detected.
 (/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count345
-\Gm@cntv=\count346
-\c@Gm@tempcnt=\count347
+\Gm@cnth=\count346
+\Gm@cntv=\count347
+\c@Gm@tempcnt=\count348
 \Gm@bindingoffset=\dimen145
 \Gm@wd@mp=\dimen146
 \Gm@odd@mp=\dimen147
@@ -981,14 +990,24 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen152
 \Gm@dimlist=\toks30
 )
+
+! Package biblatex Error: Incompatible package 'apacite'.
+
+See the biblatex package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.25 \begin{document}
+                     
+The 'apacite' package and biblatex are incompatible.
+
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
-
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2017/12/19 v3.10 biblatex localization (PK/JW/AB)
 )
-\@quotelevel=\count348
-\@quotereset=\count349
+\@quotelevel=\count349
+\@quotereset=\count350
 
 (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
@@ -1018,7 +1037,7 @@ See the minted package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.24 \begin{document}
+l.25 \begin{document}
                      
 Refer to the installation instructions in the minted documentation for more inf
 ormation.
@@ -1039,30 +1058,30 @@ LaTeX Warning: Label `equ:Lmarg' multiply defined.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count350
+\scratchcounter=\count351
 \scratchdimen=\dimen153
 \scratchbox=\box49
-\nofMPsegments=\count351
-\nofMParguments=\count352
+\nofMPsegments=\count352
+\nofMParguments=\count353
 \everyMPshowfont=\toks31
-\MPscratchCnt=\count353
+\MPscratchCnt=\count354
 \MPscratchDim=\dimen154
-\MPnumerator=\count354
-\makeMPintoPDFobject=\count355
+\MPnumerator=\count355
+\makeMPintoPDFobject=\count356
 \everyMPtoPDFconversion=\toks32
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1096,8 +1115,14 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' not found.
 
 No file main.bbl.
-Package biblatex Info: Reference section=0 on input line 24.
-Package biblatex Info: Reference segment=0 on input line 24.
+Package biblatex Info: Reference section=0 on input line 25.
+Package biblatex Info: Reference segment=0 on input line 25.
+\c@maskedRefs=\count357
+(/usr/share/texlive/texmf-dist/tex/latex/apacite/english.apc
+File: english.apc 2013/07/21 v6.03 apacite language file
+LaTeX Info: Redefining \BPBI on input line 129.
+LaTeX Info: Redefining \BHBI on input line 130.
+)
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1132,16 +1157,16 @@ Package biblatex Info: Reference segment=0 on input line 24.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 25.
+LaTeX Font Info:    Try loading font information for U+msa on input line 26.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 25.
+LaTeX Font Info:    Try loading font information for U+msb on input line 26.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+esint on input line 25.
+LaTeX Font Info:    Try loading font information for U+esint on input line 26.
 
 (/usr/share/texlive/texmf-dist/tex/latex/esint/uesint.fd
 File: uesint.fd 
@@ -1153,7 +1178,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.28 \\A
+l.29 \\A
         s the world of fossil energy constantly exhausted and the increasing...
 
 Your command was ignored.
@@ -1161,355 +1186,323 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-LaTeX Warning: Citation 'hayes' on page 1 undefined on input line 33.
+LaTeX Warning: Citation `koutroulis2012new' undefined on input line 30.
 
 
-LaTeX Warning: Citation 'cons' on page 1 undefined on input line 34.
+LaTeX Warning: Citation `hayes' undefined on input line 36.
 
 
-LaTeX Warning: Citation 'hayes' on page 1 undefined on input line 35.
+LaTeX Warning: Citation `cons' undefined on input line 37.
 
 
-LaTeX Warning: Citation 'wilk' on page 1 undefined on input line 36.
+LaTeX Warning: Citation `wilk' undefined on input line 39.
 
 
-LaTeX Warning: Citation 'consensusPlus' on page 1 undefined on input line 38.
+LaTeX Warning: Citation `consensusPlus' undefined on input line 41.
 
 
-LaTeX Warning: Citation 'TCGA' on page 1 undefined on input line 40.
+LaTeX Warning: Citation `TCGA' undefined on input line 43.
 
 
-LaTeX Warning: Citation 'wilk' on page 1 undefined on input line 43.
+LaTeX Warning: Citation `castro' undefined on input line 51.
 
 
-LaTeX Warning: Citation 'castro' on page 1 undefined on input line 48.
+LaTeX Warning: Citation `sharma' undefined on input line 56.
 
 
-LaTeX Warning: Citation 'sharma' on page 1 undefined on input line 53.
+LaTeX Warning: Citation `pages' undefined on input line 57.
 
 
-LaTeX Warning: Citation 'pages' on page 1 undefined on input line 54.
+LaTeX Warning: Citation `mullner' undefined on input line 58.
 
 
-LaTeX Warning: Citation 'mullner' on page 1 undefined on input line 55.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
 
-LaTeX Warning: Citation 'raftery' on page 2 undefined on input line 59.
+LaTeX Warning: Citation `raftery' undefined on input line 62.
 
 
-LaTeX Warning: Citation 'bishop' on page 2 undefined on input line 60.
+LaTeX Warning: Citation `bishop' undefined on input line 63.
 
 
-LaTeX Warning: Citation 'murphy' on page 2 undefined on input line 61.
+LaTeX Warning: Citation `murphy' undefined on input line 64.
 
 
-Underfull \hbox (badness 1215) in paragraph at lines 59--62
-\OT1/cmr/m/n/12 pro-vided us use-ful in-sights to Bayesian in-fer-
- []
+LaTeX Warning: Citation `shedden' undefined on input line 69.
 
 
-Underfull \hbox (badness 3312) in paragraph at lines 59--62
-\OT1/cmr/m/n/12 a-lyt-i-cally tractable so-lu-tion in our Gaus-sian
- []
-
-
-LaTeX Warning: Citation 'shedden' on page 2 undefined on input line 66.
-
-
-LaTeX Warning: Citation 'TCGA' on page 2 undefined on input line 66.
-
-
-LaTeX Warning: Citation 'annot' on page 2 undefined on input line 67.
-
-
-LaTeX Warning: Citation 'hayes' on page 2 undefined on input line 84.
-
-
-LaTeX Warning: Citation 'wilk' on page 2 undefined on input line 84.
+LaTeX Warning: Citation `annot' undefined on input line 70.
 
 <img/SampleS_box.png, id=8, 481.8pt x 481.8pt>
 File: img/SampleS_box.png Graphic file (type png)
 <use img/SampleS_box.png>
-Package pdftex.def Info: img/SampleS_box.png  used on input line 90.
+Package pdftex.def Info: img/SampleS_box.png  used on input line 93.
 (pdftex.def)             Requested size: 115.627pt x 115.63243pt.
 
-Overfull \hbox (10.58104pt too wide) in paragraph at lines 90--91
+Overfull \hbox (10.58104pt too wide) in paragraph at lines 93--94
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 91--91
+Underfull \hbox (badness 10000) in paragraph at lines 94--94
 []\OT1/cmr/m/n/10.95 (a) |Box plots of
  []
 
 <img/result.png, id=9, 481.8pt x 481.8pt>
 File: img/result.png Graphic file (type png)
 <use img/result.png>
-Package pdftex.def Info: img/result.png  used on input line 96.
+Package pdftex.def Info: img/result.png  used on input line 99.
 (pdftex.def)             Requested size: 115.627pt x 115.63243pt.
 
-Overfull \hbox (10.58104pt too wide) in paragraph at lines 96--98
+Overfull \hbox (10.58104pt too wide) in paragraph at lines 99--101
  [][] 
  []
 
 
-Underfull \hbox (badness 1281) in paragraph at lines 98--98
+Underfull \hbox (badness 1281) in paragraph at lines 101--101
 []\OT1/cmr/m/n/10.95 (b) |MA-plot of dis-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--98
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \OT1/cmr/m/n/10.95 eased pa-tients and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--98
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \OT1/cmr/m/n/10.95 healthy ones (con-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--98
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \OT1/cmr/m/n/10.95 red dots rep-re-sent
  []
 
 
-LaTeX Warning: Citation 'TCGA' on page 2 undefined on input line 104.
-
-
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 107.
+               Default added (so using `!tbp') on input line 110.
 
 <img/adenodatasets.png, id=10, 630.85687pt x 198.7425pt>
 File: img/adenodatasets.png Graphic file (type png)
 <use img/adenodatasets.png>
-Package pdftex.def Info: img/adenodatasets.png  used on input line 109.
+Package pdftex.def Info: img/adenodatasets.png  used on input line 112.
 (pdftex.def)             Requested size: 252.33827pt x 79.49557pt.
 [2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 129.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 132.
 
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 129.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 132.
 
-Underfull \hbox (badness 5756) in paragraph at lines 130--131
+Underfull \hbox (badness 5756) in paragraph at lines 133--134
 []\OT1/cmr/m/n/12 Nominal: Gen-er-al-i-sa-tion of the bi-nary
  []
 
 
-Underfull \hbox (badness 2809) in paragraph at lines 130--131
+Underfull \hbox (badness 2809) in paragraph at lines 133--134
 \OT1/cmr/m/n/12 case for K cat-e-gories, i.e: Race (Aus-
  []
 
 
-Overfull \hbox (11.05327pt too wide) in paragraph at lines 130--131
+Overfull \hbox (11.05327pt too wide) in paragraph at lines 133--134
 \OT1/cmr/m/n/12 traloid/Capoid/Caucasoid/Mongoloid/Negroid) 
  []
 
 <img/HC.png, id=18, 1121.18875pt x 900.36375pt>
 File: img/HC.png Graphic file (type png)
 <use img/HC.png>
-Package pdftex.def Info: img/HC.png  used on input line 140.
+Package pdftex.def Info: img/HC.png  used on input line 143.
 (pdftex.def)             Requested size: 224.23378pt x 180.06955pt.
 
-Underfull \hbox (badness 1946) in paragraph at lines 134--147
+Underfull \hbox (badness 1946) in paragraph at lines 137--150
 \OT1/cmr/m/n/12 be-cause the math-e-mat-i-cal tools we ap-ply to
  []
 
 
-Underfull \hbox (badness 5359) in paragraph at lines 134--147
+Underfull \hbox (badness 5359) in paragraph at lines 137--150
 \OT1/cmr/m/n/12 (MALE/FEMALE), to num-bers (1/2), even
  []
 
 
-Underfull \hbox (badness 1460) in paragraph at lines 134--147
+Underfull \hbox (badness 1460) in paragraph at lines 137--150
 \OT1/cmr/m/n/12 vari-ables will be as-sumed to fol-low Gaus-sian
  []
 
 
-Underfull \hbox (badness 1057) in paragraph at lines 134--147
+Underfull \hbox (badness 1057) in paragraph at lines 137--150
 \OT1/cmr/m/n/12 dis-tri-bu-tions (close to a Gaus-sian dis-tri-bu-tion
  []
 
 
-Underfull \hbox (badness 2828) in paragraph at lines 134--147
+Underfull \hbox (badness 2828) in paragraph at lines 137--150
 \OT1/cmr/m/n/12 ones multi-no-mial dis-tri-bu-tions, which change
  []
 
 
-Underfull \hbox (badness 1178) in paragraph at lines 134--147
+Underfull \hbox (badness 1178) in paragraph at lines 137--150
 \OT1/cmr/m/n/12 com-par-i-son method. A very sim-ple dis-tance
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--147
+Underfull \hbox (badness 10000) in paragraph at lines 137--150
 
  []
 
-[3 <./img/SampleS_box.png> <./img/result.png> <./img/adenodatasets.png>]
-Underfull \hbox (badness 1147) in paragraph at lines 150--153
+[3 <./img/adenodatasets.png> <./img/SampleS_box.png> <./img/result.png>]
+Underfull \hbox (badness 1147) in paragraph at lines 153--156
 \OT1/cmr/m/n/12 of di-men-sion D. The choice of the met-ric is
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--153
+Underfull \hbox (badness 10000) in paragraph at lines 153--156
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--157
+Underfull \hbox (badness 10000) in paragraph at lines 158--160
 
  []
 
 
-LaTeX Warning: Citation 'maechler' on page 4 undefined on input line 163.
+LaTeX Warning: Citation `maechler' undefined on input line 166.
 
 
-Underfull \hbox (badness 1122) in paragraph at lines 170--174
+Underfull \hbox (badness 1122) in paragraph at lines 173--177
 \OT1/cmr/m/n/12 The Ward's method looks for min-imis-ing the
  []
 
 
-LaTeX Warning: Citation 'burnham' on page 4 undefined on input line 180.
+LaTeX Warning: Citation `burnham' undefined on input line 183.
 
 [4 <./img/HC.png>]
-
-LaTeX Warning: Citation 'bishop' on page 5 undefined on input line 187.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 204--208
-
- []
+Underfull \vbox (badness 1990) has occurred while \output is active []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--212
+Underfull \hbox (badness 10000) in paragraph at lines 207--211
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--216
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
 
  []
 
 
-Underfull \hbox (badness 1968) in paragraph at lines 223--227
+Underfull \hbox (badness 10000) in paragraph at lines 218--219
+
+ []
+
+
+Underfull \hbox (badness 1968) in paragraph at lines 226--230
 \OT1/cmr/m/n/12 Now that we have es-tab-lished the ba-sics of
  []
 
 
-Underfull \hbox (badness 1448) in paragraph at lines 228--228
+Underfull \hbox (badness 1448) in paragraph at lines 231--231
 []\OT1/cmr/bx/n/14.4 Model com-par-i-son us-ing the
  []
 
-
-LaTeX Warning: Citation 'raftery' on page 5 undefined on input line 232.
-
 [5]
-Underfull \hbox (badness 4254) in paragraph at lines 245--246
+Underfull \hbox (badness 4254) in paragraph at lines 248--249
 \OT1/cmr/m/n/12 Then, if we wish to com-pare two mod-els
  []
 
 
-LaTeX Warning: Citation 'raftery' on page 6 undefined on input line 255.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 253--256
+Underfull \hbox (badness 10000) in paragraph at lines 256--259
 
  []
 
 
-LaTeX Warning: Citation 'raftery' on page 6 undefined on input line 273.
-
-
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 277.
+               Default added (so using `!tbp') on input line 280.
 
 <img/BFratios.jpg, id=36, 334.24875pt x 114.4275pt>
 File: img/BFratios.jpg Graphic file (type jpg)
 <use img/BFratios.jpg>
-Package pdftex.def Info: img/BFratios.jpg  used on input line 279.
+Package pdftex.def Info: img/BFratios.jpg  used on input line 282.
 (pdftex.def)             Requested size: 200.55078pt x 68.65701pt.
 
-Underfull \hbox (badness 2717) in paragraph at lines 284--284
+Underfull \hbox (badness 2717) in paragraph at lines 287--287
 []\OT1/cmr/bx/n/14.4 Application of the Bayesian
  []
 
-[6 <./img/BFratios.jpg>]
+
+Underfull \vbox (badness 1748) has occurred while \output is active []
+
+ [6 <./img/BFratios.jpg>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 307.
+               Default added (so using `!tbp') on input line 310.
 
 <img/gaussDist.jpg, id=41, 274.02374pt x 184.43906pt>
 File: img/gaussDist.jpg Graphic file (type jpg)
 <use img/gaussDist.jpg>
-Package pdftex.def Info: img/gaussDist.jpg  used on input line 311.
+Package pdftex.def Info: img/gaussDist.jpg  used on input line 314.
 (pdftex.def)             Requested size: 128.84552pt x 86.72377pt.
 <img/distVar.jpg, id=42, 324.46219pt x 431.36156pt>
 File: img/distVar.jpg Graphic file (type jpg)
 <use img/distVar.jpg>
-Package pdftex.def Info: img/distVar.jpg  used on input line 316.
+Package pdftex.def Info: img/distVar.jpg  used on input line 319.
 (pdftex.def)             Requested size: 65.22794pt x 86.72377pt.
 
-Overfull \hbox (4.99998pt too wide) in paragraph at lines 309--319
+Overfull \hbox (4.99998pt too wide) in paragraph at lines 312--322
  [][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 325--328
+Underfull \hbox (badness 10000) in paragraph at lines 328--331
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 331--332
+Underfull \hbox (badness 10000) in paragraph at lines 334--335
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--335
+Underfull \hbox (badness 10000) in paragraph at lines 336--338
 
  []
 
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 335.
+(amsmath)                 on input line 338.
 
 
-Underfull \hbox (badness 1565) in paragraph at lines 345--346
+Underfull \hbox (badness 1565) in paragraph at lines 348--349
 []$\OML/cmm/m/it/12 ^^N$ \OT1/cmr/m/n/12 is the Dirac delta func-tion de-fined 
 as
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 345--346
+Underfull \hbox (badness 10000) in paragraph at lines 348--349
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 348--351
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 359--361
+Underfull \hbox (badness 10000) in paragraph at lines 351--354
 
  []
 
 [7 <./img/gaussDist.jpg> <./img/distVar.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 371--371
+Underfull \hbox (badness 10000) in paragraph at lines 362--364
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 374--374
 []\OT1/cmr/bx/n/12 Likelihood marginal-i-sa-tion and
  []
 
 
-LaTeX Warning: Citation 'murphy' on page 8 undefined on input line 374.
-
-
-Overfull \hbox (37.06693pt too wide) detected at line 384
+Overfull \hbox (37.06693pt too wide) detected at line 387
 \OMS/cmsy/m/n/12 L[]  \OT1/cmr/m/n/12 =  [] [][\OMS/cmsy/m/n/12 N\OT1/cmr/m/n/1
 2 (\OML/cmm/m/it/12 x[]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 ^^V; ^^[[]\OT1/cmr/m/
 n/12 )]\OMS/cmsy/m/n/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^V\OMS/cmsy/m/n/12 
@@ -1518,12 +1511,12 @@ j\OML/cmm/m/it/12 m; ^^[[]\OT1/cmr/m/n/12 ) [] \OML/cmm/m/it/12 P[]\OT1/cmr/m/n
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 390--393
+Underfull \hbox (badness 10000) in paragraph at lines 393--396
 
  []
 
 
-Overfull \hbox (2.60179pt too wide) detected at line 399
+Overfull \hbox (2.60179pt too wide) detected at line 402
 \OMS/cmsy/m/n/12 L[]  \OT1/cmr/m/n/12 =  [] [] [][\OMS/cmsy/m/n/12 N\OT1/cmr/m/
 n/12 (\OML/cmm/m/it/12 x[]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 ^^V[]; ^^[[]\OT1/c
 mr/m/n/12 )]\OMS/cmsy/m/n/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^V[]\OMS/cmsy/
@@ -1531,73 +1524,70 @@ m/n/12 j\OML/cmm/m/it/12 m; ^^[[]\OT1/cmr/m/n/12 )]\OML/cmm/m/it/12 d^^V[]
  []
 
 
-LaTeX Warning: Citation 'murphy' on page 8 undefined on input line 405.
-
-
-Overfull \hbox (5.92662pt too wide) detected at line 423
+Overfull \hbox (5.92662pt too wide) detected at line 426
 []
  []
 
 [8]
-Overfull \hbox (50.6634pt too wide) detected at line 432
+Overfull \hbox (50.6634pt too wide) detected at line 435
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 432--435
+Underfull \hbox (badness 10000) in paragraph at lines 435--438
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 444--446
+Underfull \hbox (badness 10000) in paragraph at lines 447--449
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 449--450
+Underfull \hbox (badness 10000) in paragraph at lines 452--453
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 453--454
+Underfull \hbox (badness 10000) in paragraph at lines 456--457
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 457--458
+Underfull \hbox (badness 10000) in paragraph at lines 460--461
 
  []
 
 
-Overfull \hbox (15.99788pt too wide) detected at line 458
+Overfull \hbox (15.99788pt too wide) detected at line 461
 []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 N[]; N[]\OT1/cmr/m/n/10.95 )  =  []  
 =  []
  []
 
 
-Overfull \hbox (8.34027pt too wide) detected at line 471
+Overfull \hbox (8.34027pt too wide) detected at line 474
 \OMS/cmsy/m/n/10.95 L[] \OT1/cmr/m/n/10.95 = [] [] []
  []
 
 
-Overfull \hbox (33.69576pt too wide) detected at line 478
+Overfull \hbox (33.69576pt too wide) detected at line 481
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 485--487
+Underfull \hbox (badness 10000) in paragraph at lines 488--490
 
  []
 
 [9]
-Underfull \hbox (badness 1622) in paragraph at lines 511--511
+Underfull \hbox (badness 1622) in paragraph at lines 514--514
 []\OT1/cmr/bx/n/12 Hierarchical Bottom-Up clus-ter-ing
  []
 
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 522.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 525.
 
-Underfull \hbox (badness 5817) in paragraph at lines 522--523
+Underfull \hbox (badness 5817) in paragraph at lines 525--526
 []$\OML/cmm/m/it/10.95 a \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 ^^@[]\OML/cmm
 /m/it/10.95 ln\OT1/cmr/m/n/10.95 (2\OML/cmm/m/it/10.95 ^^Y\OT1/cmr/m/n/10.95 ) 
 + [][][[]\OML/cmm/m/it/10.95 ln\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^[[]\OT
@@ -1605,10 +1595,10 @@ Underfull \hbox (badness 5817) in paragraph at lines 522--523
  []
 
 
-LaTeX Warning: Command \c invalid in math mode on input line 528.
+LaTeX Warning: Command \c invalid in math mode on input line 531.
 
 
-Overfull \hbox (25.12505pt too wide) detected at line 536
+Overfull \hbox (25.12505pt too wide) detected at line 539
 \OMS/cmsy/m/n/10.95 L[]  \OT1/cmr/m/n/10.95 =  \OML/cmm/m/it/10.95 N\OMS/cmsy/m
 /n/10.95 ^^A \OML/cmm/m/it/10.95 a\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 N[] \
 OT1/cmr/m/n/10.95 = 1)  +  [] \OML/cmm/m/it/10.95 b\OT1/cmr/m/n/10.95 (\OML/cmm
@@ -1618,176 +1608,190 @@ T1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 )
  []
 
 
-Overfull \hbox (16.55469pt too wide) detected at line 541
+Overfull \hbox (16.55469pt too wide) detected at line 544
 []
  []
 
 
-Overfull \hbox (31.38756pt too wide) detected at line 545
+Overfull \hbox (31.38756pt too wide) detected at line 548
 []
  []
-
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!htbp') on input line 556.
-
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!htbp') on input line 585.
 
 [10]
-Underfull \hbox (badness 6016) in paragraph at lines 607--607
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!htbp') on input line 559.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!htbp') on input line 588.
+
+
+Underfull \hbox (badness 6016) in paragraph at lines 610--610
 []\OT1/cmr/bx/n/12 Hierarchical Top-Down clus-ter-ing
  []
 
-[11]
+
+Underfull \vbox (badness 2229) has occurred while \output is active []
+
+ [11]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!htbp') on input line 637.
+               Default added (so using `!htbp') on input line 640.
 
 
-Underfull \hbox (badness 2573) in paragraph at lines 674--674
+Underfull \hbox (badness 2573) in paragraph at lines 677--677
 []\OT1/cmr/bx/n/12 Simplified hi-er-ar-chi-cal Bottom-Up
  []
 
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!htbp') on input line 699.
-
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!htbp') on input line 740.
-
 [12]
 
-LaTeX Warning: Citation 'source1' on page 13 undefined on input line 768.
-
-
-LaTeX Warning: Citation 'source2' on page 13 undefined on input line 768.
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!htbp') on input line 702.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 771.
+               Default added (so using `!htbp') on input line 743.
+
+
+LaTeX Warning: Citation `source1' undefined on input line 771.
+
+
+LaTeX Warning: Citation `source2' undefined on input line 771.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!tbp') on input line 774.
 
 <img/dataSets.png, id=69, 182.93344pt x 607.51968pt>
 File: img/dataSets.png Graphic file (type png)
 <use img/dataSets.png>
-Package pdftex.def Info: img/dataSets.png  used on input line 773.
+Package pdftex.def Info: img/dataSets.png  used on input line 776.
 (pdftex.def)             Requested size: 73.17207pt x 243.00356pt.
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 785.
+               Default added (so using `!tbp') on input line 788.
 
 <img/ResultsTable.png, id=70, 485.56406pt x 867.99281pt>
 File: img/ResultsTable.png Graphic file (type png)
 <use img/ResultsTable.png>
-Package pdftex.def Info: img/ResultsTable.png  used on input line 787.
+Package pdftex.def Info: img/ResultsTable.png  used on input line 790.
 (pdftex.def)             Requested size: 169.94997pt x 303.80203pt.
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 795.
+               Default added (so using `!tbp') on input line 798.
 
 <img/BFplot.png, id=71, 752.8125pt x 1047.915pt>
 File: img/BFplot.png Graphic file (type png)
 <use img/BFplot.png>
-Package pdftex.def Info: img/BFplot.png  used on input line 797.
+Package pdftex.def Info: img/BFplot.png  used on input line 800.
 (pdftex.def)             Requested size: 225.84549pt x 314.37692pt.
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 803.
+               Default added (so using `!tbp') on input line 806.
 
 <img/BFplotNotBelowZero.png, id=72, 752.8125pt x 1047.915pt>
 File: img/BFplotNotBelowZero.png Graphic file (type png)
 <use img/BFplotNotBelowZero.png>
-Package pdftex.def Info: img/BFplotNotBelowZero.png  used on input line 805.
+Package pdftex.def Info: img/BFplotNotBelowZero.png  used on input line 808.
 (pdftex.def)             Requested size: 225.84549pt x 314.37692pt.
-[13]
-Underfull \vbox (badness 1412) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [14 <./img/dataSets.png> <./img/ResultsTable.png> <./img/BFplot.png>]
+[13] [14 <./img/dataSets.png> <./img/ResultsTable.png>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 823.
+               Default added (so using `!tbp') on input line 826.
 
-<img/AccTable.png, id=81, 478.03593pt x 566.115pt>
+<img/AccTable.png, id=80, 478.03593pt x 566.115pt>
 File: img/AccTable.png Graphic file (type png)
 <use img/AccTable.png>
-Package pdftex.def Info: img/AccTable.png  used on input line 825.
+Package pdftex.def Info: img/AccTable.png  used on input line 828.
 (pdftex.def)             Requested size: 191.21098pt x 226.44199pt.
 
-LaTeX Warning: Citation 'hayes' on page 15 undefined on input line 835.
-
-
-LaTeX Warning: Citation 'wilk' on page 15 undefined on input line 835.
-
-
-LaTeX Warning: Citation 'TCGA' on page 15 undefined on input line 835.
-
-
-LaTeX Warning: Citation 'TCGA' on page 15 undefined on input line 836.
-
-
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 837.
+               Default added (so using `!tbp') on input line 840.
 
-<img/ResultsAdeno.png, id=82, 491.58656pt x 614.295pt>
+<img/ResultsAdeno.png, id=81, 491.58656pt x 614.295pt>
 File: img/ResultsAdeno.png Graphic file (type png)
 <use img/ResultsAdeno.png>
-Package pdftex.def Info: img/ResultsAdeno.png  used on input line 839.
+Package pdftex.def Info: img/ResultsAdeno.png  used on input line 842.
 (pdftex.def)             Requested size: 196.63113pt x 245.71364pt.
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 843.
+               Default added (so using `!tbp') on input line 846.
 
-<img/AccAdeno.png, id=83, 767.86874pt x 475.7775pt>
+<img/AccAdeno.png, id=82, 767.86874pt x 475.7775pt>
 File: img/AccAdeno.png Graphic file (type png)
 <use img/AccAdeno.png>
-Package pdftex.def Info: img/AccAdeno.png  used on input line 845.
+Package pdftex.def Info: img/AccAdeno.png  used on input line 848.
 (pdftex.def)             Requested size: 230.3624pt x 142.73434pt.
-[15 <./img/BFplotNotBelowZero.png> <./img/AccTable.png>]
+[15 <./img/BFplot.png> <./img/BFplotNotBelowZero.png> <./img/AccTable.png>]
+Underfull \vbox (badness 1348) has occurred while \output is active []
+
+ [16 <./img/ResultsAdeno.png> <./img/AccAdeno.png>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 874.
+               Default added (so using `!tbp') on input line 877.
 
-<img/runTime.png, id=88, 461.47406pt x 394.47375pt>
+<img/runTime.png, id=91, 461.47406pt x 394.47375pt>
 File: img/runTime.png Graphic file (type png)
 <use img/runTime.png>
-Package pdftex.def Info: img/runTime.png  used on input line 876.
+Package pdftex.def Info: img/runTime.png  used on input line 879.
 (pdftex.def)             Requested size: 184.58635pt x 157.7867pt.
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 880.
+               Default added (so using `!tbp') on input line 883.
 
-<img/ObsTime.png, id=89, 752.8125pt x 1044.15094pt>
+<img/ObsTime.png, id=92, 752.8125pt x 1044.15094pt>
 File: img/ObsTime.png Graphic file (type png)
 <use img/ObsTime.png>
-Package pdftex.def Info: img/ObsTime.png  used on input line 882.
+Package pdftex.def Info: img/ObsTime.png  used on input line 885.
 (pdftex.def)             Requested size: 225.84549pt x 313.2477pt.
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 886.
+               Default added (so using `!tbp') on input line 889.
 
-<img/VarTime.png, id=90, 752.8125pt x 1044.15094pt>
+<img/VarTime.png, id=93, 752.8125pt x 1044.15094pt>
 File: img/VarTime.png Graphic file (type png)
 <use img/VarTime.png>
-Package pdftex.def Info: img/VarTime.png  used on input line 888.
+Package pdftex.def Info: img/VarTime.png  used on input line 891.
 (pdftex.def)             Requested size: 225.84549pt x 313.2477pt.
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 892.
+               Default added (so using `!tbp') on input line 895.
 
-<img/bothTime.png, id=91, 752.8125pt x 1044.15094pt>
+<img/bothTime.png, id=94, 752.8125pt x 1044.15094pt>
 File: img/bothTime.png Graphic file (type png)
 <use img/bothTime.png>
-Package pdftex.def Info: img/bothTime.png  used on input line 894.
+Package pdftex.def Info: img/bothTime.png  used on input line 897.
 (pdftex.def)             Requested size: 225.84549pt x 313.2477pt.
-[16 <./img/ResultsAdeno.png> <./img/AccAdeno.png>] [17 <./img/runTime.png> <./i
-mg/ObsTime.png> <./img/VarTime.png> <./img/bothTime.png>]
+[17 <./img/runTime.png> <./img/ObsTime.png> <./img/VarTime.png> <./img/bothTime
+.png>]
 
-LaTeX Warning: Empty bibliography on input line 926.
+LaTeX Warning: Empty bibliography on input line 929.
+
+
+! Package biblatex Error: '\bibliographystyle' invalid.
+
+See the biblatex package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.930 \bibliographystyle{apacite}
+                                 
+Use the package option 'style' instead.
+I'm ignoring this command.
+
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.931 \bibliography
+                   {References}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
 [18] (./main.aux)
 
@@ -1796,23 +1800,18 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 15278 strings out of 492982
- 264009 string characters out of 6134897
- 743594 words of memory out of 5000000
- 18585 multiletter control sequences out of 15000+600000
+ 15546 strings out of 492982
+ 266076 string characters out of 6134897
+ 750327 words of memory out of 5000000
+ 18846 multiletter control sequences out of 15000+600000
  21426 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,16n,40p,839b,1075s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,16n,40p,976b,742s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
@@ -1830,7 +1829,7 @@ exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/esint-type1/esint10.pfb>
-Output written on main.pdf (18 pages, 690895 bytes).
+Output written on main.pdf (18 pages, 686372 bytes).
 PDF statistics:
  161 PDF objects out of 1000 (max. 8388607)
  96 compressed objects within 1 object stream

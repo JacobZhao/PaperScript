@@ -13,7 +13,7 @@
 
 \title{Photovoltaic System Reconfiguration strategy for mismatch condition\\
 {\footnotesize \textsuperscript{}}
-\thanks{Identify applicable funding agency here. If none, delete this.}
+%\thanks{Identify applicable funding agency here. If none, delete this.}
 }
 
 \author{\IEEEauthorblockN{1\textsuperscript{st} Dafang Zhao}
@@ -22,12 +22,52 @@
 \and
 \IEEEauthorblockN{2\textsuperscript{nd} Given Name Surname}
 \IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}}
+\textit{name of organization (of Aff.)}}As the world of fossil energy constantly exhausted and the
+increasingly serious environmental pollution, the research and
+utilization of renewable energy and green energy have become
+maintain necessary means of survival and development of the
+human. Photovoltaic (PV) energy received significant attention
+since it has unlimited energy and easy to be scaled up. Thanks
+to extensive technology and research on photovoltaic energy
+generation, large scale photovoltaic energy generation system
+have been deployed into many practical application. But due to
+PV arrays are senstive to shading and PV cell’s fault or aging.
+That means when interconnection of PV cells or modules do
+no have identical properties or experience different conditions
+from one another. PV arrays are in mismatch condition. In
+order to avoid mismatch condition damage PV cells, we
+proposed an algorithm that can re-configurate photovoltaic
+arrays to minimize mismatch loss.
+In this paper, we using non-uniform irradiance levels to
+represent mismatch condition and analysis the efficiency of
+a PV system under different shaded working condition is
+presented. When photovoltaic arrays operating in non-uniform
+irradiance levels may present multiple local maxmimum power
+points (MPPs) [1], which been genearated by turning on
+bypass diodes. By changing electrical connection among the
+panels to prevent activate bypass diodes is a recent appealing
+solution [2].
+The main difficulty facing the reconfiguration problem is
+that some or even all panels can be subjected to partial
+shading, so there may be more than one MPP for each
+panel. Reconfiguration strategy need also consider to group
+PV modules which provided high power separately [3] [4].
+This procedure enables to detect panel’s operating con-
+ditions, in more than two-strings, receiving different irradi-
+ance levels. The reconfiguration algorithm will analysis pan-
+els’ working conditions and reorganizes panels into different
+strings by different irradiance levels. However, in sparse of
+mismatching conditions, distribution of panels among different
+irradiance levels are not significant. For that, by increasing
+number of strings in the PV array and using exhaustive
+search can be a solution [3].Another approach to optimize
+photovoltaic arrays is using genetic algorithm [5]. However,
+computing cost is too significant, and this algorithm can’t
+detect best configuration precisely.
 \and
 \IEEEauthorblockN{3\textsuperscript{rd} Given Name Surname}
 \IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}}
-}
+\textit{name of organization (of Aff.)}}}
 
 \maketitle
 
@@ -43,25 +83,20 @@ component, formatting, style, styling, insert
 
 \section{Introduction}
 
-As the world of fossil energy constantly exhausted and the increasingly serious environmental pollution, the research and utilization of renewable energy and green energy have become maintain necessary means of survival and development of the human. Photovoltaic (PV) energy received significant attention since it has unlimited energy and easy to be scaled up. Thanks to extensive technology and research on photovoltaic energy generation, large scale photovoltaic energy generation system have been deployed into many practical application. But due to PV arrays are senstive to shading and PV cell's fault or aging. That means when interconnection of PV cells or modules do no have identical properties or experience different conditions from one another.PV arrays are in mismatch condition. In order to avoid mismatch condition damage PV cells, we proposed an algorithm that can re-configurate photovoltaic arrays to minimize mismatch loss.
+As the world of fossil energy constantly exhausted and the increasingly serious environmental pollution, the research and utilization of renewable energy and green energy have become maintain necessary means of survival and development of the human. Photovoltaic (PV) energy received significant attention since it has unlimited energy and easy to be scaled up. Thanks to extensive technology and research on photovoltaic energy generation, large scale photovoltaic energy generation system have been deployed into many practical application. But due to PV arrays are senstive to shading and PV cell's fault or aging. That means when interconnection of PV cells or modules do no have identical properties or experience different conditions from one another. PV arrays are in mismatch condition. In order to avoid mismatch condition damage PV cells, we proposed an algorithm that can re-configurate photovoltaic arrays to minimize mismatch loss.
 
 In this paper, we using non-uniform irradiance levels to represent mismatch condition and analysis the efficiency of a PV system under different shaded working condition is presented. When photovoltaic arrays operating in non-uniform irradiance levels may present multiple local maxmimum power points (MPPs) \cite{b1}, which been genearated by turning on bypass diodes. By changing electrical connection among the panels to prevent activate bypass diodes is a recent appealing solution\cite{b2}.
 
-This procedure enables to detect panel's operating conditions, in more than two-strings, receiving different irradiance levels. The reconfiguration algorithm will analysis panels' working conditions and reorganizes panels into different strings by different irradiance levels. However, in sparse of mismatching conditions, distribution of panels among different irradiance levels are not significant. For that, by increasing number of strings in the PV array and using exhaustive search can be a solution\cite{b3}.
+The main difficulty facing the reconfiguration problem is that some or even all panels can be subjected to partial shading, so there may be more than one MPP for each panel. Reconfiguration strategy need also consider to group PV modules which provided high power separately\cite{b3} \cite{b4}.
 
-The main difficulty facing the reconfiguration problem is 
+This procedure enables to detect panel's operating conditions, in more than two-strings, receiving different irradiance levels. The reconfiguration algorithm will analysis panels' working conditions and reorganizes panels into different strings by different irradiance levels. However, in sparse of mismatching conditions, distribution of panels among different irradiance levels are not significant. For that, by increasing number of strings in the PV array and using exhaustive search can be a solution\cite{b3}.Another approach to optimize photovoltaic arrays is using genetic algorithm\cite{b5}. However, computing cost is too significant, and this algorithm can't detect best configuration precisely.
 
-\section{Ease of Use}
 
-\subsection{Maintaining the Integrity of the Specifications}
 
-The IEEEtran class file is used to format your paper and style the text. All margins, 
-column widths, line spaces, and text fonts are prescribed; please do not 
-alter them. You may note peculiarities. For example, the head margin
-measures proportionately more than is customary. This measurement 
-and others are deliberate, using specifications that anticipate your paper 
-as one part of the entire proceedings, and not as an independent document. 
-Please do not revise any of the current designations.
+\section{Assumption of a PV array}
+
+
+
 
 \section{Prepare Your Paper Before Styling}
 Before you begin to format your paper, first write and save the content as a 
@@ -257,8 +292,8 @@ citation first, followed by the original foreign-language citation \cite{b6}.
 \bibitem{b1} Koutroulis, Eftichios, and Frede Blaabjerg. "A new technique for tracking the global maximum power point of PV arrays operating under partial-shading conditions." IEEE Journal of Photovoltaics 2.2 (2012): 184-190.
 \bibitem{b2} La Manna, Damiano, et al. "Reconfigurable electrical interconnection strategies for photovoltaic arrays: A review." Renewable and Sustainable Energy Reviews 33 (2014): 412-426.
 \bibitem{b3}Storey, Jonathan, Peter R. Wilson, and Darren Bagnall. "The optimized-string dynamic photovoltaic array." IEEE Transactions on Power Electronics 29.4 (2014): 1768-1776.
-\bibitem{b4} K. Elissa, ``Title of paper if known,'' unpublished.
-\bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
+\bibitem{b4} Storey, Jonathan P., Peter R. Wilson, and Darren Bagnall. "Improved optimization strategy for irradiance equalization in dynamic photovoltaic arrays." IEEE transactions on power electronics 28.6 (2013): 2946-2956.
+\bibitem{b5} P. Carotenuto, A. D. Cioppa, A. Marcelli, and G. Spagnuolo, “An evolu- tionary approach to the dynamical reconfiguration of photovoltaic fields,” Neurocomputing, vol. 170, pp. 393–405, 2015.
 \bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
 \bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
 \end{thebibliography}

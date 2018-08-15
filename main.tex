@@ -78,11 +78,11 @@ Furthermore, it is also assumed that for each string it has same number of panel
 
 
 \section{Reconfiguration Algorithm}
-The general steps of reconfiguration algorithm are presented in Fig. \ref{fig2}. The first step is determine each PV module's \textit{$V_{mpp}$} and \textit{$I_{mpp}$} by using algorithm provided in \cite{b7} \cite{b9}, and calculate MPP current and voltage candidates of PV array. When there are more than two panels connected in series, for a string MPPs is not straightforward. The MPP current and voltage candidates can be evaluated though a procedure presented in \cite{b10}. For string MPP current candidates, \textit{$I_{mpp_n}$} values' different less than 5\% are assumed to be equal. For string MPP voltage candidates, \textit{$V_{mpp_n}$}  can be calculated though multiplay number of active modules (\textit{$N_a$}) by average MPP voltages (\textit{$\bar V_{mpp}$}) with $\pm$18\% error \cite{b10}. Afterward, determine real number of working modules (\textit{$Q_{M_n}$})  per string by applying method in \cite{b10}. Next, find MPP candidates by multiplying current candidates and voltage candidates which determine by \textit{$Q_{M_n}$}. Due to \textit{$V_{mpp}s$} and \textit{$I_{mpp}s$} can indicate shadowing distribution among PV array.  Then grouping panels into different shadow levels. Then grouping panels by different irradiance levels. 
+The general steps of reconfiguration algorithm are presented in Fig. \ref{fig2}. The first step is determine each PV module's \textit{$V_{mpp}$} and \textit{$I_{mpp}$} by using algorithm provided in \cite{b7} \cite{b9}, and calculate MPP current and voltage candidates of PV array. When there are more than two panels connected in series, for a string MPPs is not straightforward. The MPP current and voltage candidates can be evaluated though a procedure presented in \cite{b10}. For string MPP current candidates, \textit{$I_{mpp_n}$} values' different less than 5\% are assumed to be equal. For string MPP voltage candidates, \textit{$V_{mpp_n}$}  can be calculated though multiplay number of active modules (\textit{$N_a$}) by average MPP voltages (\textit{$\bar V_{mpp}$}) with $\pm$18\% error \cite{b10}. Afterward, determine real number of working modules (\textit{$Q_{M_n}$})  per string by applying method in \cite{b10}. Next, find MPP candidates by multiplying current candidates and voltage candidates which determine by \textit{$Q_{M_n}$}. Due to \textit{$V_{mpp}s$} and \textit{$I_{mpp}s$} can indicate shadowing distribution among PV array.  Then grouping panels into different shadow distribution.  
 
-After this procedures is conducted for PV array, all panels will be sorted into many groups that from un-shadowed to fully shadowed group. However, if just simply grouping panels by shadow conditions it may cause electrical connection overhead or unable calculate optimal configuration. To further reconfigure PV system into a better configuration, the replacement part of algorithm will proceed as follow:
+After this procedures is conducted for PV array, all panels will be organized into many groups that from un-shadowed or uniform shadow to fully shadowed group. However, if just simply grouping panels by shadow distribution conditions it may cause electrical connection overhead or unable calculate optimal configuration. To further reconfigure PV system into a better configuration, the replacement part of algorithm will proceed as follow:
 \begin{itemize}
-\item Sorting group by different irradiance levels, select panels from first group into a PV string which working on high current level.
+\item Sorting group by different shadow distribution conditions, select panels from first group into a PV string which working on high current level.
 \item If selected panels' working modules ( \textit{$Q_{M_n}^{*}$} ) less than \textit{$Q_{M_n}$} , select panels from next irradiance level group.
 \item If selected panels' \textit{$Q_{M_n}^{*}$} more than \textit{$Q_{M_n}$}, re-select panels to adjust \textit{$Q_{M_n}^{*}$} equal to \textit{$Q_{M_n}$} if it is possible. 
 \end{itemize}
@@ -127,9 +127,18 @@ The example refer to a three-strings PV array, each string contain with 3 panels
 \textit{$Q_{M_n}$} = [&\{8,8,8\}, \{8,8,8\}, \{4,4,4\}, \{7,7,7\}, \{4,4,4\}, \\&\{2,2,2\}, \{5,5,5\}, \{4,4,4\}, \{2,2,2\}, \{1,1,1\}] \label{e3}
 \end{aligned}
 \end{equation}
+ 
+\begin{figure}[htbp]
+\centerline{\includegraphics{fig1.png}}
+\caption{Flowchart of reconfiguration algorithm.}
+\label{fig4}
+\end{figure}
 
-Due to 5\% error of MPP current candidates and 18\% error of MPP voltage candidates, total error rate of MPP candidates is 23\%. Though procedure of algorithm, MPP candidates with 23\% are: [\{ 0.5, 0.5, 2\}, \{0.5, 2, 2\}, \{2, 2, 2\}, \{2, 2, 3\}] and require working modules per strings are: [\{8, 8, 8\}, \{7, 7, 7\}, \{5, 5, 5\}, \{4, 4, 4\}]. Those MPP candidates are able to generate maximum output power of PV system, but the configurations of MPP candidates may meet electrical connection overhead. In order to reduce electrical connection simulation time, replacement and feasibility check will be approved. 
+Due to 5\% error of MPP current candidates and 18\% error of MPP voltage candidates, total error rate of MPP candidates is 23\%. Though procedure of algorithm, MPP candidates with 23\% are: [\{ 0.5, 0.5, 2\}, \{0.5, 2, 2\}, \{2, 2, 2\}, \{2, 2, 3\}] and require working modules per strings are: [\{8, 8, 8\}, \{7, 7, 7\}, \{5, 5, 5\}, \{4, 4, 4\}]. And PV array are organized as Fig \ref{fig4}
+Those MPP candidates are able to generate maximum output power of PV system, but the configurations of MPP candidates may meet electrical connection overhead. In order to reduce electrical connection simulation time, replacement and feasibility check will be approved. 
 
+Consider fourth MPP candidate, it require panels on string one working at 2A, panels on string two working at 2A, panels on string three working at 3A and require 4 PV modules working for each string. Firstly, selecting panels for high current string, string three. According to Table \ref{tab}, only Panel 2, Panel 7 and Panel 9 are able to work at 3A. Those four panel can provide 4 PV module working at 3A and meet requirement of \textit{$Q_{M_n}$}. Because on extra panel can provide module  working on 3A, no replacement will be approved. Means no further improvement for configuration of string three.
+Then select panel for string two, Panel 4 and Panel 8 will be selected, but this configuration is not optimized. Selected panels provide 5 modules able to work at 2A, satisfy requirement of \textit{$Q_{M_n}$} $\ge$ 4, but one module more than requirement. The process will replace Panel 4 by Panel 1 that provide just 4 modules working at 2A. Configuration for string two are Panel 8 and Panel 1. At last, select panels for string one. Panel 4 to Panel 6 are selected, they can provide 5 modules working at 2A satisfy requirement. 
 
 
 

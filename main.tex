@@ -139,7 +139,24 @@ The example refer to a three-strings PV array, each string contain with 3 panels
 Due to 5\% error of MPP current candidates and 18\% error of MPP voltage candidates, total error rate of MPP candidates is 23\%. Though procedure of algorithm, MPP candidates with 23\% are: [\{ 0.5, 0.5, 2\}, \{0.5, 2, 2\}, \{2, 2, 2\}, \{2, 2, 3\}] and require working modules per strings are: [\{8, 8, 8\}, \{7, 7, 7\}, \{5, 5, 5\}, \{4, 4, 4\}]. And PV array are organized as Fig \ref{fig4}
 Those MPP candidates are able to generate maximum output power of PV system, but the configurations of MPP candidates may meet electrical connection overhead. In order to reduce electrical connection simulation time, replacement and feasibility check will be approved. 
 
-Consider fourth MPP candidate, it require panels on string one working at 2A, panels on string two working at 2A, panels on string three working at 3A and require 4 PV modules working for each string. Firstly, selecting panels for high current string, string three. According to Table \ref{tab}, only Panel 2, Panel 7 and Panel 9 are able to work at 3A. Those four panel can provide 4 PV module working at 3A and meet requirement of \textit{$Q_{M_n}$}. Because on extra panel can provide module  working on 3A, no replacement will be approved. Means no further improvement for configuration of string three.
+\begin{table}[htbp]
+\caption{Table Type Styles}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Table}&\multicolumn{3}{|c|}{\textbf{Table Column Head}} \\
+\cline{2-4} 
+\textbf{Head} & \textbf{\textit{Table column subhead}}& \textbf{\textit{Subhead}}& \textbf{\textit{Subhead}} \\
+\hline
+copy& More table copy$^{\mathrm{a}}$& &  \\
+\hline
+\multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
+\end{tabular}
+\label{tab2}
+\end{center}
+\end{table}
+
+Consider fourth MPP candidate, it require panels on string one working at 2A, panels on string two working at 2A, panels on string three working at 3A and require 4 PV modules working for each string. Firstly, selecting panels for high current string, string three. According to Table \ref{tab2}, only Panel 2, Panel 7 and Panel 9 are able to work at 3A. Those four panel can provide 4 PV module working at 3A and meet requirement of \textit{$Q_{M_n}$}. Because on extra panel can provide module  working on 3A, no replacement will be approved. Means no further improvement for configuration of string three.
 Then select panel for string two, Panel 4 and Panel 8 will be selected, but this configuration is not optimized. Selected panels provide 5 modules able to work at 2A, satisfy requirement of \textit{$Q_{M_n}$} $\ge$ 4, but one module more than requirement. The process will replace Panel 4 by Panel 1 that provide just 4 modules working at 2A. Configuration for string two are Panel 8 and Panel 1. At last, select panels for string one. Panel 4, Panel 5, Panel 6 are selected, they can provide 5 modules working at 2A that satisfy requirement. For configuration on string one due to it is the last string to process and meet requirement, in order to reduce computing time replacement will not be approved. Configuration of MPP candidate \{2, 2, 3\} are \textit{St} 1:\{Panel 4,Panel 5, Panel 6\}, \textit{St} 2: \{Panel 1, Panel 8\}, \textit{St} 3: \{Panel 2, Panel 7, Panel 9\}. As described in section \ref{assum}, each string have identical length and Panel 3 not been used in any configuration. So optimized configuration for this MPP candidate are: \textit{St} 1:\{Panel 4,Panel 5, Panel 6\}, \textit{St} 2: \{Panel 1, Panel 8, Panel 3\}, \textit{St} 3: \{Panel 2, Panel 7, Panel 9\}. The MPP values of this configuration calculated by multiplay string voltage and current equal to 347.2W are put into evidence. 
 
 For the third MPP candidate, as same calculating procedure as fourth MPP candidate, optimized configuration for MPP candidate \{2, 2, 2\} are: \textit{St} 1:\{Panel 4,Panel 8, Panel 3\}, \textit{St} 2: \{Panel 1, Panel 2, Panel 6\}, \textit{St} 3: \{Panel 5, Panel 7, Panel 9\}. 
@@ -172,9 +189,28 @@ As shown, working module on each string are large or equal than required \textit
 \caption{Flowchart of reconfiguration algorithm.}
 \label{fig6}
 \end{figure}
+The computational time required to find the best configuration in the proposed and existed method is also compared and summarized in Table \ref{tab3}. As shown in Table \ref{tab3}, proposed algorithm achieved high accuracy and less computing time compare with exhaustive search algorithm and methods described in \cite{b10} \cite{b11} \cite{b12}.
+
+\begin{table}[htbp]
+\caption{Table Type Styles}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Table}&\multicolumn{3}{|c|}{\textbf{Table Column Head}} \\
+\cline{2-4} 
+\textbf{Head} & \textbf{\textit{Table column subhead}}& \textbf{\textit{Subhead}}& \textbf{\textit{Subhead}} \\
+\hline
+copy& More table copy$^{\mathrm{a}}$& &  \\
+\hline
+\multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
+\end{tabular}
+\label{tab3}
+\end{center}
+\end{table}
+
 The simulations were performed using an Intel i7-4770 3.2-Ghz processor and 32.0 GB of RAM memory. The calculation time used by the proposed estimation method was 165.2 ms, which is significantly lower than the 57 h, 57 m, and 55 s needed by the exhaustive search algorithm.
 \section{conclusions}
-
+The existing PV reconfiguration methods either have high accuracy but suffer from long computational time such as exhausted searching algorithm or GA, or they have short computational time but do not guarantee the best configuration as described in \cite{b10} \cite{b11} \cite{b12}. This paper proposed a new PV system reconfiguration algorithm with high accuracy and less computational time. Proposed algorithm's effectiveness has been validated using LTspice simulation. The algorithm was tested though un-uniform shadow distribution among PV array and shows its effectiveness in finding optimal configuration. The proposed algorithm also compared with existed method in terms of accuracy and computational time. The result shows that proposed algorithm has high accuracy and less computational time.
 %\begin{figure}
 %\centering
 %\subfigure[the first subfigure]{
@@ -397,6 +433,8 @@ The simulations were performed using an Intel i7-4770 3.2-Ghz processor and 32.0
 \bibitem{b8} Spagnuolo, Giovanni, et al. "Control of photovoltaic arrays: Dynamical reconfiguration for fighting mismatched conditions and meeting load requests." IEEE Industrial Electronics Magazine 9.1 (2015): 62-76.
 \bibitem{b9} Carotenuto, Pietro Luigi, et al. "Online recording a PV module fingerprint." IEEE Journal of Photovoltaics 4.2 (2014): 659-668.
 \bibitem{b10} Orozco-Gutierrez, M. L., et al. "Optimized configuration of mismatched photovoltaic arrays." IEEE J. Photovolt 6.5 (2016): 1210-1220.
+\bibitem{b11} El-Dein, MZ Shams, Mehrdad Kazerani, and M. M. A. Salama. "Optimal photovoltaic array reconfiguration to reduce partial shading losses." IEEE Trans. Sustain. Energy 4.1 (2013): 145-153.
+\bibitem{b12} Storey, Jonathan P., Peter R. Wilson, and Darren Bagnall. "Improved optimization strategy for irradiance equalization in dynamic photovoltaic arrays." IEEE transactions on power electronics 28.6 (2013): 2946-2956.
   
 \end{thebibliography}
 %\vspace{12pt}

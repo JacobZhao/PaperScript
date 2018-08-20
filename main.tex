@@ -50,18 +50,15 @@ The main difficulty facing the reconfiguration problem is that some or even all 
 
 This procedure enables to detect panel's operating conditions, in more than two-strings, receiving different irradiance levels. The reconfiguration algorithm will analyzes panels' working conditions and reorganizes panels into different strings by different irradiance levels. However, in sparse of mismatching conditions, distribution of panels among different irradiance levels are not significant. For that, by increasing number of strings in the PV array and using exhaustive search can be a solution\cite{b3}.Another approach to optimize photovoltaic arrays is using genetic algorithm\cite{b5}. However, computing cost is too significant, and this algorithm can't detect best configuration precisely.
 
-
-
 \section{Assumption of a PV array} \label{assum}
 In this paper, we using following definitions of PV arrays, modules, strings and panels. A PV array formed by several parallel connected PV strings, and string is several series connected PV panels. For a PV panel, formed by two or three PV modules connected in series with bypass diodes. An equivalent connection as showed in Fig. \ref{fig1}.
 \begin{figure}[htbp]
-\centerline{\includegraphics{fig2.png}}
+\centerline{\includegraphics[width=7.2cm]{paper-fig1.png}}
 \caption{Definition of PV array and internal components.}
 \label{fig1}
 \end{figure}
 
 The algorithm we proposed based on following assumptions.
-
 \begin{itemize}
 \item The current versus voltage (\textit{I-V}) curve of each panel calculated by algorithm presented in \cite{b6}. This algorithm will analyzes panel's \textit{I-V} curve sample and coordinate to maximum or minimum power point in \textit{P-V} curve.
 \item All the panels in PV array have same number (\textit{N}) of modules. For particular module, using (\textit{$V_{mpp_n}$, $I_{mpp_n}$}) to identify MPP voltage and current by index \textit{n}. Those parameter can be directly estimated by the prosess provided in\cite{b7}.
@@ -69,7 +66,7 @@ The algorithm we proposed based on following assumptions.
 
 Furthermore, it is also assumed that for each string it has same number of panels in PV array. Means every string in PV array have same length. String's length are identical based on when they connected in parallel, a string has more panels may cause current back flow into other strings which have less panels\cite{b8}.
 \begin{figure}[htbp]
-\centerline{\includegraphics{fig2.png}}
+\centerline{\includegraphics[width=8cm]{paper-fig2.png}}
 \caption{Flowchart of reconfiguration algorithm.}
 \label{fig2}
 \end{figure}
@@ -86,7 +83,7 @@ After this procedures is conducted for PV array, all panels will be organized in
 \end{itemize}
 
 \begin{figure}[htbp]
-\centerline{\includegraphics{fig2.png}}
+\centerline{\includegraphics[width=6.2cm]{fig2.png}}
 \caption{An example of un-uniform shadowed PV array.}
 \label{fig3}
 \end{figure}
@@ -127,7 +124,7 @@ The example refer to a three-strings PV array, each string contain with 3 panels
 \end{equation}
  
 \begin{figure}[htbp]
-\centerline{\includegraphics{fig2.png}}
+\centerline{\includegraphics[width=6.2cm]{fig2.png}}
 \caption{Organized PV array after first part of Algorithm.}
 \label{fig4}
 \end{figure}
@@ -147,20 +144,20 @@ on three different string at 0.5A, 2A, 2A, respectively.
 \section{evaluation of optimization algorithm}
 %\subsection{Verification of the Proposed algorithm}
 This section verifies the effectiveness of proposed algorithm using LTspice simulation. With pilot example presented in last section, shading scenario as showed in Fig.\ref{fig5a}. To minimize power loss, the proposed algorithm, as described, is applied to reconfigure the system. The resulting configuration is depicted in Fig.\ref{fig5b} and Fig.\ref{fig5c}. 
-\begin{figure}[H]
+\begin{figure}
 \centering
  
 \subfloat[]{
 	\label{fig5a}
-	\includegraphics{fig2.png} } 
+	\includegraphics[width=6.2cm]{fig2.png} } 
  
 \subfloat[]{
 	\label{fig5b}
-	\includegraphics{fig2.png} } 
+	\includegraphics[width=6.2cm]{fig2.png} } 
  
 \subfloat[]{
 	\label{fig5c}
-	\includegraphics{fig2.png}} 
+	\includegraphics[width=6.2cm]{fig2.png}} 
  
 \caption{The PV system under shading scenario (a) before reconfiguration, (b) after reconfigurationfor MPP candidate \{2, 2, 3\} and (c) MPP candidate \{2, 2, 2\}} 
 \end{figure}
@@ -181,7 +178,7 @@ This section verifies the effectiveness of proposed algorithm using LTspice simu
 As shown, working module on each string are large or equal than required \textit{$Q_{M_n}$}, which means mismatched power loss are minimized. The \textit{P-V} curve for this PV array before and after reconfiguration are showed in Fig.\ref{fig6}. It can be seen that after reconfiguration maximum power (!!!!!!!!!! W and !!!!!!W) are significantly higher than before reconfiguration maximum power (!!!!!!!!W).
 
 \begin{figure}[htbp]
-\centerline{\includegraphics{fig2.png}}
+\centerline{\includegraphics[width=6.2cm]{fig2.png}}
 \caption{The \textit{P-V} curves for the PV system under first shading scenario before and after reconfiguration.}
 \label{fig6}
 \end{figure}

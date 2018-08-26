@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.17)  26 AUG 2018 10:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.17)  26 AUG 2018 21:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -488,7 +488,7 @@ LaTeX Font Info:    Calculating math sizes for size <11> on input line 34.
 <paper-fig1.png, id=1, 838.13126pt x 691.58376pt>
 File: paper-fig1.png Graphic file (type png)
  <use paper-fig1.png>
-Package pdftex.def Info: paper-fig1.png used on input line 57.
+Package pdftex.def Info: paper-fig1.png used on input line 58.
 (pdftex.def)             Requested size: 204.85974pt x 169.03322pt.
  [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
@@ -497,52 +497,52 @@ Package pdftex.def Info: paper-fig1.png used on input line 57.
 <flowchart.png, id=15, 723.70375pt x 608.2725pt>
 File: flowchart.png Graphic file (type png)
  <use flowchart.png>
-Package pdftex.def Info: flowchart.png used on input line 69.
+Package pdftex.def Info: flowchart.png used on input line 70.
 (pdftex.def)             Requested size: 227.62204pt x 191.31912pt.
 
-Overfull \hbox (6.49059pt too wide) detected at line 104
+Overfull \hbox (6.49059pt too wide) detected at line 105
 [][]
  []
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 121.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 122.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 121.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 122.
  [2 <./paper-fig1.png> <./flowchart.png>] <mpp3.png, id=24, 234.8775pt x 328.22
 626pt>
 File: mpp3.png Graphic file (type png)
 
 <use mpp3.png>
-Package pdftex.def Info: mpp3.png used on input line 185.
+Package pdftex.def Info: mpp3.png used on input line 186.
 (pdftex.def)             Requested size: 113.81102pt x 159.0443pt.
  <mpp4.png, id=25, 234.8775pt x 328.22626pt>
 File: mpp4.png Graphic file (type png)
  <use mpp4.png>
-Package pdftex.def Info: mpp4.png used on input line 187.
+Package pdftex.def Info: mpp4.png used on input line 188.
 (pdftex.def)             Requested size: 113.81102pt x 159.0443pt.
 
 <paper-fig5(a).png, id=26, 300.12125pt x 412.54124pt>
 File: paper-fig5(a).png Graphic file (type png)
  <use paper-fig5(a).png>
-Package pdftex.def Info: paper-fig5(a).png used on input line 262.
+Package pdftex.def Info: paper-fig5(a).png used on input line 263.
 (pdftex.def)             Requested size: 142.26378pt x 195.55626pt.
 File: mpp3.png Graphic file (type png)
 
 <use mpp3.png>
-Package pdftex.def Info: mpp3.png used on input line 265.
+Package pdftex.def Info: mpp3.png used on input line 266.
 (pdftex.def)             Requested size: 113.81102pt x 159.0443pt.
 File: mpp4.png Graphic file (type png)
  <use mpp4.png>
-Package pdftex.def Info: mpp4.png used on input line 268.
+Package pdftex.def Info: mpp4.png used on input line 269.
 (pdftex.def)             Requested size: 113.81102pt x 159.0443pt.
  <fig2.png, id=27, 56.8524pt x 56.8524pt>
 File: fig2.png Graphic file (type png)
 
 <use fig2.png>
-Package pdftex.def Info: fig2.png used on input line 288.
+Package pdftex.def Info: fig2.png used on input line 289.
 (pdftex.def)             Requested size: 142.26378pt x 142.28503pt.
  [3 <./mpp3.png> <./mpp4.png>]
 Missing character: There is no â in font ptmr7t!
@@ -589,7 +589,7 @@ l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
 017/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2017/texmf
 -dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/font
 s/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (5 pages, 225573 bytes).
+Output written on main.pdf (5 pages, 225562 bytes).
 PDF statistics:
  77 PDF objects out of 1000 (max. 8388607)
  47 compressed objects within 1 object stream

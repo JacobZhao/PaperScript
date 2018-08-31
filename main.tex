@@ -34,7 +34,8 @@
 \maketitle
 
 \begin{abstract}
-  Power generation efficiency of photovoltaic(PV) system is reduced significantly under partial shading or solar cell damage  conditions. This efficiency losses affected by truing on bypass diode of PV panels, which called mismatch losses. Reconfiguration technology to reconfigure electrical series or parallel connection among PV panel can maximize generate power. This paper proposes a reconfiguration strategy that finds an optimal configuration among mismatched PV array in a less computational time. This algorithm is very light and suitable for embedded device. The results show that compare with existed reconfiguration method under non-uniform shadow scenario proposed algorithm computes an optimized configuration with less computational time and very high accuracy.
+  Power generation efficiency of photovoltaic(PV) system is reduced significantly under partial shading or solar cell damage  conditions. This efficiency losses affected by turning on bypass diode of PV panels, which called mismatch losses. Reconfiguration technology to reconfigure electrical series or parallel connection among PV panels can maximize power generation. Recently, an efficient reconfiguration method of PV panel connection to optimize power generation is proposed. The method first list candidate configurations and applies precise power simulations to the candidates. However, some of candidates might not be realized by given PV panels and the paper does not show any systematic way to identify such a feasibility. In this paper, we propose a very fast algorithm to check the feasibility with high accuracy.
+%This paper proposes a reconfiguration strategy that finds an optimal configuration among mismatched PV array in a less computational time. This algorithm is very light and suitable for embedded device. The results show that compare with existed reconfiguration method under non-uniform shadow scenario proposed algorithm computes an optimized configuration with less computational time and very high accuracy.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -42,23 +43,75 @@
 \end{IEEEkeywords}
 
 \section{Introduction} \label{intro}
-As fossil energy is constantly depleted and increasing a serious pollution problem for the environment, research and utilization on a green and renewable energy have become necessary to support human existence and guarantee a sustainable human development.
+As constant fossil energy generation is increasing the crisis of fossil fuel depletion and serious pollution problems for the environment, 
+%As fossil energy is constantly depleted and increasing a serious pollution problem for the environment, 
+research and utilization on a green and renewable energy have become necessary for sustainable society and environment.
+%to support human existence and guarantee a sustainable human development.
 %As the world of fossil energy constantly exhausted and the increasingly serious environmental pollution, the research and utilization of renewable and green energy have become necessary means of survival and development of human being. 
-Photovoltaic (PV) energy has received a significant attention since it is unlimited and easy to be scaled up. Thanks to extensive technology and research on photovoltaic energy generation, large scale photovoltaic energy generation systems have been deployed into many practical applications. However, PV arrays are sensitive to shading and PV cell's fault or aging. This implies that when interconnection of PV cells or modules do not have identical properties or experience different conditions from one another. the PV array is in mismatch condition. The photovoltaic arrays under mismatched conditions will accelerate the aging and heating of PV cells and cause a short circuit of photovoltaic cells to further damage the PV array. In order to avoid mismatch condition damage PV cells, we propose an algorithm that can reconfigure photovoltaic arrays to avoid mismatch damage and maximize generated power.
+Photovoltaic (PV) energy has received a significant attention since it is unlimited and easy to be scaled up. Thanks to extensive technology and research on photovoltaic energy generation, large scale photovoltaic energy generation systems have been deployed into many practical applications. However, PV arrays are sensitive to shading and PV cell's fault or aging. This means that when 
+%interconnection of 
+PV cells or modules do not uniformly generate power
+%have identical properties
+ or experience different irradiance conditions from one another, the PV array is in mismatch condition and could not efficiently generate power. In addition, the photovoltaic arrays under mismatched conditions will accelerate the aging and heating of PV cells and cause a short circuit of photovoltaic cells to further damage the PV array. In order to maximize power generation and also avoid damaging PV cells, we propose an algorithm that can reconfigure photovoltaic arrays.
+ 
+In this paper, we use non-uniform irradiance levels to represent mismatch condition and analyze the efficiency of a PV system.
+% under different shaded working condition. 
+% Photovoltaic arrays operating in non-uniform irradiance levels may present multiple local maximum power points (MPPs) \cite{b1}, which are generated by turning on bypass diodes. By changing electrical connection among the panels to prevent activate bypass diodes is a recent appealing solution\cite{b2}.
+Photovoltaic arrays operating in mismatch conditions could not efficiently generate power, and reconfiguration of  panel connection has been widely investigated to solve this problem \cite{b2}.
 
-In this paper, we use non-uniform irradiance levels to represent mismatch condition and analyze the efficiency of a PV system under different shaded working condition. Photovoltaic arrays operating in non-uniform irradiance levels may present multiple local maximum power points (MPPs) \cite{b1}, which are generated by turning on bypass diodes. By changing electrical connection among the panels to prevent activate bypass diodes is a recent appealing solution\cite{b2}.
+Some of works proposed optimized or efficient algorithms to reconfigure the connection of PV cells \cite{b3}\cite{b4}. However, these works assume a full reconfiguration ability among PV cells. In general, a PV array is a connection of multiple PV panels, each PV panel has multiple PV modules, and each PV module consists of multiple PV cells. One typical PV panel has 3 PV modules with 24 PV cells. To realize reconfiguration in PV cell level, a new PV panel architecture is required.
 
-The main difficulty facing the reconfiguration problem is that some or even all panels can be subjected to partial shading and there may be more than one MPP for each panel. Moreover, the panels, and not modules, reconfiguration strategy has to be realized so that modules providing the highest power could be grouped separately\cite{b3} \cite{b4}.
+Recently, as practical solutions, reconfiguration in PV panels have been investigated \cite{b5}\cite{b10}. One PV panel typically has two (plus and minus) terminals, and a PV array is configured by connecting PV panels in series and/or parallel. Such a configuration is also realized using a switch among PV panels, and reconfigurations in PV panel level can be regarded as  practical solutions. However, the reconfiguration in PV panel level is more difficult than that in PV cell level. PV modules in the same PV panel can be individually bypassed by bypass diodes when some mismatch condition occurs, and it causes multiple maximal power points (MPPs) for one PV panel.  
 
-This procedure enables to detect panel's operating conditions, in more than two-strings, receiving different irradiance levels. The reconfiguration algorithm will analyzes panels' working conditions and reorganizes panels into different strings by different irradiance levels. However, in sparse of mismatching conditions, distribution of panels among different irradiance levels are not significant. For that, by increasing number of strings in the PV array and using exhaustive search can be a solution\cite{b3}. Another approach to optimize photovoltaic arrays is using genetic algorithm\cite{b5}. However, computing cost is too significant, and this algorithm can't detect best configuration precisely. A simplest reconfiguration strategy for minimizing mismatch losses is presented in \cite{b10}. In this strategy, an algorithm gives candidates for PV array reconfiguration, for each candidates we have conduct power simulations. But some candidates are not feasible, which means there isn't any configuration for PV array can be realized. Since the power simulation is very time consuming, based on existed work we want to reduce number of candidates to accelerate overall reconfiguration algorithm. In this paper we propose an algorithm can give optimal configuration and check feasibility with less computational time and high accuracy.  
+A PV panel level reconfiguration using genetic algorithm is proposed in\cite{b5}. Though this can generate a new configuration, computing cost is too significant and the algorithm cannot generate the best configuration precisely. A fast reconfigurationstrategy for minimizing power losses is presented in \cite{b10}.In this strategy, candidates for PV array configurations are first listed by some fast estimation method, and, for each candidates, precise power simulations are applied. However, some candidate configurations might not be feasible, that is, it is impossible to realize a designated PV array configuration with given PV panels, and there is no description of a systematic way to identify the feasibility. 
 
-\section{Assumption of a PV array} \label{assum}
-In this paper, we use the following definitions of PV arrays, modules, strings and panels as showed in Fig. \ref{fig1}. A PV array is formed by several parallel connected (PV) strings, and a string is formed by several series-connected PV panels. For a PV panel, formed by three PV modules (\textit{$N_M=3$}) connected in series with bypass diodes. 
+In this paper,  we propose an algorithm to identify feasibility for a given configuration with less computational time and highaccuracy.
+%The main difficulty facing the reconfiguration problem is that some or even all panels can be subjected to partial shading and there may be more than one MPP for each panel. Moreover, the panels, and not modules, reconfiguration strategy has to be realized so that modules providing the highest power could be grouped separately\cite{b3} \cite{b4}.
+%
+%This procedure enables to detect panel's operating conditions, in more than two-strings, receiving different irradiance levels. The reconfiguration algorithm will analyzes panels' working conditions and reorganizes panels into different strings by different irradiance levels. However, in sparse of mismatching conditions, distribution of panels among different irradiance levels are not significant. For that, by increasing number of strings in the PV array and using exhaustive search can be a solution\cite{b3}. Another approach to optimize photovoltaic arrays is using genetic algorithm\cite{b5}. However, computing cost is too significant, and this algorithm can't detect best configuration precisely. A simplest reconfiguration strategy for minimizing mismatch losses is presented in \cite{b10}. In this strategy, an algorithm gives candidates for PV array reconfiguration, for each candidates we have conduct power simulations. But some candidates are not feasible, which means there isn't any configuration for PV array can be realized. Since the power simulation is very time consuming, based on existed work we want to reduce number of candidates to accelerate overall reconfiguration algorithm. In this paper we propose an algorithm can give optimal configuration and check feasibility with less computational time and high accuracy.  
+
+\section{Photovoltaic Array} \label{array}
+In this paper, we use the following model of PV arrays, modules, strings and panels as showed in Fig. \ref{fig1}. A PV array is formed by several parallel connected (PV) strings, and a string is formed by several series-connected PV panels. A PV panel is formed by three PV modules (\textit{$N_M=3$}).
+% connected in series with bypass diodes. 
+And each bypass diode is connected in parallel with a module.
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=7.2cm]{paper-fig1.png}}
 \caption{PV arrays, strings, and panels.}
 \label{fig1}
 \end{figure}
+
+Fig.\ref{fig2a} shows  I-V curves for PV panels. PV panel generates a currents according to a provided control voltage within some range.PV cells in a PV panel may have different conditions (irradiance or fault) and hence have different upper limits for their generated currents. Therefore, for lower control voltage, only PV cells that can generate higher currents can work and the other PV cells do not generate current with their bypass diodes switching on. As a result, PV panel might have multiple maximal power points (MPPs, points where power curve has extreme values). Fig.\ref{fig2b} and \ref{fig2c} show I-V curves for series and parallel connections of two PV panels. The series connection accepts wider range of control voltage, and the parallel connection can generate higher current. 
+
+When understanding complete I-V characteristics of some parallel and/or series connection of PV panels, we may need I-V characteristics of the PV panels. However, to find out the (near)  maximum generated power, it is enough to considers some restricted information including maximal power points (MPPs), a short circuit current, an open circuit voltage. These values form a fingerprint of the connection.
+
+\begin{figure}
+\centering 
+\subfloat[]{
+	\label{fig2a}
+	\includegraphics[width=4cm]{fig2.png} } \\
+\subfloat[]{
+	\label{fig2b}
+	\includegraphics[width=4cm]{fig2.png} }
+\subfloat[]{
+	\label{fig2c}
+	\includegraphics[width=4cm]{fig2.png}} \\
+\caption{} 
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 We assume that each panel follows: The current versus voltage (\textit{I-V}) curve is acquired and calculated by algorithm presented in \cite{b6}. That algorithm will analyzes the panel \textit{I-V} curve sample by finding almost-constant-current and voltage regions and coordinate multiple maximum or minimum power point in the \textit{P-V} curve if PV array is working in mismatched conditions or not. 
 
@@ -66,15 +119,26 @@ All the panels in PV array have the same number (\textit{N}) of modules. For par
 
 
 Furthermore, it is also assumed that for each string it has same number of panels. Means every string in PV array have same length. String's length are identical based on when they connected in parallel, a string has more panels may cause current back flow into other strings which have less panels\cite{b8}.
+
+\section{Reconfiguration Algorithm} \label{algo}
+\subsection{Overview of the algorithm}
+In this section, we describe the overview of the reconfiguration algorithm in \cite{b10}. First, the reconfiguration algorithm determines MPPs for PV modules in the mismatched condition by using algorithms in \cite{b6}\cite{b7}\cite{b9}. As an example, we consider a PV panel where nine panels are connected in three strings. We assume that, in this example, the reconfiguration algorithm finds MPPs given in Table \ref{tab1}.
+%To reconfigure a large scale partial shading PV array, an example refers to 9 panels which have been connected in 3 strings. In this example, mismatching conditions presented in Table \ref{tab1}. 
+%Each panel made of 3 identical PV modules (\textit{N=3}), dataset in Table \ref{tab1} are provide by method in \cite{b6} \cite{b7}. As described in \cite{b10}, the Fast reconfiguration strategy firstly determine \textit{$V_{mpp}$} and \textit{$I_{mpp}$} for each PV module by using the algorithm in \cite{b7} \cite{b9}. 
+After that, the reconfiguration algorithm generates candidates of current assignments, where the current assignment specifies a current of each string. The reconfiguration algorithm treats the current of each MPP as a current candidate for string, and constructs a current assignment by assigning a current candidate to each string. The reconfiguration algorithm generates current assignments by considering all combinations of current candidates for string.
+%Then determine MPP current and voltage candidates among PV array. Calculate MPP candidates matrix by multiplying the current and voltage candidates. 
+Then, for each current assignment, the reconfiguration algorithm computes the number of working modules in each string. We define a configuration as a combination of a current assignment and the number of working modules in each string. By this algorithm, we obtain a set of candidate configurations. Since we can estimate the generated power of each candidate configuration, we can select the candidate configuration that maximizes the generated power.
+%\vspace{10cm}
+%Using the number of working modules (\textit{$Q_{M_n}$}) for each MPP current candidates to determine MPP candidates. Finally the Fast reconfiguration strategy gives MPP candidates for reconfiguration, which specifies a current value and minimum number of working modules for each string in PV array. 
+The general steps of Fast reconfiguration strategy as showed in Fig. \ref{flowchart}. 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=8cm]{flowchart.png}}
 \caption{Flowchart of reconfiguration algorithm in \cite{b10}.}
 \label{flowchart}
 \end{figure}
-
-
-\section{Reconfiguration Algorithm} \label{algo}
-To reconfigure a large scale partial shading PV array, an example refers to 9 panels which have been connected in 3 strings. In this example, mismatching conditions presented in Table \ref{tab1}. Each panel made of 3 identical PV modules (\textit{N=3}), dataset in Table \ref{tab1} are provide by method in \cite{b6} \cite{b7}. As described in \cite{b10}, the Fast reconfiguration strategy firstly determine \textit{$V_{mpp}$} and \textit{$I_{mpp}$} for each PV module by using the algorithm in \cite{b7} \cite{b9}. Then determine MPP current and voltage candidates among PV array. Calculate MPP candidates matrix by multiplying the current and voltage candidates. Using the number of working modules (\textit{$Q_{M_n}$}) for each MPP current candidates to determine MPP candidates. Finally the Fast reconfiguration strategy gives MPP candidates for reconfiguration, which specifies a current value and minimum number of working modules for each string in PV array. The general steps of Fast reconfiguration strategy as showed in Fig. \ref{flowchart}. Due to a PV panel can not be used into different string, those MPP candidates may have some un-feasible configurations. Our proposed algorithm based on the method in \cite{b10} to calculate MPP candidates and using unique panel selection technology to give optimal reconfiguration solution among partial-shading PV array. 
+The previous estimation can not give precise 
+\subsection{Feasibility Problem}
+Due to a PV panel can not be used into different string, those MPP candidates may have some un-feasible configurations. Our proposed algorithm based on the method in \cite{b10} to calculate MPP candidates and using unique panel selection technology to give optimal reconfiguration solution among partial-shading PV array. 
 
 In this example, though the procedure in Fast reconfiguration strategy, MPP candidates are presented in (\ref{mpp}) and number of working modules in MPP candidates are presented in (\ref{qmn}), respectively. 
 
@@ -111,7 +175,7 @@ P9     & {[}2.9, 11.4, 17.1{]}  & {[}0.5, 2, 3{]}     & {[}1.5, 22.8, 51.3{]}
 \end{equation}
 
 \subsection{Feasibility}
-The feasibility of configuration based on the assumption of section \ref{assum}, each string in PV array must have same number of panels. Definition of feasibility in (\ref{feas}). When a configuration needs panels in a string (\textit{$NP_n$}) are over maximum number of panels per-string(\textit{$NP_{stMAX}$}) this configuration is unfeasible. 
+The feasibility of configuration based on the assumption of section \ref{array}, each string in PV array must have same number of panels. Definition of feasibility in (\ref{feas}). When a configuration needs panels in a string (\textit{$NP_n$}) are over maximum number of panels per-string(\textit{$NP_{stMAX}$}) this configuration is unfeasible. 
 \begin{equation}
 \left\{\begin{matrix}
 NP_n > NP_{stMAX}& & \text{Unfeasible}\\ 
@@ -172,7 +236,7 @@ To find the best PV configuration, following steps are required:
 \item If there remain any unselect panel, set unselect panel to a string with minimum length. 
 \end{enumerate}
 \subsection{Panel Replace Strategy}
-In the section \ref{selection strategy}, to obtain optimal panel selection need swap undesired panel. Based on section \ref{assum}, each panel only contain three identical PV modules. So the element in selection matrix in the range of 0 to 3. The replacement policy follows priorities are:
+In the section \ref{selection strategy}, to obtain optimal panel selection need swap undesired panel. Based on section \ref{array}, each panel only contain three identical PV modules. So the element in selection matrix in the range of 0 to 3. The replacement policy follows priorities are:
 \begin{enumerate} [ (1) ]
 \item Swap a panel contain 3 working modules to \textbf{three} panels each contain 1 working module.
 \item Swap a panel contain 3 working modules to \textbf{one} panel contain 1 working module and \textbf{one} contain 2 working modules.
@@ -232,7 +296,7 @@ By inspecting the features of each module in Table \ref{tab1}, there are no conf
 %Due to 5\% error of MPP current candidates and 18\% error of MPP voltage candidates, total error rate of MPP candidates is 23\%. Though procedure of algorithm, MPP candidates with 23\% are: [\{ 0.5, 0.5, 2\}, \{0.5, 2, 2\}, \{2, 2, 2\}, \{2, 2, 3\}] and require working modules per strings are: [\{8, 8, 8\}, \{7, 7, 7\}, \{5, 5, 5\}, \{4, 4, 4\}]. And PV array are organized as Fig.\ref{fig4}
 %Those MPP candidates are able to generate maximum output power of PV system, but the configurations of MPP candidates may meet electrical connection overhead. In order to reduce electrical connection simulation time, replacement and feasibility check will be approved. 
 %Consider fourth MPP candidate, it require panels on string one working at 2A, panels on string two working at 2A, panels on string three working at 3A and require 4 PV modules working for each string. Firstly, selecting panels for high current string, string three. According to Table \ref{tab1}, only Panel 2, Panel 7 and Panel 9 are able to work at 3A. Those four panel can provide 4 PV module working at 3A and meet requirement of \textit{$Q_{M_n}$}. Because on extra panel can provide module  working on 3A, no replacement will be approved. Means no further improvement for configuration of string three.
-%Then select panel for string two, Panel 4 and Panel 8 will be selected, but this configuration is not optimized. Selected panels provide 5 modules able to work at 2A, satisfy requirement of \textit{$Q_{M_n}$} $\ge$ 4, but one module more than requirement. The process will replace Panel 4 by Panel 1 that provide just 4 modules working at 2A. Configuration for string two are Panel 8 and Panel 1. At last, select panels for string one. Panel 4, Panel 5, Panel 6 are selected, they can provide 5 modules working at 2A that satisfy requirement. For configuration on string one due to it is the last string to process and meet requirement, in order to reduce computing time replacement will not be approved. Configuration of MPP candidate \{2, 2, 3\} are \textit{St} 1:\{Panel 4,Panel 5, Panel 6\}, \textit{St} 2: \{Panel 1, Panel 8\}, \textit{St} 3: \{Panel 2, Panel 7, Panel 9\}. As described in section \ref{assum}, each string have identical length and Panel 3 not been used in any configuration. So optimized configuration for this MPP candidate are: \textit{St} 1:\{Panel 4,Panel 5, Panel 6\}, \textit{St} 2: \{Panel 1, Panel 8, Panel 3\}, \textit{St} 3: \{Panel 2, Panel 7, Panel 9\}. The MPP values of this configuration calculated by multiplay string voltage and current equal to 347.2W are put into evidence. 
+%Then select panel for string two, Panel 4 and Panel 8 will be selected, but this configuration is not optimized. Selected panels provide 5 modules able to work at 2A, satisfy requirement of \textit{$Q_{M_n}$} $\ge$ 4, but one module more than requirement. The process will replace Panel 4 by Panel 1 that provide just 4 modules working at 2A. Configuration for string two are Panel 8 and Panel 1. At last, select panels for string one. Panel 4, Panel 5, Panel 6 are selected, they can provide 5 modules working at 2A that satisfy requirement. For configuration on string one due to it is the last string to process and meet requirement, in order to reduce computing time replacement will not be approved. Configuration of MPP candidate \{2, 2, 3\} are \textit{St} 1:\{Panel 4,Panel 5, Panel 6\}, \textit{St} 2: \{Panel 1, Panel 8\}, \textit{St} 3: \{Panel 2, Panel 7, Panel 9\}. As described in section \ref{array}, each string have identical length and Panel 3 not been used in any configuration. So optimized configuration for this MPP candidate are: \textit{St} 1:\{Panel 4,Panel 5, Panel 6\}, \textit{St} 2: \{Panel 1, Panel 8, Panel 3\}, \textit{St} 3: \{Panel 2, Panel 7, Panel 9\}. The MPP values of this configuration calculated by multiplay string voltage and current equal to 347.2W are put into evidence. 
 
 %For the third MPP candidate, as same calculating procedure as fourth MPP candidate, optimized configuration for MPP candidate \{2, 2, 2\} are: \textit{St} 1:\{Panel 4,Panel 8, Panel 3\}, \textit{St} 2: \{Panel 1, Panel 2, Panel 6\}, \textit{St} 3: \{Panel 5, Panel 7, Panel 9\}. 
 %
@@ -301,20 +365,21 @@ The computational time required to find the best configuration and accuracy of c
 \caption{}
 \begin{center}
 \begin{tabular}{ccc}
-\multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}}COMPARISON BETWEEN EXISTED METHODS \\ AND PROPOSED ALGORITHM\end{tabular}} \\ \hline
-Methods                                     & Computational time  & Accuracy  \\ \hline
-The method in \cite{b10}   &                     &           \\
-%The method in \cite{b11}   &                     &           \\
-%The method in \cite{b12}   &                     &           \\
-Exhaustive search Algorithm                 &                     &           \\
-Proposed Algorithm                          &                     &          
+\multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}}COMPARISON BETWEEN EXISTED METHODS\\ AND PROPOSED ALGORITHM\end{tabular}}                                         \\ \hline \hline
+\multicolumn{1}{c|}{}                         & \multicolumn{1}{c|}{Propose Algorithm} & \begin{tabular}[c]{@{}c@{}}Exhaustive search \\ Algorithm\end{tabular} \\ \hline
+\multicolumn{1}{c|}{Number of PV Array}       & \multicolumn{2}{c}{300}                                                                                         \\ \hline
+\multicolumn{1}{c|}{Number of MPP candidates} & \multicolumn{2}{c}{10961}                                                                                       \\ \hline
+\multicolumn{1}{c|}{Feasible Candidates}      & \multicolumn{1}{c|}{1180}              & 1278                                                                   \\ \hline
+\multicolumn{1}{c|}{Unfeasible Candidates}    & \multicolumn{1}{c|}{9781}              & 9683                                                                   \\ \hline
+\multicolumn{1}{c|}{Error Rate}               & \multicolumn{1}{c|}{0.89\%}            & 0\%                                                                    \\ \hline
+\multicolumn{1}{c|}{Ave. times per Array}     & \multicolumn{1}{c|}{0.157s}            & 4370s                                                                 
 \end{tabular}
 \label{tab2}
 \end{center}
 \end{table}
 
 %The simulations were performed using an Intel i7-4770 3.2-Ghz processor with 32.0 GB of RAM memory. 
-The calculation time used by the proposed algorithm for one MPP candidate was !!!!! ms, which is significantly lower compared with exhaustive search (!!!!!!!time) and accuracy are higher than methods proposed in \cite{b10} \cite{b12}.
+The calculation time used by the proposed algorithm for one MPP candidate was 157 ms, which is significantly lower compared with exhaustive search 1hour 12min 50s and accuracy are higher than methods proposed in \cite{b10} \cite{b12}.
 \section{conclusions}
 The existing PV reconfiguration methods either have high accuracy but suffer from long computational time such as exhausted searching algorithm or GA, or they have short computational time but do not guarantee the best configuration as described in \cite{b10} \cite{b11} \cite{b12}. This paper proposed a new PV system reconfiguration algorithm with feasibility check function and have high accuracy and less computational time. Proposed algorithm's effectiveness has been validated using Matlab simulation. The algorithm was tested though un-uniform shadow distribution among PV array and shows its effectiveness in finding optimal configuration. The proposed algorithm also compared with existed method in terms of accuracy and computational time. The result shows that proposed algorithm has high accuracy and less computational time.
 

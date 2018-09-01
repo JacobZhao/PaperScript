@@ -87,39 +87,23 @@ And each bypass diode is connected in parallel with a module.
 Fig.\ref{fig2a} shows  I-V curves for PV panels. PV panel generates a currents according to a provided control voltage within some range.
 PV cells in a PV panel may have different conditions (irradiance or fault) and hence have different upper limits for their generated currents. Therefore, for lower control voltage, only PV cells that can generate higher currents can work and the other PV cells do not generate current with their bypass diodes switching on. As a result, PV panel might have multiple maximal power points (MPPs, points where power curve has extreme values). 
 Fig.\ref{fig2b} and \ref{fig2c} show I-V curves for series and parallel connections of two PV panels. The series connection accepts wider range of control voltage, and the parallel connection can generate higher current. 
-
-When understanding complete I-V characteristics of some parallel and/or series connection of PV panels, we may need I-V characteristics of the PV panels. However, to find out the (near)  maximum generated power, it is enough to considers some restricted information including maximal power points (MPPs), a short circuit current, an open circuit voltage. These values form a fingerprint of the connection.
-
+%When understanding complete I-V characteristics of some parallel and/or series connection of PV panels, we may need I-V characteristics of the PV panels. However, to find out the (near)  maximum generated power, it is enough to considers some restricted information including maximal power points (MPPs), a short circuit current, an open circuit voltage. These values form a fingerprint of the connection.
+When understanding complete I-V characteristics of some parallel and/or series connection of PV panels, we may need I-V characteristics of the PV panels. However, to find out the (near) maximum generated power, it is enough to considers some restricted information including maximal power points (MPPs). The algorithm in [6] analyzes the current versus voltage (I-V) curves of panels and finds MPPs, short circuit current, open circuit voltage of each panel in mismatched conditions.These values form a fingerprint of the connection.
 \begin{figure}
 \centering 
 \subfloat[]{
 	\label{fig2a}
-	\includegraphics[width=4cm]{fig2.png} } \\
+	\includegraphics[width=8cm]{2panel.png}} \\
 \subfloat[]{
 	\label{fig2b}
-	\includegraphics[width=4cm]{fig2.png} }
+	\includegraphics[width=4cm]{ser.png} }
 \subfloat[]{
 	\label{fig2c}
-	\includegraphics[width=4cm]{fig2.png}} \\
+	\includegraphics[width=4cm]{par.png}} \\
 \caption{} 
 \end{figure}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 %We assume that each panel follows: The current versus voltage (\textit{I-V}) curve is acquired and calculated by algorithm presented in \cite{b6}. That algorithm will analyzes the panel \textit{I-V} curve sample by finding almost-constant-current and voltage regions and coordinate multiple maximum or minimum power point in the \textit{P-V} curve if PV array is working in mismatched conditions or not. 
+
 In mismatched conditions, the power versus voltage (P-V) curve of each panel shows multiple MPPs (maximal power points). We refer to a MPP by a pair $(V_{mpp},I_{mpp})$ where $V_{mpp}$ and $I_{mpp}$ are the voltage and the current that give a maximal power, respectively. The algorithm in \cite{b6} analyzes the current versus voltage (I-V) curves of panels and finds MPPs of each panel in mismatched conditions.
 %All the panels in PV array have the same number (\textit{N}) of modules. For particular module, using (\textit{$V_{mpp_n}$, $I_{mpp_n}$}) to identify voltage and current values on different maximum power point by index \textit{n}. Those parameters can be directly estimated by the prosess provided in\cite{b7}.
 
@@ -200,7 +184,8 @@ To execute a power simulation, we have to assign panels to each string to realiz
 \section{An Algorithm to Identify Feasibility}
 In this section, we propose an algorithm to identify feasibility.
 \subsection{The Input And Output Of Algorithm}
-First, we summarize the input and output of our algorithm. The input of our algorithm is information of a PV array and a configuration. The information of a PV array is given as a set of panels and the number of working modules in each panel for each current candidate. Table \ref{mpp3-1} shows the information of a PV panel given in Table \ref{tab1}. For example, this table shows panel P2 includes three, two, and two modules that work in current 0.5A, 2A, and 3A, respectively. Recall that a configuration is a combination of a current assignment and the number of working modules in each string, and a current assignment specifies a current for each string. The output of our algorithm is feasibility of the given configuration. That is, the algorithm determines whether there exists assignment of panels to strings that realizes the configuration.
+%First, we summarize the input and output of our algorithm. 
+The input of our algorithm is information of a PV array and a configuration. The information of a PV array is given as a set of panels and the number of working modules in each panel for each current candidate. Table \ref{mpp3-1} shows the information of a PV panel given in Table \ref{tab1}. For example, this table shows panel P2 includes three, two, and two modules that work in current 0.5A, 2A and 3A, respectively. Recall that a configuration is a combination of a current assignment and the number of working modules in each string, and a current assignment specifies a current for each string. The output of our algorithm is feasibility of the given configuration. That is, the algorithm determines whether there exists assignment of panels to strings that realizes the configuration.
 \begin{table}[htbp] 
 \caption{Information of a PV array}
 \begin{center}
@@ -226,9 +211,10 @@ First, we summarize the input and output of our algorithm. The input of our algo
 %\end{matrix}\right. 
 %\end{equation}
 %For the first MPP candidate \{0.5, 0.5, 2\} need 8 modules for each string. According to Table \ref{tab1}, for a string current on 2A at least need 4 panels and didn't meet feasible requirement, thus, algorithm terminate. The second MPP candidate \{0.5, 2, 2\} as same as previous one also not feasible.
-Recall that a configuration is a combination of a current assignment and the number of working modules in each string, and a current assignment specifies a current for each string. The output of our algorithm is feasibility of the given configuration. That is, the algorithm determines whether there exists assignment of panels to strings that realizes the configuration.
-\subsection{Panel Selection Strategy} \label{selection strategy}Let $s$ be the number of strings, and $i_h$ ($0\le h<s$) be the current assigned to the $h$-th string. Without loss of generality, we assume $i_0\le i_1\le \cdots \le i_{s-1}$ holds. In our algorithm, we first determine the assignment of panels for the $(s-1)$-th string (i.e., the string with the biggest current), and then determine assignments for $(s-2)$-th string, $(s-3)$-th string, and so on.We explain the way to determine the assignment of the $(s-1)$-th string. To do this, we consider the number of working modules of each panel for currents less than $i_{s-1}$. Let $m_p(i)$ be the number of working modules of Panel $p$ that work in current $i$. For each panel $p$, we consider the difference vector $D_p=(m_p(i_{s-2})-m_p(i_{s-1}), m_p(i_{s-3})-m_p(i_{s-2}), \ldots, m_p(i_0)-m_p(1))$. The first element $d_1$ of $D_p$ means, if we use panel $p$ in current $i_{s-1}$, we lose $d_1$ working modules in current $i_{s-2}$. ... Sorry, I didn't complete this comment.
-
+%Recall that a configuration is a combination of a current assignment and the number of working modules in each string, and a current assignment specifies a current for each string. The output of our algorithm is feasibility of the given configuration. That is, the algorithm determines whether there exists assignment of panels to strings that realizes the configuration.
+\subsection{Panel Selection Strategy} \label{selection strategy}Let $s$ be the number of strings, and $i_h$ ($0\le h<s$) be the current assigned to the $h$-th string. Without loss of generality, we assume $i_0\le i_1\le \cdots \le i_{s-1}$ holds. In our algorithm, we first determine the assignment of panels for the $(s-1)$-th string (i.e., the string with the highest current), and then determine assignments for $(s-2)$-th string, $(s-3)$-th string, and so on.We explain the way to determine the assignment of the $(s-1)$-th string. To do this, we consider the number of working modules of each panel for currents less than $i_{s-1}$. Let $m_p(i)$ be the number of working modules of Panel $p$ that work in current $i$. For each panel $p$, we consider the difference vector $D_p=(m_p(i_{s-2})-m_p(i_{s-1}), m_p(i_{s-3})-m_p(i_{s-2}), \ldots, m_p(i_0)-m_p(1))$. The first element $d_1$ of $D_p$ means, if we use panel $p$ in current $i_{s-1}$, we lose $d_1$ working modules in current $i_{s-2}$. Then we sort panels in lexicographic order by vector $D_p$. This means, a panel with minimum module losses should firstly assign to the string with the highest current.
+%... Sorry, I didn't complete this comment.
+%\vspace{1cm}
 %Calculate MPP candidates based on existed reconfiguration method in \cite{b10}. MPP current candidates and MPP voltage candidates are present in (\ref{e1}) and (\ref{e2}), respectively. Additional, number of real working module at MPP current candidates are given in (\ref{e3}). Due to 5\% error of MPP current candidates and 18\% error of MPP voltage candidates, total error rate of MPP candidates is 23\%. Though procedure of algorithm in \cite{b10}, MPP candidates with 23\% are: [\{ 0.5, 0.5, 2\}, \{0.5, 2, 2\}, \{2, 2, 2\}, \{2, 2, 3\}] and require working modules per strings are: [\{8, 8, 8\}, \{7, 7, 7\}, \{5, 5, 5\}, \{4, 4, 4\}].
 %\begin{equation}
 %\begin{aligned}
@@ -245,24 +231,29 @@ Recall that a configuration is a combination of a current assignment and the num
 %\textit{$Q_{M_n}$} = [&\{8,8,8\}, \{8,8,8\}, \{4,4,4\}, \{7,7,7\}, \{4,4,4\}, \\&\{2,2,2\}, \{5,5,5\}, \{4,4,4\}, \{2,2,2\}, \{1,1,1\}] \label{e3}
 %\end{aligned}
 %\end{equation}
+% In order to give more precise reconfiguration strategy. Our proposed algorithm firstly sort panels in a particular order for MPP candidates. For the example of fourth MPP candidate \{2, 2, 3\}, by giving dataset in Table \ref{tab1} generate a selection matrix in (\ref{mpp3-1}) that each column indicate panel's number and  each row indicate to string number. Element in the matrix corresponding to number of module which be able to working on string current.
 
- In order to give more precise reconfiguration strategy. Our proposed algorithm firstly sort panels in a particular order for MPP candidates. For the example of fourth MPP candidate \{2, 2, 3\}, by giving dataset in Table \ref{tab1} generate a selection matrix in (\ref{mpp3-1}) that each column indicate panel's number and  each row indicate to string number. Element in the matrix corresponding to number of module which be able to working on string current.
-
-Then calculate number of module difference among string currents. For panel 1, difference between string 3 and string 2 is 1 (\textit{$Diff_1=1$}) and difference between string 2 and string 1 is 0 (\textit{$Diff_2=0$}). Sort panels in lexicographic order by \textit{$Diff_1$} and \textit{$Diff_2$}. As showed in matrix (\ref{sorted}). 
-\begin{equation}
+%Then calculate number of module difference among string currents. For panel 1, difference between string 3 and string 2 is 1 (\textit{$Diff_1=1$}) and difference between string 2 and string 1 is 0 (\textit{$Diff_2=0$}). Sort panels in lexicographic order by \textit{$Diff_1$} and \textit{$Diff_2$}. As showed in matrix (\ref{sorted}). 
+\begin{table}[htbp] 
+\caption{Panel selection order}
+\begin{center}
+%\begin{equation}
 \begin{tabular}{l|lllllllll}
         & P2 & P3 & P1 & P5 & P7 & P9 & P4 & P6 & P8 \\ \hline 
-St1     & 2  & 0  & 1  & 1  & 2  & 2  & 2  & 2  & 3  \\
-St2     & 2  & 0  & 1  & 1  & 2  & 2  & 2  & 2  & 3  \\
-St3     & 2  & 0  & 0  & 0  & 1  & 1  & 0  & 0  & 0  \\
-\textit{$Diff_1$} & 0  & 0  & 1  & 1  & 1  & 1  & 2  & 2  & 3  \\
-\textit{$Diff_2$} & 0  & 0  & 0  & 0  & 0  & 0  & 0  & 0  & 0 
+2A     & 2  & 0  & 1  & 1  & 2  & 2  & 2  & 2  & 3  \\
+2A     & 2  & 0  & 1  & 1  & 2  & 2  & 2  & 2  & 3  \\
+3A     & 2  & 0  & 0  & 0  & 1  & 1  & 0  & 0  & 0  \\
+$d_1$ & 0  & 0  & 1  & 1  & 1  & 1  & 2  & 2  & 3  \\
+$d_2$ & 0  & 0  & 0  & 0  & 0  & 0  & 0  & 0  & 0 
 \end{tabular}\label{sorted}
-\end{equation}
-To find the best PV configuration, following steps are required:
+%\end{equation}
+\end{center}
+\end{table}
+Table \ref{sorted} shows the panel selection order of MPP candidate \{2A, 2A, 3A\} by given panel information from Table \ref{tab1}. For example shows panel P7 includes two, two and one modules that work in current 2A, 2A and 3A, respectively. So choosing panel P7 working on 3A will lose one module that can work on 2A.
+To assign panel in the right string, following steps are required:
 \begin{enumerate} [1-]
-\item Select panels in matrix (\ref{sorted}) from left side to right.
-\item If the element in matrix is 0, release corresponding panel
+\item Select panels in Table (\ref{sorted}) from left side to right.
+\item If the element in Table is 0, release corresponding panel
 \item Replace selected panels if summations of selected panels' contain modules are equal to unselect panel. As the example of string 2, selected panels are [Panel 1, Panel 5], these panels contain modules are equal to next unselect panel [Panel 4]. Then swap [Panel 1, Panel 5] and [Panel4], release [Panel 1, Panel 5]. \label{replace}
 %\item At each replacement, mark swapped unselect panel as fixed. Fixed panel  
 \item If replacement approved, step \ref{replace} will be repeated till summations of selected panel contain modules are large or equal to \textit{$Q_{M_n}$}.

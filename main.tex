@@ -18,7 +18,6 @@
 \begin{document}
 \title{Photovoltaic System Reconfiguration strategy for mismatch condition\\
 {\footnotesize \textsuperscript{}}}
-
 \author{\IEEEauthorblockN{1\textsuperscript{st} Dafang Zhao}
 \IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
 \textit{name of organization (of Aff.)}}
@@ -87,13 +86,14 @@ And each bypass diode is connected in parallel with a module.
 \centering 
 \subfloat[]{
 	\label{fig2a}
-	\includegraphics[width=8.5cm]{2panel.png} }\\
+	\includegraphics[width=4.2cm]{P2.pdf}
+        \includegraphics[width=4.2cm]{P1.pdf}}\\
 \subfloat[]{
 	\label{fig2b}
-	\includegraphics[width=4.2cm]{ser.png} }
+	\includegraphics[width=4.2cm]{ser.pdf} }
 \subfloat[]{
 	\label{fig2c}
-	\includegraphics[width=4.2cm]{par.png}} \\
+	\includegraphics[width=4.2cm]{par.pdf}} \\
 \caption{I-V curves, (a) 2 panels, (b) strings (series connection of PV panels), and (c) parallel connection of  PV panels}
 \end{figure}
 Fig.\ref{fig2a} shows  I-V curves for PV panels. PV panel generates a currents according to a provided control voltage within some range.
@@ -101,11 +101,13 @@ PV cells in a PV panel may have different conditions (irradiance or fault) and h
 Fig.\ref{fig2b} and \ref{fig2c} show I-V curves for series and parallel connections of two PV panels. The series connection accepts wider range of control voltage, and the parallel connection can generate higher current. 
 %When understanding complete I-V characteristics of some parallel and/or series connection of PV panels, we may need I-V characteristics of the PV panels. However, to find out the (near)  maximum generated power, it is enough to considers some restricted information including maximal power points (MPPs), a short circuit current, an open circuit voltage. These values form a fingerprint of the connection.
 
-When understanding complete I-V characteristics of some parallel and/or series connection of PV panels, we may need I-V characteristics of the PV panels. However, to find out the (near) maximum generated power, it is enough to considers some restricted information including maximal power points (MPPs). The algorithm in [6] analyzes the current versus voltage (I-V) curves of panels and finds MPPs, short circuit current, open circuit voltage of each panel in mismatched conditions. These values form a fingerprint of the connection.
+When understanding complete I-V characteristics of some parallel and/or series connection of PV panels, we may need I-V characteristics of the PV panels. However, to find out the (near) maximum generated power, it is enough to considers some restricted information including maximal power points (MPPs). The algorithm in \cite{b6} analyzes the current versus voltage (I-V) curves of panels and finds MPPs, short circuit current, open circuit voltage of each panel in mismatched conditions. These values form a fingerprint of the connection.
 
 %We assume that each panel follows: The current versus voltage (\textit{I-V}) curve is acquired and calculated by algorithm presented in \cite{b6}. That algorithm will analyzes the panel \textit{I-V} curve sample by finding almost-constant-current and voltage regions and coordinate multiple maximum or minimum power point in the \textit{P-V} curve if PV array is working in mismatched conditions or not. 
 
-In mismatched conditions, the power versus voltage (P-V) curve of each panel shows multiple MPPs (maximal power points). We refer to a MPP by a pair $(V_{mpp},I_{mpp})$ where $V_{mpp}$ and $I_{mpp}$ are the voltage and the current that give a maximal power, respectively. The algorithm in \cite{b6} analyzes the current versus voltage (I-V) curves of panels and finds MPPs of each panel in mismatched conditions.
+%In mismatched conditions, the power versus voltage (P-V) curve of each panel shows multiple MPPs (maximal power points). We refer to a MPP by a pair $(V_{mpp},I_{mpp})$ where $V_{mpp}$ and $I_{mpp}$ are the voltage and the current that give a maximal power, respectively. The algorithm in \cite{b6} analyzes the current versus voltage (I-V) curves of panels and finds MPPs of each panel in mismatched conditions.
+
+
 %All the panels in PV array have the same number (\textit{N}) of modules. For particular module, using (\textit{$V_{mpp_n}$, $I_{mpp_n}$}) to identify voltage and current values on different maximum power point by index \textit{n}. Those parameters can be directly estimated by the prosess provided in\cite{b7}.
 
 
@@ -271,12 +273,12 @@ To assign panels in the right string, following steps are required:
 \begin{enumerate} [1-]
 \item Select panels in Panel Selection Order Table from left side to right.
 \item If the element in Table is 0, release corresponding panel ,as panel P3.
-\item Replace selected panels if summations of selected panels' contain modules are equal to unselect panel. As the example of string current on 2A, selected panels are panel P1, panel P5, these panels contain modules are equal to next unselect panel panel P4. Then swap (P1, P5) and P4, release P1 and P5. \label{replace}
+\item Replace selected panels if summations of selected panels' contain modules are equal to unselect panel. As the example of string current on 2A, selected panels are panel P1 and P5, these panels contain modules are equal to next unselect panel P4. Then swap (P1, P5) and P4, release P1 and P5. \label{replace}
 %\item At each replacement, mark swapped unselect panel as fixed. Fixed panel  
 \item If replacement approved, step \ref{replace} will be repeated till summations of selected panel contain modules are large or equal to \textit{$Q_{M_n}$}.
 \item Otherwise, none of the replacement will be approved. Evaluate selected panels with feasibility requirement in \ref{feasPro} equation (\ref{feas}).
 % and compare selected modules with the requirement of \textit{$Q_{M_n}$}.
-\item If there remain any unselect panel, set unselect panel to a string with minimum length. 
+\item If there remain any unselect panel, assign unselect panel to a string with minimum length. 
 \end{enumerate}
 
 \subsection{Panel Replace Strategy}
@@ -287,15 +289,28 @@ In the section \ref{selection strategy}, to obtain optimal panel selection need 
 \item Swap a panel contain 2 working modules to \textbf{two} panels each contain 1 working module.
 \end{enumerate}
 
-By inspecting the features of each module in Table \ref{tab1}, there are no configuration for MPP candidate \{0.5A, 0.5A, 2A\} and MPP candidate \{0.5A, 2A, 2A\}. Configuration for MPP candidate \{2A, 2A, 2A\} is that first string include Panel P1, P2 and P4; the second string include Panel P5, P6 and P7; the third string include Panel P3, P8 and P9. Configuration for MPP candidate \{2A, 2A, 3A\} is that first string include Panel P1, P5 and P8; the second string include Panel P3, P4 and P6; the third string include Panel P2, P7 and P9. Optimal configuration for this partial-shading PV array as showed in Fig. \ref{reconfiguration}. 
-\begin{figure}%
-    \centering
-    \subfloat[MPP candidate 3]{{\includegraphics[width=4cm]{MPP3.png} }}%
-%    \qquad
-    \subfloat[MPP candidate 4]{{\includegraphics[width=4cm]{MPP4.png} }}%
-    \caption{Configuration of partial-shading PV array}%
-    \label{reconfiguration}%
+By inspecting the features of each module in Table \ref{tab1}, there are no configuration for MPP candidate \{0.5A, 0.5A, 2A\} and MPP candidate \{0.5A, 2A, 2A\}. Configuration for MPP candidate \{2A, 2A, 2A\} as shown in Fig.\ref{recon-a} is that first string include Panel P1, P2 and P4; the second string include Panel P5, P6 and P7; the third string include Panel P3, P8 and P9. Configuration for MPP candidate \{2A, 2A, 3A\} as shown in Fig.\ref{recon-b} is that first string include Panel P1, P5 and P8; the second string include Panel P3, P4 and P6; the third string include Panel P2, P7 and P9.
+%% Optimal configuration for this partial-shading PV array as showed in Fig. \ref{reconfiguration}.
+
+\begin{figure}
+\centering 
+\subfloat[]{
+	\label{recon-a}
+	\includegraphics[width=4cm]{MPP3.png} }
+\subfloat[]{
+	\label{recon-b}
+	\includegraphics[width=4cm]{MPP4.png}} \\
+\caption{Configuration of partial-shading PV array}
 \end{figure}
+
+%% \begin{figure}%
+%%     \centering
+%%     \subfloat[MPP candidate 3]{{\includegraphics[width=4cm]{MPP3.png} }}%
+%% %    \qquad
+%%     \subfloat[MPP candidate 4]{{\includegraphics[width=4cm]{MPP4.png} }}%
+%%     \caption{Configuration of partial-shading PV array}%
+%%     \label{reconfiguration}%
+%% \end{figure}
 
 
 %The general steps of reconfiguration algorithm are presented in Fig. \ref{fig2}. The first step is determine each PV module's \textit{$V_{mpp}$} and \textit{$I_{mpp}$} by using algorithm provided in \cite{b7} \cite{b9}, and calculate MPP current and voltage candidates of PV array. When there are more than two panels connected in series, for a string MPPs is not straightforward. The MPP current and voltage candidates can be evaluated though a procedure presented in \cite{b10}. For string MPP current candidates, \textit{$I_{mpp_n}$} values' different less than 5\% are assumed to be equal. For string MPP voltage candidates, \textit{$V_{mpp_n}$}  can be calculated though multiplay number of active modules (\textit{$N_a$}) by average MPP voltages (\textit{$\bar V_{mpp}$}) with $\pm$18\% error \cite{b10}. Afterward, determine real number of working modules (\textit{$Q_{M_n}$}) for each MPP current candidates by applying method in \cite{b10}. Next, find MPP candidates by multiplying current candidates and voltage candidates which determine by \textit{$Q_{M_n}$}. Due to \textit{$V_{mpp}s$} and \textit{$I_{mpp}s$} can indicate shading distribution among PV array.  Then grouping panels into different shadow distribution.  
@@ -350,7 +365,7 @@ By inspecting the features of each module in Table \ref{tab1}, there are no conf
 \section{evaluation of optimization algorithm}
 %\subsection{Verification of the Proposed algorithm}
 Although the pilot example refers to three strings only, the extension of the method to any number of parallel connected strings is the same.
-This section verifies the effectiveness of proposed algorithm using Matlab simulation. With pilot example presented in last section, shading scenario as showed in Fig.\ref{fig5a}. To minimize power loss, the proposed algorithm, as described, is applied to reconfigure the system. The resulting configuration is depicted in Fig.\ref{fig5b} and Fig.\ref{fig5c}. 
+%This section verifies the effectiveness of proposed algorithm using Matlab simulation. With pilot example presented in last section, shading scenario as showed in Fig.\ref{fig5a}. To minimize power loss, the proposed algorithm, as described, is applied to reconfigure the system. The resulting configuration is depicted in Fig.\ref{fig5b} and Fig.\ref{fig5c}. 
 %\begin{figure}%
 %    \centering
 %    \subfloat[label 1]{{\includegraphics[width=5cm]{paper-fig5(a).png} }}
@@ -363,21 +378,21 @@ This section verifies the effectiveness of proposed algorithm using Matlab simul
 %    \label{fig5c}%
 %\end{figure}
 
-\begin{figure}
-\centering 
-\subfloat[]{
-	\label{fig5a}
-	\includegraphics[width=5cm]{paper-fig5(a).png} } \\
-\subfloat[]{
-	\label{fig5b}
-	\includegraphics[width=4cm]{MPP3.png} }
-\subfloat[]{
-	\label{fig5c}
-	\includegraphics[width=4cm]{MPP4.png}} \\
-\caption{The PV system under shading scenario (a) before reconfiguration, (b) after reconfiguration for MPP candidate \{2, 2, 2\} and (c) MPP candidate \{2, 2, 3\}} 
-\end{figure}
+%% \begin{figure}
+%% \centering 
+%% \subfloat[]{
+%% 	\label{fig5a}
+%% 	\includegraphics[width=5cm]{paper-fig5(a).png} } \\
+%% \subfloat[]{
+%% 	\label{fig5b}
+%% 	\includegraphics[width=4cm]{MPP3.png} }
+%% \subfloat[]{
+%% 	\label{fig5c}
+%% 	\includegraphics[width=4cm]{MPP4.png}} \\
+%% \caption{The PV system under shading scenario (a) before reconfiguration, (b) after reconfiguration for MPP candidate \{2, 2, 2\} and (c) MPP candidate \{2, 2, 3\}} 
+%% \end{figure}
 
-%% \begin{figure}[htbp]            
+%%\begin{figure}[htbp]      
 %% \begin{minipage}[t]{0.5\linewidth}
 %% \centerline{\includegraphics{fig2.png}}
 %% \caption{(a)}
@@ -390,7 +405,7 @@ This section verifies the effectiveness of proposed algorithm using Matlab simul
 %% \end{minipage}
 %% \end{figure}
 
-As shown, working module on each string are large or equal than required \textit{$Q_{M_n}$}, which means mismatched power loss are minimized. The \textit{P-V} curve for this PV array before and after reconfiguration are showed in Fig.\ref{fig6}. It can be seen that after reconfiguration maximum power (283 W and 276W) are higher than before reconfiguration maximum power (277W).
+As shown in previous section, working modules on each string are large or equal than required \textit{$Q_{M_n}$}, which means mismatched power loss are minimized. The \textit{P-V} curve for this PV array before and after reconfiguration are showed in Fig.\ref{fig6}. It can be seen that after reconfiguration maximum power (283 W and 276W) are higher than before reconfiguration maximum power (277W).
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=8cm]{zhao.pdf}}
@@ -422,10 +437,9 @@ The computational time required to find the best configuration and accuracy of c
 \end{table}
 
 %The simulations were performed using an Intel i7-4770 3.2-Ghz processor with 32.0 GB of RAM memory. 
-The calculation time used by the proposed algorithm for one MPP candidate was 157 ms, which is significantly lower compared with exhaustive search 1hour 12min 50s and accuracy are higher than methods proposed in \cite{b10} \cite{b12}.
+The calculation time used by the proposed algorithm for one MPP candidate was 157 ms, which is significantly lower compared with exhaustive search 1hour 12min 50s and accuracy are higher than methods proposed in \cite{b10}.
 \section{conclusions}
-The existing PV reconfiguration methods either have high accuracy but suffer from long computational time such as exhausted searching algorithm or GA, or they have short computational time but do not guarantee the best configuration as described in \cite{b10} \cite{b11} \cite{b12}. This paper proposed a new PV system reconfiguration algorithm with feasibility check function and have high accuracy and less computational time. Proposed algorithm's effectiveness has been validated using Matlab simulation. The algorithm was tested though un-uniform shadow distribution among PV array and shows its effectiveness in finding optimal configuration. The proposed algorithm also compared with existed method in terms of accuracy and computational time. The result shows that proposed algorithm has high accuracy and less computational time.
-
+The existing PV reconfiguration methods either have high accuracy but suffer from long computational time such as exhausted searching algorithm or GA, or they have short computational time but do not guarantee the best configuration as described in \cite{b10}. This paper proposed a new PV system reconfiguration algorithm with feasibility check function and have high accuracy and less computational time. Proposed algorithm's effectiveness has been validated using Matlab simulation. The algorithm was tested though un-uniform shadow distribution among PV array and shows its effectiveness in finding optimal configuration. The proposed algorithm also compared with existed method in terms of accuracy and computational time. The result shows that proposed algorithm has high accuracy and less computational time.
 \begin{thebibliography}{00}
 \bibitem{b1} Koutroulis, Eftichios, and Frede Blaabjerg. "A new technique for tracking the global maximum power point of PV arrays operating under partial-shading conditions." IEEE Journal of Photovoltaics 2.2 (2012): 184-190.
 \bibitem{b2} La Manna, Damiano, et al. "Reconfigurable electrical interconnection strategies for photovoltaic arrays: A review." Renewable and Sustainable Energy Reviews 33 (2014): 412-426.
@@ -434,11 +448,11 @@ The existing PV reconfiguration methods either have high accuracy but suffer fro
 \bibitem{b5} P. Carotenuto, A. D. Cioppa, A. Marcelli, and G. Spagnuolo, “An evolu- tionary approach to the dynamical reconfiguration of photovoltaic fields,” Neurocomputing, vol. 170, pp. 393–405, 2015.
 \bibitem{b6} Carotenuto, Pietro Luigi, et al. "Online recording a PV module fingerprint." IEEE Journal of Photovoltaics 4.2 (2014): 659-668.
 \bibitem{b7} Orozco-Gutierrez, M. L., et al. "Fast estimation of MPPs in mismatched PV arrays based on lossless model." Clean Electrical Power (ICCEP), 2015 International Conference on. IEEE, 2015.
-\bibitem{b8} Spagnuolo, Giovanni, et al. "Control of photovoltaic arrays: Dynamical reconfiguration for fighting mismatched conditions and meeting load requests." IEEE Industrial Electronics Magazine 9.1 (2015): 62-76.
+%% \bibitem{b8} Spagnuolo, Giovanni, et al. "Control of photovoltaic arrays: Dynamical reconfiguration for fighting mismatched conditions and meeting load requests." IEEE Industrial Electronics Magazine 9.1 (2015): 62-76.
 %\bibitem{b9} Carotenuto, Pietro Luigi, et al. "Online recording a PV module fingerprint." IEEE Journal of Photovoltaics 4.2 (2014): 659-668.
 \bibitem{b10} Orozco-Gutierrez, M. L., et al. "Optimized configuration of mismatched photovoltaic arrays." IEEE J. Photovolt 6.5 (2016): 1210-1220.
-\bibitem{b11} El-Dein, MZ Shams, Mehrdad Kazerani, and M. M. A. Salama. "Optimal photovoltaic array reconfiguration to reduce partial shading losses." IEEE Trans. Sustain. Energy 4.1 (2013): 145-153.
-\bibitem{b12} Storey, Jonathan P., Peter R. Wilson, and Darren Bagnall. "Improved optimization strategy for irradiance equalization in dynamic photovoltaic arrays." IEEE transactions on power electronics 28.6 (2013): 2946-2956.
+%% \bibitem{b11} El-Dein, MZ Shams, Mehrdad Kazerani, and M. M. A. Salama. "Optimal photovoltaic array reconfiguration to reduce partial shading losses." IEEE Trans. Sustain. Energy 4.1 (2013): 145-153.
+%% \bibitem{b12} Storey, Jonathan P., Peter R. Wilson, and Darren Bagnall. "Improved optimization strategy for irradiance equalization in dynamic photovoltaic arrays." IEEE transactions on power electronics 28.6 (2013): 2946-2956.
   
 \end{thebibliography}
 \end{document}

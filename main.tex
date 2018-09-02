@@ -83,25 +83,26 @@ And each bypass diode is connected in parallel with a module.
 \caption{PV arrays, strings, and panels.}
 \label{fig1}
 \end{figure}
-
-Fig.\ref{fig2a} shows  I-V curves for PV panels. PV panel generates a currents according to a provided control voltage within some range.
-PV cells in a PV panel may have different conditions (irradiance or fault) and hence have different upper limits for their generated currents. Therefore, for lower control voltage, only PV cells that can generate higher currents can work and the other PV cells do not generate current with their bypass diodes switching on. As a result, PV panel might have multiple maximal power points (MPPs, points where power curve has extreme values). 
-Fig.\ref{fig2b} and \ref{fig2c} show I-V curves for series and parallel connections of two PV panels. The series connection accepts wider range of control voltage, and the parallel connection can generate higher current. 
-%When understanding complete I-V characteristics of some parallel and/or series connection of PV panels, we may need I-V characteristics of the PV panels. However, to find out the (near)  maximum generated power, it is enough to considers some restricted information including maximal power points (MPPs), a short circuit current, an open circuit voltage. These values form a fingerprint of the connection.
-When understanding complete I-V characteristics of some parallel and/or series connection of PV panels, we may need I-V characteristics of the PV panels. However, to find out the (near) maximum generated power, it is enough to considers some restricted information including maximal power points (MPPs). The algorithm in [6] analyzes the current versus voltage (I-V) curves of panels and finds MPPs, short circuit current, open circuit voltage of each panel in mismatched conditions.These values form a fingerprint of the connection.
 \begin{figure}
 \centering 
 \subfloat[]{
 	\label{fig2a}
-	\includegraphics[width=8cm]{2panel.png}} \\
+	\includegraphics[width=8.5cm]{2panel.png} }\\
 \subfloat[]{
 	\label{fig2b}
-	\includegraphics[width=4cm]{ser.png} }
+	\includegraphics[width=4.2cm]{ser.png} }
 \subfloat[]{
 	\label{fig2c}
-	\includegraphics[width=4cm]{par.png}} \\
-\caption{} 
+	\includegraphics[width=4.2cm]{par.png}} \\
+\caption{I-V curves, (a) 2 panels, (b) strings (series connection of PV panels), and (c) parallel connection of  PV panels}
 \end{figure}
+Fig.\ref{fig2a} shows  I-V curves for PV panels. PV panel generates a currents according to a provided control voltage within some range.
+PV cells in a PV panel may have different conditions (irradiance or fault) and hence have different upper limits for their generated currents. Therefore, for lower control voltage, only PV cells that can generate higher currents can work and the other PV cells do not generate current with their bypass diodes switching on. As a result, PV panel might have multiple maximal power points (MPPs, points where power curve has extreme values). 
+Fig.\ref{fig2b} and \ref{fig2c} show I-V curves for series and parallel connections of two PV panels. The series connection accepts wider range of control voltage, and the parallel connection can generate higher current. 
+%When understanding complete I-V characteristics of some parallel and/or series connection of PV panels, we may need I-V characteristics of the PV panels. However, to find out the (near)  maximum generated power, it is enough to considers some restricted information including maximal power points (MPPs), a short circuit current, an open circuit voltage. These values form a fingerprint of the connection.
+
+When understanding complete I-V characteristics of some parallel and/or series connection of PV panels, we may need I-V characteristics of the PV panels. However, to find out the (near) maximum generated power, it is enough to considers some restricted information including maximal power points (MPPs). The algorithm in [6] analyzes the current versus voltage (I-V) curves of panels and finds MPPs, short circuit current, open circuit voltage of each panel in mismatched conditions. These values form a fingerprint of the connection.
+
 %We assume that each panel follows: The current versus voltage (\textit{I-V}) curve is acquired and calculated by algorithm presented in \cite{b6}. That algorithm will analyzes the panel \textit{I-V} curve sample by finding almost-constant-current and voltage regions and coordinate multiple maximum or minimum power point in the \textit{P-V} curve if PV array is working in mismatched conditions or not. 
 
 In mismatched conditions, the power versus voltage (P-V) curve of each panel shows multiple MPPs (maximal power points). We refer to a MPP by a pair $(V_{mpp},I_{mpp})$ where $V_{mpp}$ and $I_{mpp}$ are the voltage and the current that give a maximal power, respectively. The algorithm in \cite{b6} analyzes the current versus voltage (I-V) curves of panels and finds MPPs of each panel in mismatched conditions.
@@ -109,11 +110,34 @@ In mismatched conditions, the power versus voltage (P-V) curve of each panel sho
 
 
 %Furthermore, it is also assumed that for each string it has same number of panels. Means every string in PV array have same length. String's length are identical based on when they connected in parallel, a string has more panels may cause current back flow into other strings which have less panels\cite{b8}.
+\section{Related Works}
+Carotenuto et al. proposed a online recording method of PV module fingerprint \cite{b6}. In their method, a fingerprint including the current and voltage at open- and short-circuit points and multiple MPPs are obtained from several samples from a monitored PV panel. Orozco-Gutierrez et al. proposed a method to estimate multiple MPPs of a PV array from fingerprints of PV panels in the PV array \cite{b7}.
+
+Orozco-Gutierrez et al. further proposed a Fast reconfiguration algorithm to optimize power generation by reconfiguring the connection of PV panels \cite{b10}, where the online monitoring \cite{b6} and the power estimation \cite{b7} are utilized. In the method in \cite{b10}, first, close values of fingerprints from monitoring of PV panels are grouped with some representative values, and then possible combinations of reconfiguration are enumerated. Their power values are estimated by \cite{b7} along with careful estimation of possible errors. The method presented a simple feasibility check and obtains estimated power values for all the possible connections for representative values with some error rate \textit{err}, and then select configurations within \textit{err} difference from the largest estimated value as candidates of the optical configurations. 
+\begin{table}[htbp]
+\caption{DATASET OF PARTIAL-SHADING PV ARRAY}
+\begin{center}
+\begin{tabular}{cccc}
+%\multicolumn{4}{c}{DATASET OF PARTIAL-SHADING PV ARRAY} \\ \hline \hline
+Panels & Vmpp(V)                & Impp (A)            & MPP(W)                 \\ \hline
+P1     & {[}0, 2.9, 11.4{]}     & {[}0, 0.5, 2{]}     & {[}None, 1.5, 22.8{]}     \\
+P2     & {[}2.9, 17.1, 17.1{]}  & {[}0.5, 3, 3{]}     & {[}1.5, 51.3, 51.3{]}  \\
+P3     & {[}2.9, 2.9, 2.9{]}    & {[}0.5, 0.5, 0.5{]} & {[}1.5, 1.5, 1.5{]}    \\
+P4     & {[}0, 11.4, 11.4{]}    & {[}0, 2, 2{]}       & {[}None, 22.8, 22.8{]}    \\
+P5     & {[}0, 2.9, 11.4{]}     & {[}0, 0.5, 2{]}     & {[}None, 1.5, 22.8{]}     \\
+P6     & {[}2.9, 11.4, 11.4{]}  & {[}0.5, 2, 2{]}     & {[}1.5, 22.8, 22.8{]}  \\
+P7     & {[}2.9, 11.4, 17.1{]}  & {[}0.5, 2, 3{]}     & {[}1.5, 22.8, 51.3{]}  \\
+P8     & {[}11.4, 11.4, 11.4{]} & {[}2, 2, 2{]}       & {[}22.8, 22.8, 22.8{]} \\
+P9     & {[}2.9, 11.4, 17.1{]}  & {[}0.5, 2, 3{]}     & {[}1.5, 22.8, 51.3{]} 
+\end{tabular}
+\label{tab1}
+\end{center}
+\end{table}
 
 \section{Reconfiguration Algorithm} \label{algo}
 
 \subsection{Overview of the algorithm}
-In this section, we describe the overview of the Fast reconfiguration algorithm in \cite{b10}. First, the reconfiguration algorithm determines MPPs for PV modules in the mismatched condition by using algorithms in \cite{b6}\cite{b7}\cite{b9}. As an example, we consider a PV panel where nine panels are connected in three strings. We assume that, in this example, the reconfiguration algorithm finds MPPs given in Table \ref{tab1}.
+In this section, we describe the overview of the Fast reconfiguration algorithm in \cite{b10}. First, the reconfiguration algorithm determines MPPs for PV modules in the mismatched condition by using algorithms in \cite{b6}\cite{b7}. As an example, we consider a PV array where nine panels are connected in three strings. We assume that, in this example, the reconfiguration algorithm finds MPPs given in Table \ref{tab1}.
 %To reconfigure a large scale partial shading PV array, an example refers to 9 panels which have been connected in 3 strings. In this example, mismatching conditions presented in Table \ref{tab1}. 
 %Each panel made of 3 identical PV modules (\textit{N=3}), dataset in Table \ref{tab1} are provide by method in \cite{b6} \cite{b7}. As described in \cite{b10}, the Fast reconfiguration strategy firstly determine \textit{$V_{mpp}$} and \textit{$I_{mpp}$} for each PV module by using the algorithm in \cite{b7} \cite{b9}. 
 After that, the reconfiguration algorithm generates candidates of current assignments, where the current assignment specifies a current of each string. The reconfiguration algorithm treats the current of each MPP as a current candidate for string, and constructs a current assignment by assigning a current candidate to each string. The reconfiguration algorithm generates current assignments by considering all combinations of current candidates for string.
@@ -122,7 +146,7 @@ Then, for each current assignment, the reconfiguration algorithm computes the nu
 
 \begin{equation}
 \begin{aligned}
-\textit{MPP candidates} = [\{ 0.5, 0.5, 2\}, \{0.5, 2, 2\}, \{2, 2, 2\}, \{2, 2, 3\}]
+\textit{MPP candidates}& = \\ [\{ 0.5, &0.5, 2\}, \{0.5, 2, 2\}, \{2, 2, 2\}, \{2, 2, 3\}]
 \end{aligned}\label{mpp}
 \end{equation}
 \begin{equation}
@@ -141,29 +165,21 @@ The general steps of Fast reconfiguration strategy as showed in Fig. \ref{flowch
 \label{flowchart}
 \end{figure}
 The previous estimation can not give precise reconfiguration answer. This algorithm lists some candidate configurations ( in addition to the maximum one ) and for each candidate configuration it will executes a time consuming and precise power simulation. Considering there are some errors in previous estimation, this algorithm is not efficient for finding the best configuration. 
-\begin{table}[htbp]
-\caption{}
-\begin{center}
-\begin{tabular}{cccc}
-\multicolumn{4}{c}{DATASET OF PARTIAL-SHADING PV ARRAY} \\ \hline \hline
-Panels & Vmpp(V)                & Impp (A)            & MPP(W)                 \\ \hline
-P1     & {[}0, 2.9, 11.4{]}     & {[}0, 0.5, 2{]}     & {[}None, 1.5, 22.8{]}     \\
-P2     & {[}2.9, 17.1, 17.1{]}  & {[}0.5, 3, 3{]}     & {[}1.5, 51.3, 51.3{]}  \\
-P3     & {[}2.9, 2.9, 2.9{]}    & {[}0.5, 0.5, 0.5{]} & {[}1.5, 1.5, 1.5{]}    \\
-P4     & {[}0, 11.4, 11.4{]}    & {[}0, 2, 2{]}       & {[}None, 22.8, 22.8{]}    \\
-P5     & {[}0, 2.9, 11.4{]}     & {[}0, 0.5, 2{]}     & {[}None, 1.5, 22.8{]}     \\
-P6     & {[}2.9, 11.4, 11.4{]}  & {[}0.5, 2, 2{]}     & {[}1.5, 22.8, 22.8{]}  \\
-P7     & {[}2.9, 11.4, 17.1{]}  & {[}0.5, 2, 3{]}     & {[}1.5, 22.8, 51.3{]}  \\
-P8     & {[}11.4, 11.4, 11.4{]} & {[}2, 2, 2{]}       & {[}22.8, 22.8, 22.8{]} \\
-P9     & {[}2.9, 11.4, 17.1{]}  & {[}0.5, 2, 3{]}     & {[}1.5, 22.8, 51.3{]} 
-\end{tabular}
-\label{tab1}
-\end{center}
-\end{table}
 
 
-\subsection{Feasibility Problem}
-To execute a power simulation, we have to assign panels to each string to realize a candidate configuration. However, the way is not given in \cite{b10} and some candidate configurations are infeasible. For an configuration example \{0.5A, 0.5A, 2A\}, there are 8 PV modules working on each string. According to Table I, for a string current on 2A at least need 4 panels, remaining panels can not provide enough PV module working on 0.5A for another two strings.Of course we can compute it by using an exhaustive search. However, it is time-consuming. So, we need an algorithm to efficiently identify feasibility of a configuration and realize the configuration if it is feasible.
+
+\subsection{Feasibility Problem}\label{feasPro}
+To execute a power simulation, we have to assign panels to each string to realize a candidate configuration. However, the way is not given in \cite{b10} and some candidate configurations are infeasible. 
+The definition of feasibility in (\ref{feas}). When a configuration needs working modules in a string (\textit{$M_S$}) are less than number of working module per-string (\textit{$Q_{M_{n}}$}), then this configuration is infeasible. 
+\begin{equation}
+\left\{\begin{matrix}
+M_S < Q_{M_{n}} & & \text{Infeasible}\\ 
+M_S \geqslant Q_{M_{n}} & & \text{Feasible} 
+\label{feas}
+\end{matrix}\right. 
+\end{equation}
+For an configuration example \{0.5A, 0.5A, 2A\}, there are 8 PV modules working on each string. According to Table I, for a string current on 2A at least need 4 panels, remaining panels can not provide enough PV module working on 0.5A for another two strings. 
+Of course we can compute it by using an exhaustive search. However, it is time-consuming. So, we need an algorithm to efficiently identify feasibility of a configuration and realize the configuration if it is feasible.
 
 %Due to a PV panel can not be used into different string, those MPP candidates may have some un-feasible configurations. Our proposed algorithm based on the method in \cite{b10} to calculate MPP candidates and using unique panel selection technology to give optimal reconfiguration solution among partial-shading PV array. 
 
@@ -202,7 +218,8 @@ The input of our algorithm is information of a PV array and a configuration. The
 \end{center}
 \end{table}  
 %\subsection{Feasibility}
-%The feasibility of configuration based on the assumption of section \ref{array}, each string in PV array must have same number of panels. Definition of feasibility in (\ref{feas}). When a configuration needs panels in a string (\textit{$NP_n$}) are over maximum number of panels per-string(\textit{$NP_{stMAX}$}) this configuration is unfeasible. 
+%The feasibility of configuration based on the assumption of section \ref{array}, each string in PV array must have same number of panels. 
+%Definition of feasibility in (\ref{feas}). When a configuration needs panels in a string (\textit{$NP_n$}) are over maximum number of panels per-string(\textit{$NP_{stMAX}$}) this configuration is unfeasible. 
 %\begin{equation}
 %\left\{\begin{matrix}
 %NP_n > NP_{stMAX}& & \text{Unfeasible}\\ 
@@ -239,37 +256,38 @@ The input of our algorithm is information of a PV array and a configuration. The
 \begin{center}
 %\begin{equation}
 \begin{tabular}{l|lllllllll}
-        & P2 & P3 & P1 & P5 & P7 & P9 & P4 & P6 & P8 \\ \hline 
-2A     & 2  & 0  & 1  & 1  & 2  & 2  & 2  & 2  & 3  \\
-2A     & 2  & 0  & 1  & 1  & 2  & 2  & 2  & 2  & 3  \\
-3A     & 2  & 0  & 0  & 0  & 1  & 1  & 0  & 0  & 0  \\
+        & P3 & P2 & P1 & P5 & P7 & P9 & P4 & P6 & P8 \\ \hline 
+2A     & 0  & 2  & 1  & 1  & 2  & 2  & 2  & 2  & 3  \\
+2A     & 0  & 2  & 1  & 1  & 2  & 2  & 2  & 2  & 3  \\
+3A     & 0  & 2  & 0  & 0  & 1  & 1  & 0  & 0  & 0  \\
 $d_1$ & 0  & 0  & 1  & 1  & 1  & 1  & 2  & 2  & 3  \\
 $d_2$ & 0  & 0  & 0  & 0  & 0  & 0  & 0  & 0  & 0 
 \end{tabular}\label{sorted}
 %\end{equation}
 \end{center}
 \end{table}
-Table \ref{sorted} shows the panel selection order of MPP candidate \{2A, 2A, 3A\} by given panel information from Table \ref{tab1}. For example shows panel P7 includes two, two and one modules that work in current 2A, 2A and 3A, respectively. So choosing panel P7 working on 3A will lose one module that can work on 2A.
-To assign panel in the right string, following steps are required:
+Table \ref{sorted} shows the panel selection order of MPP candidate \{2A, 2A, 3A\} by given panel information from Table \ref{tab1}. For this example, this table shows panel P7 includes two, two and one modules that work in current 2A, 2A and 3A, respectively. So choosing panel P7 working on 3A will lose one module that can work on 2A.
+To assign panels in the right string, following steps are required:
 \begin{enumerate} [1-]
-\item Select panels in Table (\ref{sorted}) from left side to right.
-\item If the element in Table is 0, release corresponding panel
-\item Replace selected panels if summations of selected panels' contain modules are equal to unselect panel. As the example of string 2, selected panels are [Panel 1, Panel 5], these panels contain modules are equal to next unselect panel [Panel 4]. Then swap [Panel 1, Panel 5] and [Panel4], release [Panel 1, Panel 5]. \label{replace}
+\item Select panels in Panel Selection Order Table from left side to right.
+\item If the element in Table is 0, release corresponding panel ,as panel P3.
+\item Replace selected panels if summations of selected panels' contain modules are equal to unselect panel. As the example of string current on 2A, selected panels are panel P1, panel P5, these panels contain modules are equal to next unselect panel panel P4. Then swap (P1, P5) and P4, release P1 and P5. \label{replace}
 %\item At each replacement, mark swapped unselect panel as fixed. Fixed panel  
 \item If replacement approved, step \ref{replace} will be repeated till summations of selected panel contain modules are large or equal to \textit{$Q_{M_n}$}.
-\item Otherwise, none of the replacement will be approved. Evaluate selected panels with feasibility requirement and compare selected modules with the requirement of \textit{$Q_{M_n}$}.
+\item Otherwise, none of the replacement will be approved. Evaluate selected panels with feasibility requirement in \ref{feasPro} equation (\ref{feas}).
+% and compare selected modules with the requirement of \textit{$Q_{M_n}$}.
 \item If there remain any unselect panel, set unselect panel to a string with minimum length. 
 \end{enumerate}
+
 \subsection{Panel Replace Strategy}
-In the section \ref{selection strategy}, to obtain optimal panel selection need swap undesired panel. Based on section \ref{array}, each panel only contain three identical PV modules. So the element in selection matrix in the range of 0 to 3. The replacement policy follows priorities are:
+In the section \ref{selection strategy}, to obtain optimal panel selection need swap undesired panel. Based on assumption from section \ref{array}, each panel only contain three identical PV modules. So the element in panel selection table in the range of 0 to 3. The replacement policy follows priorities are:
 \begin{enumerate} [ (1) ]
 \item Swap a panel contain 3 working modules to \textbf{three} panels each contain 1 working module.
 \item Swap a panel contain 3 working modules to \textbf{one} panel contain 1 working module and \textbf{one} contain 2 working modules.
 \item Swap a panel contain 2 working modules to \textbf{two} panels each contain 1 working module.
 \end{enumerate}
 
-By inspecting the features of each module in Table \ref{tab1}, there are no configuration for MPP candidate 1 and MPP candidate 2. Configuration for MPP candidate 3 is that first string include Panel 1, Panel 2 and Panel 4; the second string include Panel 5, Panel 6 and Panel 7; the third string include Panel 3, Panel 8 and Panel 9. Configuration for MPP candidate 4 is that first string include Panel 1, Panel 5 and Panel 8; the second string include Panel 3, Panel 4 and Panel 6; the third string include Panel 2, Panel 7 and Panel 9. Optimal configuration for this partial-shading PV array as showed in Fig. \ref{reconfiguration}. 
-
+By inspecting the features of each module in Table \ref{tab1}, there are no configuration for MPP candidate \{0.5A, 0.5A, 2A\} and MPP candidate \{0.5A, 2A, 2A\}. Configuration for MPP candidate \{2A, 2A, 2A\} is that first string include Panel P1, P2 and P4; the second string include Panel P5, P6 and P7; the third string include Panel P3, P8 and P9. Configuration for MPP candidate \{2A, 2A, 3A\} is that first string include Panel P1, P5 and P8; the second string include Panel P3, P4 and P6; the third string include Panel P2, P7 and P9. Optimal configuration for this partial-shading PV array as showed in Fig. \ref{reconfiguration}. 
 \begin{figure}%
     \centering
     \subfloat[MPP candidate 3]{{\includegraphics[width=4cm]{mpp3.png} }}%
@@ -395,7 +413,7 @@ The computational time required to find the best configuration and accuracy of c
 \multicolumn{1}{c|}{Number of PV Array}       & \multicolumn{2}{c}{300}                                                                                         \\ \hline
 \multicolumn{1}{c|}{Number of MPP candidates} & \multicolumn{2}{c}{10961}                                                                                       \\ \hline
 \multicolumn{1}{c|}{Feasible Candidates}      & \multicolumn{1}{c|}{1180}              & 1278                                                                   \\ \hline
-\multicolumn{1}{c|}{Unfeasible Candidates}    & \multicolumn{1}{c|}{9781}              & 9683                                                                   \\ \hline
+\multicolumn{1}{c|}{Infeasible Candidates}    & \multicolumn{1}{c|}{9781}              & 9683                                                                   \\ \hline
 \multicolumn{1}{c|}{Error Rate}               & \multicolumn{1}{c|}{0.89\%}            & 0\%                                                                    \\ \hline
 \multicolumn{1}{c|}{Ave. times per Array}     & \multicolumn{1}{c|}{0.157s}            & 4370s                                                                 
 \end{tabular}
@@ -417,7 +435,7 @@ The existing PV reconfiguration methods either have high accuracy but suffer fro
 \bibitem{b6} Carotenuto, Pietro Luigi, et al. "Online recording a PV module fingerprint." IEEE Journal of Photovoltaics 4.2 (2014): 659-668.
 \bibitem{b7} Orozco-Gutierrez, M. L., et al. "Fast estimation of MPPs in mismatched PV arrays based on lossless model." Clean Electrical Power (ICCEP), 2015 International Conference on. IEEE, 2015.
 \bibitem{b8} Spagnuolo, Giovanni, et al. "Control of photovoltaic arrays: Dynamical reconfiguration for fighting mismatched conditions and meeting load requests." IEEE Industrial Electronics Magazine 9.1 (2015): 62-76.
-\bibitem{b9} Carotenuto, Pietro Luigi, et al. "Online recording a PV module fingerprint." IEEE Journal of Photovoltaics 4.2 (2014): 659-668.
+%\bibitem{b9} Carotenuto, Pietro Luigi, et al. "Online recording a PV module fingerprint." IEEE Journal of Photovoltaics 4.2 (2014): 659-668.
 \bibitem{b10} Orozco-Gutierrez, M. L., et al. "Optimized configuration of mismatched photovoltaic arrays." IEEE J. Photovolt 6.5 (2016): 1210-1220.
 \bibitem{b11} El-Dein, MZ Shams, Mehrdad Kazerani, and M. M. A. Salama. "Optimal photovoltaic array reconfiguration to reduce partial shading losses." IEEE Trans. Sustain. Energy 4.1 (2013): 145-153.
 \bibitem{b12} Storey, Jonathan P., Peter R. Wilson, and Darren Bagnall. "Improved optimization strategy for irradiance equalization in dynamic photovoltaic arrays." IEEE transactions on power electronics 28.6 (2013): 2946-2956.

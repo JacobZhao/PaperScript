@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.17)  1 SEP 2018 09:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.17)  2 SEP 2018 17:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -494,76 +494,70 @@ Package pdftex.def Info: paper-fig1.png used on input line 82.
 <2panel.png, id=3, 1314.9125pt x 425.59pt>
 File: 2panel.png Graphic file (type png)
  <use 2panel.png>
-Package pdftex.def Info: 2panel.png used on input line 96.
-(pdftex.def)             Requested size: 227.62204pt x 73.6676pt.
+Package pdftex.def Info: 2panel.png used on input line 90.
+(pdftex.def)             Requested size: 241.84842pt x 78.27184pt.
 
 <ser.png, id=4, 384.2355pt x 240.29774pt>
 File: ser.png Graphic file (type png)
  <use ser.png>
-Package pdftex.def Info: ser.png used on input line 99.
-(pdftex.def)             Requested size: 113.81102pt x 71.1732pt.
+Package pdftex.def Info: ser.png used on input line 93.
+(pdftex.def)             Requested size: 119.50148pt x 74.73352pt.
 
 <par.png, id=5, 383.63326pt x 240.29774pt>
 File: par.png Graphic file (type png)
  <use par.png>
-Package pdftex.def Info: par.png used on input line 102.
-(pdftex.def)             Requested size: 113.81102pt x 71.28688pt.
+Package pdftex.def Info: par.png used on input line 96.
+(pdftex.def)             Requested size: 119.50148pt x 74.85086pt.
  [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
-]
-Overfull \hbox (6.49059pt too wide) detected at line 127
-[][]
- []
-
-<flowchart.png, id=15, 723.70375pt x 608.2725pt>
+] [2 <./paper-fig1.png> <./2panel.png> <./ser.png> <./par.png>]
+<flowchart.png, id=25, 723.70375pt x 608.2725pt>
 File: flowchart.png Graphic file (type png)
  <use flowchart.png>
-Package pdftex.def Info: flowchart.png used on input line 139.
+Package pdftex.def Info: flowchart.png used on input line 163.
 (pdftex.def)             Requested size: 227.62204pt x 191.31912pt.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 166.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 181.
 
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 166.
- [2 <./paper-fig1.png> <./2panel.png> <./ser.png> <./par.png>] [3 <./flowchart.
-png>]
-<mpp3.png, id=36, 234.8775pt x 328.22626pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 181.
+ [3 <./flowchart.png>] <mpp3.png, id=36, 234.8775pt x 328.22626pt>
 File: mpp3.png Graphic file (type png)
  <use mpp3.png>
-Package pdftex.def Info: mpp3.png used on input line 278.
+Package pdftex.def Info: mpp3.png used on input line 296.
 (pdftex.def)             Requested size: 113.81102pt x 159.0443pt.
 
 <mpp4.png, id=37, 234.8775pt x 328.22626pt>
 File: mpp4.png Graphic file (type png)
  <use mpp4.png>
-Package pdftex.def Info: mpp4.png used on input line 280.
+Package pdftex.def Info: mpp4.png used on input line 298.
 (pdftex.def)             Requested size: 113.81102pt x 159.0443pt.
 
 <paper-fig5(a).png, id=38, 300.12125pt x 412.54124pt>
 File: paper-fig5(a).png Graphic file (type png)
  <use paper-fig5(a).png>
-Package pdftex.def Info: paper-fig5(a).png used on input line 355.
+Package pdftex.def Info: paper-fig5(a).png used on input line 373.
 (pdftex.def)             Requested size: 142.26378pt x 195.55626pt.
 File: mpp3.png Graphic file (type png)
 
 <use mpp3.png>
-Package pdftex.def Info: mpp3.png used on input line 358.
+Package pdftex.def Info: mpp3.png used on input line 376.
 (pdftex.def)             Requested size: 113.81102pt x 159.0443pt.
 File: mpp4.png Graphic file (type png)
  <use mpp4.png>
-Package pdftex.def Info: mpp4.png used on input line 361.
+Package pdftex.def Info: mpp4.png used on input line 379.
 (pdftex.def)             Requested size: 113.81102pt x 159.0443pt.
  <fig2.png, id=39, 56.8524pt x 56.8524pt>
 File: fig2.png Graphic file (type png)
 
 <use fig2.png>
-Package pdftex.def Info: fig2.png used on input line 381.
+Package pdftex.def Info: fig2.png used on input line 399.
 (pdftex.def)             Requested size: 142.26378pt x 142.28503pt.
- [4 <./mpp3.png> <./mpp4.png> <./paper-fig5(a).png>]
+ [4 <./mpp3.png> <./mpp4.png>]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no œ in font ptmr7t!
@@ -585,33 +579,35 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[5 <./fig2.png (PNG copy)>] (./main.aux) ) 
+[5 <./paper-fig5(a).png> <./fig2.png (PNG copy)>] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 5737 strings out of 492995
- 87506 string characters out of 6132704
- 164011 words of memory out of 5000000
- 9203 multiletter control sequences out of 15000+600000
+ 5738 strings out of 492995
+ 87517 string characters out of 6132704
+ 165029 words of memory out of 5000000
+ 9204 multiletter control sequences out of 15000+600000
  43840 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,14n,49p,1358b,355s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2017/texmf-dist/f
-onts/enc/dvips/base/8r.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
-msy7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
-/usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/loca
-l/texlive/2017/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/
-2017/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (5 pages, 282244 bytes).
+ 39i,14n,49p,1358b,352s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/tex
+live/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2017/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2017/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2017/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/p
+ublic/amsfonts/symbols/msam10.pfb></usr/local/texlive/2017/texmf-dist/fonts/typ
+e1/urw/times/utmb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/tim
+es/utmbi8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmr8a
+.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (5 pages, 298482 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
- 53 compressed objects within 1 object stream
+ 99 PDF objects out of 1000 (max. 8388607)
+ 59 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

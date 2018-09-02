@@ -290,9 +290,9 @@ In the section \ref{selection strategy}, to obtain optimal panel selection need 
 By inspecting the features of each module in Table \ref{tab1}, there are no configuration for MPP candidate \{0.5A, 0.5A, 2A\} and MPP candidate \{0.5A, 2A, 2A\}. Configuration for MPP candidate \{2A, 2A, 2A\} is that first string include Panel P1, P2 and P4; the second string include Panel P5, P6 and P7; the third string include Panel P3, P8 and P9. Configuration for MPP candidate \{2A, 2A, 3A\} is that first string include Panel P1, P5 and P8; the second string include Panel P3, P4 and P6; the third string include Panel P2, P7 and P9. Optimal configuration for this partial-shading PV array as showed in Fig. \ref{reconfiguration}. 
 \begin{figure}%
     \centering
-    \subfloat[MPP candidate 3]{{\includegraphics[width=4cm]{mpp3.png} }}%
+    \subfloat[MPP candidate 3]{{\includegraphics[width=4cm]{MPP3.png} }}%
 %    \qquad
-    \subfloat[MPP candidate 4]{{\includegraphics[width=4cm]{mpp4.png} }}%
+    \subfloat[MPP candidate 4]{{\includegraphics[width=4cm]{MPP4.png} }}%
     \caption{Configuration of partial-shading PV array}%
     \label{reconfiguration}%
 \end{figure}
@@ -370,10 +370,10 @@ This section verifies the effectiveness of proposed algorithm using Matlab simul
 	\includegraphics[width=5cm]{paper-fig5(a).png} } \\
 \subfloat[]{
 	\label{fig5b}
-	\includegraphics[width=4cm]{mpp3.png} }
+	\includegraphics[width=4cm]{MPP3.png} }
 \subfloat[]{
 	\label{fig5c}
-	\includegraphics[width=4cm]{mpp4.png}} \\
+	\includegraphics[width=4cm]{MPP4.png}} \\
 \caption{The PV system under shading scenario (a) before reconfiguration, (b) after reconfiguration for MPP candidate \{2, 2, 2\} and (c) MPP candidate \{2, 2, 3\}} 
 \end{figure}
 
@@ -390,10 +390,10 @@ This section verifies the effectiveness of proposed algorithm using Matlab simul
 %% \end{minipage}
 %% \end{figure}
 
-As shown, working module on each string are large or equal than required \textit{$Q_{M_n}$}, which means mismatched power loss are minimized. The \textit{P-V} curve for this PV array before and after reconfiguration are showed in Fig.\ref{fig6}. It can be seen that after reconfiguration maximum power (!!!!!!!!!! W and !!!!!!W) are significantly higher than before reconfiguration maximum power (!!!!!!!!W).
+As shown, working module on each string are large or equal than required \textit{$Q_{M_n}$}, which means mismatched power loss are minimized. The \textit{P-V} curve for this PV array before and after reconfiguration are showed in Fig.\ref{fig6}. It can be seen that after reconfiguration maximum power (283 W and 276W) are higher than before reconfiguration maximum power (277W).
 
 \begin{figure}[htbp]
-\centerline{\includegraphics[width=5cm]{fig2.png}}
+\centerline{\includegraphics[width=8cm]{zhao.pdf}}
 \caption{The \textit{P-V} curves for the PV system under first shading scenario before and after reconfiguration.}
 \label{fig6}
 \end{figure}

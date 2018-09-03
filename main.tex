@@ -16,7 +16,7 @@
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
-\title{Photovoltaic System Reconfiguration strategy for mismatch condition\\
+\title{Photovoltaic System Reconfiguration Strategy For Mismatch Condition\\
 {\footnotesize \textsuperscript{}}}
 \author{\IEEEauthorblockN{1\textsuperscript{st} Dafang Zhao}
 \IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
@@ -142,9 +142,11 @@ P9     & {[}2.9, 11.4, 17.1{]}  & {[}0.5, 2, 3{]}     & {[}1.5, 22.8, 51.3{]}
 In this section, we describe the overview of the Fast reconfiguration algorithm in \cite{b10}. First, the reconfiguration algorithm determines MPPs for PV modules in the mismatched condition by using algorithms in \cite{b6}\cite{b7}. As an example, we consider a PV array where nine panels are connected in three strings. We assume that, in this example, the reconfiguration algorithm finds MPPs given in Table \ref{tab1}.
 %To reconfigure a large scale partial shading PV array, an example refers to 9 panels which have been connected in 3 strings. In this example, mismatching conditions presented in Table \ref{tab1}. 
 %Each panel made of 3 identical PV modules (\textit{N=3}), dataset in Table \ref{tab1} are provide by method in \cite{b6} \cite{b7}. As described in \cite{b10}, the Fast reconfiguration strategy firstly determine \textit{$V_{mpp}$} and \textit{$I_{mpp}$} for each PV module by using the algorithm in \cite{b7} \cite{b9}. 
-After that, the reconfiguration algorithm generates candidates of current assignments, where the current assignment specifies a current of each string. The reconfiguration algorithm treats the current of each MPP as a current candidate for string, and constructs a current assignment by assigning a current candidate to each string. The reconfiguration algorithm generates current assignments by considering all combinations of current candidates for string.
+After that, the Fast reconfiguration algorithm generates candidates of current assignments 
+%% where the current assignment specifies a current of each string. The reconfiguration algorithm
+and treats the current of each MPP as a current candidate for string, constructs a current assignment by assigning a current candidate to each string. The reconfiguration algorithm generates current assignments by considering all combinations of current candidates for string.
 %Then determine MPP current and voltage candidates among PV array. Calculate MPP candidates matrix by multiplying the current and voltage candidates. 
-Then, for each current assignment, the reconfiguration algorithm computes the number of working modules in each string. We define a configuration as a combination of a current assignment and the number of working modules (\textit{$Q_{M_n}$}) in each string. MPP candidates are presented in (\ref{mpp}) and number of working modules of MPP candidates are presented in (\ref{qmn}), respectively. 
+Then, for each current assignment, the reconfiguration algorithm computes the number of working modules (\textit{$Q_{M_n}$}) in each string. We define a configuration as a combination of a current assignment and the number of working modules in each string. MPP candidates are presented in (\ref{mpp}) and number of working modules for each string are presented in (\ref{qmn}), respectively. 
 
 \begin{equation}
 \begin{aligned}
@@ -162,7 +164,7 @@ By this algorithm, we obtain a set of candidate configurations. Since we can est
 %Using the number of working modules (\textit{$Q_{M_n}$}) for each MPP current candidates to determine MPP candidates. Finally the Fast reconfiguration strategy gives MPP candidates for reconfiguration, which specifies a current value and minimum number of working modules for each string in PV array. 
 The general steps of Fast reconfiguration strategy as showed in Fig. \ref{flowchart}. 
 \begin{figure}[htbp]
-\centerline{\includegraphics[width=8cm]{flowchart.png}}
+\centerline{\includegraphics[width=8cm]{flowchart(1).png}}
 \caption{Flowchart of reconfiguration algorithm in \cite{b10}.}
 \label{flowchart}
 \end{figure}
@@ -272,7 +274,7 @@ Table \ref{sorted} shows the panel selection order of MPP candidate \{2A, 2A, 3A
 To assign panels in the right string, following steps are required:
 \begin{enumerate} [1-]
 \item Select panels in Panel Selection Order Table from left side to right.
-\item If the element in Table is 0, release corresponding panel ,as panel P3.
+\item If the element in Table is 0, release corresponding panel, $m_p(i)$ = 0.
 \item Replace selected panels if summations of selected panels' contain modules are equal to unselect panel. As the example of string current on 2A, selected panels are panel P1 and P5, these panels contain modules are equal to next unselect panel P4. Then swap (P1, P5) and P4, release P1 and P5. \label{replace}
 %\item At each replacement, mark swapped unselect panel as fixed. Fixed panel  
 \item If replacement approved, step \ref{replace} will be repeated till summations of selected panel contain modules are large or equal to \textit{$Q_{M_n}$}.
@@ -284,9 +286,9 @@ To assign panels in the right string, following steps are required:
 \subsection{Panel Replace Strategy}
 In the section \ref{selection strategy}, to obtain optimal panel selection need swap undesired panel. Based on assumption from section \ref{array}, each panel only contain three identical PV modules. So the element in panel selection table in the range of 0 to 3. The replacement policy follows priorities are:
 \begin{enumerate} [ (1) ]
-\item Swap a panel contain 3 working modules to \textbf{three} panels each contain 1 working module.
-\item Swap a panel contain 3 working modules to \textbf{one} panel contain 1 working module and \textbf{one} contain 2 working modules.
-\item Swap a panel contain 2 working modules to \textbf{two} panels each contain 1 working module.
+\item Swap a panel contain 3 working modules ($m_p(i)$ = 3) to \textbf{three} panels each contain 1 working module ($m_p(i)$ = 1).
+\item Swap a panel contain 3 working modules ($m_p(i)$ = 3) to \textbf{one} panel contain 1 working module ($m_p(i)$ = 1) and \textbf{one} contain 2 working modules ($m_p(i)$ = 2).
+\item Swap a panel contain 2 working modules ($m_p(i)$ = 2) to \textbf{two} panels each contain 1 working module ($m_p(i)$ = 1).
 \end{enumerate}
 
 By inspecting the features of each module in Table \ref{tab1}, there are no configuration for MPP candidate \{0.5A, 0.5A, 2A\} and MPP candidate \{0.5A, 2A, 2A\}. Configuration for MPP candidate \{2A, 2A, 2A\} as shown in Fig.\ref{recon-a} is that first string include Panel P1, P2 and P4; the second string include Panel P5, P6 and P7; the third string include Panel P3, P8 and P9. Configuration for MPP candidate \{2A, 2A, 3A\} as shown in Fig.\ref{recon-b} is that first string include Panel P1, P5 and P8; the second string include Panel P3, P4 and P6; the third string include Panel P2, P7 and P9.
@@ -417,14 +419,15 @@ To evaluate the performance of proposed algorithm, we compare the propose algori
 
 
 
-The computational time required to find the best configuration and accuracy of configuration in the proposed and exhaustive search algorithm are compared and summarized in Table \ref{tab2}. As shown in Table \ref{tab2}, proposed algorithm achieved high accuracy and less computing time compare with exhaustive search algorithm and methods described in \cite{b10}. %\cite{b11} \cite{b12}.
+The computational time required to find the best configuration and accuracy of configuration in the proposed and exhaustive search algorithm are compared and summarized in Table \ref{tab2}. As shown in Table \ref{tab2}, proposed algorithm achieved high accuracy and less computing time compare with exhaustive search algorithm.
+%% and methods described in \cite{b10}. %\cite{b11} \cite{b12}.
 
 \begin{table}[htbp]
 \caption{}
 \begin{center}
 \begin{tabular}{ccc}
 \multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}}COMPARISON BETWEEN EXISTED METHODS\\ AND PROPOSED ALGORITHM\end{tabular}}                                         \\ \hline \hline
-\multicolumn{1}{c|}{}                         & \multicolumn{1}{c|}{Propose Algorithm} & \begin{tabular}[c]{@{}c@{}}Exhaustive search \\ Algorithm\end{tabular} \\ \hline
+\multicolumn{1}{c|}{}                         & \multicolumn{1}{c|}{Proposed Algorithm} & \begin{tabular}[c]{@{}c@{}}Exhaustive search \\ Algorithm\end{tabular} \\ \hline
 \multicolumn{1}{c|}{Number of PV Array}       & \multicolumn{2}{c}{300}                                                                                         \\ \hline
 \multicolumn{1}{c|}{Number of MPP candidates} & \multicolumn{2}{c}{10961}                                                                                       \\ \hline
 \multicolumn{1}{c|}{Feasible Candidates}      & \multicolumn{1}{c|}{1180}              & 1278                                                                   \\ \hline
@@ -437,7 +440,7 @@ The computational time required to find the best configuration and accuracy of c
 \end{table}
 
 %The simulations were performed using an Intel i7-4770 3.2-Ghz processor with 32.0 GB of RAM memory. 
-The calculation time used by the proposed algorithm for one MPP candidate was 157 ms, which is significantly lower compared with exhaustive search 1hour 12min 50s and accuracy are higher than methods proposed in \cite{b10}.
+The calculation time used by the proposed algorithm for one MPP candidate was 157 ms, which is significantly lower compared with exhaustive search 1hour 12min 50s and accuracy are higher than exhaustive search algorithm.
 \section{conclusions}
 The existing PV reconfiguration methods either have high accuracy but suffer from long computational time such as exhausted searching algorithm or GA, or they have short computational time but do not guarantee the best configuration as described in \cite{b10}. This paper proposed a new PV system reconfiguration algorithm with feasibility check function and have high accuracy and less computational time. Proposed algorithm's effectiveness has been validated using Matlab simulation. The algorithm was tested though un-uniform shadow distribution among PV array and shows its effectiveness in finding optimal configuration. The proposed algorithm also compared with existed method in terms of accuracy and computational time. The result shows that proposed algorithm has high accuracy and less computational time.
 \begin{thebibliography}{00}

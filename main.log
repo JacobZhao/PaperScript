@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.8.2)  3 SEP 2018 06:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.8.2)  3 SEP 2018 14:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -521,33 +521,33 @@ ge group included in a single page
 pdfTeX warning: pdflatex (file ./par.pdf): PDF inclusion: multiple pdfs with pa
 ge group included in a single page
 >]
-<flowchart.png, id=48, 723.70375pt x 608.2725pt>
-File: flowchart.png Graphic file (type png)
-<use flowchart.png>
-Package pdftex.def Info: flowchart.png  used on input line 165.
-(pdftex.def)             Requested size: 227.62204pt x 191.31912pt.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 183.
+<flowchart(1).png, id=48, 728.7225pt x 605.26125pt>
+File: flowchart(1).png Graphic file (type png)
+<use flowchart(1).png>
+Package pdftex.def Info: flowchart(1).png  used on input line 167.
+(pdftex.def)             Requested size: 227.62204pt x 189.05132pt.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 185.
 
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 183.
- [3 <./flowchart.png>]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 185.
+ [3 <./flowchart(1).png>]
 <MPP3.png, id=62, 234.8775pt x 328.22626pt>
 File: MPP3.png Graphic file (type png)
 <use MPP3.png>
-Package pdftex.def Info: MPP3.png  used on input line 302.
+Package pdftex.def Info: MPP3.png  used on input line 304.
 (pdftex.def)             Requested size: 113.81102pt x 159.0443pt.
 <MPP4.png, id=63, 234.8775pt x 328.22626pt>
 File: MPP4.png Graphic file (type png)
 <use MPP4.png>
-Package pdftex.def Info: MPP4.png  used on input line 305.
+Package pdftex.def Info: MPP4.png  used on input line 307.
 (pdftex.def)             Requested size: 113.81102pt x 159.0443pt.
 <zhao.pdf, id=64, 644.40659pt x 483.8078pt>
 File: zhao.pdf Graphic file (type pdf)
 <use zhao.pdf>
-Package pdftex.def Info: zhao.pdf  used on input line 414.
+Package pdftex.def Info: zhao.pdf  used on input line 416.
 (pdftex.def)             Requested size: 227.62204pt x 170.89293pt.
  [4 <./MPP3.png> <./MPP4.png> <./zhao.pdf>]
 Missing character: There is no â in font ptmr7t!
@@ -574,7 +574,7 @@ Before submitting the final camera ready copy, remember to:
 [5] (./main.aux) ) 
 Here is how much of TeX's memory you used:
  5681 strings out of 492982
- 86321 string characters out of 6134897
+ 86336 string characters out of 6134897
  160289 words of memory out of 5000000
  9160 multiletter control sequences out of 15000+600000
  43840 words of font info for 98 fonts, out of 8000000 for 9000
@@ -595,7 +595,7 @@ sy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam
 are/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (5 pages, 321457 bytes).
+Output written on main.pdf (5 pages, 312896 bytes).
 PDF statistics:
  130 PDF objects out of 1000 (max. 8388607)
  86 compressed objects within 1 object stream

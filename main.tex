@@ -21,23 +21,22 @@
 
 \author{\IEEEauthorblockN{Dafang Zhao, Michiko Inoue, Ooshita Fukuhito}
   \IEEEauthorblockA{\textit{Graduate School of Science and Technology, Nara Institute of Science and Technology (NAIST) \\8916-5 Takoyama-cho, Ikoma, Nara, 630-0192 Japan}}}
-%% \IEEEauthorblock\{dafang-z.yu7, kounoe, f-ooshita\}@is.naist.jp}}
-%% \{dafang-z.yu7, kounoe, f-ooshita\}@is.naist.jp
+%%% \IEEEauthorblock\{dafang-z.yu7, kounoe, f-ooshita\}@is.naist.jp}}
+%%% \{dafang-z.yu7, kounoe, f-ooshita\}@is.naist.jp
 
-%% \author{\IEEEauthorblockN{1\textsuperscript{st} Dafang Zhao}
-%% \IEEEauthorblockA{\textit{Graduate School of Science and Technology} \\
-%% \textit{Nara Institute of Science and Technology}}
-%% \and
-%% \IEEEauthorblockN{2\textsuperscript{nd} Michiko Inoue}
-%% \IEEEauthorblockA{\textit{Graduate School of Science and Technology} \\
-%% \textit{Nara Institute of Science and Technology}}
-%% \and
-%% \IEEEauthorblockN{3\textsuperscript{rd} Ooshita Fukuhito}
-%% \IEEEauthorblockA{\textit{Graduate School of Science and Technolog} \\
-%% \textit{Nara Institute of Science and Technology}}}
+ \author{\IEEEauthorblockN{Dafang Zhao}
+ \IEEEauthorblockA{\textit{Graduate School of Information Science} \\
+ \textit{Nara Institute of Science and Technology}}
+ \\
+ \IEEEauthorblockN{ Michiko Inoue}
+ \IEEEauthorblockA{\textit{Graduate School of Science and Technology} \\
+ \textit{Nara Institute of Science and Technology}}
+ \and
+ \IEEEauthorblockN{Fukuhito Ooshita}
+ \IEEEauthorblockA{\textit{Graduate School of Science and Technolog} \\
+ \textit{Nara Institute of Science and Technology}}}
 
 \maketitle
-
 \begin{abstract}
   Power generation efficiency of photovoltaic(PV) system is reduced significantly under partial shading or solar cell damage  conditions. This efficiency losses affected by turning on bypass diode of PV panels, which called mismatch losses. Reconfiguration technology to reconfigure electrical series or parallel connection among PV panels can maximize power generation. Recently, an efficient reconfiguration method of PV panel connection to optimize power generation is proposed. The method first list candidate configurations and applies precise power simulations to the candidates. However, some of candidates might not be realized by given PV panels and the paper does not show any systematic way to identify such a feasibility. In this paper, we propose a very fast algorithm to check the feasibility with high accuracy.
 %This paper proposes a reconfiguration strategy that finds an optimal configuration among mismatched PV array in a less computational time. This algorithm is very light and suitable for embedded device. The results show that compare with existed reconfiguration method under non-uniform shadow scenario proposed algorithm computes an optimized configuration with less computational time and very high accuracy.
@@ -122,25 +121,28 @@ When understanding complete I-V characteristics of some parallel and/or series c
 Carotenuto et al. proposed a online recording method of PV module fingerprint \cite{b6}. In their method, a fingerprint including the current and voltage at open- and short-circuit points and multiple MPPs are obtained from several samples from a monitored PV panel. Orozco-Gutierrez et al. proposed a method to estimate multiple MPPs of a PV array from fingerprints of PV panels in the PV array \cite{b7}.
 
 Orozco-Gutierrez et al. further proposed a Fast reconfiguration algorithm to optimize power generation by reconfiguring the connection of PV panels \cite{b10}, where the online monitoring \cite{b6} and the power estimation \cite{b7} are utilized. In the method in \cite{b10}, first, close values of fingerprints from monitoring of PV panels are grouped with some representative values, and then possible combinations of reconfiguration are enumerated. Their power values are estimated by \cite{b7} along with careful estimation of possible errors. The method presented a simple feasibility check and obtains estimated power values for all the possible connections for representative values with some error rate \textit{err}, and then select configurations within \textit{err} difference from the largest estimated value as candidates of the optical configurations. 
-\begin{table}[htbp]
-\caption{DATASET OF PARTIAL-SHADING PV ARRAY}
-\begin{center}
-\begin{tabular}{cccc}
-%\multicolumn{4}{c}{DATASET OF PARTIAL-SHADING PV ARRAY} \\ \hline \hline
-Panels & Vmpp(V)                & Impp (A)            & MPP(W)                 \\ \hline
-P1     & {[}0, 2.9, 11.4{]}     & {[}0, 0.5, 2{]}     & {[}None, 1.5, 22.8{]}     \\
-P2     & {[}2.9, 17.1, 17.1{]}  & {[}0.5, 3, 3{]}     & {[}1.5, 51.3, 51.3{]}  \\
-P3     & {[}2.9, 2.9, 2.9{]}    & {[}0.5, 0.5, 0.5{]} & {[}1.5, 1.5, 1.5{]}    \\
-P4     & {[}0, 11.4, 11.4{]}    & {[}0, 2, 2{]}       & {[}None, 22.8, 22.8{]}    \\
-P5     & {[}0, 2.9, 11.4{]}     & {[}0, 0.5, 2{]}     & {[}None, 1.5, 22.8{]}     \\
-P6     & {[}2.9, 11.4, 11.4{]}  & {[}0.5, 2, 2{]}     & {[}1.5, 22.8, 22.8{]}  \\
-P7     & {[}2.9, 11.4, 17.1{]}  & {[}0.5, 2, 3{]}     & {[}1.5, 22.8, 51.3{]}  \\
-P8     & {[}11.4, 11.4, 11.4{]} & {[}2, 2, 2{]}       & {[}22.8, 22.8, 22.8{]} \\
-P9     & {[}2.9, 11.4, 17.1{]}  & {[}0.5, 2, 3{]}     & {[}1.5, 22.8, 51.3{]} 
-\end{tabular}
-\label{tab1}
-\end{center}
-\end{table}
+
+The method \cite{b10} needs to check feasibility since their method designate a configuration with number of strings, the number of active modules for one string and current value of each string where the active module means a module whose bypass diode is not working and the number of active modules of strings are common for all the strings have the common control voltage. For example, if a connection requires two strings with two active modules with 3A and 5A for these strings respectively, we might not find possible combination of PV panels. In [10], a simple feasibility check based on the number of active modules for each representative current values. However, we found out that the feasibility check proposed in [10] is optimistic and does not always identify infeasible cases. 
+
+%\begin{table}[htbp]
+%\caption{DATASET OF PARTIAL-SHADING PV ARRAY}
+%\begin{center}
+%\begin{tabular}{cccc}
+%%\multicolumn{4}{c}{DATASET OF PARTIAL-SHADING PV ARRAY} \\ \hline \hline
+%Panels & Vmpp(V)                & Impp (A)            & MPP(W)                 \\ \hline
+%P1     & {[}0, 2.9, 11.4{]}     & {[}0, 0.5, 2{]}     & {[}None, 1.5, 22.8{]}     \\
+%P2     & {[}2.9, 17.1, 17.1{]}  & {[}0.5, 3, 3{]}     & {[}1.5, 51.3, 51.3{]}  \\
+%P3     & {[}2.9, 2.9, 2.9{]}    & {[}0.5, 0.5, 0.5{]} & {[}1.5, 1.5, 1.5{]}    \\
+%P4     & {[}0, 11.4, 11.4{]}    & {[}0, 2, 2{]}       & {[}None, 22.8, 22.8{]}    \\
+%P5     & {[}0, 2.9, 11.4{]}     & {[}0, 0.5, 2{]}     & {[}None, 1.5, 22.8{]}     \\
+%P6     & {[}2.9, 11.4, 11.4{]}  & {[}0.5, 2, 2{]}     & {[}1.5, 22.8, 22.8{]}  \\
+%P7     & {[}2.9, 11.4, 17.1{]}  & {[}0.5, 2, 3{]}     & {[}1.5, 22.8, 51.3{]}  \\
+%P8     & {[}11.4, 11.4, 11.4{]} & {[}2, 2, 2{]}       & {[}22.8, 22.8, 22.8{]} \\
+%P9     & {[}2.9, 11.4, 17.1{]}  & {[}0.5, 2, 3{]}     & {[}1.5, 22.8, 51.3{]} 
+%\end{tabular}
+%\label{tab1}
+%\end{center}
+%\end{table}
 
 \section{Reconfiguration Algorithm} \label{algo}
 
@@ -239,7 +241,10 @@ The input of our algorithm is information of a PV array and a configuration. The
 %\end{equation}
 %For the first MPP candidate \{0.5, 0.5, 2\} need 8 modules for each string. According to Table \ref{tab1}, for a string current on 2A at least need 4 panels and didn't meet feasible requirement, thus, algorithm terminate. The second MPP candidate \{0.5, 2, 2\} as same as previous one also not feasible.
 %Recall that a configuration is a combination of a current assignment and the number of working modules in each string, and a current assignment specifies a current for each string. The output of our algorithm is feasibility of the given configuration. That is, the algorithm determines whether there exists assignment of panels to strings that realizes the configuration.
-\subsection{Panel Selection Strategy} \label{selection strategy}Let $s$ be the number of strings, and $i_h$ ($0\le h<s$) be the current assigned to the $h$-th string. Without loss of generality, we assume $i_0\le i_1\le \cdots \le i_{s-1}$ holds. In our algorithm, we first determine the assignment of panels for the $(s-1)$-th string (i.e., the string with the highest current), and then determine assignments for $(s-2)$-th string, $(s-3)$-th string, and so on.We explain the way to determine the assignment of the $(s-1)$-th string. To do this, we consider the number of working modules of each panel for currents less than $i_{s-1}$. Let $m_p(i)$ be the number of working modules of Panel $p$ that work in current $i$. For each panel $p$, we consider the difference vector $D_p=(m_p(i_{s-2})-m_p(i_{s-1}), m_p(i_{s-3})-m_p(i_{s-2}), \ldots, m_p(i_0)-m_p(1))$. The first element $d_1$ of $D_p$ means, if we use panel $p$ in current $i_{s-1}$, we lose $d_1$ working modules in current $i_{s-2}$. Then we sort panels in lexicographic order by vector $D_p$. This means, a panel with minimum module losses should firstly assign to the string with the highest current.
+\subsection{Panel Selection Strategy} \label{selection strategy}
+Let $s$ be the number of strings, and $i_h$ ($0\le h<s$) be the current assigned to the $h$-th string. Without loss of generality, we assume $i_0\le i_1\le \cdots \le i_{s-1}$ holds. In our algorithm, we first determine the assignment of panels for the $(s-1)$-th string (i.e., the string with the highest current), and then determine assignments for $(s-2)$-th string, $(s-3)$-th string, and so on.
+
+We explain the way to determine the assignment of the $(s-1)$-th string. To do this, we consider the number of working modules of each panel for currents less than $i_{s-1}$. Let $m_p(i)$ be the number of working modules of Panel $p$ that work in current $i$. For each panel $p$, we consider the difference vector $D_p=(m_p(i_{s-2})-m_p(i_{s-1}), m_p(i_{s-3})-m_p(i_{s-2}), \ldots, m_p(i_0)-m_p(1))$. The first element $d_1$ of $D_p$ means, if we use panel $p$ in current $i_{s-1}$, we lose $d_1$ working modules in current $i_{s-2}$. Then we sort panels in lexicographic order by vector $D_p$. This means, a panel with minimum module losses should firstly assign to the string with the highest current.
 %... Sorry, I didn't complete this comment.
 %\vspace{1cm}
 %Calculate MPP candidates based on existed reconfiguration method in \cite{b10}. MPP current candidates and MPP voltage candidates are present in (\ref{e1}) and (\ref{e2}), respectively. Additional, number of real working module at MPP current candidates are given in (\ref{e3}). Due to 5\% error of MPP current candidates and 18\% error of MPP voltage candidates, total error rate of MPP candidates is 23\%. Though procedure of algorithm in \cite{b10}, MPP candidates with 23\% are: [\{ 0.5, 0.5, 2\}, \{0.5, 2, 2\}, \{2, 2, 2\}, \{2, 2, 3\}] and require working modules per strings are: [\{8, 8, 8\}, \{7, 7, 7\}, \{5, 5, 5\}, \{4, 4, 4\}].

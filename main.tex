@@ -122,9 +122,9 @@ When understanding complete I-V characteristics of some parallel and/or series c
 \section{Related Works}
 Carotenuto et al. proposed a online recording method of PV module fingerprint \cite{b6}. In their method, a fingerprint including the current and voltage at open- and short-circuit points and multiple MPPs are obtained from several samples from a monitored PV panel. Orozco-Gutierrez et al. proposed a method to estimate multiple MPPs of a PV array from fingerprints of PV panels in the PV array \cite{b7}.
 
-Orozco-Gutierrez et al. further proposed a Fast reconfiguration algorithm to optimize power generation by reconfiguring the connection of PV panels \cite{b10}, where the online monitoring \cite{b6} and the power estimation \cite{b7} are utilized. In the method in \cite{b10}, first, close values of fingerprints from monitoring of PV panels are grouped with some representative values, and then possible combinations of reconfiguration are enumerated. Their power values are estimated by \cite{b7} along with careful estimation of possible errors. The method presented a simple feasibility check and obtains estimated power values for all the possible connections for representative values with some error rate \textit{err}, and then select configurations within \textit{err} difference from the largest estimated value as candidates of the optical configurations. 
+Orozco-Gutierrez et al. further proposed a Fast reconfiguration algorithm to optimize power generation by reconfiguring the connection of PV panels \cite{b10}, where the online monitoring \cite{b6} and the power estimation \cite{b7} are utilized. In the method in \cite{b10}, first, close values of fingerprints from monitoring of PV panels are grouped with some representative values, and then possible combinations of reconfiguration are enumerated. Their power values are estimated by \cite{b7} along with careful estimation of possible errors. The method presented a simplify feasibility check and obtains estimated power values for all the possible connections for representative values with some error rate \textit{err}, and then select configurations within \textit{err} difference from the largest estimated value as candidates of the optical configurations. 
 
-The method \cite{b10} needs to check feasibility since their method designate a configuration with number of strings, the number of active modules for one string and current value of each string where the active module means a module whose bypass diode is not working and the number of active modules of strings are common for all the strings have the common control voltage. For example, if a connection requires two strings with two active modules with 3A and 5A for these strings respectively, we might not find possible combination of PV panels. In \cite{b10}, a simple feasibility check based on the number of active modules for each representative current values. However, we found out that the feasibility check proposed in \cite{b10} is optimistic and does not always identify infeasible cases. 
+The method \cite{b10} needs to check feasibility since their method designate a configuration with number of strings, the number of active modules for one string and current value of each string where the active module means a module whose bypass diode is not working and the number of active modules of strings are common for all the strings have the common control voltage. For example, if a connection requires two strings with two active modules with 3A and 5A for these strings respectively, we might not find possible combination of PV panels. In \cite{b10}, a simplify feasibility check based on the number of active modules for each representative current values. However, we found out that the feasibility check proposed in \cite{b10} is optimistic and does not always identify infeasible cases. 
 
 %\begin{table}[htbp]
 %\caption{DATASET OF PARTIAL-SHADING PV ARRAY}
@@ -194,7 +194,7 @@ The method \cite{b10} needs to check feasibility since their method designate a 
 \end{table}
 
 \section{Feasibility}\label{feasPro}
-As an example, we consider a PV array where nine panels are connected in three strings. We assume that, in this example, this Fast reconfiguration algorithm estimate number of working module on different current candidate for each panel as shown in Table \ref{tab1}. The dot in table in form of a PV module. We set $N_C$ as the meaning of not candidate, set infeasible MPPs as zero. Though the procedure in Fast reconfiguration algorithm and simple feasibility check, MPPs are presented in matrix below. [C1, C2, C3, C4] indicate 4 MPP candidates.
+As an example, we consider a PV array where nine panels are connected in three strings. We assume that, in this example, this Fast reconfiguration algorithm estimate number of working module on different current candidate for each panel as shown in Table \ref{tab1}. The dot in table in form of a PV module. We set $N_C$ as the meaning of not candidate, set infeasible MPPs as zero. Through the procedure in Fast reconfiguration algorithm and simplify feasibility check, MPPs are presented in matrix below. [C1, C2, C3, C4] indicate 4 MPP candidates.
 
 
 To execute a power simulation, we have to assign panels to each string to realize a candidate configuration. However, the way is not given in \cite{b10} and some candidate configurations are infeasible. 
@@ -230,12 +230,12 @@ In this section, we propose an algorithm to identify feasibility.
 \subsection{The Input And Output Of Algorithm}
 
 %First, we summarize the input and output of our algorithm. 
-The input of our algorithm is information of a PV array and a configuration. The information of a PV array is given as a set of panels and the number of working modules in each panel for each current candidate. Table \ref{mpp3-1} shows the information of a PV panel given in Table \ref{tab1}.\\
+The input of our algorithm is information of a PV array and a configuration. The information of a PV array is given as a set of panels and the number of working modules in each panel for each current candidate. Table \ref{mpp3-1} shows the information of a PV panel given in Table \ref{tab1}.
 \begin{table}[htbp]
   \begin{center}
     %% \binom{\begin{pmatrix}
     \begin{tabular}[]{ccccccccccc}
- $\frac{Current \rightarrow }{Number\ of\ modules\downarrow}$&\{0.5,0.5,0.5\}&\{0.5,0.5,2\}&\{0.5,0.5,3\}&\{0.5,2,2\}&\{0.5,2,3\}&\{0.5,3,3\}&\{2,2,2\}&\{2,2,3\}&\{2,3,3\}&\{3,3,3\}\\ \hline \hline
+ $\frac{Current\ \rightarrow }{Number\ of\ modules\ \downarrow}$&\{0.5,0.5,0.5\}&\{0.5,0.5,2\}&\{0.5,0.5,3\}&\{0.5,2,2\}&\{0.5,2,3\}&\{0.5,3,3\}&\{2,2,2\}&\{2,2,3\}&\{2,3,3\}&\{3,3,3\}\\  \\ \hline \hline
 $\geq 1$ &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  \\
 $\geq 2$ &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &0  \\
 $\geq 3$ &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &0  &$N_C$  &$N_C$  &0      &0 \\

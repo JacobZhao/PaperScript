@@ -41,7 +41,7 @@
      id="namedview9202"
      showgrid="false"
      inkscape:zoom="1.0386541"
-     inkscape:cx="529.32042"
+     inkscape:cx="512.47169"
      inkscape:cy="325.32163"
      inkscape:window-x="1920"
      inkscape:window-y="1"
@@ -37373,35 +37373,35 @@
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:30.00004387px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75000113"
        x="326.3844"
-       y="473.33542"
+       y="476.33542"
        id="text9212"><tspan
          sodipodi:role="line"
          id="tspan9210"
          x="326.3844"
-         y="473.33542"
+         y="476.33542"
          style="stroke-width:0.75000113">V</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:30.00004196px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75000113"
-       x="11.533124"
-       y="32.080849"
+       x="-9.4669075"
+       y="33.580853"
        id="text8994"><tspan
          sodipodi:role="line"
          id="tspan8992"
-         x="11.533124"
-         y="32.080849"
-         style="font-size:16.0000248px;stroke-width:0.75000113">IPsc</tspan></text>
+         x="-9.4669075"
+         y="33.580853"
+         style="font-size:28.00004196px;stroke-width:0.75000113">IPsc</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:30.00004196px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75000113"
-       x="542.19232"
-       y="467.50076"
+       x="531.69232"
+       y="473.50076"
        id="text8998"><tspan
          sodipodi:role="line"
          id="tspan8996"
-         x="542.19232"
-         y="467.50076"
-         style="font-size:16.0000248px;stroke-width:0.75000113">VPoc</tspan></text>
+         x="531.69232"
+         y="473.50076"
+         style="font-size:28.00004196px;stroke-width:0.75000113">VPoc</tspan></text>
     <ellipse
        style="opacity:1;fill:url(#linearGradient11511-5);fill-opacity:1;stroke:none;stroke-width:1.90207779;stroke-miterlimit:4;stroke-dasharray:11.41246615, 11.41246615;stroke-dashoffset:0;stroke-opacity:1"
        id="path9004-5"
@@ -37419,11 +37419,7 @@
          id="tspan11595"
          x="81.925331"
          y="42.303383"
-         style="stroke-width:0.75000113"><tspan
-           style="font-size:16.0000248px;stroke-width:0.75000113"
-           id="tspan11599">MPP</tspan><tspan
-           style="font-size:12.00001812px;stroke-width:0.75000113"
-           id="tspan11601">1</tspan></tspan></text>
+         style="stroke-width:0.75000113;font-size:28.00004192px">MPP1</tspan></text>
     <ellipse
        style="opacity:1;fill:url(#linearGradient11511);fill-opacity:1;stroke:none;stroke-width:1.90207779;stroke-miterlimit:4;stroke-dasharray:11.41246647, 11.41246647;stroke-dashoffset:0;stroke-opacity:1"
        id="path9004"
@@ -37441,9 +37437,7 @@
          id="tspan11595-2"
          x="235.01088"
          y="130.3904"
-         style="font-size:16.0000248px;stroke-width:0.75000113">MPP<tspan
-   style="font-size:12.00001812px;stroke-width:0.75000113"
-   id="tspan11639">2</tspan></tspan></text>
+         style="font-size:28.00004192px;stroke-width:0.75000113">MPP2</tspan></text>
     <ellipse
        style="opacity:1;fill:url(#linearGradient11511-3);fill-opacity:1;stroke:none;stroke-width:1.90207779;stroke-miterlimit:4;stroke-dasharray:11.41246615, 11.41246615;stroke-dashoffset:0;stroke-opacity:1"
        id="path9004-7"
@@ -37461,8 +37455,6 @@
          id="tspan11595-7"
          x="448.88159"
          y="280.96381"
-         style="font-size:16.0000248px;stroke-width:0.75000113">MPP<tspan
-   style="font-size:12.00001812px;stroke-width:0.75000113"
-   id="tspan11642">3</tspan></tspan></text>
+         style="font-size:28.00004192px;stroke-width:0.75000113">MPP3</tspan></text>
   </g>
 </svg>

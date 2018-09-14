@@ -41,7 +41,7 @@
      id="namedview8980"
      showgrid="false"
      inkscape:zoom="1.0386541"
-     inkscape:cx="317.97216"
+     inkscape:cx="301.12343"
      inkscape:cy="297.57251"
      inkscape:window-x="1920"
      inkscape:window-y="1"
@@ -36419,35 +36419,35 @@
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:30.00004387px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75000113"
      x="326.3844"
-     y="471.16919"
+     y="475.66919"
      id="text8990"><tspan
        sodipodi:role="line"
        id="tspan8988"
        x="326.3844"
-       y="471.16919"
+       y="475.66919"
        style="stroke-width:0.75000113">V</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:30.00004387px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75000113"
-     x="12.997609"
-     y="37.193432"
+     x="-1.4441791"
+     y="38.581787"
      id="text8994"><tspan
        sodipodi:role="line"
        id="tspan8992"
-       x="12.997609"
-       y="37.193432"
-       style="font-size:16.0000248px;stroke-width:0.75000113">IPsc</tspan></text>
+       x="-1.4441791"
+       y="38.581787"
+       style="font-size:28.00004196px;stroke-width:0.75000113">IPsc</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:30.00004387px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75000113"
-     x="541.56702"
-     y="465.39246"
+     x="526.56702"
+     y="474.39246"
      id="text8998"><tspan
        sodipodi:role="line"
        id="tspan8996"
-       x="541.56702"
-       y="465.39246"
-       style="font-size:16.0000248px;stroke-width:0.75000113">VPoc</tspan></text>
+       x="526.56702"
+       y="474.39246"
+       style="font-size:28.00004196px;stroke-width:0.75000113">VPoc</tspan></text>
   <ellipse
      style="opacity:0;fill:#1a1a1a;stroke-width:2.8500042;stroke-miterlimit:4;stroke-dasharray:17.10002554, 17.10002554;stroke-dashoffset:0"
      id="path9000"
@@ -36493,11 +36493,7 @@
        id="tspan11595"
        x="81.5961"
        y="40.803879"
-       style="stroke-width:0.75000113"><tspan
-         style="font-size:16.00002396px"
-         id="tspan11599">MPP</tspan><tspan
-         style="font-size:12.00001797px"
-         id="tspan11601">1</tspan></tspan></text>
+       style="stroke-width:0.75000113;font-size:28.00004192px">MPP1</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:30.00004196px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75000113"
@@ -36508,9 +36504,7 @@
        id="tspan11595-2"
        x="274.17926"
        y="237.26753"
-       style="font-size:16.0000248px;stroke-width:0.75000113">MPP<tspan
-   style="font-size:12.00001797px"
-   id="tspan11639">2</tspan></tspan></text>
+       style="font-size:28.00004192px;stroke-width:0.75000113">MPP2</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:30.00004196px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75000113"
@@ -36521,7 +36515,5 @@
        id="tspan11595-7"
        x="473.47595"
        y="335.47168"
-       style="font-size:16.0000248px;stroke-width:0.75000113">MPP<tspan
-   style="font-size:12.00001797px"
-   id="tspan11642">3</tspan></tspan></text>
+       style="font-size:28.00004192px;stroke-width:0.75000113">MPP3</tspan></text>
 </svg>

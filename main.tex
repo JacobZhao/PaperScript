@@ -15,6 +15,7 @@
 \usepackage{subfig}
 \usepackage{fancyhdr}
 \usepackage{lipsum}
+\usepackage{stfloats}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
@@ -40,7 +41,7 @@
 
 \maketitle
 \begin{abstract}
-  Power generation efficiency of photovoltaic(PV) system is reduced significantly under partial shading or solar cell damage  conditions. This efficiency losses affected by turning on bypass diode of PV panels, which called mismatch losses. Reconfiguration technology to reconfigure electrical series or parallel connection among PV panels can maximize power generation. Recently, an efficient reconfiguration method of PV panel connection to optimize power generation is proposed. The method first list candidate configurations and applies precise power simulations to the candidates. However, some of candidates might not be realized by given PV panels and the paper does not show any systematic way to identify such a feasibility. In this paper, we propose a very fast algorithm to check the feasibility with high accuracy.
+  Power generation efficiency of photovoltaic(PV) system is reduced significantly under partial shading or solar cell damage  conditions. These efficiency losses affected by turning on bypass diode of PV panels, which called mismatch losses. Reconfiguration technology to reconfigure electrical series or parallel connection among PV panels can maximize power generation. Recently, an efficient reconfiguration method of PV panel connection to optimize power generation is proposed. The method first list candidate configurations and applies precise power simulations to the candidates. However, some of candidates might not be realized by given PV panels and the paper does not show any systematic way to identify such a feasibility. In this paper, we propose a very fast algorithm to check the feasibility with high accuracy.
 %This paper proposes a reconfiguration strategy that finds an optimal configuration among mismatched PV array in a less computational time. This algorithm is very light and suitable for embedded device. The results show that compare with existed reconfiguration method under non-uniform shadow scenario proposed algorithm computes an optimized configuration with less computational time and very high accuracy.
 \end{abstract}
 
@@ -194,11 +195,8 @@ The method \cite{b10} needs to check feasibility since their method designate a 
 \end{table}
 
 \section{Feasibility}\label{feasPro}
-As an example, we consider a PV array where nine panels are connected in three strings. We assume that, in this example, this Fast reconfiguration algorithm estimate number of working module on different current candidate for each panel as shown in Table \ref{tab1}. The dot in table in form of a PV module. We set $N_C$ as the meaning of not candidate, set infeasible MPPs as zero. Through the procedure in Fast reconfiguration algorithm and simplify feasibility check, MPPs are presented in matrix below. [C1, C2, C3, C4] indicate 4 MPP candidates.
-
-
 To execute a power simulation, we need assign panels into different strings to realize a configuration. However, the way to assign panels is not given in \cite{b10} and some configuration candidates are infeasible. 
-The definition of feasibility in (\ref{feas}). When a configuration needs working modules in a string (\textit{$M_S$}) are less than number of working module per-string (\textit{$Q_{M_{n}}$}), then this configuration is infeasible. 
+The definition of feasibility in (\ref{feas}). When a configuration needs working modules in \textit{h}-th string (\textit{$M_{Sh}$}) are less than number of working modules per-string (\textit{$Q_{M_{n}}$}), then this configuration is infeasible. 
 \begin{equation}
 \left\{\begin{matrix}
 M_S < Q_{M_{n}} & & \text{Infeasible}\\ 
@@ -206,8 +204,29 @@ M_S \geqslant Q_{M_{n}} & & \text{Feasible}
 \label{feas}
 \end{matrix}\right. 
 \end{equation}
-For an configuration example [C2] \{0.5A, 0.5A, 2A\}, there are 8 PV modules working on each string. According to Table I, for a string current on 2A at least need 4 panels, remaining panels can not provide enough PV module working on 0.5A for another two strings. 
+
+As an example, we consider a PV array where nine panels are connected in three strings. We assume that, in this example, this Fast reconfiguration algorithm estimate number of working module on different current candidate for each panel as shown in Table \ref{tab1}. The dot in the table in form of a PV module. We set $N_C$ as the meaning of not configuration candidate and infeasible MPPs are set as zero. Through the procedure in Fast reconfiguration algorithm and simplify feasibility check, MPPs are presented in Table \ref{mppcandidates}. [C1, C2, C3, C4] indicate 4 MPP candidates.
+
+For an configuration example [C1] \{0.5A, 0.5A, 2A\}, there are 8 PV modules working on each string. According to Table I, for a string current on 2A at least need 4 panels, remaining panels can not provide enough PV module working on 0.5A for another two strings. So this configuration is infeasible.
 Of course we can compute it by using an exhaustive search. However, it is time-consuming. So, we need an algorithm to efficiently identify feasibility of a configuration and realize the configuration if it is feasible.
+
+\begin{table*}[bp]
+\caption{Maximum Power Point Candidates}
+  \begin{center}
+    %% \binom{\begin{pmatrix}
+    \begin{tabular}[]{ccccccccccc}
+ $\frac{Current\ \rightarrow }{Number\ of\ modules\ \downarrow}$&\{0.5,0.5,0.5\}&\{0.5,0.5,2\}&\{0.5,0.5,3\}&\{0.5,2,2\}&\{0.5,2,3\}&\{0.5,3,3\}&\{2,2,2\}&\{2,2,3\}&\{2,3,3\}&\{3,3,3\}\\  \\ \hline \hline
+$\geq 1$ &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  \\
+$\geq 2$ &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &0  \\
+$\geq 3$ &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &0  &$N_C$  &$N_C$  &0      &0 \\
+$\geq 4$ &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &0  &$N_C$  & C4    &0      &0 \\
+$\geq 5$ &$N_C$  &$N_C$  &0      &$N_C$  &0     &0      &C3     &0      &0      &0  \\
+$\geq 6$ &$N_C$  &$N_C$  &0      &$N_C$  &0     &0      &0      &0      &0      &0 \\
+$\geq 7$ &$N_C$  &$N_C$  &0      &C2     &0     &0      &0      &0      &0      &0 \\
+$\geq 8$ &$N_C$  &C1     &0      &0      &0     &0      &0      &0      &0      &0
+    \end{tabular}\label{mppcandidates}
+    \end{center}
+\end{table*}
 
 %Due to a PV panel can not be used into different string, those MPP candidates may have some un-feasible configurations. Our proposed algorithm based on the method in \cite{b10} to calculate MPP candidates and using unique panel selection technology to give optimal reconfiguration solution among partial-shading PV array. 
 
@@ -230,23 +249,8 @@ In this section, we propose an algorithm to identify feasibility of configuratio
 \subsection{The Input And Output Of Algorithm}
 
 %First, we summarize the input and output of our algorithm. 
-The input of our algorithm is information of a PV array and a configuration. The information of a PV array is given as a set of panels and the number of working modules in each panel for each current candidate. Table \ref{mpp3-1} shows the information of a PV panel given in Table \ref{tab1}.
-\begin{table}[htbp]
-  \begin{center}
-    %% \binom{\begin{pmatrix}
-    \begin{tabular}[]{ccccccccccc}
- $\frac{Current\ \rightarrow }{Number\ of\ modules\ \downarrow}$&\{0.5,0.5,0.5\}&\{0.5,0.5,2\}&\{0.5,0.5,3\}&\{0.5,2,2\}&\{0.5,2,3\}&\{0.5,3,3\}&\{2,2,2\}&\{2,2,3\}&\{2,3,3\}&\{3,3,3\}\\  \\ \hline \hline
-$\geq 1$ &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  \\
-$\geq 2$ &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &0  \\
-$\geq 3$ &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &0  &$N_C$  &$N_C$  &0      &0 \\
-$\geq 4$ &$N_C$  &$N_C$  &$N_C$  &$N_C$  &$N_C$  &0  &$N_C$  & C4    &0      &0 \\
-$\geq 5$ &$N_C$  &$N_C$  &0      &$N_C$  &0     &0      &C3     &0      &0      &0  \\
-$\geq 6$ &$N_C$  &$N_C$  &0      &$N_C$  &0     &0      &0      &0      &0      &0 \\
-$\geq 7$ &$N_C$  &$N_C$  &0      &C2     &0     &0      &0      &0      &0      &0 \\
-$\geq 8$ &$N_C$  &C1     &0      &0      &0     &0      &0      &0      &0      &0
-    \end{tabular}\label{mppcandidates}
-    \end{center}
-\end{table}
+The input of our algorithm is information of a PV array and a configuration. The information of a PV array is given as a set of panels and the number of working modules in each panel for each current candidate. Table \ref{mpp3-1} shows the information of a PV panel be given dataset in Table \ref{tab1}.
+
 
 For example, this table shows panel P2 includes three, two, and two modules that work in current 0.5A, 2A and 3A, respectively. Recall that a configuration is a combination of a current assignment and the number of working modules in each string, and a current assignment specifies a current for each string. The output of our algorithm is feasibility of the given configuration. That is, the algorithm determines whether there exists assignment of panels to strings that realizes the configuration.
 \begin{table}[htbp] 
@@ -295,10 +299,7 @@ To assign panels in the right string, following steps are required:
 % and compare selected modules with the requirement of \textit{$Q_{M_n}$}.
 \item If there remain any unselect panel, assign unselect panel to a string with minimum length. 
 \end{enumerate}
-\vspace{5.7cm}
 
-
-\newpage
 We explain step (\ref{step1}) that determine the assignment of the $h$-th string. To do this, we consider the number of working modules of each panel for currents less than $i_{s-1}$. Let $m_p(i)$ be the number of working modules of Panel $p$ that work in current $i$. For each panel $p$, we consider the difference vector $D_p=(m_p(i_{s-2})-m_p(i_{s-1}), m_p(i_{s-3})-m_p(i_{s-2}), \ldots, m_p(i_0)-m_p(1))$. The first element $d_1$ of $D_p$ means, if we use panel $p$ in current $i_{s-1}$, we lose $d_1$ working modules in current $i_{s-2}$. Then we sort panels in lexicographic order by vector $D_p$. This means, a panel with minimum module losses should firstly assign to the string with the highest current.
 %... Sorry, I didn't complete this comment.
 %\vspace{1cm}

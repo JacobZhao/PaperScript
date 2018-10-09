@@ -197,7 +197,7 @@ The method \cite{b10} needs to check feasibility since their method designate a 
 As an example, we consider a PV array where nine panels are connected in three strings. We assume that, in this example, this Fast reconfiguration algorithm estimate number of working module on different current candidate for each panel as shown in Table \ref{tab1}. The dot in table in form of a PV module. We set $N_C$ as the meaning of not candidate, set infeasible MPPs as zero. Through the procedure in Fast reconfiguration algorithm and simplify feasibility check, MPPs are presented in matrix below. [C1, C2, C3, C4] indicate 4 MPP candidates.
 
 
-To execute a power simulation, we have to assign panels to each string to realize a candidate configuration. However, the way is not given in \cite{b10} and some candidate configurations are infeasible. 
+To execute a power simulation, we need assign panels into different strings to realize a configuration. However, the way to assign panels is not given in \cite{b10} and some configuration candidates are infeasible. 
 The definition of feasibility in (\ref{feas}). When a configuration needs working modules in a string (\textit{$M_S$}) are less than number of working module per-string (\textit{$Q_{M_{n}}$}), then this configuration is infeasible. 
 \begin{equation}
 \left\{\begin{matrix}
@@ -226,7 +226,7 @@ Of course we can compute it by using an exhaustive search. However, it is time-c
 %\label{qmn}
 %\end{equation}
 \section{An Algorithm to Identify Feasibility}
-In this section, we propose an algorithm to identify feasibility.
+In this section, we propose an algorithm to identify feasibility of configuration candidates.
 \subsection{The Input And Output Of Algorithm}
 
 %First, we summarize the input and output of our algorithm. 

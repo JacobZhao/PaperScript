@@ -10,7 +10,6 @@
 \usepackage{textcomp}
 \usepackage{xcolor}
 \usepackage{graphicx}
-%\usepackage{subfigure}
 \usepackage{caption}
 \usepackage{subfig}
 \usepackage{fancyhdr}
@@ -24,9 +23,6 @@
 
 \author{\IEEEauthorblockN{Dafang Zhao, Michiko Inoue, Ooshita Fukuhito}
   \IEEEauthorblockA{\textit{Graduate School of Science and Technology, Nara Institute of Science and Technology (NAIST) \\8916-5 Takoyama-cho, Ikoma, Nara, 630-0192 Japan}}}
-%%% \IEEEauthorblock\{dafang-z.yu7, kounoe, f-ooshita\}@is.naist.jp}}
-%%% \{dafang-z.yu7, kounoe, f-ooshita\}@is.naist.jp
-
  \author{\IEEEauthorblockN{Dafantg Zhao}
  \IEEEauthorblockA{\textit{Graduate School of Information Science} \\
  \textit{Nara Institute of Science and Technology}}
@@ -300,8 +296,7 @@ To assign panels in the right string, following steps are required:
 \item If there remain any unselect panel, assign unselect panel to a string with minimum length. 
 \end{enumerate}
 
-We explain step (\ref{step1}) that determine the assignment of the $h$-th string. To do this, we consider the number of working modules of each panel for currents less than $i_{s-1}$. Let $m_p(i)$ be the number of working modules of Panel $p$ that work in current $i$. For each panel $p$, we consider the difference vector $D_p=(m_p(i_{s-2})-m_p(i_{s-1}), m_p(i_{s-3})-m_p(i_{s-2}), \ldots, m_p(i_0)-m_p(1))$. The first element $d_1$ of $D_p$ means, if we use panel $p$ in current $i_{s-1}$, we lose $d_1$ working modules in current $i_{s-2}$. Then we sort panels in lexicographic order by vector $D_p$. This means, a panel with minimum module losses should firstly assign to the string with the highest current.
-%... Sorry, I didn't complete this comment.
+We explain step (\ref{step1}) that determine the assignment of the $h$-th string. To do this, we consider the number of working modules of each panel for currents less than $i_{s-1}$. Let $m_p(i)$ be the number of working modules of Panel $p$ that work in current $i$. For each panel $p$, we consider the difference vector $D_p=(m_p(i_{s-2})-m_p(i_{s-1}), m_p(i_{s-3})-m_p(i_{s-2}), \ldots, m_p(i_0)-m_p(1))$. The first element $d_1$ of $D_p$ means, if we use panel $p$ in current $i_{s-1}$, we lose $d_1$ working modules in current $i_{s-2}$. Then we sort panels in lexicographic order by vector $D_p$. This means, a panel with minimum module losses should firstly assign to the string with the highest current. So in generally, each panel will be assigned to right please.
 %\vspace{1cm}
 %Calculate MPP candidates based on existed reconfiguration method in \cite{b10}. MPP current candidates and MPP voltage candidates are present in (\ref{e1}) and (\ref{e2}), respectively. Additional, number of real working module at MPP current candidates are given in (\ref{e3}). Due to 5\% error of MPP current candidates and 18\% error of MPP voltage candidates, total error rate of MPP candidates is 23\%. Though procedure of algorithm in \cite{b10}, MPP candidates with 23\% are: [\{ 0.5, 0.5, 2\}, \{0.5, 2, 2\}, \{2, 2, 2\}, \{2, 2, 3\}] and require working modules per strings are: [\{8, 8, 8\}, \{7, 7, 7\}, \{5, 5, 5\}, \{4, 4, 4\}].
 %\begin{equation}

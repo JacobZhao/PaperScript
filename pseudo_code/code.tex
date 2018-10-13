@@ -15,45 +15,38 @@
 \LinesNumbered %要求显示行号
 \SetKwInOut{Input}{Input}  
 \Input{\textit{$M_{(p,i)}$}:# of modules in panel \textit{p} at current \textit{i};\\
-\textit{P}: # of panels; \textit{S}: # of strings;\\
-\textit{$Q_M$}: minimum # of modules per-string;}
+  \textit{P}: # of panels; \textit{S}: # of strings;\\
+  \textit{$Q_M$}: minimum # of modules per-string;}
 \SetKwInOut{Output}{Output}
 \Output{Feasibility Result;\\
   Conf: Configuration Result;}
 \For{\textbf{\textup{each}} k \textup{(}$1 \leq k \leq S-1 $\textup{)}, \textup{Panel} p}{
-Loss[\textit{p,k}] = $M_{(p,S-k)}$ -- $M_{(p,S-(k+1))}$
-} \\
-(${p_0}^*$,${p_1}^*$,...,${p_{P-1}}^*$) sorted by lexicographical permutation in terms of \textit{Loss}\;
-% Table = lexicographical permutation ($D_p$, $m_p$)\;
-% \tcp{Table have NP columns and (s+$D_p$) rows}
+  Loss[\textit{p,k}] = $M_{(p,S-k)}$ -- $M_{(p,S-(k+1))}$}\\
+(${p^*_0}$, ${p^*_1}$ ,..., ${p^*_{P-1}}$) sorted by lexicographical permutation in terms of \textbf{\textit{Loss}}\;
 \For{\textbf{\textup{each}} j \textup{(}$S \geq j \geq 2$\textup{)}}{
   \For{\textbf{\textup{each}} $p^*$}{
     \eIf{$\sum$ $M_{(p^*,j)}$ \geq $Q_M$}{
-      \While{$M_{({p_n}^*,j)}$ == 0, \textup{(}$0 \leq n \leq P-1 $\textup{)}}{
-        release Panel ${p_n}^*$ in $p^*$}
+      \While{$M_{({p^*_n},j)}$ == 0, \textup{(}$0 \leq n \leq P-1 $\textup{)}}{
+        release Panel ${p^*_n}$ in $p^*$}
       \eIf{$\sum$  $M_{(p^*, j)}  == $Q_M$}{
         Conf =  $M_{(p^*, j)}$}{
         \textup{\textbf{Do}} Panel Swap}
 }
     {Feasibility = No}}
-}
+}p^*_x
 \eIf{$\sum$ $M_{(p^*,1)}$ $\geq$ $Q_M$}{
     Feasibility = Yes\;
     Conf = select + $M_{(p^*,1)}$}{
     Feasibility = No}
 \end{algorithm}
-% \eIf{}{}{}
-
-
-
-
 
 \begin{algorithm}
 \caption{Panel Swap}
-\LinesNumbered     %% select = $M_{(p^*, j)}$\;       
+\LinesNumbered
 \KwIn{$M_{(p^*,j)}$, $Q_M$}
-\KwOut{Conf.}
+\KwOut{Conf}
 Over = $\sum$  $M_{(p^*, j)}$ - $Q_M$ \;
+<<<<<<< Updated upstream
 \eIf{  $M_{({p_x}^*, j)}$ == Over, \textup{\textbf{for each}} x in $p^*$}{
   release Panel ${p_x}^*$ in $p^*$\;
   Conf = $M_{(p^*, j)}$ \;
@@ -82,7 +75,21 @@ Over = $\sum$  $M_{(p^*, j)}$ - $Q_M$ \;
      y]\;
 %     select$^*$ = select - select[y]+Table$[j+1]$\;
 %     Table = Table - select$^*$}
+=======
+\eIf{$M_{({p^*_y}, j)}$ == Over, \textup{\textbf{for each}} \textup{Panel} y in $p^*$}{
+  release Panel ${p^*_y}$ in $p^*$\;
+  Conf = $M_{(p^*, j)}$ \;}
+    {
+  \For{\textup{\textbf{each} panel} y, y in $p^*$}
+      {\If{$\sum$ $M_{({p^*_y}, j)}$ == 3 \textbf{\textup{and}} $M_{({p^*_y}, j)}$ == 1}
+        {Swap Panel ${p_x}^*$ and Panel $p^*_y$, \\$M_{({p_x}^*, j)}$ == 3, x $>$ y}
+        \If{$\sum$ $M_{({p^*_y},j)}$ == 3 \textup{\textbf{and}} $M_{({p^*_{y1}}, j)}$ == 1, $M_{({p^*_{y2}}, j)}$ == 2 }
+           {Swap Panel ${p^*_x}$ and [ Panel $p^*_{y1}$, $p^*_{y2}$ ], \\$M_{({p_x}^*, j)}$ == 3, x$>$y1$>$y2}
+           \If{$\sum$ $M_{({p^*_y},j)}$ == 2 \textip{\textbf{and}} $M_{({p^*_y}, j)}$ == 1}
+              {Swap Panel ${p_x}^*$ and Panel $p^*_y$,\\$M_{({p_x}^*, j)}$ == 2, x $>$ y}
+      }
+    Conf = $M_{(p^*, j)}$}
+>>>>>>> Stashed changes
 \end{algorithm}
 
 \end{document}
-

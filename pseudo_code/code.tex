@@ -33,7 +33,7 @@
         \textup{\textbf{Do}} Panel Swap}
 }
     {Feasibility = No}}
-}p^*_x
+}
 \eIf{$\sum$ $M_{(p^*,1)}$ $\geq$ $Q_M$}{
     Feasibility = Yes\;
     Conf = select + $M_{(p^*,1)}$}{
@@ -46,36 +46,6 @@
 \KwIn{$M_{(p^*,j)}$, $Q_M$}
 \KwOut{Conf}
 Over = $\sum$  $M_{(p^*, j)}$ - $Q_M$ \;
-<<<<<<< Updated upstream
-\eIf{  $M_{({p_x}^*, j)}$ == Over, \textup{\textbf{for each}} x in $p^*$}{
-  release Panel ${p_x}^*$ in $p^*$\;
-  Conf = $M_{(p^*, j)}$ \;
-}{
-  \For{\textup{\textbf{each}} y in $p&*$}
-      {\If{$\sum$ $M_{({p_y}^*, j)}$ == 3 \textbf{\textup{and each}} $M_{(y, j)}$ == 1}
-        {}}}
-\For{y, $(1\leq y \leq length(select))$}{
-\If{$\sum$ select [y] == 3 \textbf{and} select [y]==1}{
-    \For{k=j+1, k $\leq$ NP, k++}{
-    \If{Table[i,k] == 3}{
-    select = select + Table[i,k]}}}
-\If{$\sum$ select [y] == 3  \textbf{and} select [y]==1 \textbf{and} select [y+1]=2}{
-    \For{k=j+1, k $\leq$ NP, k++}{
-    \If{Table[i,k] == 3}{
-    select = select + Table[i,k]}}}    
-\If{$\sum$ select [y] == 2 \textbf{and} select [y]==1}{
-\For{k=j+1, k $\leq$ NP, k++}{
-    \If{Table[i,k] == 2}{
-    select = select + Table[i,k]}}}
-    select$^*$ = select-select[y]\;
-    }
-     Table = Table - select$^*$\;
-% \If{$\sum$select $[y,y+1,...]$ == Table$[j+1]$}{
-     %     release select[
-     y]\;
-%     select$^*$ = select - select[y]+Table$[j+1]$\;
-%     Table = Table - select$^*$}
-=======
 \eIf{$M_{({p^*_y}, j)}$ == Over, \textup{\textbf{for each}} \textup{Panel} y in $p^*$}{
   release Panel ${p^*_y}$ in $p^*$\;
   Conf = $M_{(p^*, j)}$ \;}
@@ -89,7 +59,6 @@ Over = $\sum$  $M_{(p^*, j)}$ - $Q_M$ \;
               {Swap Panel ${p_x}^*$ and Panel $p^*_y$,\\$M_{({p_x}^*, j)}$ == 2, x $>$ y}
       }
     Conf = $M_{(p^*, j)}$}
->>>>>>> Stashed changes
 \end{algorithm}
 
 \end{document}

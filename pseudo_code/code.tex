@@ -14,30 +14,54 @@
 \caption{Feasibility Check}%算法名字
 \LinesNumbered %要求显示行号
 \SetKwInOut{Input}{Input}  
-\Input{\textit{$M_{(p,i)}$}:# of modules in panel \textit{p} at current \textit{i};\\
-  \textit{P}: # of panels; \textit{S}: # of strings;\\
-  \textit{$Q_M$}: minimum # of modules per-string;}
+\Input{\textit{$M_{(i,p)}$}: The number of modules in panel \textit{p} at current \textit{i};\\
+  \textit{P}: Number of panels; \textit{S}: Number of strings;\\
+  \textit{$Q_M$}: The minimum number of modules for each string;}
 \SetKwInOut{Output}{Output}
 \Output{Feasibility Result;\\
-  Conf: Configuration Result;}
-\For{\textbf{\textup{each}} k \textup{(}$1 \leq k \leq S-1 $\textup{)}, \textup{Panel} p}{
-  Loss[\textit{p,k}] = $M_{(p,S-k)}$ -- $M_{(p,S-(k+1))}$}\\
-(${p^*_0}$, ${p^*_1}$ ,..., ${p^*_{P-1}}$) sorted by lexicographical permutation in terms of \textbf{\textit{Loss}}\;
-\For{\textbf{\textup{each}} j \textup{(}$S \geq j \geq 2$\textup{)}}{
-  \For{\textbf{\textup{each}} $p^*$}{
-    \eIf{$\sum$ $M_{(p^*,j)}$ \geq $Q_M$}{
-      \While{$M_{({p^*_n},j)}$ == 0, \textup{(}$0 \leq n \leq P-1 $\textup{)}}{
-        release Panel ${p^*_n}$ in $p^*$}
-      \eIf{$\sum$  $M_{(p^*, j)}  == $Q_M$}{
-        Conf =  $M_{(p^*, j)}$}{
-        \textup{\textbf{Do}} Panel Swap}
-}
-    {Feasibility = No}}
-}
-\eIf{$\sum$ $M_{(p^*,1)}$ $\geq$ $Q_M$}{
-    Feasibility = Yes\;
-    Conf = select + $M_{(p^*,1)}$}{
-    Feasibility = No}
+        Conf: Configuration Result;}
+\For{k = 1 to S-1,\textup{panel} p}{
+  Loss[\textit{p,k}] = $M_{(i_{S-k},p)}$ -- $M_{(i_{S-k+1},p)}$}\\
+% (${p^*_0}$, ${p^*_1}$ ,..., ${p^*_{P-1}}$) sorted by lexicographical permutation in terms of \textbf{\textit{Loss}}\;
+$P^*$ =P;\\
+\For{j = S to 1}
+    {Sort lexicographical order;\\
+    n = 1;\\ 
+    \While{ \textup{SUM = }$\sum_{k = 1}^{n} M_{(j,\alpha_k)}$$<$ $Q_M$}
+        {n \textup{++};\\ 
+            \If{n == $P^*$}
+            {\textup{\textbf{return}}: Feasibility = NO}
+        }
+    TempConf = \{ $p_{\alpha_1}$, $p_{\alpha_2}$, $p_{\alpha_3}$,..., $p_{\alpha_n}$ \};\\
+    \For{m = 1 to n}
+        {\If{$M_{(j,\alpha_m)}$ == 0}
+        {TempConf = TempConf - \{$p_{\alpha_m}$\}}
+        }
+    \eIf{\textup{SUM} == $Q_M$ \textup{or} j == 1}
+        {Conf[j] = TempConf}
+        {\textup{\textbf{Do}} Panel Swap}
+    }
+\textup{\textbf{return}}: Feasibility = YES
+
+
+
+
+
+% \For{\textbf{\textup{each}} j \textup{(}$S \geq j \geq 2$\textup{)}}{
+%   \For{\textbf{\textup{each}} $p^*$}{
+%     \eIf{$\sum$ $M_{(p^*,j)}$ \geq $Q_M$}{
+%       \While{$M_{({p^*_n},j)}$ == 0, \textup{(}$0 \leq n \leq P-1 $\textup{)}}{
+%         release Panel ${p^*_n}$ in $p^*$}
+%       \eIf{$\sum$  $M_{(p^*, j)}  == $Q_M$}{
+%         Conf =  $M_{(p^*, j)}$}{
+%         \textup{\textbf{Do}} Panel Swap}
+% }
+%     {Feasibility = No}}
+% }
+% \eIf{$\sum$ $M_{(p^*,1)}$ $\geq$ $Q_M$}{
+%     Feasibility = Yes\;
+%     Conf = select + $M_{(p^*,1)}$}{
+%     Feasibility = No}
 \end{algorithm}
 
 \begin{algorithm}

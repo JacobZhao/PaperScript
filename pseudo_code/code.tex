@@ -20,56 +20,45 @@
 \SetKwInOut{Output}{Output}
 \Output{Feasibility Result;\\
         Conf: Configuration Result;}
-\For{k = 1 to S-1,\textup{panel} p}{
+\For{k = 1 to S-1, \textup{\textbf{each}} \textup{panel} p}{
   Loss[\textit{p,k}] = $M_{(i_{S-k},p)}$ -- $M_{(i_{S-k+1},p)}$}\\
-% (${p^*_0}$, ${p^*_1}$ ,..., ${p^*_{P-1}}$) sorted by lexicographical permutation in terms of \textbf{\textit{Loss}}\;
-$P^*$ =P;\\
+$P^*$ = $P$;\\
 \For{j = S to 1}
-    {Sort lexicographical order;\\
-    n = 1;\\ 
+    {n = 1;\\
+    \If{Conf \textup{[j]} $\neq$ \{ \}}
+        {\{p\} = \{p\} - \{Conf\};\\
+        $P^*$ = $P^*$ - \# of \{Conf\}}\\
+        (${p_{\alpha_1}}$, ${p_{\alpha_2}}$ ,..., ${p_{\alpha_{P^*}}}$) sorted by \textup{Loss[$p_a,k$] \leq Loss[$p_b,k^*$]}, if and only if $a < b$ \textup{\textbf{or}} (a = b \textbf{and} $k\leq k^*$) \\
+        \tcc{Sort Panels in lexicographical permutation by \textbf{\textit{Loss}}}
     \While{ \textup{SUM = }$\sum_{k = 1}^{n} M_{(j,\alpha_k)}$$<$ $Q_M$}
-        {n \textup{++};\\ 
-            \If{n == $P^*$}
+        {\If{n == $P^*$}
             {\textup{\textbf{return}}: Feasibility = NO}
-        }
+        n \textup{++};\\}
     TempConf = \{ $p_{\alpha_1}$, $p_{\alpha_2}$, $p_{\alpha_3}$,..., $p_{\alpha_n}$ \};\\
     \For{m = 1 to n}
         {\If{$M_{(j,\alpha_m)}$ == 0}
-        {TempConf = TempConf - \{$p_{\alpha_m}$\}}
+        {TempConf = TempConf - \{$p_{\alpha_m}$\};}
         }
     \eIf{\textup{SUM} == $Q_M$ \textup{or} j == 1}
-        {Conf[j] = TempConf}
+        {Conf [j] = TempConf}
         {\textup{\textbf{Do}} Panel Swap}
     }
 \textup{\textbf{return}}: Feasibility = YES
-
-
-
-
-
-% \For{\textbf{\textup{each}} j \textup{(}$S \geq j \geq 2$\textup{)}}{
-%   \For{\textbf{\textup{each}} $p^*$}{
-%     \eIf{$\sum$ $M_{(p^*,j)}$ \geq $Q_M$}{
-%       \While{$M_{({p^*_n},j)}$ == 0, \textup{(}$0 \leq n \leq P-1 $\textup{)}}{
-%         release Panel ${p^*_n}$ in $p^*$}
-%       \eIf{$\sum$  $M_{(p^*, j)}  == $Q_M$}{
-%         Conf =  $M_{(p^*, j)}$}{
-%         \textup{\textbf{Do}} Panel Swap}
-% }
-%     {Feasibility = No}}
-% }
-% \eIf{$\sum$ $M_{(p^*,1)}$ $\geq$ $Q_M$}{
-%     Feasibility = Yes\;
-%     Conf = select + $M_{(p^*,1)}$}{
-%     Feasibility = No}
 \end{algorithm}
 
 \begin{algorithm}
 \caption{Panel Swap}
 \LinesNumbered
-\KwIn{$M_{(p^*,j)}$, $Q_M$}
+\KwIn{$M_{(j, \alpha)}$, $Q_M$, SUM}
 \KwOut{Conf}
-Over = $\sum$  $M_{(p^*, j)}$ - $Q_M$ \;
+Over = SUM - $Q_M$ \;
+\For{x = 1 to n}
+    {\If{$M_{(j,\alpha_x)}$ == Over}
+    {TempConf = TempConf - \{$p_{\alpha_x}$\}\\
+    Conf [j] = TempConf\\}
+    }
+\For{}{}
+    
 \eIf{$M_{({p^*_y}, j)}$ == Over, \textup{\textbf{for each}} \textup{Panel} y in $p^*$}{
   release Panel ${p^*_y}$ in $p^*$\;
   Conf = $M_{(p^*, j)}$ \;}

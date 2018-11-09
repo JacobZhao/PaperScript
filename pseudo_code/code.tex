@@ -22,17 +22,23 @@
         Conf: Configuration Result;}
 \For{k = 1 to S-1, \textup{\textbf{each}} \textup{panel} p}{
   Loss[\textit{p,k}] = $M_{(i_{S-k},p)}$ -- $M_{(i_{S-k+1},p)}$}\\
-$P^*$ = $P$;\\
+% $PSet$ = $P$;\\
+PSet = \{$p_1$, $p_2$,..., $p_P$\}; \\
 \For{j = S to 1}
     {n = 1;\\
-    \If{Conf \textup{[j]} $\neq$ \{ \}}
-        {\{p\} = \{p\} - \{Conf\};\\
-        $P^*$ = $P^*$ - \# of \{Conf\}}\\
-        (${p_{\alpha_1}}$, ${p_{\alpha_2}}$ ,..., ${p_{\alpha_{P^*}}}$) sorted by \textup{Loss[$p_a,k$] \leq
-        Loss[$p_b,k^*$]}, if and only if $a < b$ \textup{\textbf{or}} (a = b \textbf{and} $k\leq k^*$) \\
+    % \If{Conf \textup{[j]} $\neq$ \{ \}}
+    %     {\{p\} = \{p\} - \{Conf\};\\
+    %     $PSet$ = $PSet$ - \{Conf\}}\\
+        \For{\textup{\textbf{each}} p $\in$ PSet}
+            {$Loss^*[p] = (Loss[p,S-j+1], Loss[p,S-j+2],..., Loss[P,S])$}\\
+        Let $\alpha_1, \alpha_2,..., \alpha_{|PSet|}$ be indices such that
+            $Loss^*[p_{\alpha i}] $\leq$ Loss^*[p_{\alpha j}]$ holds for $
+            \textup{\textbf{any}}$ i $\leq$ j\\
+        % (${p_{\alpha_1}}$, ${p_{\alpha_2}}$ ,..., ${p_{\alpha_{P^*}}}$) sorted by \textup{Loss[$p_a,k$] \leq
+        % Loss[$p_b,k^*$]}, if and only if $a < b$ \textup{\textbf{or}} (a = b \textbf{and} $k\leq k^*$) \\
         \tcc{Sort Panels in lexicographical permutation by \textbf{\textit{Loss}}}
-    \While{ \textup{SUM = }$\sum_{k = 1}^{n} M_{(j,\alpha_k)}$$<$ $Q_M$}
-        {\If{n == $P^*$}
+    \While{ \textup{SUM = }$\sum_{k = 1}^{n} M_{(i_j,\alpha_k)}$$<$ $Q_M$}
+        {\If{n == $PSet$}
             {\textup{\textbf{return}}: Feasibility = NO}
         n \textup{++};\\}
     TempConf = \{ $p_{\alpha_1}$, $p_{\alpha_2}$, $p_{\alpha_3}$,..., $p_{\alpha_n}$ \};\\
@@ -43,14 +49,14 @@ $P^*$ = $P$;\\
     \eIf{\textup{SUM} == $Q_M$ \textup{or} j == 1}
         {Conf [j] = TempConf}
         {\textup{\textbf{Do}} Panel Swap}
-    }
+    PSet = PSet - Conf[j]}
 \textup{\textbf{return}}: Feasibility = YES
 \end{algorithm}
 
 \begin{algorithm}
 \caption{Panel Swap}
 \LinesNumbered
-\KwIn{$M_{(j, \alpha)}$, $Q_M$, SUM}
+\KwIn{$M_{(j, \alpha)}$, $Q_M$, SUM, TempConf}
 \KwOut{Conf [j]}
 Over = SUM - $Q_M$ \;
 % \For{$p_{a_x}$ in \textup{\{TempConf\}}}
@@ -63,13 +69,13 @@ Over = SUM - $Q_M$ \;
     TempConf = TempConf - \{$p_{\alpha_x}$\}\\
     \textup{\textbf{return}}: Conf [j] = TempConf\;
   }
-  \uElseIf{&$\sum_{x}^{x+2} M_{(j,\alpha_x)}$ $==$ 3 $==$ $M_{(j,\alpha_y)}$ \textup{\textbf{and}} $M_{(j,\alpha_x)}$ == $M_{(j,\alpha_{x+1})}$ == $M_{(j,\alpha_{x+2})}$, y $>$n}{
+  \uElseIf{&$\sum_{x}^{x+2} M_{(i_j,\alpha_x)}$ $==$ 3 $==$ $M_{(j,\alpha_y)}$ \textup{\textbf{and}} $M_{(j,\alpha_x)}$ == $M_{(j,\alpha_{x+1})}$ == $M_{(j,\alpha_{x+2})}$, y $>$n}{
     TempConf =TempConf - \{$p_{\alpha_x}$, $p_{\alpha_{x+1}}$, $p_{\alpha_{x+2}}$\}+\{$p_{\alpha_y}$\} \;
   }
-    \uElseIf{$\sum_{x}^{x+2} M_{(j,\alpha_x)}$ $==$ 3 $==$ $M_{(j,\alpha_y)}$ y $>$n}{
+    \uElseIf{$\sum_{x}^{x+2} M_{(i_j,\alpha_x)}$ $==$ 3 $==$ $M_{(j,\alpha_y)}$ y $>$n}{
     TempConf =TempConf - \{$p_{\alpha_x}$, $p_{\alpha_{x+1}}$, $p_{\alpha_{x+2}}$\}+\{$p_{\alpha_y}$\} \;
   }
-    \uElseIf{$\sum_{x}^{x+2} M_{(j,\alpha_x)}$ $==$ 2 $==$ $M_{(j,\alpha_y)}$ y $>$n}{
+    \uElseIf{$\sum_{x}^{x+2} M_{(i_j,\alpha_x)}$ $==$ 2 $==$ $M_{(j,\alpha_y)}$ y $>$n}{
     TempConf =TempConf - \{$p_{\alpha_x}$, $p_{\alpha_{x+1}}$\}+\{$p_{\alpha_y}$\} \;
   }
   \Else{

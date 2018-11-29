@@ -6,13 +6,11 @@
 \newcommand\myinput[1]{%
   \settowidth\mylen{\KwIn{}}%
   \setlength\hangindent{\mylen}%
-  \hspace*{\mylen}#1\\}
-
-
+\hspace*{\mylen}#1\\}
 \begin{document}
 \begin{algorithm}[H]
 \caption{Feasibility Check}%算法名字
-\LinesNumbered %要求显示行号
+\LinesNumbered %要求显示
 \SetKwInOut{Input}{Input}  
 \Input{\textit{$M_{(i,p)}$}: The number of modules in panel \textit{p} at current \textit{i};\\
   \textit{P}: Number of panels; \textit{S}: Number of strings;\\
@@ -22,7 +20,7 @@
         Conf: Configuration Result;}
 \For{k = 1 to S-1, \textup{\textbf{each}} \textup{panel} p}{
   Loss[\textit{p,k}] = $M_{(i_{S-k},p)}$ -- $M_{(i_{S-k+1},p)}$}\\
-% $PSet$ = $P$;\\
+% $PSet$ = $P$;\
 PSet = \{$p_1$, $p_2$,..., $p_P$\}; \\
 \For{j = S to 1}
     {n = 1;\\

@@ -62,19 +62,20 @@ In this paper we use the following model of PV array, module, string and panel a
     \caption{PV array, string, module and panel}
     \label{model}
 \end{figure}
+
 When understanding the I-V characteristics of different structure of PV panels, by using the algorithm in \cite{carotenuto2014online} we can find the I-V curves of panels and (near) MPPs, short circuit current, open circuit voltage of each panel in mismatch condition. These values form a fingerprint of connection.
 \begin{figure}
      \centering
      \begin{subfigure}[b]{0.8\linewidth}
          \centering
-         \includegraphics[width=\linewidth]{IEEE_CEC_SS/one-panel.eps}
+         \includegraphics[width=\linewidth]{one-panel.eps}
          \caption{I-V characteristics on different control voltage}
          \label{one_panel}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.8\linewidth}
          \centering
-         \includegraphics[width=\linewidth]{IEEE_CEC_SS/ser-par.eps}
+         \includegraphics[width=\linewidth]{ser-par.eps}
          \caption{Series and parallel connection I-V character}
          \label{ser-par}
      \end{subfigure}
@@ -82,7 +83,7 @@ When understanding the I-V characteristics of different structure of PV panels, 
         \label{fig:three graphs}
 \end{figure}
 \section{Related works}\label{Sec3}
-
+Orozco-Guierrez et al. proposed a fast reconfiguration algorithm for mismatched PV arrays \cite{orozco2016optimized}, where the online monitoring \cite{carotenuto2014online} and power estimation \cite{orozco2015fast} are utilized. For the method in \cite{orozco2016optimized}, first, close values will be approximated and then possible combinations of reconfiguration are enumerated. For each configuration candidates their generate power value are estimated by \cite{orozco2015fast} along with careful estimation of possible errors.
 \section{Feasibility}\label{Sec4}
 
 \section{An algorithm to identify feasibility}\label{Sec5}

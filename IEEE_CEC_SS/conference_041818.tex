@@ -20,7 +20,6 @@
 \author{\IEEEauthorblockN{Dafang Zhao, Fukuhito Ooshita, and Michiko Inoue}
 %Email: 
 \IEEEauthorblockA{Nara Institute of Science and Technology, Japan\\
-% Win : My email is @ku.th, Not @ku.ac.th
 Email:   \{zhao.dafang.yu7, f-ooshita, kounoe\}@is.naist.jp}}
 \maketitle
 
@@ -83,14 +82,17 @@ When understanding the I-V characteristics of different structure of PV panels, 
         \label{fig:three graphs}
 \end{figure}
 \section{Related works}\label{Sec3}
-Orozco-Guierrez et al. proposed a fast reconfiguration algorithm for mismatched PV arrays \cite{orozco2016optimized}, where the online monitoring \cite{carotenuto2014online} and power estimation \cite{orozco2015fast} are utilized. For the method in \cite{orozco2016optimized}, first, close values will be approximated and then possible combinations of reconfiguration are enumerated. For each configuration candidates their generate power value are estimated by \cite{orozco2015fast} along with careful estimation of possible errors.
-\section{Feasibility}\label{Sec4}
+Orozco-Guierrez et al. proposed a fast reconfiguration algorithm for mismatched PV arrays \cite{orozco2016optimized}, where the online monitoring \cite{carotenuto2014online} and power estimation \cite{orozco2015fast} are utilized. For the method in \cite{orozco2016optimized}, first, close values will be approximated and then possible combinations of reconfiguration are enumerated. For each configuration candidates their generate power value are estimated by \cite{orozco2015fast} along with careful estimation of possible errors. This method provided a simplified feasibility check, for all possible configuration the representative value with some error rate \textit{err}. Select configuration candidates with \textit{err} from the largest estimation value.
 
+This method has given configuration candidates designate the number of strings, current value of each string and the number of modules which not been bypassed of each string. Besides, the number of active modules are common for each string based on that each PV string are connected in parallel. However, for some configuration candidates, we may not be able to find such combination that fit the requirement. We find out the simple feasibility check based on the number of active PV modules for each representative current values in \cite{orozco2016optimized} is optimistic and does not always identify the infeasible case.
+\section{Feasibility}\label{Sec4}
+To execute a power simulation for a PV array. We need to assign panels into different location to realize the candidate configuration. The definition of feasibility is in equation \ref{feasibility}. When the number of working modules in a string ($M_S$) are less than the number of working module per-string ($Q_M$), this configuration is infeasible.
+The simple feasibility provided in \cite{orozco2016optimized}.
 \section{An algorithm to identify feasibility}\label{Sec5}
 
-\section{Evaluation of optimization algorithm}\label{Sec6}
+\section{Simulation}\label{Sec6}
 
-\section{Simulation}\label{Sec7}
+\section{Conclusions}\label{Sec7}
 
 \section*{Acknowledgment}
 
@@ -100,15 +102,5 @@ Orozco-Guierrez et al. proposed a fast reconfiguration algorithm for mismatched 
 \renewcommand\refname{Reference}
 \bibliographystyle{ieeetr}
 \bibliography{reference}
-% \begin{thebibliography}{00}
-% \bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
-% \bibitem{b2} J. Clerk Maxwell, A Treatise on sdElectricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
-% \bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
-% \bibitem{b4} K. Elissa, ``Title of paper if known,'' unpublished.
-% \bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
-% \bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
-% \bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
-
-% \end{thebibliography}
 
 \end{document}

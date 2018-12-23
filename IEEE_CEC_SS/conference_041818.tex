@@ -86,10 +86,34 @@ Orozco-Guierrez et al. proposed a fast reconfiguration algorithm for mismatched 
 
 This method has given configuration candidates designate the number of strings, current value of each string and the number of modules which not been bypassed of each string. Besides, the number of active modules are common for each string based on that each PV string are connected in parallel. However, for some configuration candidates, we may not be able to find such combination that fit the requirement. We find out the simple feasibility check based on the number of active PV modules for each representative current values in \cite{orozco2016optimized} is optimistic and does not always identify the infeasible case.
 \section{Feasibility}\label{Sec4}
-To execute a power simulation for a PV array. We need to assign panels into different location to realize the candidate configuration. The definition of feasibility is in equation \ref{feasibility}. When the number of working modules in a string ($M_S$) are less than the number of working module per-string ($Q_M$), this configuration is infeasible.
-The simple feasibility provided in \cite{orozco2016optimized}.
-\section{An algorithm to identify feasibility}\label{Sec5}
+To execute a power simulation for a PV array. We need to assign panels into different location to realize the candidate configuration. The definition of feasibility is in Equation \ref{feasibility}. When the number of working modules in a string ($M_S$) are less than the number of working module per-string ($Q_M$), this configuration is infeasible.
+\begin{equation}
+    \left\{\begin{matrix}
+        M_S < Q_{M} & & \text{Infeasible}\\ 
+        M_S \geqslant Q_{M} & & \text{Feasible} 
+    \end{matrix}\right.
+    \label{feasibility}
+\end{equation}
 
+For example, An 3X3 PV array formed by 9 PV panels. The number of modules that are able to work at current value for each string as showed in Table \ref{not_feasible}. As the number of modules and the panel they belong to, it is straight forward that panel P1 for any current value it have at least 2 modules can work. Instead of panel P9 only have 1 module can work at 0.5A.
+One configuration requires 6 modules working for each string ($Q_M = 6$). According to Table \ref{not_feasible} there isn't any combination for such configuration. Of course we can compute it by using exhaustive searching. However it is time-consuming. So we need an algorithm to efficiently identify feasibility for each configuration candidates.
+
+\begin{table}[htbp]
+    \caption{Infeasible Example}
+    \begin{center}
+    \begin{tabular}{c|c|c|c|c|c|c|c|c|c}
+    \hline\hline
+             & P1 & P2  & P3  & P4 & P5 & P6  & P7  & P8  & P9  \\ \hline
+        String-1 0.5A & ***& *** & *   & *  & ***& **  & *   & *** & * \\ \hline
+        String-2 1.5A & ***& *** & *   & *  & ***&     & *   &     &   \\ \hline
+        String-3 3A   & ** & **  & *   & *  & ** &     &     &     &   \\\hline \hline
+    \end{tabular}
+    \label{not_feasible}
+    \end{center}
+\end{table}
+\section{An algorithm to identify feasibility}\label{Sec5}
+In this section we proposed an algorithm to identify feasibility.
+\subsection{}
 \section{Simulation}\label{Sec6}
 
 \section{Conclusions}\label{Sec7}

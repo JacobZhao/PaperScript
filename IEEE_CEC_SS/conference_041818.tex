@@ -95,8 +95,8 @@ To execute a power simulation for a PV array. We need to assign panels into diff
     \label{feasibility}
 \end{equation}
 
-For example, An 3X3 PV array formed by 9 PV panels. The number of modules that are able to work at current value for each string as showed in Table \ref{not_feasible}. As the number of modules and the panel they belong to, it is straight forward that panel P1 for any current value it have at least 2 modules can work. Instead of panel P9 only have 1 module can work at 0.5A.
-One configuration requires 6 modules working for each string ($Q_M = 6$). According to Table \ref{not_feasible} there isn't any combination for such configuration. Of course we can compute it by using exhaustive searching. However it is time-consuming. So we need an algorithm to efficiently identify feasibility for each configuration candidates.
+For example, An 3X3 PV array formed by 9 PV panels. The number of modules that are able to work at current value for each string as showed in Table \ref{not_feasible}.The dot in each block in form of a PV module. As the number of modules and the panel they belong to, it is straight forward that panel P1 for any current value it have at least 2 modules can work. Instead of panel P9 only have 1 module can work at 0.5A.
+One configuration requires 6 modules working for each string at 0.5A, 0.5A and 3A($Q_M = 6$). According to Table \ref{not_feasible} there isn't any combination for such configuration. Of course we can compute it by using exhaustive searching. However it is time-consuming. So we need an algorithm to efficiently identify feasibility for each configuration candidates.
 
 \begin{table}[htbp]
     \caption{Infeasible Example}
@@ -104,16 +104,34 @@ One configuration requires 6 modules working for each string ($Q_M = 6$). Accord
     \begin{tabular}{c|c|c|c|c|c|c|c|c|c}
     \hline\hline
              & P1 & P2  & P3  & P4 & P5 & P6  & P7  & P8  & P9  \\ \hline
-        String-1 0.5A & ***& *** & *   & *  & ***& **  & *   & *** & * \\ \hline
-        String-2 1.5A & ***& *** & *   & *  & ***&     & *   &     &   \\ \hline
-        String-3 3A   & ** & **  & *   & *  & ** &     &     &     &   \\\hline \hline
+         0.5A & ***& *** & *   & *  & ***& **  & *   & *** & * \\ \hline
+         1.5A & ***& *** & *   & *  & ***&     & *   &     &   \\ \hline
+         3A   & ** & **  & *   & *  & ** &     &     &     &   \\\hline \hline
     \end{tabular}
     \label{not_feasible}
     \end{center}
 \end{table}
 \section{An algorithm to identify feasibility}\label{Sec5}
 In this section we proposed an algorithm to identify feasibility.
+\subsection{Input And Output Of Algorithm}\label{Sec5_1}
+The input of algorithm is the information of PV array and Configuration candidates. The information of PV array contains a set of panels and the number of working modules in each panel for each current values. Table \ref{Info_Array} shows the information of a PV panel from Table \ref{not_feasible} for configuration \{0.5A, 0.5A, 3A, $Q_M = 6$ \}.
+\begin{table}[htbp]
+    \caption{Information of PV Array}
+    \begin{center}
+    \begin{tabular}{c|c|c|c|c|c|c|c|c|c}
+    \hline\hline
+             & P1 & P2  & P3  & P4 & P5 & P6  & P7  & P8  & P9  \\ \hline
+         String1-0.5A & 3& 3 & 1   & 1  & 3& 2  & 1   & 3 & 1 \\ \hline
+         String2-0.5A & 3& 3 & 1   & 1  & 3& 2  & 1   & 3 & 1  \\ \hline
+         String3-3A   & 2 & 2  & 1   & 1  & 2 & 0  &0   &0  &0  \\\hline \hline
+    \end{tabular}
+    \label{Info_Array}
+    \end{center}
+\end{table}
+It terms that for panel P2, 3 modules are able to work on String1 or String2 and 2 modules are able to work on String3. Due to one panel can only connected to single string. So the output of algorithm is the feasibility answer for a configuration. That is, the algorithm determines whether there exists an assignment of panels to strings that realizes the configuration required.
+
 \subsection{}
+
 \section{Simulation}\label{Sec6}
 
 \section{Conclusions}\label{Sec7}

@@ -11,6 +11,7 @@
 \usepackage{textcomp}
 \usepackage{xcolor}
 \usepackage{graphicx}
+\usepackage{enumerate}
 \usepackage[colorinlistoftodos]{todonotes}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
@@ -130,7 +131,15 @@ The input of algorithm is the information of PV array and Configuration candidat
 \end{table}
 It terms that for panel P2, 3 modules are able to work on String1 or String2 and 2 modules are able to work on String3. Due to one panel can only connected to single string. So the output of algorithm is the feasibility answer for a configuration. That is, the algorithm determines whether there exists an assignment of panels to strings that realizes the configuration required.
 
-\subsection{}
+\subsection{Algorithm}
+
+Let the $S$ for the number of PV strings and $P$ be the number of PV panels, $M_{(i,p)}$ is the number of modules on panel $p$ at current value $i$. For each panel we consider the different vector $Loss[p,k] = M_{(i_{k-1},p)}-M_{(i_{k},p)} ,(k \leq S)$. This vector means if we use panel $p$ on current $k$  it will loss $Loss[p,k]$ working modules in current $k-1$. Without loss of generality, for each panel $p$, $Loss^*[p] = ( Loss[p,k_1], Loss[p,k_2],..., Loss[p,k_S] )$ and $Loss^*[p_i] \leq Loss^*[p_j]$ holds for any $i \leq j$. After sorting all panels in lexicographic order by vector $Loss^*[p]$, we will have a order for arranging panels in different location.
+
+To assign panels in right location, following steps are required.
+\begin{enumerate}[(1)]
+\item 
+\end{enumerate}
+\subsection{Evaluation}
 
 \section{Simulation}\label{Sec6}
 

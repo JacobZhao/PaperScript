@@ -7,11 +7,17 @@
 \usepackage{caption}
 \usepackage{subcaption}
 % \usepackage{subfigure}
+\usepackage{color}
 \usepackage{graphicx}
 \usepackage{textcomp}
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{enumerate}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[ruled]{algorithm2e}
 \usepackage[colorinlistoftodos]{todonotes}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
@@ -137,11 +143,115 @@ Let the $S$ for the number of PV strings and $P$ be the number of PV panels, $M_
 
 To assign panels in right location, following steps are required.
 \begin{enumerate}[(1)]
-\item Select panels by the lexicographic order.
-\item 
+\item Selecting panel from sorted panels until selected contain enough PV modules working at the highest desired current value.
+\item Remove selected panels which don't have PV modules working at the highest desired current value for further more selection.
+\item In selected panels, try to find a combination that provided exact number of modules working at the highest desired current value.\label{find_exact}
+\item Swap selected panels to find a combination with minimum number of panels. This SWAP will follow several priorities.\label{swap}
+\item If SWAP approved, step \ref{swap} will be repeated till number of panels are minimized.
+\item Otherwise, none of SWAP will be approved. Evaluate selected panels with feasibility requirement in \ref{Sec4} equation (\ref{feasibility}).
+\item If there remain any un-selected panel, as them to different PV strings that balance the string length.
 \end{enumerate}
-\subsection{Evaluation}
 
+We explain step (\ref{find_exact}) and (\ref{swap}) that finding a local optimized combination of a desired current value. To do this, we begin with sorting panels by vector $Loss^*[p]$. That will let a panel with minimum module losses be the first one in a string with highest current value. When $Loss^*[p_a] = Loss^*[p_b]$ which means panel $a$ and panel $b$'s module losses are same and they are in same loss level ($LV$). By using vector $LV$ we can divide selected panels into different groups.
+
+To get exact number of working modules, we start to search panels form last loss level to first loss level. In each $LV$ remove the panel $x$ which $M_{(j,x)} \leq Q_M - \sum (M_{(j,\textup{Selected Panels})})$. This step will cut the number of panels and increase flexibility.
+
+\begin{table}[htbp]
+\caption{SWAP Example}
+\begin{center}
+\begin{tabular}{c|ccccc|cc}\hline \hline
+                               & \multicolumn{5}{c|}{Selected Panels} & \multicolumn{2}{c}{Swap Panels} \\
+                               & $P1$    & $P2$   & $P3$    & $P4$    & $P5$   & $P6$            & $P7$             \\ \hline
+High                           & 1     & 1     & 1     & 1     & 2    & 2              & 2              \\ \hline
+Low                            & 1     & 1     & 1     & 2     & 3    & 3              & 3              \\ \hline
+$Loss^*[p]$ & 0     & 0     & 0     & 1     & 1    & 1              & 1             
+\end{tabular}
+\end{center}
+\label{table_swap}
+\end{table}
+
+For swapping panels, panels with same $LV$ as selected panels can be swapped. In order to not loss flexibility, swapped panles' $Loss^*[p]$ should less than unswap panels'. For example as Table \ref{table_swap}, panel $P1-P5$ are selected panels. Panel $P6$ and $P7$ have the same $Loss^*[p]$ vector as $P5$, so they are able to swap. Due to $P1$ and $P2$'s $Loss^*[p]$ are less than $P6$'s, we can not swap them. On the other hand, we can swap panel $P1$ and $P4$ with $P6$. Keeping the same module losses and further reduce the number of panels.  Pseudo codes are given below to give details to summarize the process of proposed algorithm.
+
+\begin{algorithm}
+\caption{Sort panel by lexicographic order}
+\LinesNumbered
+\SetKwInOut{Input}{Input}  
+\Input{\textit{$M_{(i,p)}$}: The number of modules in panel \textit{p} at current \textit{i};
+  \textit{P}: Number of panels; \textit{S}: Number of strings;
+  \textit{$Q_M$}: The minimum number of modules for each string;}
+\SetKwInOut{Output}{Output}
+\Output{Feasibility Result;\\
+        Conf: Configuration Result;}
+\For{k = 1 to S-1, \textup{\textbf{each}} panel $p$}{$Loss[p,k] = M_{(i_{S-k},p)}-M_{(i_{S-k+1},p)}$}
+PSet = $\{p_1, p_2,...,p_P\}$\\
+\For{j = S to 1}
+    {n = 1;\\
+     \For{\textup{\textbf{each}} p $\in$ PSet}
+        {$Loss^*[p] = (Loss[p,S-j+1], Loss[p,S-j+2],..., Loss[p,S])$\\
+        Let $\alpha_1, \alpha_2,..., \alpha_{|PSet|}$ be indices such that $Loss^*[p_{\alpha i}] \leq Loss^*[p_{\alpha j}]$ holds for $ \textup{\textbf{any}}$ i $\leq$ j\\
+        \tcc{Sort Panels in lexicographical order by \textit{Loss}}}
+     \While{\textup{SUM} = $\sum_{k=1}^{n} M_{(i_j,\alpha_k)} < Q_M$}
+        {\If{n == $PSet$}
+            {\textup{\textbf{return :}} Feasibility = NO}n++;\\}
+        $TempConf$ = \{ $p_{\alpha_1}$, $p_{\alpha_2}$, $p_{\alpha_3}$,..., $p_{\alpha_n}$ \};\\
+    \ForAll{panels in $TempConf$}
+        {remove panels which $M_{(j,\alpha)} == 0$}
+    %  \For{m = 1 to n}
+    %     {\If{$M_{(j,\alpha_m)} == 0$}
+    %         {$TempConf$ = $TempConf$ -\{$p_{\alpha_m}$\}}}
+    %  \eIf{SUM == $Q_M$ \textup{or} j == 1}
+    %     {Conf[j] = $TempConf$}
+    %     {Over = SUM - $Q_M$;\\\textup{\textbf{Do} Algorithm 2}}
+        Over = SUM - $Q_M$;\\\textup{\textbf{Do} Algorithm 2}\\
+        % Conf[j] = $TempConf$\\
+        $PSet$ = $PSet$ - Conf[j];\\
+    }
+    \textup{\textbf{return :}} Feasibility = YES
+\end{algorithm}
+
+\begin{algorithm}
+    \caption{find exact \# of modules}
+    \LinesNumbered
+    \KwIn{$TempConf$, n, $Loss^*[p]$,Over}
+    \KwOut{Conf[j]}
+    $i$ = $h$ = 1; $LV[h]$ = \{$p_{\alpha_1}$\};\\
+    \While{i $\neq$ $\left|PSet\right|$}
+        {i++;\\
+        \uIf{$Loss^*[p_{\alpha_i}]$ == $Loss^*[p_{\alpha_{i-1}}]$}
+            {$LV[h] = LV[h]$ $\cup$ \{$p_{\alpha_i}$\}\\
+            \textup{\textbf{continue;}}}
+        \uElseIf{i $>$ n}
+            {\textup{\textbf{break;}}}
+        \Else{h++;\\$LV[h]$ = \{$p_{\alpha_i}$\}}
+    }
+    \While{h$\neq$0}
+        {\eIf{Over == 0}
+            {\textbf{\textup{break;}}}
+        {L=$\left|\{p_i \in LV^*[h^{'}]\mid h^{'} \leq h-1 \}\right|$\\
+        $l^{*} = \left|\{p_i \in LV^*[h]\mid M_{(j,\alpha_i)} \leq Over \}\right|$\\
+        Let $l$ be the minimum index $l^{'}$ such that $\sum^{l^{*}}_{t=l^{'}}M_{(j,\alpha_{L+t})}\leq Over$\\
+        $Over = Over - \sum^{l^{*}}_{t=l^{'}}M_{(j,\alpha_{L+t})}$;\\
+        $TempConf$ = $TempConf$ - $\{p_{L+l}, p_{L+l+1},..., p_{L+l^*}\}$;\\
+        $h- -$;}
+    }
+    $U = \{p_{\alpha_{1}}, p_{\alpha_{2}},..., p_{\alpha_{i-1}}\}$;\\
+    $N = U-TempConf$;\\
+    \Repeat{x==$\left|N\right|$}
+        {Let $\beta_1, \beta_2, \beta_3,...,\beta_{\left|TempConf\right|}$ be new indices of $TempConf$;\\
+        Let $\gamma_1, \gamma_2, \gamma_3,...,\gamma_{\left|N\right|}$ be new indices of $N$;\\
+        \For{x = 1 to $\left|N\right|$}
+            {\ForAll{$p_\beta$ in $TempConf$}
+                {\uIf{$\sum M_{(j,\beta}$==$M_{(j,\gamma_x)}$}
+                    {$TempConf = TempConf - \{p_{\beta}\}+\{p_{\gamma_x}\}$;\\
+            % $N^* = \left|N\right|$\\
+            $N = N - \{p_{\gamma_x}\}$;\\
+            \textbf{\textup{Continue;}}\\}}}
+        }
+\end{algorithm}
+\subsection{Evaluation}
+Although the pilot example refers to three strings only, the extension of the method to any number of parallel connected strings is the same.
+
+To evaluate the performance of proposed algorithm, we compare the result with exhaustive searching algorithm for 300 random shadow distributed PV array. For each PV array, contains {\color{red} \textbf{how many - how many}} PV panels connected into {\color{red} \textbf{how many - how many}} PV strings.
 \section{Simulation}\label{Sec6}
 
 \section{Conclusions}\label{Sec7}

@@ -251,9 +251,33 @@ PSet = $\{p_1, p_2,...,p_P\}$\\
 \subsection{Evaluation}
 Although the pilot example refers to three strings only, the extension of the method to any number of parallel connected strings is the same.
 
-To evaluate the performance of proposed algorithm, we compare the result with exhaustive searching algorithm for 300 random shadow distributed PV array. For each PV array, contains {\color{red} \textbf{how many - how many}} PV panels connected into {\color{red} \textbf{how many - how many}} PV strings.
-\section{Simulation}\label{Sec6}
+To evaluate the performance of proposed algorithm, we compare the result with exhaustive searching algorithm for 300 random shadow distributed PV array. For each PV array, contains {\color{red} \textbf{how many - how many}} PV panels connected into {\color{red} \textbf{how many - how many}} PV strings. For each PV panels, it will have {\color{red}{how many - how many}} working current value.
 
+The computational time required for finding optimal configuration and accuracy of feasibility judgment in the proposed algorithm and exhaustive search algorithm are compared in Table \ref{result_compare}. As shown in Table \ref{result_compare}, proposed algorithm achieved less computing time compare with exhaustive search algorithm and with high accuracy.  
+\section{Simulation}\label{Sec6}
+In this section, we consider using 3 different size PV array, which are 3 $\times$ 4 array, 60 $\times$ 4 array and 40 $\times$ 15 array. The whole process though SPICE simulation with the configuration result by proposed algorithm. The PV cell's parameters are shown in Table \ref{PV_cell_par}.
+
+\begin{table}[]
+\caption{PV Cell Parameters}
+\begin{center}
+\begin{tabular}{c|c}
+\hline \hline
+Parameter             & Value  \\ \hline
+Short-Circuit Current & 0.66A  \\
+MPP-Current           & 0.58A  \\
+Open-Circuit Voltage  & 280V   \\
+MPP-Voltage           & 215V  \\
+Max Power Output      & 124.7W 
+\end{tabular}
+\end{center}
+\label{PV_cell_par}
+\end{table}
+\subsection{3 $\times$ 4 Array}
+In a 3 $\times$ 4 array, there are 12 panels connected in parallel for 4 strings, for each string contains 3 PV panels. The shadow conditions for PV array are not uniformly, as shown in Fig. \ref{shadow_3x4_a}. Without reconfiguration, PV array output I-V characteristic as shown in Fig. \ref{shadow_3x4_b}. The global MPP as {\color{red}{how many Watt}} on {\color{red}{how many voltage}}. After proposed algorithm based reconfiguration, this PV array achieved {\color{red}{how many Watt}} on {\color{red}{how many voltage}} for global MPP. The output power has increased by {\color{red}{how many \%}}
+\subsection{60 $\times$ 4 Array}
+For medium size 60 $\times$ 4 array, on standard test condition the power output are {\color{red}{how many KW}} without any shadow. Fig. \ref{shadow_60x4_a} presents the shadow distribution amount the PV array which power output are {\color{red}{how may KW}}. After reconfiguration, panel arrangement as illustrated in Fig. \ref{shadow_60x4_b}. With reconfiguration, power generation increased by {\color{red}{how many \%}}.
+\subsection{40 $\times$ 15 Array}
+As a large scale PV array. Although the algorithm proposed in \cite{orozco2016optimized} are hard to converge when the configuration candidates are widely distributed. The algorithm we proposed still calculate the feasible configuration result very fast. {\color{red}{60}} configuration candidates though the feasibility judgment algorithm in 269.6s with {\color{red}{20}} feasible configuration as shown in Table \ref{shadow_40x15_table}.
 \section{Conclusions}\label{Sec7}
 
 \section*{Acknowledgment}

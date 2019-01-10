@@ -3,49 +3,44 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: conference_041818.aux
 The style file: ieeetr.bst
 Database file #1: reference.bib
-Repeated entry---line 86 of file reference.bib
- : @article{orozco2016optimized
- :                             ,
-I'm skipping whatever remains of this entry
-You've used 11 entries,
+You've used 9 entries,
             1876 wiz_defined-function locations,
-            549 strings with 5845 characters,
-and the built_in function-call counts, 3879 in all, are:
-= -- 410
-> -- 139
+            539 strings with 5451 characters,
+and the built_in function-call counts, 3383 in all, are:
+= -- 360
+> -- 120
 < -- 0
-+ -- 50
-- -- 39
-* -- 288
-:= -- 529
-add.period$ -- 11
-call.type$ -- 11
-change.case$ -- 11
++ -- 43
+- -- 34
+* -- 253
+:= -- 456
+add.period$ -- 9
+call.type$ -- 9
+change.case$ -- 9
 chr.to.int$ -- 0
-cite$ -- 11
-duplicate$ -- 191
-empty$ -- 337
-format.name$ -- 39
-if$ -- 945
+cite$ -- 9
+duplicate$ -- 165
+empty$ -- 290
+format.name$ -- 34
+if$ -- 825
 int.to.chr$ -- 0
-int.to.str$ -- 11
-missing$ -- 11
-newline$ -- 36
-num.names$ -- 11
-pop$ -- 20
+int.to.str$ -- 9
+missing$ -- 9
+newline$ -- 30
+num.names$ -- 9
+pop$ -- 15
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 155
+skip$ -- 140
 stack$ -- 0
-substring$ -- 352
-swap$ -- 99
+substring$ -- 320
+swap$ -- 89
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 41
-width$ -- 13
-write$ -- 118
-(There was 1 error message)
+while$ -- 36
+width$ -- 10
+write$ -- 99

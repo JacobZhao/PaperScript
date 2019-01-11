@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2019.1.2)  10 JAN 2019 18:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2019.1.2)  11 JAN 2019 12:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -911,10 +911,6 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 50.
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-
-LaTeX Warning: Citation `udenze2018reconfiguration' on page 1 undefined on inpu
-t line 55.
-
 Package epstopdf Info: Source file: <fig/new_compare.eps>
 (epstopdf)                    date: 2019-01-10 18:55:56
 (epstopdf)                    size: 37514 bytes
@@ -931,65 +927,93 @@ File: fig/new_compare-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: fig/new_compare-eps-converted-to.pdf  used on input li
 ne 63.
 (pdftex.def)             Requested size: 201.60077pt x 151.20079pt.
-
-LaTeX Warning: Citation `hu2017non' on page 1 undefined on input line 68.
-
-
-LaTeX Warning: Citation `hu2017non' on page 1 undefined on input line 70.
-
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
  <./fig/new_compare-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `Sec6' on page 2 undefined on input line 76.
+
 <module.png, id=43, 838.13126pt x 691.58376pt>
 File: module.png Graphic file (type png)
 <use module.png>
 Package pdftex.def Info: module.png  used on input line 90.
 (pdftex.def)             Requested size: 201.60077pt x 166.34229pt.
-<fig/IV-module.pdf, id=45, 249.93375pt x 206.7725pt>
-File: fig/IV-module.pdf Graphic file (type pdf)
-<use fig/IV-module.pdf>
-Package pdftex.def Info: fig/IV-module.pdf  used on input line 99.
-(pdftex.def)             Requested size: 126.0pt x 104.24101pt.
-<fig/IV-panel.pdf, id=46, 539.01375pt x 221.82875pt>
-File: fig/IV-panel.pdf Graphic file (type pdf)
-<use fig/IV-panel.pdf>
-Package pdftex.def Info: fig/IV-panel.pdf  used on input line 106.
-(pdftex.def)             Requested size: 226.79846pt x 93.34006pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [2 <./module.png> <./fig/IV-module.pdf> <./fig/IV-panel.pdf>]
-<fig/feasible-configuration.pdf, id=72, 351.3125pt x 427.5975pt>
+Package epstopdf Info: Source file: <fig/Module_1.eps>
+(epstopdf)                    date: 2019-01-11 11:54:05
+(epstopdf)                    size: 17415 bytes
+(epstopdf)             Output file: <fig/Module_1-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-01-11 12:43:38
+(epstopdf)                    size: 6725 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/Module_1-eps-converted
+-to.pdf fig/Module_1.eps>
+(epstopdf)             \includegraphics on input line 99.
+Package epstopdf Info: Output file is already uptodate.
+<fig/Module_1-eps-converted-to.pdf, id=45, 421.575pt x 316.18124pt>
+File: fig/Module_1-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/Module_1-eps-converted-to.pdf>
+Package pdftex.def Info: fig/Module_1-eps-converted-to.pdf  used on input line 
+99.
+(pdftex.def)             Requested size: 126.0pt x 94.49808pt.
+Package epstopdf Info: Source file: <fig/Module_2.eps>
+(epstopdf)                    date: 2019-01-11 11:54:55
+(epstopdf)                    size: 17750 bytes
+(epstopdf)             Output file: <fig/Module_2-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-01-11 12:43:38
+(epstopdf)                    size: 6752 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/Module_2-eps-converted
+-to.pdf fig/Module_2.eps>
+(epstopdf)             \includegraphics on input line 104.
+Package epstopdf Info: Output file is already uptodate.
+<fig/Module_2-eps-converted-to.pdf, id=46, 421.575pt x 316.18124pt>
+File: fig/Module_2-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/Module_2-eps-converted-to.pdf>
+Package pdftex.def Info: fig/Module_2-eps-converted-to.pdf  used on input line 
+104.
+(pdftex.def)             Requested size: 126.0pt x 94.49808pt.
+Package epstopdf Info: Source file: <fig/Module_3.eps>
+(epstopdf)                    date: 2019-01-11 11:55:33
+(epstopdf)                    size: 17766 bytes
+(epstopdf)             Output file: <fig/Module_3-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-01-11 12:43:39
+(epstopdf)                    size: 6764 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/Module_3-eps-converted
+-to.pdf fig/Module_3.eps>
+(epstopdf)             \includegraphics on input line 109.
+Package epstopdf Info: Output file is already uptodate.
+<fig/Module_3-eps-converted-to.pdf, id=47, 421.575pt x 316.18124pt>
+File: fig/Module_3-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/Module_3-eps-converted-to.pdf>
+Package pdftex.def Info: fig/Module_3-eps-converted-to.pdf  used on input line 
+109.
+(pdftex.def)             Requested size: 126.0pt x 94.49808pt.
+Package epstopdf Info: Source file: <fig/pv_panel_edit.eps>
+(epstopdf)                    date: 2019-01-11 12:24:17
+(epstopdf)                    size: 28050 bytes
+(epstopdf)             Output file: <fig/pv_panel_edit-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-01-11 12:39:07
+(epstopdf)                    size: 12875 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/pv_panel_edit-eps-conv
+erted-to.pdf fig/pv_panel_edit.eps>
+(epstopdf)             \includegraphics on input line 116.
+Package epstopdf Info: Output file is already uptodate.
+<fig/pv_panel_edit-eps-converted-to.pdf, id=48, 421.575pt x 316.18124pt>
+File: fig/pv_panel_edit-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/pv_panel_edit-eps-converted-to.pdf>
+Package pdftex.def Info: fig/pv_panel_edit-eps-converted-to.pdf  used on input 
+line 116.
+(pdftex.def)             Requested size: 226.79846pt x 170.1033pt.
+[2 <./module.png>]
+<fig/feasible-configuration.pdf, id=57, 351.3125pt x 427.5975pt>
 File: fig/feasible-configuration.pdf Graphic file (type pdf)
 <use fig/feasible-configuration.pdf>
-Package pdftex.def Info: fig/feasible-configuration.pdf  used on input line 237
+Package pdftex.def Info: fig/feasible-configuration.pdf  used on input line 247
 .
 (pdftex.def)             Requested size: 126.0pt x 153.36081pt.
- [3 <./fig/feasible-configuration.pdf>] [4]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 602.
-
-
-LaTeX Warning: Reference `shadow_3x4_a' on page 5 undefined on input line 618.
-
-
-LaTeX Warning: Reference `shadow_3x4_b' on page 5 undefined on input line 618.
-
-
-LaTeX Warning: Reference `shadow_60x4_a' on page 5 undefined on input line 620.
-
-
-
-LaTeX Warning: Reference `shadow_60x4_b' on page 5 undefined on input line 620.
-
-
-
-LaTeX Warning: Reference `shadow_40x15_table' on page 5 undefined on input line
- 622.
-
-(./conference_041818.bbl [5])
+ [3 <./fig/Module_1-eps-converted-to.pdf> <./fig/Module_2-eps-converted-to.pdf>
+ <./fig/Module_3-eps-converted-to.pdf> <./fig/pv_panel_edit-eps-converted-to.pd
+f>] [4 <./fig/feasible-configuration.pdf>]
+(./conference_041818.bbl)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -1001,7 +1025,7 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[6
+[5] [6
 
 ] (./conference_041818.aux)
 
@@ -1009,10 +1033,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 16690 strings out of 492639
- 319500 string characters out of 6135498
- 382376 words of memory out of 5000000
- 20232 multiletter control sequences out of 15000+600000
+ 16693 strings out of 492639
+ 319916 string characters out of 6135498
+ 388359 words of memory out of 5000000
+ 20233 multiletter control sequences out of 15000+600000
  43341 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,15n,80p,1631b,541s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1030,10 +1054,10 @@ dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type
 b8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/te
 xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/ur
 w/times/utmri8a.pfb>
-Output written on conference_041818.pdf (6 pages, 278381 bytes).
+Output written on conference_041818.pdf (6 pages, 251829 bytes).
 PDF statistics:
- 158 PDF objects out of 1000 (max. 8388607)
+ 162 PDF objects out of 1000 (max. 8388607)
  103 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 134 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 144 words of extra memory for PDF output out of 10000 (max. 10000000)
 

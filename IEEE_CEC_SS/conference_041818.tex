@@ -73,15 +73,17 @@ Orozco-Gutierrez et al. proposed an efficient and effective reconfiguration meth
 
 In this paper, we propose an algorithm to rapidly check feasibility that a given configuration candidate is actually formed by given PV panels. The proposed method can efficiently check the feasibility while identifying most feasible cases accurately. The experimental results demonstrate the effectiveness of the proposed method where ...
 
-The remaining of this paper is organized as follows. Section \ref{Sec2} introduces a PV array which is a targeting PV system in this paper. Section \ref{Sec3} gives related works. Section \ref{Sec4} defines a feasibility, and Sections \ref{Sec5} and \ref{Sec6} give the details of algorithm and evaluation. Section \ref{Sec7} shows the experimental results. Conclusions are provided in the last section.
+The remaining of this paper is organized as follows. Section \ref{Sec2} introduces a PV array which is a targeting PV system in this paper. Section \ref{Sec3} gives related works. Section \ref{Sec4} defines a feasibility, and Sections \ref{Sec5} give the details of algorithm and evaluation. 
+% Section \ref{Sec7} shows the experimental results. 
+Conclusions are provided in the last section.
 
 \section{Photovoltaic array}\label{Sec2}
 A PV system or PV array is composed of PV panels that have two terminals of plus and minus and can be interconnected. There are two common connection styles for PV arrays, \textit{series-parallel} array and \textit{total-cross-tied} array. 
 In a series-parallel array, PV panels are connected in series, and multiple series connections are connected in parallel. In a total-cross-tied array, parallel connections of PV panels are connected in series. In this paper, we focus on series-parallel arrays, however the basic idea of the proposed method can be applied also to total-cross-tied arrays. Hereafter, we simply call a series-parallel array a \textit{PV array}. 
 
-Figure \ref{model} shows an example of a PV array. A PV array is a parallel connection of (PV) strings where a string is a series connection of PV panels. A PV panel is a series connection of PV modules, and a PV module is a parallel connection of a series of PV cells and a bypass diode. A typical PV panel is composed of three PV modules each of which has 12-24 PV cells. A PV module can generate power for a given voltage according to its I-V characteristics as shown in Fig.\ref{fig:IV}(a). The I-V characteristics is affected by irradiance level and physical damage of PV cells. Figure \ref{fig:IV}(a) also shows a typical degradation of a I-V characteristics where generated current is reduced with some ratio while keeping the voltage range. When a PV panel has a partial shade, that is its PV modules have different irradiance levels and hence different I-V characteristics, the PV panels might have multiple peaks (maximum power points, MPPs) in power generation as shown in Fig.\ref{fig:IV}(b). 
+Figure \ref{model} shows an example of a PV array. A PV array is a parallel connection of (PV) strings where a string is a series connection of PV panels. A PV panel is a series connection of PV modules, and a PV module is a parallel connection of a series of PV cells and a bypass diode. A typical PV panel is composed of three PV modules each of which has 12-24 PV cells. A PV module can generate power for a given voltage according to its I-V characteristics as shown in Fig.\ref{fig:IV}(a - c). The I-V characteristics is affected by irradiance level and physical damage of PV cells. Figure \ref{fig:IV}(a) also shows a typical degradation of a I-V characteristics where generated current is reduced with some ratio while keeping the voltage range. When a PV panel has a partial shade, that is its PV modules have different irradiance levels and hence different I-V characteristics, the PV panels might have multiple peaks (maximum power points, MPPs) in power generation as shown in Fig.\ref{fig:IV}(d). 
 
-To find out accurate I-V characteristics of a PV panel, we need a time consuming power simulation. However, we can roughly understand I-V characteristics of a PV panel (and also a string) as follows. When a control voltage is low, PV modules with high irradiance level are active while PV modules with low irradiance level are inactive with turning on their bypass diodes. In this case, a high current can flow in the PV panel. When control voltage is high, some of bypass diodes become turning off and the corresponding PV modules become active. In this case, the current level is reduced and generated power sometimes increases and sometimes decreases. The generated power at MPPs can be roughly estimated. In Fig.\ref{fig:IV}(b), one PV panel has three PV modules with different irradiance levels. The peak currents for these modules are 5A, 3A, and 1.5A, respectively. Voltages at MPPs are roughly 20V, 40V, 60V in Fig.\ref{fig:IV}(b), those are roughly multiples of a voltage of MPP for one PV module (around 20V in this case). At the first MPP (MPP1), only one PV module with a peak current of 5A is active at a control voltage of 20V, so the generated power is 100W. At the second MPP (MPP2), two PV modules with peak currents of 5A and 3A are active at a control voltage of 40V. In this case, the current level of the PV panel is 3A since two PV panels are connected in series and they have to have the same current level, and the generated power is 120W. At the third MPP (MPP3), the current level of the PV panel is 1.5A at a control voltage of 60V, and the generated power is 90W. 
+To find out accurate I-V characteristics of a PV panel, we need a time consuming power simulation. However, we can roughly understand I-V characteristics of a PV panel (and also a string) as follows. When a control voltage is low, PV modules with high irradiance level are active while PV modules with low irradiance level are inactive with turning on their bypass diodes. In this case, a high current can flow in the PV panel. When control voltage is high, some of bypass diodes become turning off and the corresponding PV modules become active. In this case, the current level is reduced and generated power sometimes increases and sometimes decreases. The generated power at MPPs can be roughly estimated. In Fig.\ref{fig:IV}(d), one PV panel has three PV modules with different irradiance levels. The peak currents for these modules are 433mA, 307mA, and 155mA, respectively. Voltages at MPPs are roughly 200V, 400V, 600V in Fig.\ref{fig:IV}(d), those are roughly multiples of a voltage of MPP for one PV module (around 200V in this case). At the first MPP (MPP1), only one PV module with a peak current of 433mA is active at a control voltage of 206V, so the generated power is 89W. At the second MPP (MPP2), two PV modules with peak currents of 433mA and 307mA are active at a control voltage of 420V. In this case, the current level of the PV panel is 307mA since two PV panels are connected in series and they have to have the same current level, and the generated power is 129W. At the third MPP (MPP3), the current level of the PV panel is 155mA at a control voltage of 644V, and the generated power is 100W. 
 
 In a PV array, we have two constraints. PV panels in the same string have the same current level, while all the strings have the same control voltage. When considering reconfiguration of PV panel connection, we should find out the best configuration while considering these constraints. 
 
@@ -94,17 +96,17 @@ In a PV array, we have two constraints. PV panels in the same string have the sa
 
 \begin{figure}
      \centering
-    \begin{subfigure}[b]{0.5\linewidth}
+    \begin{subfigure}[b]{0.3\linewidth}
         \centering
         \includegraphics[width=\linewidth]{fig/Module_1.eps}
         \caption{PV module 1}
      \end{subfigure}
-     \begin{subfigure}[b]{0.5\linewidth}
+     \begin{subfigure}[b]{0.3\linewidth}
         \centering
         \includegraphics[width=\linewidth]{fig/Module_2.eps}
         \caption{PV module 2}
      \end{subfigure}
-     \begin{subfigure}[b]{0.5\linewidth}
+     \begin{subfigure}[b]{0.3\linewidth}
         \centering
         \includegraphics[width=\linewidth]{fig/Module_3.eps}
         \caption{PV module 3}
@@ -595,12 +597,12 @@ The computational time required for finding optimal configuration and accuracy o
 \begin{tabular}{ccc}
 \multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}}COMPARISON BETWEEN EXISTED METHODS\\ AND PROPOSED ALGORITHM\end{tabular}}                                         \\ \hline \hline
 \multicolumn{1}{c|}{}                         & \multicolumn{1}{c|}{Proposed Algorithm} & \begin{tabular}[c]{@{}c@{}}Exhaustive search \\ Algorithm\end{tabular} \\ \hline
-\multicolumn{1}{c|}{Number of PV Array}       & \multicolumn{2}{c}{-}                                                                                         \\ \hline
-\multicolumn{1}{c|}{Number of MPP candidates} & \multicolumn{2}{c}{-}                                                                                       \\ \hline
-\multicolumn{1}{c|}{Feasible Candidates}      & \multicolumn{1}{c|}{-}              & -                                                                   \\ \hline
-\multicolumn{1}{c|}{Infeasible Candidates}    & \multicolumn{1}{c|}{-}              & -                                                                   \\ \hline
-\multicolumn{1}{c|}{Error Rate}               & \multicolumn{1}{c|}{0.89\%}            & 0\%                                                                    \\ \hline
-\multicolumn{1}{c|}{Ave. times per Array}     & \multicolumn{1}{c|}{0.157s}            & 4370s                                                                 
+\multicolumn{1}{c|}{Number of PV Array}       & \multicolumn{2}{c}{100}                                                                                         \\ \hline
+\multicolumn{1}{c|}{Number of MPP candidates} & \multicolumn{2}{c}{486}                                                                                       \\ \hline
+\multicolumn{1}{c|}{Feasible Candidates}      & \multicolumn{1}{c|}{324}              & 327                                                                   \\ \hline
+\multicolumn{1}{c|}{Infeasible Candidates}    & \multicolumn{1}{c|}{162}              & 159                                                                   \\ \hline
+\multicolumn{1}{c|}{Error Rate}               & \multicolumn{1}{c|}{0.62\%}            & 0\%                                                                    \\ \hline
+\multicolumn{1}{c|}{Ave. times per Array}     & \multicolumn{1}{c|}{0.003s}            & 98s                                                                 
 \end{tabular}
 \label{result_compare}
 \end{center}

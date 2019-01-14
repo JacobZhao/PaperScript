@@ -8,8 +8,8 @@
 \usepackage{subcaption}
 % \usepackage{subfigure}
 \usepackage{color}
-%\usepackage[dvipdfmx]{graphicx}
-\usepackage{graphicx}
+\usepackage[dvipdfmx]{graphicx}
+%\usepackage{graphicx}
 % by zhao, in overleaf no need to add [dvipdfmx] for disp eps figure
 \usepackage{textcomp}
 \usepackage{xcolor}
@@ -112,7 +112,7 @@ In a PV array, we have two constraints. PV panels in the same string have the sa
         \caption{PV module 3}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[b]{0.9\linewidth}
+    \begin{subfigure}[b]{0.8\linewidth}
         \centering
         \vspace{3mm}
         \includegraphics[width=\linewidth]{fig/pv_panel_edit.eps}
@@ -611,21 +611,21 @@ The computational time required for finding optimal configuration and accuracy o
 % \section{Simulation}\label{Sec6}
 % In this section, we consider using 3 different size PV array, which are 3 $\times$ 4 array, 60 $\times$ 4 array and 40 $\times$ 15 array. The whole process though SPICE simulation with the configuration result by proposed algorithm. The PV cell's parameters are shown in Table \ref{PV_cell_par}.
 
-% \begin{table}[]
-% \caption{PV Cell Parameters}
-% \begin{center}
-% \begin{tabular}{c|c}
-% \hline \hline
-% Parameter             & Value  \\ \hline
-% Short-Circuit Current & 0.66A  \\
-% MPP-Current           & 0.58A  \\
-% Open-Circuit Voltage  & 280V   \\
-% MPP-Voltage           & 215V  \\
-% Max Power Output      & 124.7W 
-% \end{tabular}
-% \end{center}
-% \label{PV_cell_par}
-% \end{table}
+\begin{table}[]
+\caption{PV Cell Parameters}
+\begin{center}
+\begin{tabular}{c|c}
+\hline \hline
+Parameter             & Value  \\ \hline
+Short-Circuit Current & 0.66A  \\
+MPP-Current           & 0.58A  \\
+Open-Circuit Voltage  & 280V   \\
+MPP-Voltage           & 215V  \\
+Max Power Output      & 124.7W 
+\end{tabular}
+\end{center}
+\label{PV_cell_par}
+\end{table}
 % \subsection{3 $\times$ 4 Array}
 % In a 3 $\times$ 4 array, there are 12 panels connected in parallel for 4 strings, for each string contains 3 PV panels. The shadow conditions for PV array are not uniformly, as shown in Fig. \ref{shadow_3x4_a}. Without reconfiguration, PV array output I-V characteristic as shown in Fig. \ref{shadow_3x4_b}. The global MPP as {\color{red}{how many Watt}} on {\color{red}{how many voltage}}. After proposed algorithm based reconfiguration, this PV array achieved {\color{red}{how many Watt}} on {\color{red}{how many voltage}} for global MPP. The output power has increased by {\color{red}{how many \%}}
 % \subsection{60 $\times$ 4 Array}

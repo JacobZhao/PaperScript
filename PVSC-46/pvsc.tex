@@ -83,7 +83,8 @@ After reconfiguring PV panel connection, the PV array generates more power than 
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.7\linewidth]{PVSC-46/fig/compare.png}
+    %\includegraphics[width=0.7\linewidth]{PVSC-46/fig/compare.png}
+    \includegraphics[width=0.7\linewidth]{fig/compare.png}
     \caption{Power generation before and after reconfiguration}
     \label{compare}
 \end{figure}
@@ -107,7 +108,7 @@ Some methods are based on genetic algorithm (GA)\cite{carotenuto2015evolutionary
 Orozco-Gutierrez et al. proposed a reconfiguration method\cite{orozco2016optimized} where they first consider PV module level balancing with approximated values and select feasible PV panel connections as candidates for further analysis. 
 Though they showed a simple necessary condition to check feasibility, the condition is not sufficient and it is not clear how the method accurately identify the feasibility of PV panel connections. 
 
-In this paper, we introduce a \textit{feasibility check problem} that identifies whether a PV panel connection can be configured from a given PV module level specification, and propose an algorithm to solve the problem. The proposed algorithm efficiently checks the feasibility by configuring PV panel connections for most feasible cases. 
+In this paper, we introduce a \textit{feasibility check problem} that identifies whether a PV panel connection can be configured from a given PV module level specification, and propose an algorithm to solve the problem. The proposed algorithm efficiently and effectively checks the feasibility by configuring PV panel connections. 
 The proposed method is useful to 
 identify the feasibility required in \cite{orozco2016optimized} and also 
 configure PV panel connections from solutions at PV module level.
@@ -193,20 +194,6 @@ configure PV panel connections from solutions at PV module level.
 
 
 
-%\begin{table}[t]
-%\caption{Maximum number of active modules}
-%\label{tab:modules}
-%\centering
-%\begin{tabular}{c|rrrr|r}	
-%\hline\hline
-%       &    	\multicolumn{4}{c|}{Panels}	& \\									
-%	&	\multicolumn{1}{c}{$P1$}	&	\multicolumn{1}{c}{$P2$}	&	\multicolumn{1}{c}{$P3$}	&	\multicolumn{1}{c}{$P4$} &	\multicolumn{1}{|c}{total}	\\ \hline
-%3A	&	2	&	1	&	0	&	0 & 3	\\ \hline
-%2.5A	&	2	&	3	&	0	&	1 & 6	\\ \hline
-%1.5A	&	3	&	3	&	0	&	2 & 8	\\ \hline
-%0.5A	&	3	&	3	&	3	&	3 & 12	\\ \hline
-%\end{tabular}
-%\end{table}
 
 %\begin{table*}[t]
 %\caption{Approximated power}
@@ -244,24 +231,28 @@ A PV module can generate power for a given voltage according to its I-V characte
      \centering
 	 \begin{subfigure}[b]{0.3\linewidth}
         \centering
-        \includegraphics[width=\linewidth]{PVSC-46/fig/m_1.png}
+        %\includegraphics[width=\linewidth]{PVSC-46/fig/m_1.png}
+        \includegraphics[width=\linewidth]{fig/m_1.png}
         \caption{PV module 1}
     \end{subfigure}
      \begin{subfigure}[b]{0.3\linewidth}
         \centering
-        \includegraphics[width=\linewidth]{PVSC-46/fig/m_2.png}
+        %\includegraphics[width=\linewidth]{PVSC-46/fig/m_2.png}
+        \includegraphics[width=\linewidth]{fig/m_2.png}
         \caption{PV module 2}
      \end{subfigure}
 	\begin{subfigure}[b]{0.3\linewidth}
         \centering
-        \includegraphics[width=\linewidth]{PVSC-46/fig/m_3.png}
+        %\includegraphics[width=\linewidth]{PVSC-46/fig/m_3.png}
+        \includegraphics[width=\linewidth]{fig/m_3.png}
         \caption{PV module 3}
      \end{subfigure}
     \hfill
     \begin{subfigure}[b]{\linewidth}
         \centering
         \vspace{2mm}
-        \includegraphics[width=\linewidth]{PVSC-46/fig/panel.png}
+        %\includegraphics[width=\linewidth]{PVSC-46/fig/panel.png}
+        \includegraphics[width=0.85\linewidth]{fig/panel.png}
         \caption{PV panel}
     \end{subfigure}
     \caption{I-V characteristics}
@@ -270,14 +261,16 @@ A PV module can generate power for a given voltage according to its I-V characte
 
 When a PV panel has a partial shading, the PV panels might have multiple peaks (maximum power points, MPPs) in power generation as shown in Fig.~\ref{fig:IV}(d). 
 The I-V characteristics of a series connection of PV modules like a PV panel or a string can be roughly understood as follows. 
-In Fig.~\ref{fig:IV}, one PV panel has three PV modules with different I-V characteristics with MPPs at current and voltage pairs of around (5A,~20V), (3A,~20V), and (1.5A,~20A), respectively as shown in Fig.~\ref{fig:IV}(a-c). The PV panel has three MPPs at around (5A,~20V), (3A,~40V), and (1.5A,~60A) as shown in Fig.~\ref{fig:IV}(d). 
-When a control voltage is 20V, a PV module with the highest maximum current (module 1) is active while other PV modules (modules 2 and 3) are inactive with turning on their bypass diodes. 
-When a control voltage is 40V, PV modules 1 and 2 are active with current level 3A. That is if a PV module can be active with current level $I$A, the PV module also can be active with current level $I$A or less.
+In Fig.~\ref{fig:IV}, one PV panel has three PV modules with different I-V characteristics with MPPs at current and voltage pairs of around (4.5A,~22V), (3A,~22V), and (1.5A,~22A), respectively as shown in Fig.~\ref{fig:IV}(a-c). The PV panel has three MPPs at around (4.5A,~22V), (3A,~44V), and (1.5A,~66A) as shown in Fig.~\ref{fig:IV}(d). 
+When a control voltage is 22V, a PV module with the highest maximum current (module 1) is active while other PV modules (modules 2 and 3) are inactive with turning on their bypass diodes. 
+When a control voltage is 44V, PV modules 1 and 2 are active with current level 3A. That is if a PV module can be active with current level $I$A, the PV module also can be active with current level $I$A or less.
 
 We introduce a \textit{feasibility problem} for a requirement of currents of strings. 
 In a PV array, current levels of active PV modules should be the same for each string and voltage levels of strings should be the same. The latter implies that the number of active modules should be the same for all the strings. 
 When information of MPPs of PV panels is given like Table \ref{tab:approximated}, we consider if it is feasible to configure a PV array with current levels of 
-$Q = (Q_{1},Q_{2},\ldots ,Q_{s})$ for strings $1,2,\ldots s$ with $m$ active modules per string. For example, for a current requirement (2.5A, 2.5A) with 3 active modules is realized by assigning panel $P2$ to the first string and panels $P1$ and $P4$ to the second string as shown in Fig.~\ref{fig:feasible-configuration}. However, we could not find a feasible assignment for a current pair (3A, 2.5A) with 3 active modules.
+$Q = (Q_{1},Q_{2},\ldots ,Q_{s})$ for $s$ strings with $m$ active modules per string. 
+Table \ref{tab:approximated} also shows the maximum number of active modules for each required current level and PV panel (this information is obtained from MPP information).
+For example, for a current requirement (2.5A, 2.5A) with 3 active modules is realized by assigning panel $P2$ to the first string and panels $P1$ and $P4$ to the second string as shown in Fig.~\ref{fig:feasible-configuration}. However, we could not find a feasible assignment for a current pair (3A, 2.5A) with 3 active modules.
 
 %There are three peaks in power (maximum power points, MPPs) where voltage values are roughly multiples of a unit voltage. Current levels of MPPs are roughly maximum current levels of three PV modules in In Fig.\ref{fig:IV}(a-c). 
 
@@ -286,18 +279,55 @@ $Q = (Q_{1},Q_{2},\ldots ,Q_{s})$ for strings $1,2,\ldots s$ with $m$ active mod
 %In the method\cite{orozco2016optimized}, to execute a power simulation for a PV array, we need to assign panels into strings to realize a candidate configuration. 
 
 \begin{table}[t]
-\caption{Currents of MPPs}
+\caption{MPP information}
 \label{tab:approximated}
 \centering
-\begin{tabular}{c|rrrr}	
+\begin{tabular}{cc|rrrr}	
 \hline\hline
-       &    	\multicolumn{4}{c}{Panels}	\\
-	&	\multicolumn{1}{c}{$P1$}	&	\multicolumn{1}{c}{$P2$}	&	\multicolumn{1}{c}{$P3$}	&	\multicolumn{1}{c}{$P4$}	\\ \hline
-MPP1	&	3A	&	3A	&	0.5A	&	2.5A	\\ \hline
-MPP2	&	3A	&	2.5A	&	0.5A	&	1.5A	\\ \hline
-MPP3	&	1.5A	&	2.5A	&	0.5A	&	0.5A	\\ \hline
+  &     &    	\multicolumn{4}{c}{Panels}	\\
+&	&	\multicolumn{1}{c}{$P1$}	&	\multicolumn{1}{c}{$P2$}	&	\multicolumn{1}{c}{$P3$}	&	\multicolumn{1}{c}{$P4$} \\ \hline
+\multicolumn{2}{c|}{MPP1}	&	3A	&	3A	&	0.5A	&	2.5A 	\\ \hline
+\multicolumn{2}{c|}{MPP2}	&	3A	&	2.5A	&	0.5A	&	1.5A 	\\ \hline
+\multicolumn{2}{c|}{MPP3}	&	1.5A	&	2.5A	&	0.5A	&	0.5A 	\\ \hline\hline
+%       &    	\multicolumn{4}{c|}{Panels}	& \\									
+%	&	\multicolumn{1}{c}{$P1$}	&	\multicolumn{1}{c}{$P2$}	&	\multicolumn{1}{c}{$P3$}	&	\multicolumn{1}{c}{$P4$} &	\multicolumn{1}{|c}{total}	\\ \hline
+& 3A	&	2	&	1	&	0	&	0 	\\ \cline{2-6}
+Max Number of & 2.5A	&	2	&	3	&	0	&	1 	\\ \cline{2-6}
+Active Modules & 1.5A	&	3	&	3	&	0	&	2 	\\ \cline{2-6}
+& 0.5A	&	3	&	3	&	3	&	3 	\\ \hline
 \end{tabular}
 \end{table}
+
+%\begin{table}[t]
+%\caption{MPP information}
+%\label{tab:approximated}
+%\centering
+%\begin{tabular}{c|rrrr}	
+%\hline\hline
+%       &    	\multicolumn{4}{c}{Panels}	\\
+%	&	\multicolumn{1}{c}{$P1$}	&	\multicolumn{1}{c}{$P2$}	&	\multicolumn{1}{c}{$P3$}	&	\multicolumn{1}{c}{$P4$}	\\ \hline
+%MPP1	&	3A	&	3A	&	0.5A	&	2.5A	\\ \hline
+%MPP2	&	3A	&	2.5A	&	0.5A	&	1.5A	\\ \hline
+%MPP3	&	1.5A	&	2.5A	&	0.5A	&	0.5A	\\ \hline
+%\end{tabular}
+%\end{table}
+%
+%\begin{table}[t]
+%\caption{Maximum number of active modules}
+%\label{tab:modules}
+%\centering
+%\begin{tabular}{c|rrrr|r}	
+%\hline\hline
+%       &    	\multicolumn{4}{c|}{Panels}	& \\									
+%	&	\multicolumn{1}{c}{$P1$}	&	\multicolumn{1}{c}{$P2$}	&	\multicolumn{1}{c}{$P3$}	&	\multicolumn{1}{c}{$P4$} &	\multicolumn{1}{|c}{total}	\\ \hline
+%3A	&	2	&	1	&	0	&	0 & 3	\\ \hline
+%2.5A	&	2	&	3	&	0	&	1 & 6	\\ \hline
+%1.5A	&	3	&	3	&	0	&	2 & 8	\\ \hline
+%0.5A	&	3	&	3	&	3	&	3 & 12	\\ \hline
+%\end{tabular}
+%\end{table}
+
+
 
 \begin{figure}[t]
     \centering
@@ -393,13 +423,14 @@ To assign panels for the $n$-th string, the following steps are applied. Let $m$
 %Before explaining more details, we first show an example. 
 Table \ref{tab:proposed-example} shows an example of how to select (at least) 5 PV modules for the first string. 
 Panels are sorted by $Loss$ and $M_{p}(Q_{1})$ and a sequence $P1$, $P2$, $\ldots$, $P8$ is obtained. 
-In the example, panels $P2$ to $P6$ are at the same loss level $(1,0)$. 
-PV panels are selected for each loss level. First, $P1$ is selected, then panels at the second loss level are selected in the order of $P2$, $P3$, $\ldots$. After selecting until $P5$, the number of active modules exceed $m (=5)$. In this case, if there is some redundant panels, these panels are canceled. In the example, $P4$ is canceled. Finally, if some of selected PV panels can be swapped with unselected panels according to a swap rule in Table \ref{tab:swap}, they are swapped. In the example, $P2$ and $P3$ are swapped with $P6$. Consequently, three panels $P1$, $P5$ and $P6$ are selected. 
+%In the example, panels $P2$ to $P6$ are at the same loss level $(1,0)$. 
+%PV panels are selected for each loss level. 
+First, panels are selected in this order. After selecting until $P5$, the number of active modules exceed $m (=5)$. Then, some redundant panels ($P4$ in this case) are canceled. Finally, some of selected PV panels are swapped with unselected panels according to a swap rule in Table \ref{tab:swap}. In the example, $P2$ and $P3$ are swapped with $P6$. Consequently, three panels $P1$, $P5$ and $P6$ are selected. 
 
 \begin{table}[t]
 \caption{An example of the proposed method ($m = 5$)}
 \begin{center}
-\begin{tabular}{c|c|ccccc|cc}\hline \hline
+\begin{tabular}{c|cccccccc}\hline \hline
                                & \multicolumn{8}{c}{Panels}  \\
                                &  \multicolumn{1}{c}{$P1$}    & $P2$   & $P3$    & $P4$    & $P5$   & \multicolumn{1}{c}{$P6$}            & $P7$ & $P8$             \\ \hline
 $M_{p}(Q_1)$        & 1     & 1     & 1     & 1     & 2    & 2  & 1  & 2              \\ \hline
@@ -664,14 +695,16 @@ Each PV array has 4 or 5 candidates and our algorithm indeed found PV panel conn
 \label{tab:result}
 \begin{center}
 \begin{tabular}{ccc}
-%\multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}}COMPARISON BETWEEN EXISTED METHODS\\ AND PROPOSED ALGORITHM\end{tabular}}                                         \\ \hline \hline
-\multicolumn{1}{c|}{}                         & \multicolumn{1}{c|}{Proposed Algorithm} & \begin{tabular}[c]{@{}c@{}}Exhaustive search \\ Algorithm\end{tabular} \\ \hline
+%\multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}}COMPARISON BETWEEN EXISTED METHODS\\ AND PROPOSED ALGORITHM\end{tabular}}     
+\hline \hline
+%\multicolumn{1}{c|}{}                         & \multicolumn{1}{c|}{Proposed Algorithm} & \begin{tabular}[c]{@{}c@{}}Exhaustive Search \\ Algorithm\end{tabular} \\ \hline
+\multicolumn{1}{c|}{}                         & \multicolumn{1}{c|}{Proposed Algorithm} & \multicolumn{1}{c}{Exhaustive Search}\\ \hline
 \multicolumn{1}{c|}{Number of PV Array}       & \multicolumn{2}{c}{100}                                                                                         \\ \hline
 \multicolumn{1}{c|}{Number of MPP candidates} & \multicolumn{2}{c}{486}                                                                                       \\ \hline
 \multicolumn{1}{c|}{Feasible Candidates}      & \multicolumn{1}{c|}{324}              & 327                                                                   \\ \hline
 \multicolumn{1}{c|}{Infeasible Candidates}    & \multicolumn{1}{c|}{162}              & 159                                                                   \\ \hline
 \multicolumn{1}{c|}{Error Rate}               & \multicolumn{1}{c|}{0.62\%}            & 0\%                                                                    \\ \hline
-\multicolumn{1}{c|}{Ave. times per Array}     & \multicolumn{1}{c|}{0.003s}            & 98s                                                                 
+\multicolumn{1}{c|}{Ave. times per Array}     & \multicolumn{1}{c|}{0.003s}            & 98s            \\ \hline                                                     
 \end{tabular}
 %\label{result_compare}
 \end{center}

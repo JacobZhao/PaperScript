@@ -1,0 +1,26 @@
+* C:\Users\dafang\Desktop\New_pv_array\1module.asc
+V1 1 0 1.6
+V2 2 0 {test}
+V3 3 0 5.1
+XX1 1 p 0 module
+XX2 2 p 0 module
+XX3 3 p 0 module
+V4 N001 0 0
+V5 p N001 0
+R1 N001 0 10k
+
+* block symbol definitions
+.subckt module I_in Plus Mins
+D1 N001 Mins diode1
+rsh1 N001 Mins 3600
+rs1 Plus N001 0.036
+G1 Mins N001 I_in 0 1
+.model diode1 D IS=1e-7 N=54
+.ends module
+
+.model D D
+.lib C:\Users\dafang\Documents\LTspiceXVII\lib\cmp\standard.dio
+.dc V4 0 25 0.1
+.step param test 0 5.1 1.6
+.backanno
+.end

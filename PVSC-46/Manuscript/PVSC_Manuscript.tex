@@ -49,7 +49,7 @@
 % http://www.michaelshell.org/tex/testflow/
 
 %
-\documentclass[conference]{./pvsctran}
+\documentclass[conference]{pvsctran}
 %
 % If IEEEtran.cls has not been installed into the LaTeX system files,
 % manually specify the path to it like:
@@ -63,293 +63,16 @@
 \usepackage{amsmath}
 \usepackage[super]{nth}
 \usepackage{multicol}
-
-
-
-% Some very useful LaTeX packages include:
-% (uncomment the ones you want to load)
-
-
-% *** MISC UTILITY PACKAGES ***
-%
-%\usepackage{ifpdf}
-% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
-% compilation based on whether the output is pdf or dvi.
-% usage:
-% \ifpdf
-%   % pdf code
-% \else
-%   % dvi code
-% \fi
-% The latest version of ifpdf.sty can be obtained from:
-% http://www.ctan.org/pkg/ifpdf
-% Also, note that IEEEtran.cls V1.7 and later provides a builtin
-% \ifCLASSINFOpdf conditional that works the same way.
-% When switching from latex to pdflatex and vice-versa, the compiler may
-% have to be run twice to clear warning/error messages.
-
-
-
-
-
-
-% *** CITATION PACKAGES ***
-%
-%\usepackage{cite}
-% cite.sty was written by Donald Arseneau
-% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
-% \cite{} output to follow that of the IEEE. Loading the cite package will
-% result in citation numbers being automatically sorted and properly
-% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
-% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
-% \cite will automatically add leading space, if needed. Use cite.sty's
-% noadjust option (cite.sty V3.8 and later) if you want to turn this off
-% such as if a citation ever needs to be enclosed in parenthesis.
-% cite.sty is already installed on most LaTeX systems. Be sure and use
-% version 5.0 (2009-03-20) and later if using hyperref.sty.
-% The latest version can be obtained at:
-% http://www.ctan.org/pkg/cite
-% The documentation is contained in the cite.sty file itself.
-
-
-
-
-
-
-% *** GRAPHICS RELATED PACKAGES ***
-%
-\ifCLASSINFOpdf
-  % \usepackage[pdftex]{graphicx}
-  % declare the path(s) where your graphic files are
-  % \graphicspath{{../pdf/}{../jpeg/}}
-  % and their extensions so you won't have to specify these with
-  % every instance of \includegraphics
-  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
-\else
-  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
-  % will default to the driver specified in the system graphics.cfg if no
-  % driver is specified.
-  % \usepackage[dvips]{graphicx}
-  % declare the path(s) where your graphic files are
-  % \graphicspath{{../eps/}}
-  % and their extensions so you won't have to specify these with
-  % every instance of \includegraphics
-  % \DeclareGraphicsExtensions{.eps}
-\fi
-% graphicx was written by David Carlisle and Sebastian Rahtz. It is
-% required if you want graphics, photos, etc. graphicx.sty is already
-% installed on most LaTeX systems. The latest version and documentation
-% can be obtained at: 
-% http://www.ctan.org/pkg/graphicx
-% Another good source of documentation is "Using Imported Graphics in
-% LaTeX2e" by Keith Reckdahl which can be found at:
-% http://www.ctan.org/pkg/epslatex
-%
-% latex, and pdflatex in dvi mode, support graphics in encapsulated
-% postscript (.eps) format. pdflatex in pdf mode supports graphics
-% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
-% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
-% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
-% which can result in "jaggedy"/blurry rendering of lines and letters as
-% well as large increases in file sizes.
-%
-% You can find documentation about the pdfTeX application at:
-% http://www.tug.org/applications/pdftex
-
-
-
-
-
-% *** MATH PACKAGES ***
-%
-%\usepackage{amsmath}
-% A popular package from the American Mathematical Society that provides
-% many useful and powerful commands for dealing with mathematics.
-%
-% Note that the amsmath package sets \interdisplaylinepenalty to 10000
-% thus preventing page breaks from occurring within multiline equations. Use:
-%\interdisplaylinepenalty=2500
-% after loading amsmath to restore such page breaks as IEEEtran.cls normally
-% does. amsmath.sty is already installed on most LaTeX systems. The latest
-% version and documentation can be obtained at:
-% http://www.ctan.org/pkg/amsmath
-
-
-
-
-
-% *** SPECIALIZED LIST PACKAGES ***
-%
-%\usepackage{algorithmic}
-% algorithmic.sty was written by Peter Williams and Rogerio Brito.
-% This package provides an algorithmic environment fo describing algorithms.
-% You can use the algorithmic environment in-text or within a figure
-% environment to provide for a floating algorithm. Do NOT use the algorithm
-% floating environment provided by algorithm.sty (by the same authors) or
-% algorithm2e.sty (by Christophe Fiorio) as the IEEE does not use dedicated
-% algorithm float types and packages that provide these will not provide
-% correct IEEE style captions. The latest version and documentation of
-% algorithmic.sty can be obtained at:
-% http://www.ctan.org/pkg/algorithms
-% Also of interest may be the (relatively newer and more customizable)
-% algorithmicx.sty package by Szasz Janos:
-% http://www.ctan.org/pkg/algorithmicx
-
-
-
-
-% *** ALIGNMENT PACKAGES ***
-%
-%\usepackage{array}
-% Frank Mittelbach's and David Carlisle's array.sty patches and improves
-% the standard LaTeX2e array and tabular environments to provide better
-% appearance and additional user controls. As the default LaTeX2e table
-% generation code is lacking to the point of almost being broken with
-% respect to the quality of the end results, all users are strongly
-% advised to use an enhanced (at the very least that provided by array.sty)
-% set of table tools. array.sty is already installed on most systems. The
-% latest version and documentation can be obtained at:
-% http://www.ctan.org/pkg/array
-
-
-% IEEEtran contains the IEEEeqnarray family of commands that can be used to
-% generate multiline equations as well as matrices, tables, etc., of high
-% quality.
-
-
-
-
-% *** SUBFIGURE PACKAGES ***
-%\ifCLASSOPTIONcompsoc
-%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
-%\else
-%  \usepackage[caption=false,font=footnotesize]{subfig}
-%\fi
-% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
-% for subfigure.sty, the latter of which is no longer maintained and is
-% incompatible with some LaTeX packages including fixltx2e. However,
-% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
-% which will override IEEEtran.cls' handling of captions and this will result
-% in non-IEEE style figure/table captions. To prevent this problem, be sure
-% and invoke subfig.sty's "caption=false" package option (available since
-% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
-% handling of captions.
-% Note that the Computer Society format requires a larger sans serif font
-% than the serif footnote size font used in traditional IEEE formatting
-% and thus the need to invoke different subfig.sty package options depending
-% on whether compsoc mode has been enabled.
-%
-% The latest version and documentation of subfig.sty can be obtained at:
-% http://www.ctan.org/pkg/subfig
-
-
-
-
-% *** FLOAT PACKAGES ***
-%
-%\usepackage{fixltx2e}
-% fixltx2e, the successor to the earlier fix2col.sty, was written by
-% Frank Mittelbach and David Carlisle. This package corrects a few problems
-% in the LaTeX2e kernel, the most notable of which is that in current
-% LaTeX2e releases, the ordering of single and double column floats is not
-% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
-% single column figure to be placed prior to an earlier double column
-% figure.
-% Be aware that LaTeX2e kernels dated 2015 and later have fixltx2e.sty's
-% corrections already built into the system in which case a warning will
-% be issued if an attempt is made to load fixltx2e.sty as it is no longer
-% needed.
-% The latest version and documentation can be found at:
-% http://www.ctan.org/pkg/fixltx2e
-
-
-%\usepackage{stfloats}
-% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
-% the ability to do double column floats at the bottom of the page as well
-% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
-% LaTeX2e). It also provides a command:
-%\fnbelowfloat
-% to enable the placement of footnotes below bottom floats (the standard
-% LaTeX2e kernel puts them above bottom floats). This is an invasive package
-% which rewrites many portions of the LaTeX2e float routines. It may not work
-% with other packages that modify the LaTeX2e float routines. The latest
-% version and documentation can be obtained at:
-% http://www.ctan.org/pkg/stfloats
-% Do not use the stfloats baselinefloat ability as the IEEE does not allow
-% \baselineskip to stretch. Authors submitting work to the IEEE should note
-% that the IEEE rarely uses double column equations and that authors should try
-% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
-% packages (also by Sigitas Tolusis) as the IEEE does not format its papers in
-% such ways.
-% Do not attempt to use stfloats with fixltx2e as they are incompatible.
-% Instead, use Morten Hogholm'a dblfloatfix which combines the features
-% of both fixltx2e and stfloats:
-%
-% \usepackage{dblfloatfix}
-% The latest version can be found at:
-% http://www.ctan.org/pkg/dblfloatfix
-
-
-
-
-%\ifCLASSOPTIONcaptionsoff
-%  \usepackage[nomarkers]{endfloat}
-% \let\MYoriglatexcaption\caption
-% \renewcommand{\caption}[2][\relax]{\MYoriglatexcaption[#2]{#2}}
-%\fi
-% endfloat.sty was written by James Darrell McCauley, Jeff Goldberg and 
-% Axel Sommerfeldt. This package may be useful when used in conjunction with 
-% IEEEtran.cls'  captionsoff option. Some IEEE journals/societies require that
-% submissions have lists of figures/tables at the end of the paper and that
-% figures/tables without any captions are placed on a page by themselves at
-% the end of the document. If needed, the draftcls IEEEtran class option or
-% \CLASSINPUTbaselinestretch interface can be used to increase the line
-% spacing as well. Be sure and use the nomarkers option of endfloat to
-% prevent endfloat from "marking" where the figures would have been placed
-% in the text. The two hack lines of code above are a slight modification of
-% that suggested by in the endfloat docs (section 8.4.1) to ensure that
-% the full captions always appear in the list of figures/tables - even if
-% the user used the short optional argument of \caption[]{}.
-% IEEE papers do not typically make use of \caption[]'s optional argument,
-% so this should not be an issue. A similar trick can be used to disable
-% captions of packages such as subfig.sty that lack options to turn off
-% the subcaptions:
-% For subfig.sty:
-% \let\MYorigsubfloat\subfloat
-% \renewcommand{\subfloat}[2][\relax]{\MYorigsubfloat[]{#2}}
-% However, the above trick will not work if both optional arguments of
-% the \subfloat command are used. Furthermore, there needs to be a
-% description of each subfigure *somewhere* and endfloat does not add
-% subfigure captions to its list of figures. Thus, the best approach is to
-% avoid the use of subfigure captions (many IEEE journals avoid them anyway)
-% and instead reference/explain all the subfigures within the main caption.
-% The latest version of endfloat.sty and its documentation can obtained at:
-% http://www.ctan.org/pkg/endfloat
-%
-% The IEEEtran \ifCLASSOPTIONcaptionsoff conditional can also be used
-% later in the document, say, to conditionally put the References on a 
-% page by themselves.
-
-
-
-
-% *** PDF, URL AND HYPERLINK PACKAGES ***
-%
-%\usepackage{url}
-% url.sty was written by Donald Arseneau. It provides better support for
-% handling and breaking URLs. url.sty is already installed on most LaTeX
-% systems. The latest version and documentation can be obtained at:
-% http://www.ctan.org/pkg/url
-% Basically, \url{my_url_here}.
-
-
-
-
-% *** Do not adjust lengths that control margins, column widths, etc. ***
-% *** Do not use packages that alter fonts (such as pslatex).         ***
-% There should be no need to do such things with IEEEtran.cls V1.6 and later.
-% (Unless specifically asked to do so by the journal or conference you plan
-% to submit to, of course. )
+% Add by Zhao
+\usepackage{cite}
+\usepackage{amsthm,amsfonts}
+\usepackage{xcolor,color}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{multirow}
+\usepackage[utf8]{inputenc}
+\usepackage[ruled]{algorithm2e}
+\usepackage[colorinlistoftodos]{todonotes}
 
 
 % correct bad hyphenation here
@@ -357,49 +80,11 @@
 
 
 \begin{document}
-%
-% paper title
-% Titles are generally capitalized except for words such as a, an, and, as,
-% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
-% not capitalized unless they are the first or last word of the title.
-% Linebreaks \\ can be used within to get better formatting as desired.
-% Do not put math or special symbols in the title.
-\title{\LARGE Manuscript Preparation Guidelines and Template for the 46th IEEE Photovoltaic Specialists Conference (Title in 18-point Times font)}
 
+\title{ A Rapid Feasibility Checking for Reconfiguration of Mismatched PV Arrays}
 
-% author names and affiliations
-% use a multiple column layout for up to three different
-% affiliations
-\author{ \IEEEauthorblockN{\large William Shockley, Hans Queisser, and William R. Cherry   (List authors on this line using 12 point Times \\font -- use a second line if necessary)} \\
-\IEEEauthorblockA{\large Institute Name, City, State/Region, Mail/Zip Code, Country (authors' affiliation(s) listed here in 12 point\\ Times font Ð use a second line if necessary)}}
-
-% conference papers do not typically use \thanks and this command
-% is locked out in conference mode. If really needed, such as for
-% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
-% after \documentclass
-
-% for over three affiliations, or if they all won't fit within the width
-% of the page, use this alternative format:
-% 
-%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
-%Homer Simpson\IEEEauthorrefmark{2},
-%James Kirk\IEEEauthorrefmark{3}, 
-%Montgomery Scott\IEEEauthorrefmark{3} and
-%Eldon Tyrell\IEEEauthorrefmark{4}}
-%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
-%Georgia Institute of Technology,
-%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
-%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
-%Email: homer@thesimpsons.com}
-%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
-%Telephone: (800) 555--1212, Fax: (888) 555--1212}
-%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
-
-
-
-
-% use for special paper notices
-%\IEEEspecialpapernotice{(Invited Paper)}
+\author{ \IEEEauthorblockN{\large Dafang Zhao, Fukohito Ooshita, and Michiko Inoue}
+\IEEEauthorblockA{\large Nara Insititute of Science and Technology, Japan \\ Email:\{zhao.dafang.yu7, f-ooshita, kounoe\}@is.naist.jp}}
 
 \setlength{\columnsep}{0.25in}
 
@@ -410,92 +95,102 @@
 
 \begin{abstract}
 %\boldmath
-An abstract in the two-column format is required for the manuscript. Use 9 point Times New Roman Bold font for the abstract. Set your line spacing to be 10 points rather than single space. Indent the first line by 0.125 inches and type the word ``Abstract'' in 9 point Times New Roman Bold Italic. This should be followed by two spaces, a long dash (option / shift / minus), two spaces, and then the first word of your abstract (as shown above). Please try to keep the length of your abstract to 100 words or less. Times font is an acceptable substitute for Times New Roman font. After the abstract, you should list a few key words that describe your paper. Typically, you should list about 5 to 7 key words, in alphabetical order, using 9 point Times New Roman Bold font.
+Power generation efficiency of photovoltaic (PV) arrays is significantly affected by partial shading and PV cell damage. Partial shading or PV cell damage induces mismatched power generation among PV panels and causes an efficiency loss of power generation. Power generation of mismatched PV arrays can be recovered by reconfiguring connection of PV panels. 
+In this paper, we introduce a \textit{feasibility check problem} of PV panel configuration.
+The problem identifies whether a connection among PV panels can be configured from a given PV module level solution. 
+We also propose an algorithm for the feasibility check problem. The experimental results demonstrate that the proposed method can identify feasible configurations more than 32,000X faster than the exhaustive search with around 0.6\% errors. 
 \end{abstract}
-% IEEEtran.cls defaults to using nonbold math in the Abstract.
-% This preserves the distinction between vectors and scalars. However,
-% if the conference you are submitting to favors bold math in the abstract,
-% then you can use LaTeX's standard command \boldmath at the very start
-% of the abstract to achieve this. Many IEEE journals/conferences frown on
-% math in the abstract anyway.
+
 \begin{IEEEkeywords}
-amorphous materials, charge carrier lifetime, photovoltaic cells, silicon.
+photovoltaic, feasibility, reconfiguration, mismatch
 \end{IEEEkeywords}
-% no keywords
 
-
-
-
-% For peer review papers, you can put extra information on the cover
-% page as needed:
-% \ifCLASSOPTIONpeerreview
-% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
-% \fi
-%
-% For peerreview papers, this IEEEtran command inserts a page break and
-% creates the second title. It will be ignored for other modes.
 \IEEEpeerreviewmaketitle
 
 
 
 \section{Introduction}
-Please follow these instructions carefully.  Papers not meeting these guidelines may be excluded from the conference proceedings.  These instructions have been formatted in the manner in which you should prepare your manuscript; you may use this TeX document as a template.  Please use this as an example.  For details or clarification, please contact the Publications Chair at \url{Publications@ieee-pvsc.org}. 
+As fossil fuel depletion and environmental pollution become more serious, green and renewable energy has become necessary for a sustainable society and environment. 
+Photovoltaic (PV) systems receive significant attention since the sun has unlimited energy and PV arrays can be easily scaled up. 
+However, due to the nature of a PV cell, which is a basic component of a PV array, PV arrays are sensitive to partial shading and PV cell damage. 
+PV cells could not uniformly generate power when PV cells experience different irradiances or some of cells have physical defects, and such a mismatched condition might accelerate heating and aging of PV cells and cause further damaging. 
+To prevent PV cells from damaging, bypass diodes are usually placed in PV arrays and they are turned on in mismatched conditions. 
+However, it causes a significant loss of power generation. 
 
-Please read through this entire template before you start using it to create your paper! This will save you and the PVSC considerable time. A contributor should remember that:
-\hfil\break
-1) Deadline to submit this paper is \textbf{June 3, 2019!}\\
-2) Manuscripts must be submitted electronically to the conference website (\url{http://www.ieee-pvsc.org}).  Manuscripts must be submitted in either Microsoft Word or PDF format.  No hardcopy is required.  If you submit a Microsoft Word document, it will be converted to PDF format.  Be sure to doownload and view this PDF document to ensure proper conversion.  \\
-3) If the manuscript is not submitted by the \textbf{June 3, 2019!}\\ deadline, presentation and publication will not be permitted.  In addition, no manuscript will be published without presentation at the conference.  PVSC FOLLOWS A STRICT NO PAPER-NO PODIUM AND NO PODIUM-NO PAPER RULE.  Should you have any difficulty with the electronic submission process, please contact SPLTrak at \url{help@SPLTrak.com}.\\ 
-4) All papers are limited to six (8) pages (including all figures) and 2 MB file size.\\
-5)	You should employ this format. This document is being made available as a template for your convenience. If you elect not to use this template, please remember that you must still adhere to the general guidelines embodied in this document concerning, but not limited to, font size, margin size, page limits, file size, etc.\\
-\begin{table*}
-\centerline { TABLE 1  } 
-\vskip5pt
-\centerline { \normalsize \textsc{Summary of Typographical Settings}}
-\vskip2pt
-\centerline{
-\vbox{\offinterlineskip
-\hrule
-%\vskip2pt\hrule\vskip2pt
-% Leading & means preamble template repeats infinitely. p.241 TeX Book.
-\halign{&\vrule#&
-\strut\quad#\hfil\quad\cr
-%Use either first and third lines following this description, OR the
-%second line.  The first choice is used when all vertical rules go to the
-%top of the first horizontal line of the table.  The second choice below
-%(with the \strut) is used when there are column headings that span
-%more than one column.  The \strut in that column line will not have the
-%vertical tic marks in the horizontal rule.  Note that a vrule is also
-%considered a column, so when using \multispanx, x is the number of
-%all columns including the ``vrule.'' 
-%height2pt&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&\cr
-&\strut &&\multispan5\hfil {\bf Font Specifics}\hfil&&\multispan9\hfil {\bf Paragraph Description}\hfil &\cr
-%&\omit &&\multispan5\hfil {\bf Font Specifics}\hfil&&\multispan9\hfil {\bf Paragraph Description}\hfil &\cr
-&{\bf Section}&&\multispan5\hfil (Times Roman unless
-specified)\hfil&&\multispan5\hfil spacing (in points)\hfil &&
-alignment&&indent&\cr
-&\omit&&style&&size&&special&&line&&before&&after&&\omit&&(in inches)&\cr
-height2pt&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&\cr
-\noalign{\hrule}
-height2pt&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&\cr
-%\noalign{\vskip2pt\hrule\vskip2pt}
-%\omit&\omit&\omit&\omit\cr
-&Title&&plain&&18&&none&&single&&6&&6&&centered&&none&\cr
-&Autohr List&&plain&&12&&none&&single&&6&&6&&centered&&none&\cr
-&Affiliations&&plain&&12&&none&&single&&6&&6&&centered&&none&\cr
-&Abstract&&bold&&9&&none&&exactly 10&&0&&0&&justified&&0.125 $1^{st}$ line&\cr
-&Headings&&plain&&10&&small caps&&exactly 12&&18&&6&&centered&&none&\cr
-&Subheadings&&italic&&10&&none&&exactly 12&&6&&6&&left&&none&\cr
-&Body Paragraphs&&plain&&10&&none&&exactly 12&&0&&0&&justified&&0.125 $1^{st}$ line&\cr
-&Equations&&\multispan5 \hfil Symbol font for special characters
-\hfil&&single&&6&&6&&centered&&none&\cr
-&Figures&&\multispan5 \hfil 8 to 10 point sans serif (Helvetica)\hfil&&single&&0&&0&&centered&&none&\cr
-&Figure Captions&&plain&&9&&none &&10&&0&&0&&justified&&none, tab at 0.5&\cr
-&References&&plain&&9&&none&&10&&0&&0&&justified&&0.25 hanging&\cr
-height2pt&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&\cr}
-\hrule}}
-\label{table1}
-\end{table*}
+PV arrays are hierarchically constructed such that a group of PV cells form a PV module, a group of PV modules form a PV panel, and a group of PV panels form a PV array. 
+Power generation of mismatched PV arrays can be recovered by reconfiguring connection of these components. 
+Fig.\ref{compare} shows an example of power generations of a PV array with a partial shading. 
+We distributed shading cells non-uniformly to a PV array with 3 $\times$  4 PV panels and applied power simulation. 
+Before reconfiguration, it has four peaks in power VS voltage curve, while,  if we reconfigure connection among PV panels, it can increase around 35\% power generation.
+
+Though several reconfiguration methods have been proposed, most works consider reconfiguration in PV cell or PV module level \cite{nguyen2008adaptive,wang2014architecture,storey2013improved,storey2014optimized,udenze2018reconfiguration}. 
+However, cell level reconfiguration requires a significantly high computation time and a large number of switches for reconfiguration. 
+In addition, they require a special PV panels with capability of switching, and cannot be applied to the system constructed with standard PV panels. 
+From a practical view, reconfiguration of connection among PV panels is a realistic solution since a PV panel is manufactured as a physical one panel with two terminals and PV panels can be flexibly interconnected. 
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.8\linewidth]{PVSC-46/fig/compare.png}
+    \caption{Power generation before and after reconfiguration}
+    \label{compare}
+\end{figure}
+
+Reconfiguration in PV panel level has been investigated\cite{carotenuto2015evolutionary,hu2017non,orozco2016optimized}. 
+A PV array reconfiguration using genetic algorithm (GA) was proposed in \cite{carotenuto2015evolutionary}. Though it can give a new configuration, computing cost is significantly high and the algorithm cannot generate the best configuration precisely.  
+Hu et al. also addressed PV panel reconfiguration where they formulate a nonlinear integer programming problem to optimize power generation by reconfiguration \cite{hu2017non}.
+Orozco-Gutierrez et al. proposed an efficient and effective reconfiguration method\cite{orozco2016optimized} where it first selects candidates of configurations with approximation and then finds the best one with precise power simulation. 
+However, the candidates are specified in a PV module level though PV modules could not be fully reconfigured. Actually, we found that some of configuration candidates are not able to be realized. However, the paper\cite{orozco2016optimized}  does not show any systematic way to identify such a feasibility. 
+
+In this paper, we propose an algorithm to rapidly check feasibility that a given configuration candidate is actually formed by given PV panels. 
+The proposed method can efficiently check the feasibility while identifying most feasible cases accurately. 
+The experimental results demonstrate the effectiveness of the proposed method that 
+% \begin{table*}
+% \centerline { TABLE 1  } 
+% \vskip5pt
+% \centerline { \normalsize \textsc{Summary of Typographical Settings}}
+% \vskip2pt
+% \centerline{
+% \vbox{\offinterlineskip
+% \hrule
+% %\vskip2pt\hrule\vskip2pt
+% % Leading & means preamble template repeats infinitely. p.241 TeX Book.
+% \halign{&\vrule#&
+% \strut\quad#\hfil\quad\cr
+% %Use either first and third lines following this description, OR the
+% %second line.  The first choice is used when all vertical rules go to the
+% %top of the first horizontal line of the table.  The second choice below
+% %(with the \strut) is used when there are column headings that span
+% %more than one column.  The \strut in that column line will not have the
+% %vertical tic marks in the horizontal rule.  Note that a vrule is also
+% %considered a column, so when using \multispanx, x is the number of
+% %all columns including the ``vrule.'' 
+% %height2pt&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&\cr
+% &\strut &&\multispan5\hfil {\bf Font Specifics}\hfil&&\multispan9\hfil {\bf Paragraph Description}\hfil &\cr
+% %&\omit &&\multispan5\hfil {\bf Font Specifics}\hfil&&\multispan9\hfil {\bf Paragraph Description}\hfil &\cr
+% &{\bf Section}&&\multispan5\hfil (Times Roman unless
+% specified)\hfil&&\multispan5\hfil spacing (in points)\hfil &&
+% alignment&&indent&\cr
+% &\omit&&style&&size&&special&&line&&before&&after&&\omit&&(in inches)&\cr
+% height2pt&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&\cr
+% \noalign{\hrule}
+% height2pt&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&\cr
+% %\noalign{\vskip2pt\hrule\vskip2pt}
+% %\omit&\omit&\omit&\omit\cr
+% &Title&&plain&&18&&none&&single&&6&&6&&centered&&none&\cr
+% &Autohr List&&plain&&12&&none&&single&&6&&6&&centered&&none&\cr
+% &Affiliations&&plain&&12&&none&&single&&6&&6&&centered&&none&\cr
+% &Abstract&&bold&&9&&none&&exactly 10&&0&&0&&justified&&0.125 $1^{st}$ line&\cr
+% &Headings&&plain&&10&&small caps&&exactly 12&&18&&6&&centered&&none&\cr
+% &Subheadings&&italic&&10&&none&&exactly 12&&6&&6&&left&&none&\cr
+% &Body Paragraphs&&plain&&10&&none&&exactly 12&&0&&0&&justified&&0.125 $1^{st}$ line&\cr
+% &Equations&&\multispan5 \hfil Symbol font for special characters
+% \hfil&&single&&6&&6&&centered&&none&\cr
+% &Figures&&\multispan5 \hfil 8 to 10 point sans serif (Helvetica)\hfil&&single&&0&&0&&centered&&none&\cr
+% &Figure Captions&&plain&&9&&none &&10&&0&&0&&justified&&none, tab at 0.5&\cr
+% &References&&plain&&9&&none&&10&&0&&0&&justified&&0.25 hanging&\cr
+% height2pt&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&\cr}
+% \hrule}}
+% \label{table1}
+% \end{table*}
 
 \section{Detailed Text Formatting}
 Use a two column format.  All paragraphs of text, including the abstract, figure captions, and references, should be justified at the left and the right edges.
@@ -639,7 +334,9 @@ Following these instructions will improve the quality of your paper and the PVSC
 %\IEEEtriggercmd{\enlargethispage{-5in}}
 
 % references section
-
+\renewcommand\refname{Reference}
+\bibliographystyle{ieeetr}
+\bibliography{reference}
 % can use a bibliography generated by BibTeX as a .bbl file
 % BibTeX documentation can be easily obtained at:
 % http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
@@ -652,23 +349,23 @@ Following these instructions will improve the quality of your paper and the PVSC
 % <OR> manually copy in the resultant .bbl file
 % set second argument of \begin to the number of references
 % (used to reserve space for the reference number labels box)
-\begin{thebibliography}{1}
-\small
+% \begin{thebibliography}{1}
+% \small
 
-\bibitem {Yamaguchi}
-M. Yamaguchi, A. Khan, S.J. Taylor, M. Imaizumi, T. Hisamatsu, and S. Matsuda, ``A detailed model to improve the radiation-resistance of Si space solar cells,\emph{Fundamentals of Solar Cells} vol. 46, pp. 2133-2138, 1999.
+% \bibitem {Yamaguchi}
+% M. Yamaguchi, A. Khan, S.J. Taylor, M. Imaizumi, T. Hisamatsu, and S. Matsuda, ``A detailed model to improve the radiation-resistance of Si space solar cells,\emph{Fundamentals of Solar Cells} vol. 46, pp. 2133-2138, 1999.
 
-\bibitem {Hovel}
-H. J. Hovel and J. M. Woodall, ``The effect of depletion region recombination currents on the efficiencies of Si and GaAs solar cells'', \emph {in 10th IEEE Photovoltaic Specialist Conference}, p. 25, 1973.
+% \bibitem {Hovel}
+% H. J. Hovel and J. M. Woodall, ``The effect of depletion region recombination currents on the efficiencies of Si and GaAs solar cells'', \emph {in 10th IEEE Photovoltaic Specialist Conference}, p. 25, 1973.
 
-\bibitem {Fahrenbruch}
-A. L. Fahrenbruch and R. H. Bube, \emph{Fundamentals of Solar Cells}, New York: Academic Press, 1983.
+% \bibitem {Fahrenbruch}
+% A. L. Fahrenbruch and R. H. Bube, \emph{Fundamentals of Solar Cells}, New York: Academic Press, 1983.
 
-%\bibitem{IEEEhowto:kopka}
-%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
-%  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+% %\bibitem{IEEEhowto:kopka}
+% %H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+% %  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
 
-\end{thebibliography}
+% \end{thebibliography}
 %\smallskip
 %Note: For the Summary paper submission only, references to the authors own work must be redacted to preserve the new double-blind reviewing requirements.
 

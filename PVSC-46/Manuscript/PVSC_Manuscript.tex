@@ -74,8 +74,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage[ruled]{algorithm2e}
 \usepackage[colorinlistoftodos]{todonotes}
-
-
+\newtheorem{definition}{Definition}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
 
@@ -149,7 +150,7 @@ The experimental results demonstrate the effectiveness of the proposed method ca
 
 
 
-\section{Photovoltaic Array}
+\section{Photovoltaic Array}\label{Sec2}
 
 A PV system or PV array is composed of PV panels that have two terminals of plus and minus and can be interconnected.
 There are two common connection styles for PV arrays, \textit{series-parallel} array and \textit{total-cross-tied} array. 
@@ -218,109 +219,284 @@ When considering reconfiguration of PV panel connection, we should find out the 
     \caption{I-V characteristics}
     \label{fig:IV}
 \end{figure}
-% \subsection{ Major Subsections}
-% As shown, denote subsections with left justified 10-point Times Italic. Order them with capitalized alphabetic characters $(A, B,...)$. Follow the letter designation with a period, a single space, and then the subsection title capitalizing the first letter of each word. The paragraph description of the subsection heading is set to "exactly 12-point" line spacing with 6 points before and after.
-% \subsection{ Equations }
-% Equations should be centered in the column and numbered sequentially. Place the equation number to the right of the equation within a parenthesis, with right justification within its column. An example would be
-% \begin{equation}
-% V_{OC}=\frac{1}{\beta}ln\left(\frac{I_L}{I_S}+1\right)
-% \end{equation}
-% \emph{Make sure that any subscripts in your equations are legible and are not too
-% small to read!} When referring to an equation, use the number within
-% parenthesis. For example, you would usually refer to the first
-% equation as (1) rather than equation (1). If possible, use the Symbol
-% font for all special characters.%, or better yet, use Equation Editor or
-% %MathType. 
-% The paragraph description of the line containing the
-% equation should be set for 6 points before and 6 points after. The
-% paragraph spacing will need to be set to ``single'' rather than ``exactly
-% 12 point'' so that the height will autoscale to fit the equation.
 
-% \section{Figures and Tables}
-% The use of color in figures and photos is recommended.  Keep in mind that the proceedings will only be produced in electronic format (DVD).  There will not be a hardbound version of the proceedings.  Please consider the use of different line styles (dashes, dots, etc.) in plots to ensure clarity.  See example.  Please use jpg or png format for all images and compress the size.
 
-% Most of the following applies to Microsoft Word.  Figures should utilize as much of the column width as possible in order to maximize legibility. Use a sans serif font, such as Helvetica. Helvetica is larger and much easier to read than Times. Using 8- to 10-point Helvetica usually results in a legible figure. \emph{Do not use any font smaller than 8-point!} It must be legible. When referring to a figure, use the abbreviation Fig. followed by its number. Place figure captions directly below each figure. Use
-% 9-point Times with the paragraph spacing set at ``exactly 10 points.'' Set a tab at 0.5 inch. Type ``Fig. \#.'' (\# is the numeral) then tab over to the 0.5 inch mark before beginning the text of the figure caption. Note that figure captions are always (left and right) justified, rather than centered, even if they are less than a single full line in length. See the caption for Fig. 1.
 
-% Within \LaTeX, there is basically only one option for placing figures
-% within your paper.  Often the easiest way is to insert them into the
-% top of the next column.
-%Within Microsoft Word there are several options for placing figures
-%within your paper. Often the easiest is to insert them between
-%existing paragraphs allowing the figures to remain in that relative
-%position. The paragraph description where the figure is inserted must
-%be set to ``single'' spacing rather than ``exactly 12 points'' in
-%order to allow the line to autoscale in height to display the entire
-%figure. Some disadvantages of this approach are that you don't have
-%total flexibility in placing figures, and that the figures will move
-%as text is inserted or deleted in any part of the document before the
-%figure. If you elect to use this approach, it is recommended that you
-%nearly complete the editing of your text before inserting any
-%figures. Remember to allow room for them, however. Then begin
-%inserting figures starting from the beginning of your document. 
-% Do not lump all figures at the end of the paper!
-% If you have difficulties with the titles on your figures, you can always elect to add in the titles as separate text boxes, rather than importing the titles with the graph. This is sometimes helpful in getting a lengthy vertically-oriented title to display correctly.
 
-% %\begin{figure}
-% %%\includegraphics {figure_temp.epsi}
-% %\epsfxsize=3.25in\epsfbox{figure1.eps}
-% %\caption{ Estimated relationship between the time an author spends reading these instructions and the quality of the author's digest article.}
-% %\end{figure}
 
-% \begin{figure}
-% \centering
-% \includegraphics[width=9cm]{image1.png}
-% \caption{Example of readable plot using different colors and line styles for clarity.}
-% \end{figure}
 
-% Notice that prior to the graph, a single 12-point line is used to
-% separate the preceding text from the graph. The equivalent of a blank
-% line should exist between the bottom of the graph (the x-axis caption)
-% and the figure caption. (In this particular case, there was no need to
-% add a blank line between the x-axis label and the figure caption,
-% because there was already adequate spacing provided by the image
-% border.) After the figure caption, there should be a single 12-point
-% blank line before the text resumes. 
-%\LaTeX accepts encapsulated post script files as figures.  Standard post script figures will not expand and contract to fill the designate area on the page. Encapsulated post script files will.  Thus, encapsulated post script files must obviously be only one page long.  It is often easy to convert a post script file to encapsulated post script.  In Linux this can be done with the command, ``ps2epsi.''
-%More flexibility is obtained in inserting figures if you can place
-%them exactly where you would like them to be on a page. This can be
-%accomplished by inserting the figure, selecting the figure, and then
-%choosing ``Format Picture\dots ''. Various settings allow you to place the figure at an absolute position on a page; specify if the text is supposed to flow around the figure or if the figure should move with the text, etc. If you elect to let the text flow around the figure, then remember that you will have to insert a separate text box for the caption, otherwise the figure caption is likely to become separated from the figure.
-%When importing a graph from Excel into Word, it is often helpful to
-%special-paste it in as a ``Picture (Enhanced Meta-file).'' This saves
-%file memory for Word documents. Be aware that the usual Copy
-%$\rightarrow $  Paste procedure will copy the entire Excel spreadsheet into your Word file. The Copy $\rightarrow$ Paste Special $\rightarrow$ Picture (Enhanced Metafile) command copies only the graph as a static picture. This is not a concern with PDF file submissions.
-% If you decide to use color traces in your graphical data, be absolutely certain that there is no ambiguity about your graphical information when printed on a B\&W printer.
+\section{Orozco-Guierrez's method}\label{Sec3}
+In this section, we briefly introduce a method proposed by Orozco-Guierrez et al.\cite{orozco2016optimized} as the most related work to this paper.
+Orozco-Guierrez et al. proposed an efficient reconfiguration algorithm for mismatched PV arrays. 
+The method utilizes information of MPPs of every PV panel that are extracted using an online monitoring \cite{carotenuto2014online} and a power estimation \cite{orozco2015fast}. 
+Then currents and voltages of MPPs are approximated and grouped into a small number of classes so that the number of possible combinations, or a search space, is reduced.
+For example, Table \ref{tab:monitored} shows extracted currents for 4 panels each of which has 3 modules, and they are approximated into four current levels as shown in Table \ref{tab:approximated}. 
+As mentioned in Section \ref{Sec2}, if some panel has $m$ MPPs with current level of $I$ or larger, $m$ modules can be active with current level of $I$. 
+Table \ref{tab:modules} shows the maximum number of active modules for each current level. 
 
-% Table I on the second page was inserted using ``Insert'', ``Text
-% Box'', creating the text contained in Table I, and then formatting the
-% text box using all the settings available under ``Format'', ``Text
-% Box\dots ''. Table I also serves as an illustration of one of the rare
-% instances when the double column format requirement can be
-% violated. Certain figures and tables will require the full-page width
-% to display. It is usually best to place these figures and tables at
-% the top, rather than in the middle or bottom of a page. Tables should be entered within a single column if this can be done cleanly, without the entry becoming too crowded.
+Then power values are approximated for possible configurations. 
+Table \ref{tab:powers} shows an example to form a PV array with two strings where control voltages are approximated as multiples of 20V (the number of active modules per string times 20V). 
+The method has a simple feasibility check as follows. 
+\newline{}
+\textbf{(Feasibility 1)} For the $n$-th highest current level $I_{n}$, the number of active modules in a system is $N(I_{n}) / n$ or less. 
+\newline{}
+Where, $N(I)$ denotes the total number of active modules for a current level $I$. 
+For example, consider a candidate current pair (3A. 2.5A). In this case, the highest and the second highest current levels are 3A and 2.5A, respectively, and the total number of active modules for 3A and 2.5A are 3 and 6, respectively (see Table \ref{tab:modules}). Therefore, the number of active modules in the first string is 3 or less, and the number of active modules in the second string is also $ 6/2  = 3$ or less. Consequently, the number of active modules per string is at most 3 for a candidate current pair (3A. 2.5A). Table \ref{tab:powers} has values in the cells when Feasibility 1 is satisfied. 
 
-% \section{Citing Previous Work}
-% When referencing a journal article \cite{Yamaguchi}, a conference
-% digest article \cite{Hovel} or a book \cite{Fahrenbruch}, place the reference numbers within square
-% brackets. To simultaneously cite these references \cite{Yamaguchi} - \cite{Fahrenbruch} use the format just demonstrated. The reference list is the last section and references are listed in the order cited. Use 9 point Times. The paragraph description is set for a line spacing of exactly 10 points with 0 point spacing before and after. A 0.25 inch hanging indention should be specified. 
+The method finds the largest power value from possible candidate configurations (330W for current pair (3A, 2.5A) with three active modules in this case) and evaluates the case more precisely along with the cases with close values to the best value since the analysis are given with approximated values. In the case of Table \ref{tab:powers}, 330W, 320W and 300W are selected for further evaluation. 
 
-% Generally speaking, references should be very detailed. For journal articles, list all authors by initials and last name, the title of the paper in quotations (capitalizing only the first letter of the first word, unless it would be capitalized in a sentence, e.g., a proper noun), the journal name in italics, the volume number, the issue number, the page numbers, and the date. Use the examples provided \cite{Yamaguchi} - \cite{Fahrenbruch} as a guide. 
-% %Further information on LaTeX and TeX can be found in \cite{IEEEhowto:kopka} - \cite{knuth}. 
+\begin{table}[t]
+\caption{Extracted currents of MPPs}
+\label{tab:monitored}
+\centering
+\begin{tabular}{c|rrrr}
+\hline\hline
+       &    	\multicolumn{4}{c}{Panels}								\\
+	&	\multicolumn{1}{c}{$P1$}	&	\multicolumn{1}{c}{$P2$}	&	\multicolumn{1}{c}{$P3$}	&	\multicolumn{1}{c}{$P4$}	\\ \hline
+MPP1	&	3.10A	&	3.09A	&	0.52A	&	2.47A	\\ \hline
+MPP2	&	2.98A	&	2.55A	&	0.50A	&	1.53A	\\ \hline
+MPP3	&	1.55A	&	2.48A	&	0.46A	&	0.48A	\\ \hline
+\end{tabular}
+\end{table}
 
-% % The following statement makes the two columns on the last page more
-% % or less of equal length.  Placement of this command is by trial and error.
-% \vfil\eject
+\begin{table}[t]
+\caption{Approximated currents of MPPs}
+\label{tab:approximated}
+\centering
+\begin{tabular}{c|rrrr}	
+\hline\hline
+       &    	\multicolumn{4}{c}{Panels}	\\
+	&	\multicolumn{1}{c}{$P1$}	&	\multicolumn{1}{c}{$P2$}	&	\multicolumn{1}{c}{$P3$}	&	\multicolumn{1}{c}{$P4$}	\\ \hline
+MPP1	&	3A	&	3A	&	0.5A	&	2.5A	\\ \hline
+MPP2	&	3A	&	2.5A	&	0.5A	&	1.5A	\\ \hline
+MPP3	&	1.5A	&	2.5A	&	0.5A	&	0.5A	\\ \hline
+\end{tabular}
+\end{table}
 
-% \section{Copyright and Reprint Information}
-% The IEEE copyright form will be electronically submitted for this conference.  On the conference web site, follow the link in the manuscript submission area. 
+\begin{table}[t]
+\caption{Maximum number of active modules}
+\label{tab:modules}
+\centering
+\begin{tabular}{c|rrrr|r}	
+\hline\hline
+       &    	\multicolumn{4}{c|}{Panels}	& \\									
+	&	\multicolumn{1}{c}{$P1$}	&	\multicolumn{1}{c}{$P2$}	&	\multicolumn{1}{c}{$P3$}	&	\multicolumn{1}{c}{$P4$} &	\multicolumn{1}{|c}{total}	\\ \hline
+3A	&	2	&	1	&	0	&	0 & 3	\\ \hline
+2.5A	&	2	&	3	&	0	&	1 & 6	\\ \hline
+1.5A	&	3	&	3	&	0	&	2 & 8	\\ \hline
+0.5A	&	3	&	3	&	3	&	3 & 12	\\ \hline
+\end{tabular}
+\end{table}
 
-% Reprints may be ordered by checking the appropriate box on the conference registration form.  The reprints will be mailed to you at the address listed on the registration form approximately 3 months after the conference.
+\begin{table*}[t]
+\caption{Approximated power}
+\label{tab:powers}
+\centering
+\begin{tabular}{c|rrrrrrrrrrr}
+\hline\hline	
+\# modules & 	\multicolumn{10}{c}{currents sequence for strings (A)} \\ 																
+per string		&	\multicolumn{1}{c}{(3,3)}	&	\multicolumn{1}{c}{(3,2.5)}	&	\multicolumn{1}{c}{(3,1.5)}	&	\multicolumn{1}{c}{(3,0.5)}	&	\multicolumn{1}{c}{(2.5,2.5)}	&	\multicolumn{1}{c}{(2.5,1.5)}	&	\multicolumn{1}{c}{(2.5,0.5)}	&	\multicolumn{1}{c}{(1.5,1.5)}	&	\multicolumn{1}{c}{(1.5,0.5)}	&	\multicolumn{1}{c}{(0.5,0.5)}	\\ \hline
+	1	&	120W	&	110W	&	90W	&	70W	&	100W	&	80W	&	60W	&	60W	&	40W	&	20W	\\ \hline
+	2	&	-	&	220W	&	180W	&	140W	&	200W	&	160W	&	120W	&	120W	&	80W	&	40W	\\ \hline	3	&	-	&\textbf{330W}&	270W	&	210W	&	\textbf{300W}	&	240W	&	180W	&	180W	&	120W	&	60W	\\ \hline
+4	&	-	&	-	&	-	&	-	&	-	&	\textbf{320W}	&	240W	&	240W	&	160W	&	80W	\\ \hline
+	 5	&	-	&	-	&	-	&	-	&	-	&	-	&	\textbf{300W}	&	-	&	200W	&	100W	\\ \hline
+	6	&	-	&	-	&	-	&	-	&	-	&	-	&	-	&	-	&	240W	&	120W	\\ \hline
+\end{tabular}
+\end{table*}
 
+\section{Feasibility}
+In the method\cite{orozco2016optimized}, to execute a power simulation for a PV array, we need to assign panels into strings to realize a candidate configuration. 
+For example, a candidate configuration for a current pair (2.5A, 2.5A) with 3 active modules is realized by assign panel P2  to the first string and panels P1 and P4 to the second string as shown in Fig.\ref{fig:feasible-configuration}. 
+However, we could not find feasible assignment for a current pair (3A, 2.5A) with 3 active modules or a current pair (2.5A, 1.5A) with 4 active modules though they are expected to generate higher powers 330W or 320W. 
+That is, the condition Feasibility 1 is a necessary but not sufficient to check the actual feasibility.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.8\linewidth]{PVSC-46/fig/feasible-configuration.pdf}
+    \caption{Feasible configuration}
+    \label{fig:feasible-configuration}
+\end{figure}
+
+Now we will define the feasibility. For a PV array $A$ with $s$ strings, let $M_{A,i}(I)$ denote the number of modules that can be active with a current level $I$ in the $i$-th string.
+Let $Q = (Q_{1},Q_{2},\ldots ,Q_{s})$ be a sequence of currents required for strings. 
+A sequence of currents $Q$ is feasible with $m$ modules if and only if it is possible to form a PV array $A$ such that 
+\begin{equation}
+M_{A,i}(Q_{i}) \geq m
+\end{equation}
+holds for each string $i (1 \leq i \leq s)$.
+
+\section{An algorithm to identify feasibility}\label{Sec5}
+\subsection{Feasibility Problem}\label{Sec5_1}
+In this section, we propose an algorithm to identify feasibility.
+First we will formulate the feasibility problem that identify the feasibility for given current sequence and the number of active modules per string as follows.
+
+\textit{Definition 1} (\textit{Feasibility Problem}):\\
+Input: Information of MPPs (approximated values), a current sequence $Q$, the number of $m$ of active modules per-string.\\
+Output: Whether $Q$ with $m$ modules is feasible or not.
+
+\subsection{Outline of the algorithm}
+In the proposed algorithm, we try to configure a PV array and identify the feasibility. 
+For a given current sequence $Q = (Q_{1},Q_{2},\ldots ,Q_{s}) (Q_{i} \geq Q_{j} \mbox{\ if\ } i \leq j)$, we will assign panels to strings in the order of $Q_{1},Q_{2},\ldots ,Q_{s}$. 
+When selecting a panel to a string, we will consider how much we lose an opportunity that the panel is more effectively used for other current level. 
+For example, if we select Panel 1 in Table \ref{tab:modules} for a string with a current level 3A, two modules can be active while the remaining one module becomes inactive. 
+The remaining one module still is not active if $P1$ is used for a current level 2,5A, while it can be active if it is used for current level 1.5A or 0.5A. 
+We will consider that when selecting $P1$ for a current level 3A, we don't have any loss for a current level 2.5A but lose one module for 1.5A and 0.5A. 
+The algorithm select panels so as to minimize such losses. 
+
+Let $M_{p}(I)$ denote the number of modules that can be active at current level $I$ in a PV panel $p$. 
+For a given current sequence $Q = (Q_{1},Q_{2},\ldots ,Q_{s}) (Q_{i} \geq Q_{j} \mbox{\ if\ } i \leq j)$, 
+a loss of selecting a panel $p$ at the $k-1$-th string for the $k$-th string is defined as 
+$Loss(p,k) = M_{p}(Q_{k}) - M_{p}(Q_{k-1})$. 
+
+To assign panels for the $n$-th string, the following steps are applied. Let $m$ be the required number of active modules.
+\begin{enumerate}
+\item Sort unselected PV panels in a lexicographically ascending order of $Loss(p,n+1)$, $Loss(p,n+2)$,$\ldots$, $Loss(p,s)$ and $M_{p}(Q_{n})$.
+\item Select PV panels until selecting $m$ or more active modules for a current level $Q_{n}$.
+\item Cancel redundant PV panels so that the number of active modules at a current level $Q_{n}$ is minimized.
+\item Swap selected PV panels with unselected PV panels so that the number of selected PV panels is minimized.
+\end{enumerate}
+
+Before explaining more details, we first show an example.
+Table \ref{tab:proposed-example} shows how to select PV panels for the first string where the required number $m$ of active modules is 5. 
+Panels are sorted by $Loss$ and $M_{p}(Q_{1})$ (the number of active modules for the first string) in the order of $P1$, $P2$, $\ldots$, $P7$. 
+In the example, panels $P2$ to $P6$ are at the same loss level $(1,0)$. 
+PV panels are selected for each loss level. First, $P1$ is selected, then panels at the second loss level are selected in the order of $P2$, $P3$, $\ldots$. After selecting until $P5$, the number of active modules exceed $m (=5)$. In this case, if there is some redundant panels, these panels are canceled. In the example, $P4$ is canceled. Finally, if some of selected PV panels can be swapped with less number of unselected panels, they are swapped. In the example, $P2$ and $P3$ are swapped with $P6$. Consequently, three panels $P1$, $P5$ and $P6$ are selected. 
+
+\begin{table}[t]
+\caption{An example of the proposed method ($m = 5$)}
+\begin{center}
+\begin{tabular}{c|c|ccccc|c}\hline \hline
+                               & \multicolumn{7}{c}{Panels}  \\
+                               &  \multicolumn{1}{c}{$P1$}    & $P2$   & $P3$    & $P4$    & $P5$   & \multicolumn{1}{c}{$P6$}            & $P7$             \\ \hline
+$M_{p}(Q_1)$        & 1     & 1     & 1     & 1     & 2    & 2    & 2              \\ \hline
+$M_{p}(Q_2)$        & 1     & 2     & 2     & 2     & 3    & 3    & 2              \\ \hline
+$M_{p}(Q_3)$        & 1     & 2     & 2     & 2     & 3    & 3    & 3              \\ \hline
+$Loss(p,2)$           & 0     & 1     & 1     & 1     & 1    & 1    & 1    \\ \hline
+$Loss(p,3)$           & 0     & 0     & 0     & 0     & 0    & 0    & 1    \\ \hline\hline
+step 2        & $\surd$ & $\surd$ &$\surd$ &$\surd$ &$\surd$ & & \\ \hline
+step 3      & $\surd$ & $\surd$ &$\surd$ & &$\surd$ & & \\ \hline
+step 4       & $\surd$ &  & & &$\surd$ & $\surd$ & \\ \hline         
+\end{tabular}
+\end{center}
+\label{tab:proposed-example}
+\end{table}
+
+\subsection{Algorithm}
+Step 1 sorts unselected panels (with modules that can be active for the target current), and Step 2 selects panels one by one in the sorted order until reaching the required number of active modules.  
+
+Step 3 optimizes the number of active modules. 
+In Step 3, if the number of active modules exceeds the required number $m$, redundant panels are canceled if exist. 
+A panel is \textit{redundant} if the number of active modules is still $m$ or more even if the panel is canceled.  
+Redundant panels are searched at loss level. 
+Starting with a loss level where the last panel is selected, we will check the number of active modules $M_{p}(Q_{n})$ for each panel $p$ 
+where $Q_{n}$ is a required current level for the current string.
+Redundant panels are selected and canceled from panels with less number of $M_{p}(Q_{n})$ in the same loss level. 
+If there still exceed $m$ after canceling, we will go to the previous loss level and try to cancel panels.
+This procedure is repeated until selecting an exact $m$ active modules or checking all the loss levels.
+
+Step 4 optimizes the number of selected panels.
+In Step 4, we will swap selected panels and an unselected panel in the same loss level to reduce the number of selected panels.
+There are 3 swap cases as shown in Table \ref{tab:swap}. Algorithm 1 shows a pseudo code of the proposed algorithm.
+
+\begin{table}[t]
+\caption{Swap rule}
+\label{tab:swap}
+\centering
+\begin{tabular}{c|c}
+\hline\hline
+\multicolumn{2}{c}{The numbers of active modules} \\
+selected panels & unselected panels \\ \hline
+1, 1, 1 & 3 \\ \hline
+1, 1 & 2 \\ \hline
+1, 2 & 3 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{algorithm}
+\caption{Feasibility Check}
+\LinesNumbered
+\SetKwInOut{Input}{Input}  
+\Input{
+  \textit{$Q = Q_1, Q_2, \ldots , Q_s$}: required current for each string; 
+  \textit{$m$}: The minimum number of active modules per string;
+  \textit{$M_{p}$}: The number of active modules in each panel \textit{p};
+  %\textit{P}: Number of panels; 
+  \textit{s}: Number of strings;}
+\SetKwInOut{Output}{Output}
+\Output{Feasibility Result;%\\
+        %Conf: Configuration Result;
+        }
+\For{\textup{each string} $ k (2 \leq k \leq s)$ \textup{and panel} $p$}{$Loss(p,k) = M_{p}(Q_{k}) - M_{p}(Q_{k-1})$}
+\For{j = 1 to s}
+    {{\If{$\sum M_{p}(Q_{j})$ \textup{for unselected panes} $< m$}
+       {\textup{\textbf{return :}} Feasibility = NO}}
+     $PS$ = a set of unselected panels with $M_{p}(Q_{j}) > 0$;\\
+     // step 1\\
+     sort $PS$ in a lexicographically ascending order of $Loss(p,j+1)$, $Loss(p,j+2)$, $\ldots$, $Loss(p,s)$, $M_{p}(Q_{j})$;\\
+     // step 2\\
+     select panels in the order in $PS$ until $\sum M_{p}(Q_{j})$ for selected panels $\geq m$;\\
+     //step 3\\
+     group selected panels $LV_{1}$, $LV_{2}$,$\ldots$, $LV_{h}$ with loss level ($LV_{1}$ is the lowest level);\\
+     \For{i = h to 1}
+     {find and cancel redundant panels in $LV_{i}$ in the order in $PS$}
+     //step 4\\
+     \For{i = h to 1}
+     {apply swap rules for selected panels in $LV_{i}$ and an unselected panel in the same loss level}
+    }
+    \textup{\textbf{return :}} Feasibility = YES
+\end{algorithm}
+
+\subsection{Evaluation}
+Although the pilot example refers to three strings only, the extension of the method to any number of parallel connected string is the same
+
+To evaluate the performance of proposed algorithm, we compare the result with exhaustive searching algorithm for 100 random shadow distributed PV array. For each PV array, contains 6 - 24 PV panels connected into 3 - 6 PV strings. For each PV panel, it will has 3 - 8 working current values.
+
+The computational time required for finding optimal configuration and accuracy of feasibility judgment in the proposed algorithm and exhaustive search algorithm are compared in Table \ref{result_compare}. As shown in Table \ref{result_compare}, proposed algorithm achieved less computing time compare with exhaustive search algorithm and with high accuracy.  
+
+
+\begin{table}[htbp]
+\caption{}
+\begin{center}
+\begin{tabular}{ccc}
+\multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}}COMPARISON BETWEEN EXISTED METHODS\\ AND PROPOSED ALGORITHM\end{tabular}}                                         \\ \hline \hline
+\multicolumn{1}{c|}{}                         & \multicolumn{1}{c|}{Proposed Algorithm} & \begin{tabular}[c]{@{}c@{}}Exhaustive search \\ Algorithm\end{tabular} \\ \hline
+\multicolumn{1}{c|}{Number of PV Array}       & \multicolumn{2}{c}{100}                                                                                         \\ \hline
+\multicolumn{1}{c|}{Number of MPP candidates} & \multicolumn{2}{c}{486}                                                                                       \\ \hline
+\multicolumn{1}{c|}{Feasible Candidates}      & \multicolumn{1}{c|}{324}              & 327                                                                   \\ \hline
+\multicolumn{1}{c|}{Infeasible Candidates}    & \multicolumn{1}{c|}{162}              & 159                                                                   \\ \hline
+\multicolumn{1}{c|}{Error Rate}               & \multicolumn{1}{c|}{0.62\%}            & 0\%                                                                    \\ \hline
+\multicolumn{1}{c|}{Ave. times per Array}     & \multicolumn{1}{c|}{0.003s}            & 98s                                                                 
+\end{tabular}
+\label{result_compare}
+\end{center}
+\end{table}
+
+\begin{table}[t]
+\caption{PV Cell Parameters}
+\begin{center}
+\begin{tabular}{c|c}
+\hline \hline
+Parameter             & Value  \\ \hline
+Short-Circuit Current & 0.66A  \\
+MPP-Current           & 0.58A  \\
+Open-Circuit Voltage  & 280V   \\
+MPP-Voltage           & 215V  \\
+Max Power Output      & 124.7W 
+\end{tabular}
+\end{center}
+\label{PV_cell_par}
+\end{table}
 
 \section{Conclusion}
-Following these instructions will improve the quality of your paper and the PVSC Proceedings. If you have comments, please contact \url{Publications@ieee-pvsc.org}. Please direct questions regarding the electronic submission process to \url{help@SPLTrak.com}. 
+
+Power generation of mismatched PV arrays can be recovered by reconfiguring connection of PV panels.
+In this paper, we introduce a feasibility check problem to configure PV panel connections from PV module connections and proposed an algorithm that efficiently and effectively solve the problem. 
+The experimental results shows that the proposed algorithm can identify feasible configurations more than 32,000X faster than the exhaustive search with around 0.6\% errors. 
+The proposed method is useful to identify or configure actual PV panel connections from PV module level specifications or connections. 
+Since there are many works of PV module level reconfiguration and PV panel level reconfiguration using PV module level optimization as an intermediate solution, the proposed algorithm is useful to actually find PV panel connections from PV module level solutions.
+PV panel level reconfiguration is a practical and realistic solution for PV arrays composed of standard PV panels, 
+and the proposed method contributes to find efficient and effective solution for PV panel level reconfiguration.
+% Following these instructions will improve the quality of your paper and the PVSC Proceedings. If you have comments, please contact \url{Publications@ieee-pvsc.org}. Please direct questions regarding the electronic submission process to \url{help@SPLTrak.com}. 
 
 % conference papers do not normally have an appendix
 

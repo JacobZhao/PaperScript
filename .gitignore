@@ -2,4 +2,6 @@
 *.gz
 *.aux
 *.log
-
+*.bbl
+*.blg
+*.out

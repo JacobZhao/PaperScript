@@ -114,7 +114,7 @@ photovoltaic, feasibility, reconfiguration, mismatch
 
 
 
-\section{Introduction}
+\section{Introduction}\label{Sec1}
 As fossil fuel depletion and environmental pollution become more serious, green and renewable energy has become necessary for a sustainable society and environment. 
 Photovoltaic (PV) systems receive significant attention since the sun has unlimited energy and PV arrays can be easily scaled up. 
 However, due to the nature of PV cell, which is a basic component of a PV array.
@@ -472,7 +472,7 @@ selected panels & unselected panels \\ \hline
     \textup{\textbf{return :}} Feasibility = YES
 \end{algorithm}
 
-\subsection{Evaluation}
+\section{Evaluation}\label{Sec6}
 Although the pilot example refers to three strings only, the extension of the method to any number of parallel connected string is the same.
 
 To evaluate the performance of proposed algorithm, we compare the result with exhaustive searching algorithm for 100 random shadow distributed PV arrays. For each PV array, contains 6 - 24 PV panels connected into 3 - 6 PV strings. For each PV panel, it will has 3 - 8 working current values.
@@ -481,7 +481,12 @@ The computational time required for finding optimal configuration and accuracy o
 % proposed algorithm achieved less computing time compare with exhaustive search algorithm and with high accuracy.  
 from 100 PV arrays, 486 configuration candidates are selected where each candidate is specified with a required current sequence for strings and the number of active modules per string.
 Since the exhaustive search checks all the combinations of panel connections for each configuration candidate, it accurately identify the feasibility of every configuration but that takes a lot of time.
-On the other hand, the proposed algorithm rapidly (more than 32,000X faster) checks feasibility while misidentifying only 3 feasible cases. 
+
+The calculation was performed using an Intel i7-4770 Quad-Core processor and 16 GB of RAM memory.
+The time used by the proposed feasibility check method was 3ms, which is significantly lower than the 98s need by the exhaustive search algorithm.
+On the other hand, the proposed algorithm misidentifying only 3 feasible negative cases with rapidly (more than 32,000X faster) feasibility checks speed
+
+In conclusion, the proposed method provides a solution for checking the feasibility of PV configurations with an error lower than 1\% but execution time are significant lower than the one required by exhaustive search algorithm.
 % Each PV array has 4 or 5 candidates and our algorithm indeed found PV panel connection for each PV array.
 
 \begin{table}[htbp]

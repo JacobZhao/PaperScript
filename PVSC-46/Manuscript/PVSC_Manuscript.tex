@@ -57,8 +57,9 @@
 
 %\input epsf
 \usepackage{graphicx}
-\usepackage{hyperref}
-\usepackage{graphicx}
+%\usepackage[dvipdfmx]{graphicx} % for michiko
+\usepackage{hyperref} 
+%\usepackage{graphicx}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage[super]{nth}
@@ -67,7 +68,7 @@
 \usepackage{cite}
 \usepackage{amsthm,amsfonts}
 \usepackage{xcolor,color}
-\usepackage{graphicx}
+%\usepackage{graphicx}
 \usepackage{enumerate}
 \usepackage{multirow}
 \usepackage{subcaption}
@@ -79,6 +80,10 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
+
+%In final version, please replace the following two definitions
+\newcommand{\michiko}{\textcolor{blue}}
+%\newcommand{\michiko}{\textcolor{black}}
 
 
 \begin{document}
@@ -117,17 +122,23 @@ photovoltaic, feasibility, reconfiguration, mismatch
 \section{Introduction}\label{Sec1}
 As fossil fuel depletion and environmental pollution become more serious, green and renewable energy has become necessary for a sustainable society and environment. 
 Photovoltaic (PV) systems receive significant attention since the sun has unlimited energy and PV arrays can be easily scaled up. 
-However, due to the nature of PV cell, which is a basic component of a PV array,PV arrays are sensitive to partial shading and PV cell damage. 
+However, due to the nature of PV cell, which is a basic component of a PV array, PV arrays are sensitive to partial shading and PV cell damage. 
 PV cells could not uniformly generate power when they experience different irradiances or some of them have physical defects, and such a mismatched condition might accelerate heating and aging of PV cells and cause further damaging. 
 To prevent PV cells from damaging, bypass diodes are usually placed in PV arrays and they are turned on in mismatched conditions. 
-However,  the operation of bypass diode will cause a number of PV cells to stop deliver power, it will introduce voltage drop which cause PV panel mismatched.
+However,  the operation of bypass diode will cause a number of PV cells to stop deliver power, %
+\michiko{and it will hence result in a significant loss of power generation. }
+
+% it will introduce voltage drop which cause PV panel mismatched.
 % However, it causes a significant loss of power generation. 
 
 PV arrays are hierarchically constructed such that a group of PV cells form a PV module, a group of PV modules form a PV panel, and a group of PV panels form a PV array. 
 Power generation of mismatched PV arrays can be recovered by reconfiguring connection of these components. 
 Fig.\ref{compare} shows an example of power generations of a PV array with a partial shading. 
 We distributed shading cells non-uniformly to a PV array with 3 $\times$  4 PV panels and applied power simulation. 
-Before reconfiguration, it has multiple maximum power points (MPP), while, after we reconfigured connection among PV panels, MPPs has reduced and power generation increased by 35\%.
+Before reconfiguration, \michiko{there are} multiple \michiko{peaks in a power - voltage curve with similar power levels,} while, after we reconfigured connection among PV panels, 
+\michiko{some peaks exhibit much higher power levels than others and }
+%MPPs has reduced and 
+power generation increased by 35\%.
 
 Though several reconfiguration methods have been proposed, most works consider reconfiguration in PV cell or PV module level \cite{nguyen2008adaptive,wang2014architecture,storey2013improved,storey2014optimized,udenze2018reconfiguration}. 
 However, cell level reconfiguration requires a significantly high computation time and a large number of switches for reconfiguration. 
@@ -140,16 +151,16 @@ From a practical view, reconfiguration of connection among PV panels is a realis
     \label{compare}
 \end{figure}
 
-Reconfiguration in PV panel level has been investigated\cite{carotenuto2015evolutionary,hu2017non,orozco2016optimized}. 
-A PV array reconfiguration using genetic algorithm (GA) was proposed in \cite{carotenuto2015evolutionary}. Though it can give a new configuration, computing cost is significantly high and the algorithm cannot generate the best configuration precisely.  
-Hu et al. also addressed PV panel reconfiguration where they formulate a nonlinear integer programming problem to optimize power generation by reconfiguration \cite{hu2017non}.
-Orozco-Gutierrez et al. proposed an efficient and effective reconfiguration method\cite{orozco2016optimized} where it first selects candidates of configurations using the product of approximated currents and voltages,
+Reconfiguration in PV panel level has been investigated~\cite{carotenuto2015evolutionary,hu2017non,orozco2016optimized}. 
+A PV array reconfiguration using genetic algorithm (GA) was proposed in~\cite{carotenuto2015evolutionary}. Though it can give a new configuration, computing cost is significantly high and the algorithm cannot generate the best configuration precisely.  
+Hu et al. also addressed PV panel reconfiguration where they formulate a nonlinear integer programming problem to optimize power generation by reconfiguration~\cite{hu2017non}.
+Orozco-Gutierrez et al. proposed an efficient and effective reconfiguration method~\cite{orozco2016optimized} where it first selects candidates of configurations using the product of approximated currents and voltages,
 then finds the best one with precise power simulation. 
-However, these candidates are specified in a PV module level though PV modules could not be fully reconfigured. Actually, we found that some of configuration candidates are not able to be realized. However, the paper\cite{orozco2016optimized}  does not show any systematic way to identify such a feasibility. 
+However, these candidates are specified in a PV module level though PV modules could not be fully reconfigured. Actually, we found that some of configuration candidates are not able to be realized. However, the paper~\cite{orozco2016optimized}  does not show any systematic way to identify such a feasibility. 
 
 In this paper, we propose an algorithm to rapidly check feasibility that a given configuration candidate is actually able to form by given PV panels. 
 The proposed method can efficiently check the feasibility while identifying most feasible cases accurately. 
-The experimental results demonstrate the effectiveness of the proposed method that it can identify the feasibility of configurations and false negative are less than 1\%.
+The experimental results demonstrate the effectiveness of the proposed method \michiko{where} it can identify the feasibility of configurations \michiko{with a very small}   false negative \michiko{rate of} less than 1\%.
 
 
 \section{Photovoltaic Array}\label{Sec2}
@@ -167,7 +178,7 @@ A PV panel is a series connection of PV modules, and a PV module is a parallel c
 A typical commerical PV panel is composed of three PV modules each of which has 12-24 PV cells. 
 A PV module can generate power for a given voltage according to its I-V characteristics as shown in Fig.\ref{fig:IV}(a - c). 
 The I-V characteristics is affected by irradiance level and physical damage of PV cells. 
-Figure \ref{fig:IV}(a) also shows a typical degradation of a I-V characteristics where generated current is reduced with some ratio while keeping the voltage range. 
+\michiko{Figure \ref{fig:IV}(a - c) also show} a typical degradation of a I-V characteristics where generated \michiko{currents are reduced} with some ratio while keeping the voltage range. 
 When a PV panel has a partial shade, that is its PV modules have different irradiance levels and hence different I-V characteristics, the PV panels might have multiple peaks (maximum power points, MPPs) in power generation as shown in Fig.\ref{fig:IV}(d). 
 
 To find out accurate I-V characteristics of a PV panel, we need to apply a time consuming power simulation. 
@@ -178,10 +189,10 @@ In that case, the current flow in the panel is determined by current of module w
 % the current level is reduced and generated power sometimes increases and sometimes decreases. 
 The generated power at MPPs can be roughly estimated. 
 In Fig.\ref{fig:IV}(d), one PV panel has three PV modules with different irradiance levels. 
-The maximum power points currents for these modules are 4.3A, 3.0A, and 1.5A, respectively. 
-Voltages at MPPs are roughly 20V, 44V, 66V in Fig.\ref{fig:IV}(d), those are roughly multiples of a voltage of MPP for one PV module (around 22V in this case). 
-At the first MPP (MPP1), only one PV module with a peak current of 4.5A is active at a control voltage of 22V, so the generated power is 94.6W. 
-At the second MPP (MPP2), two PV modules with peak currents of 4.3A and 3.0A are active at a control voltage of 44V. 
+\michiko{Current levels at MPPs} for these modules are 4.3A, 3.0A, and 1.5A, respectively. 
+\michiko{Voltage levels} at MPPs are roughly 20V, 44V, \michiko{and} 66V in Fig.\ref{fig:IV}(d), those are roughly multiples of a voltage of MPP for one PV module (around 22V in this case). 
+At the first MPP (MPP1), only one PV module with \michiko{a current of 4.3A} is active at a control voltage of 22V, so the generated power is 94.6W. 
+At the second MPP (MPP2), two PV modules with currents of 4.3A and 3.0A are active at a control voltage of 44V. 
 In this case, the current level of the PV panel is 3.0A since two PV panels are connected in series and they have to have the same current level, and the generated power is 132W.
 At the third MPP (MPP3), the current level of the PV panel is 1.5A at a control voltage of 66V, and the generated power is 99W. 
 
@@ -234,28 +245,6 @@ In this section, we briefly introduce a method proposed by Orozco-Guierrez et al
 Orozco-Guierrez et al. proposed an efficient reconfiguration algorithm for mismatched PV arrays. 
 The method utilizes information of MPPs of every PV panel that is extracted using an online monitoring \cite{carotenuto2014online} and a power estimation \cite{orozco2015fast}.
 
-For the method in \cite{orozco2016optimized}, first, close values will be approximated and grouped into a small number of classes so that the number of possible combinations, or a search space, is reduced.
-Then possible combinations of reconfiguration are enumerated.
-For each candidate configuration their generate power value are estimated by \cite{orozco2015fast} along with careful estimation of possible errors.
-For example, Table \ref{tab:monitored} shows extracted currents for 4 panels each of which has 3 modules, and they are approximated into four current levels as shown in Table \ref{tab:approximated}. 
-% Then currents and voltages of MPPs are approximated and grouped into a small number of classes so that the number of possible combinations, or a search space, is reduced.
-As mentioned in Section \ref{Sec2}, if some panel has $m$ MPPs with current level of $I$ or larger, $m$ modules can be active with current level of $I$. 
-Table \ref{tab:modules} shows the maximum number of active modules for each current level.
-Control voltage for one PV model is approximated to 20V.
-Approximated power values for possible configurations are shown in Table \ref{tab:powers}. 
-% Then power values are approximated for possible configurations. 
-Table \ref{tab:powers} shows an example to form a PV array with two strings,
-where power value is simply multiplied PV array current with control voltage .
-% where control voltages are approximated as multiples of 20V (the number of active modules per string times 20V). 
-The method has a simple feasibility check as follows. 
-\newline{}
-\textbf{(Feasibility 1)} For the $n$-th highest current level $I_{n}$, the number of active modules in a configuration candidate is $N(I_{n}) / n$ or less,
-\newline{}
-Where $N(I)$ denotes the total number of active modules for a current level $I$. 
-For example, consider a candidate current pair (3A, 2.5A). In this case, the highest and the second highest current levels are 3A and 2.5A, respectively, and the total number of active modules for 3A and 2.5A are 3 and 6, respectively (see Table \ref{tab:modules}). Therefore, the number of active modules in the first string is 3 or less, and the number of active modules in the second string is also $ 6/2  = 3$ or less. Consequently, the number of active modules per string is at most 3 for a candidate current pair (3A. 2.5A). Table \ref{tab:powers} has values in the cells when Feasibility 1 is satisfied. 
-
-The method finds the largest power value from possible candidate configurations (330W for current pair (3A, 2.5A) with three active modules in this case) and evaluates the case more precisely along with the cases with close values to the best value since the analysis are given with approximated values. In the case of Table \ref{tab:powers}, 330W, 320W and 300W are selected for further evaluation. 
-
 \begin{table}[t]
 \caption{Extracted currents of MPPs}
 \label{tab:monitored}
@@ -299,6 +288,33 @@ MPP3	&	1.5A	&	2.5A	&	0.5A	&	0.5A	\\ \hline
 \end{tabular}
 \end{table}
 
+
+For the method in \cite{orozco2016optimized}, first, close values \michiko{of extracted currents or voltages are} approximated and grouped into a small number of classes so that the number of possible combinations, or a search space, is reduced.
+Then possible combinations of reconfiguration are enumerated.
+For each candidate configuration \michiko{its generated} power value \michiko{is} estimated by \cite{orozco2015fast} along with careful estimation of possible errors.
+For example, Table \ref{tab:monitored} shows extracted currents for 4 panels each of which has 3 modules, and they are approximated into four current levels as shown in Table \ref{tab:approximated}. 
+% Then currents and voltages of MPPs are approximated and grouped into a small number of classes so that the number of possible combinations, or a search space, is reduced.
+As mentioned in Section \ref{Sec2}, if some panel has $m$ MPPs with current level of $I$ or larger, $m$ modules can be active with current level of $I$. 
+Table \ref{tab:modules} shows the maximum number of active modules for each current level.
+Control voltage for one PV model is approximated to 20V.
+Approximated power values for possible configurations are shown in Table \ref{tab:powers}. 
+% Then power values are approximated for possible configurations. 
+Table \ref{tab:powers} shows an example to form a PV array with two strings,
+%where power value is simply multiplied PV array current with control voltage .
+\michiko{where control voltages are approximated as multiples of 20V (the number of active modules per string times 20V), and power values of strings are obtained as products of current and voltage values.) For example, when current levels of two strings are 3A and 2.5A and the number of active modules per string is 3, the control voltage is 60V, and two strings generate powers of $3\mbox{A} \times 60\mbox{V} = 180\mbox{W}$ and $2.5\mbox{A} \times 60\mbox{A} = 150\mbox{W}$, and the total generated power is 330W.}
+
+\michiko{When constructing an approximated power matrix like Table~\ref{tab:powers}, the possibility that an array can be formed for given a current sequence and the number of active modules per string (it is called \textit{feasibility}) is examined.}
+The method \michiko{provides} a simple feasibility check as follows. 
+
+\textbf{(Feasibility 1)}\footnote{In~\cite{orozco2016optimized}, only the case of $n=2$ is considered, and we extended the condition to general $n$. }%
+For the $n$-th highest current level $I_{n}$ \michiko{in a current sequence for strings}, the number of active modules in a configuration candidate is $N(I_{n}) / n$ or less,
+where $N(I)$ is the total number of active modules for a current level $I$. 
+
+For example, consider a candidate current pair (3A, 2.5A). In this case, the highest and the second highest current levels are 3A and 2.5A, respectively, and the total number of active modules for 3A and 2.5A are 3 and 6, respectively (see Table \ref{tab:modules}). Therefore, the number of active modules in the first string is 3 or less, and the number of active modules in the second string is also $ 6/2  = 3$ or less. Consequently, the number of active modules per string is at most 3 for a candidate current pair (3A. 2.5A). Table \ref{tab:powers} has values in the cells when Feasibility 1 is satisfied. 
+
+The method finds the largest power value from possible candidate configurations (330W for current pair (3A, 2.5A) with three active modules in this case) and evaluates the case more precisely along with the cases with close values to the best value since the analysis are given with approximated values. In the case of Table \ref{tab:powers}, 330W, 320W and 300W are selected for further evaluation. 
+
+
 \begin{table*}[t]
 \caption{Approximated power}
 \label{tab:powers}
@@ -318,13 +334,13 @@ per string		&	\multicolumn{1}{c}{(3,3)}	&	\multicolumn{1}{c}{(3,2.5)}	&	\multico
 \section{Feasibility}
 In the method\cite{orozco2016optimized}, to execute a power simulation for a PV array, we need to assign panels into strings to realize a candidate configuration. 
 For example, a candidate configuration for a current pair (2.5A, 2.5A) with 3 active modules is realized by assign panel P2  to the first string and panels P1 and P4 to the second string as shown in Fig.\ref{fig:feasible-configuration}. 
-However, we could not find feasible assignment for a current pair (3A, 2.5A) with 3 active modules or a current pair (2.5A, 1.5A) with 4 active modules though they are expected to generate higher powers 330W or 320W. 
+However, we could not find \michiko{any} feasible assignment for a current pair (3A, 2.5A) with 3 active modules or a current pair (2.5A, 1.5A) with 4 active modules though they are expected to generate higher powers 330W or 320W. 
 That is, the condition Feasibility 1 is necessary but not sufficient to give a actual feasibility result.
 
-\begin{figure}[htp]
+\begin{figure}[b]
     \centering
     \includegraphics[width=0.6\linewidth]{../fig/feasible-configuration-vertical.pdf}
-    \caption{Feasible configuration}
+    \caption{Feasible configuration for a current pair (2.5A, 2.5A) with 3 active modules.}
     \label{fig:feasible-configuration}
 \end{figure}
 
@@ -343,15 +359,15 @@ First we will formulate the feasibility problem that identifies the feasibility 
 
 \textit{Definition 1} (\textit{Feasibility Problem}):\\
 \textbf{Input}: Information of MPPs (approximated values), a current sequence $Q$, the number of $m$ of active modules per-string.\\
-\newline
+%\newline
 \textbf{Output}: Whether $Q$ with $m$ modules is feasible or not.
 
 \subsection{Outline of the algorithm}
 In the proposed algorithm, we try to configure a PV array and identify the feasibility of configuration.
 For a given current sequence $Q = (Q_{1},Q_{2},\ldots ,Q_{s}) (Q_{i} \geq Q_{j} \mbox{\ if\ } i \leq j)$, we will assign panels to strings in the order of $Q_{1},Q_{2},\ldots ,Q_{s}$. 
 When selecting a panel to a string, we will consider how much we lose an opportunity that the panel is more effectively used for other current level. 
-For example, if we select Panel 1 in Table \ref{tab:modules} for a string with a current level 3A, two modules can be active while the remaining one module becomes inactive. 
-The remaining one module still is not active if $P1$ is used for a current level 2,5A, while it can be active if it is used for current level 1.5A or 0.5A. 
+For example, if we select Panel $P1$ in Table \ref{tab:modules} for a string with a current level 3A, two modules can be active while the remaining one module becomes inactive. 
+The remaining one module still is not active if $P1$ is used for a current level 2.5A, while it can be active if it is used for current level 1.5A or 0.5A. 
 We will consider that, when selecting $P1$ for a current level 3A, we do not have any loss for a current level 2.5A but lose one module for 1.5A and 0.5A. 
 The algorithm select panels so as to minimize such losses. 
 
@@ -394,34 +410,39 @@ step 4       & $\surd$ &  & & &$\surd$ & $\surd$ & \\ \hline
 \end{table}
 
 \subsection{Algorithm}
-This algorithm is roughly divided into 4 steps.
+\michiko{The proposed algorithm first obtains loss levels for each panel, and assigns panels for strings in the order of $1,2,\ldots ,s$ where $Q_{i} \geq Q_{j} (i \leq j)$ holds for a required current sequence $Q = (Q_{1},Q_{2},\ldots ,Q_{s})$. The pseudo code is given in Algorithm~\ref{alg1}.
+To assign panels to the $n$-th highest current $Q_{n}$, the following 4 steps are applied.}
 
-Step 1 sorts unselected panels in a lexicographically ascending order of index \textit{Loss} and $M_{P}(Q_{n})$.
-This sorting step will give a basic selecting priority for all unselected panels. A panel with uniformly irradiance distribution is perferred over non-uniformly irradiance distributed panel.
+Step 1 sorts unselected panels in a lexicographically ascending order of $Loss(p,n+1)$, $Loss(p,n+2)$,$\ldots$, $Loss(p,s)$ and $M_{p}(Q_{n})$.
+This sorting step \michiko{gives} a basic \michiko{selection} priority for all unselected panels. 
+\michiko{A panel with less losses for higher current levels are preferred. For example, a panel $P1$ has $(Loss(P1,2), Loss(P1,3)) = (0,0)$, that is there is no loss for further assignment, and it has the highest priority. The last value $M_{p}(Q_{n})$ (the number of active modules at a current level $Q_{n}$ in panel $p$) is used to select the minimum number of modules for a required current level, and it will be described in Step 3.}
+%A panel with uniformly irradiance distribution is preferred over non-uniformly irradiance distributed panel.
 
 Step 2 selects sorted panels one by one until reaching the required number of active modules.
-In this selection step, panel with no active modules will be skipped.
+In this selection step, panel with no active modules are skipped.
 % That will cut the computational space in the step 3 and step 4.
 % Step 1 sorts unselected panels (with modules that can be active for the target current), and Step 2 selects panels one by one in the sorted order until reaching the required number of active modules.  
 
 Step 3 optimizes the number of active modules. 
 In Step 3, if the number of active modules exceeds the required number $m$, redundant panels are canceled if exist. 
 A panel is \textit{redundant} if the number of active modules is still $m$ or more even if the panel is canceled.  
-Redundant panels are searched at loss level. 
-Starting with a loss level where the last panel is selected, we will check the number of active modules $M_{p}(Q_{n})$ for each panel $p$ 
+Redundant panels are searched \michiko{for each loss level}. 
+Starting with a loss level where the last panel is selected, we check the number of active modules $M_{p}(Q_{n})$ for each panel $p$ 
 where $Q_{n}$ is a required current level for the current string.
 Redundant panels are selected and canceled from panels with less number of $M_{p}(Q_{n})$ in the same loss level. 
-If they still exceed $m$ after canceling,
-the same procedure will operate on previous loss level.
+If \michiko{the number of active modules} still exceeds $m$ after canceling,
+the same procedure is applied to the previous loss level.
 % we will go to the previous loss level and try to cancel panels.
 This procedure is repeated until selecting an exactly $m$ active modules or checking all the loss levels.
+\michiko{This step accurately finds redundant panels if exist in the following reason. Since the number of active modules in one panel is 0, 1, 2, or 3 and panels are selected from panels with less active modules in the same loss level, if the number of active modules exceed $m$, the surplus is 1 or 2. That means, the last selected panel has 2 or 3 active modules, and panels with 1 or 2 active modules have already selected if exist.}
 
 Step 4 optimizes the number of selected panels.
-In Step 4, we will swap selected panels and an unselected panel in the same loss level to reduce the number of selected panels.
-There are 3 swap cases as shown in Table \ref{tab:swap}.
-This swap procedure will minimum the total module losses and further more reduce the number of panels.
+In Step 4, we swap selected panels and an unselected panel in the same loss level to reduce the number of selected panels.
+There are 3 swap rules as shown in Table \ref{tab:swap}.
+This swap procedure \michiko{keeps the number of active modules while reducing the number of panels. The step increases the number of unselected panels and hence increase the flexibility for succeeding selection.}
+%will minimum the total module losses and further more reduce the number of panels.
 % Pseudo codes are given below to give details to summarize the process of proposed algorithm.
-\textbf{\textit{Algorithm 1}} shows a pseudo code of the proposed algorithm.
+%\textbf{\textit{Algorithm 1}} shows a pseudo code of the proposed algorithm.
 
 \begin{table}[ht]
 \caption{Swap rule}
@@ -439,6 +460,7 @@ selected panels & unselected panels \\ \hline
 
 \begin{algorithm}[htp]
 \caption{Feasibility Check Problem}
+\label{alg1}
 \LinesNumbered
 \SetKwInOut{Input}{Input}  
 \Input{\\
@@ -472,18 +494,32 @@ selected panels & unselected panels \\ \hline
 \end{algorithm}
 
 \section{Evaluation}\label{Sec6}
-Although the pilot example refers to three strings only, the extension of the method to any number of parallel connected string is the same.
+%Although the pilot example refers to three strings only, the extension of the method to any number of parallel connected string is the same.
 
-To evaluate the performance of proposed algorithm, we compare the result with exhaustive searching algorithm for 100 random shadow distributed PV arrays. For each PV array, 6 - 24 PV panels are connected into 3 - 6 PV strings. For each PV panel, it will has 3 - 8 working current values.
+\michiko{To evaluate the proposed method, we prepared MPP informations of 100 mismatched PV arrays and applied our algorithm. We also applied an exhaustive searching algorithm for comparison.
+MPP information is setup as follows for each PV array. 
+Each PV array has 6 - 24  panels and the number of PV panels is randomly determined. 
+Three current values are randomly assigned to the three modules in each panel from 3 - 8 current values, where the number of possible current values are also randomly determined for each PV array. 
+The number of strings after reconfiguration is 3 - 6 and it is randomly determined for each PV array.}
 
-The computational time required for finding optimal configuration and accuracy of feasibility judgment in the proposed algorithm and exhaustive search algorithm are compared in Table \ref{result_compare}. As shown in Table \ref{result_compare},
+\michiko{We first applied the method~\cite{orozco2016optimized} to select configuration candidates. Condition \textbf{Feasibility 1} is applied to exclude a part of infeasible configurations, and then configurations that generate more than 77\% of the maximum power are selected from the remainings as candidates as mentioned in~\cite{orozco2016optimized}.  In our experiments, 486 candidates are selected from 100 PV arrays as shown in Table~\ref{result_compare}. That is, for each PV arrays, 4 - 5 candidates are selected in average.}
+
+\michiko{Table~\ref{result_compare} shows the results of feasibility checking by the proposed algorithm and the exhaustive search.} 
+%To evaluate the performance of  proposed algorithm, 
+%we compare the result with exhaustive searching algorithm for 100 random shadow distributed PV arrays. For each PV array, 6 - 24 PV panels are connected into 3 - 6 PV strings. For each PV panel, it will has 3 - 8 working current values.
+%The computational time required for finding optimal configuration and accuracy of feasibility judgment in the proposed algorithm and exhaustive search algorithm are compared in Table \ref{result_compare}. 
+%As shown in Table \ref{result_compare},
 % proposed algorithm achieved less computing time compare with exhaustive search algorithm and with high accuracy.  
-from 100 PV arrays, 486 configuration candidates are selected where each candidate is specified with a required current sequence for strings and the number of active modules per string.
-Since the exhaustive search checks all the combinations of panel connections for each configuration candidate, it accurately identifies the feasibility of every configuration but that takes a lot of time.
+%from 100 PV arrays, 486 configuration candidates are selected where each candidate is specified with a required current sequence for strings and the number of active modules per string.
+Since the exhaustive search checks all the combinations of panel connections for each configuration candidate, it accurately identifies the feasibility of every configuration. % but that takes a lot of time.
+\michiko{Though the exhaustive search identified total 327 feasible configurations, the proposed method identified 324 configurations and 3 configurations are misidentified. 
+The proposed algorthm had a few false negative cases, but its rate was less than 1\%.
+That is, it can correctly identify feasibility for most cases. 
+Indeed, the proposed algorithm found at least one candidate configuration as feasible among 4 - 5 candidates for each PV arrays. }
 
 The calculation was performed using an Intel i7-4770 Quad-Core processor and 16 GB of RAM memory.
 The time used by the proposed feasibility check method was 3ms, which is significantly lower than the 98s needed by the exhaustive search algorithm.
-On the other hand, the proposed method misidentifying only 3 feasible negative cases, the error rate is less than 1 \%.
+%On the other hand, the proposed method misidentifying only 3 feasible negative cases, the error rate is less than 1 \%.
 % On the other hand, the proposed algorithm misidentifying only 3 feasible negative cases with rapidly (more than 32,000X faster) feasibility checks speed.
 
 In conclusion, the proposed method provides a solution for checking the feasibility of PV configurations with an error lower than 1\% but execution time are significantly lower than the one required by exhaustive search algorithm.

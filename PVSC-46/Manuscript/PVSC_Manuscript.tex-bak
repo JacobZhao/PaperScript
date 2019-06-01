@@ -292,7 +292,7 @@ Table \ref{tab:powers} shows an example to form a PV array with two strings,
 \michiko{When constructing an approximated power matrix like Table~\ref{tab:powers}, the possibility that an array can be formed for given a current sequence and the number of active modules per string (it is called \textit{feasibility}) is examined.}
 The method \michiko{provides} a simple feasibility check as follows. 
 
-\textbf{(Feasibility 1)}\footnote{In~\cite{orozco2016optimized}, only the case of $n=2$ is considered, and we extended the condition to general $n$. }%
+\textbf{(Feasibility 1)}\footnote{In~\cite{orozco2016optimized}, only the case of $n=2$ is considered, and we extended the condition to general $n$. }
 For the $n$-th highest current level $I_{n}$ \michiko{in a current sequence for strings}, the number of active modules in a configuration candidate is $N(I_{n}) / n$ or less,
 where $N(I)$ is the total number of active modules for a current level $I$. 
 
@@ -410,8 +410,8 @@ In this selection step, panel with no active modules are skipped.
 % Step 1 sorts unselected panels (with modules that can be active for the target current), and Step 2 selects panels one by one in the sorted order until reaching the required number of active modules.  
 
 Step 3 optimizes the number of active modules. 
-In Step 3, if the number of active modules exceeds the required number $m$, redundant panels \zhao{will be} canceled if exist. 
-A panel is \textit{redundant} if the number of active modules is still $m$ or more even if \zhao{this} panel is canceled.  
+In Step 3, if the number of active modules exceeds the required number $m$, redundant panels are canceled if exist. 
+A panel is \textit{redundant} if the number of active modules is still $m$ or more even if the panel is canceled.  
 Redundant panels are searched \michiko{for each loss level}. 
 Starting with a loss level where the last panel is selected, we check the number of active modules $M_{p}(Q_{n})$ for each panel $p$ 
 where $Q_{n}$ is a required current level for the current string.
@@ -420,7 +420,7 @@ If \michiko{the number of active modules} still exceeds $m$ after canceling,
 the same procedure is applied to the previous loss level.
 % we will go to the previous loss level and try to cancel panels.
 This procedure is repeated until selecting an exactly $m$ active modules or checking all the loss levels.
-\michiko{This step accurately finds redundant panels if exist in the following reason. Since the number of active modules in one panel is 0, 1, 2, or 3 \zhao{as assumed in Section \ref{Sec2}} and panels are selected from panels with less active modules in the same loss level, if the number of active modules exceed $m$, the surplus is 1 or 2. That means, the last selected panel has 2 or 3 active modules, and panels with 1 or 2 active modules have already selected if exist.}
+\michiko{This step accurately finds redundant panels if exist in the following reason. Since the number of active modules in one panel is 0, 1, 2, or 3 and panels are selected from panels with less active modules in the same loss level, if the number of active modules exceed $m$, the surplus is 1 or 2. That means, the last selected panel has 2 or 3 active modules, and panels with 1 or 2 active modules have already selected if exist.}
 
 Step 4 optimizes the number of selected panels.
 In Step 4, we swap selected panels and an unselected panel in the same loss level to reduce the number of selected panels.
@@ -485,8 +485,7 @@ selected panels & unselected panels \\ \hline
 \michiko{To evaluate the proposed method, we prepared MPP informations of 100 mismatched PV arrays and applied our algorithm. We also applied an exhaustive searching algorithm for comparison.
 MPP information is setup as follows for each PV array. 
 Each PV array has 6 - 24  panels and the number of PV panels is randomly determined. 
-Three current values are randomly assigned to the three modules in each panel from 3 - 8 current values, where the number of possible current values are also randomly determined for each PV array.
-\zhao{\large \textbf{Is that means: Current value for PV modules in each PV panel are randomly assigned from 3 - 8 current values.}}
+Three current values are randomly assigned to the three modules in each panel from 3 - 8 current values, where the number of possible current values are also randomly determined for each PV array. 
 The number of strings after reconfiguration is 3 - 6 and it is randomly determined for each PV array.}
 
 \michiko{We first applied the method~\cite{orozco2016optimized} to select configuration candidates. Condition \textbf{Feasibility 1} is applied to exclude a part of infeasible configurations, and then configurations that generate more than 77\% of the maximum power are selected from the remainings as candidates as mentioned in~\cite{orozco2016optimized}.  In our experiments, 486 candidates are selected from 100 PV arrays as shown in Table~\ref{result_compare}. That is, for each PV arrays, 4 - 5 candidates are selected in average.}

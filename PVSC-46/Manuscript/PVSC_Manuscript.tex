@@ -82,9 +82,9 @@
 \hyphenation{op-tical net-works semi-conduc-tor}
 
 %In final version, please replace the following two definitions
-\newcommand{\michiko}{\textcolor{blue}}
+\newcommand{\michiko}{\textcolor{black}}
 %\newcommand{\michiko}{\textcolor{black}}
-\newcommand{\zhao}{\textcolor{red}}
+\newcommand{\zhao}{\textcolor{black}}
 
 \begin{document}
 
@@ -123,7 +123,23 @@ photovoltaic, feasibility, reconfiguration, mismatch
 As fossil fuel depletion and environmental pollution become more serious, green and renewable energy has become necessary for a sustainable society and environment. 
 Photovoltaic (PV) systems receive significant attention since the sun has unlimited energy and PV arrays can be easily scaled up. 
 However, due to the nature of PV cell, which is a basic component of a PV array, PV arrays are sensitive to partial shading and PV cell damage. 
-PV cells could not uniformly generate power when they experience different irradiances or some of them have physical defects, and such a mismatched condition might accelerate heating and % power generation increased by 35\%.
+PV cells could not uniformly generate power when they experience different irradiances or some of them have physical defects, and such a mismatched condition might accelerate heating and aging of PV cells and cause further damaging.
+To prevent PV cells from damaging, bypass diodes are usually placed in PV arrays and they are turned on in mismatched conditions.
+However, the operation of bypass diode will cause a number of PV cells to stop deliver power,
+\michiko{and it will hence result in a significant loss of power generation.}
+
+% it will introduce voltage drop which cause PV panel mismatched.
+% However, it causes a significant loss of power generation. 
+
+PV arrays are hierarchically constructed such that a group of PV cells form a PV module, a group of PV modules form a PV panel, and a group of PV panels form a PV array. 
+Power generation of mismatched PV arrays can be recovered by reconfiguring connection of these components. 
+Fig.\ref{compare} shows an example of power generations of a PV array with a partial shading. 
+We distributed shading cells non-uniformly to a PV array with 3 $\times$  4 PV panels and applied power simulation. 
+Before reconfiguration, \michiko{there are} multiple \michiko{peaks in a power - voltage curve with similar power levels,} while, after we reconfigured connection among PV panels, 
+\michiko{some peaks exhibit much higher power levels than others and }
+%MPPs has reduced and 
+% power generation increased by 35\%.
+% power generation increased by 35\%.
 \zhao{maximum output power increased by 35\%}.
 
 Though several reconfiguration methods have been proposed, most works consider reconfiguration in PV cell or PV module level \cite{nguyen2008adaptive,wang2014architecture,storey2013improved,storey2014optimized,udenze2018reconfiguration}. 
@@ -161,7 +177,7 @@ Hereafter, we simply call a series-parallel array a \textit{PV array}.
 Figure \ref{model} shows an example of a PV array. 
 A PV array is a parallel connection of (PV) strings where a string is a series connection of PV panels. 
 A PV panel is a series connection of PV modules, and a PV module is a parallel connection of a series of PV cells and a bypass diode. 
-A typical commerical PV panel is composed of three PV modules each of which has 12-24 PV cells. 
+A typical commercial PV panel is composed of three PV modules each of which has 12-24 PV cells. 
 A PV module can generate power for a given voltage according to its I-V characteristics as shown in Fig.\ref{fig:IV}(a - c). 
 The I-V characteristics is affected by irradiance level and physical damage of PV cells. 
 \michiko{Figure \ref{fig:IV}(a - c) also show} a typical degradation of a I-V characteristics where generated \michiko{currents are reduced} with some ratio while keeping the voltage range. 
@@ -410,8 +426,8 @@ In this selection step, panel with no active modules are skipped.
 % Step 1 sorts unselected panels (with modules that can be active for the target current), and Step 2 selects panels one by one in the sorted order until reaching the required number of active modules.  
 
 Step 3 optimizes the number of active modules. 
-In Step 3, if the number of active modules exceeds the required number $m$, redundant panels \zhao{will be} canceled if exist. 
-A panel is \textit{redundant} if the number of active modules is still $m$ or more even if \zhao{this} panel is canceled.  
+In Step 3, if the number of active modules exceeds the required number $m$, redundant panels \zhao{are} canceled if exist. 
+A panel is \textit{redundant} if the number of active modules is still $m$ or more even if \zhao{the} panel is canceled.
 Redundant panels are searched \michiko{for each loss level}. 
 Starting with a loss level where the last panel is selected, we check the number of active modules $M_{p}(Q_{n})$ for each panel $p$ 
 where $Q_{n}$ is a required current level for the current string.
@@ -486,7 +502,7 @@ selected panels & unselected panels \\ \hline
 MPP information is setup as follows for each PV array. 
 Each PV array has 6 - 24  panels and the number of PV panels is randomly determined. 
 Three current values are randomly assigned to the three modules in each panel from 3 - 8 current values, where the number of possible current values are also randomly determined for each PV array.
-\zhao{\large \textbf{Is that means: Current value for PV modules in each PV panel are randomly assigned from 3 - 8 current values.}}
+% \zhao{\large \textbf{Is that means: Current value for PV modules in each PV panel are randomly assigned from 3 - 8 current values.}}
 The number of strings after reconfiguration is 3 - 6 and it is randomly determined for each PV array.}
 
 \michiko{We first applied the method~\cite{orozco2016optimized} to select configuration candidates. Condition \textbf{Feasibility 1} is applied to exclude a part of infeasible configurations, and then configurations that generate more than 77\% of the maximum power are selected from the remainings as candidates as mentioned in~\cite{orozco2016optimized}.  In our experiments, 486 candidates are selected from 100 PV arrays as shown in Table~\ref{result_compare}. That is, for each PV arrays, 4 - 5 candidates are selected in average.}
@@ -500,7 +516,7 @@ The number of strings after reconfiguration is 3 - 6 and it is randomly determin
 %from 100 PV arrays, 486 configuration candidates are selected where each candidate is specified with a required current sequence for strings and the number of active modules per string.
 Since the exhaustive search checks all the combinations of panel connections for each configuration candidate, it accurately identifies the feasibility of every configuration. % but that takes a lot of time.
 \michiko{Though the exhaustive search identified total 327 feasible configurations, the proposed method identified 324 configurations and 3 configurations are misidentified. 
-The proposed algorthm had a few false negative cases, but its rate was less than 1\%.
+The proposed algorithm had a few false negative cases, but its rate was less than 1\%.
 That is, it can correctly identify feasibility for most cases. 
 Indeed, the proposed algorithm found at least one candidate configuration as feasible among 4 - 5 candidates for each PV arrays. }
 

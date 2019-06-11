@@ -68,6 +68,7 @@
 \usepackage{cite}
 \usepackage{amsthm,amsfonts}
 \usepackage{xcolor,color}
+% \usepackage{caption2}
 %\usepackage{graphicx}
 \usepackage{enumerate}
 \usepackage{multirow}
@@ -85,6 +86,10 @@
 \newcommand{\michiko}{\textcolor{black}}
 %\newcommand{\michiko}{\textcolor{black}}
 \newcommand{\zhao}{\textcolor{black}}
+
+\captionsetup[subfigure]{justification=justified,singlelinecheck=false}
+\captionsetup[figure]{justification=justified,singlelinecheck=false}
+
 
 \begin{document}
 
@@ -147,10 +152,11 @@ However, cell level reconfiguration requires a significantly high computation ti
 In addition, they require a special PV panels with capability of switching, and cannot be applied to the system constructed with standard PV panels. 
 From a practical view, reconfiguration of connection among PV panels is a realistic solution since a PV panel is manufactured as a physical one panel with two terminals and PV panels can be flexibly interconnected. 
 \begin{figure}[t]
-    \centering
-    \includegraphics[width=0.8\linewidth]{../fig/compare.png}
-    \caption{Power generation before and after reconfiguration}
-    \label{compare}
+\centering
+\includegraphics[width=9cm]{../fig/compare.png}
+% \captionstyle{flushleft}
+\caption{Power generation before and after reconfiguration}
+\label{compare}
 \end{figure}
 
 Reconfiguration in PV panel level has been investigated~\cite{carotenuto2015evolutionary,hu2017non,orozco2016optimized}. 
@@ -202,35 +208,35 @@ In a PV array, we have two constraints.
 PV panels in the same string have the same current level, while all the strings have the same control voltage. 
 When considering reconfiguration of PV panel connection, we should find out the best configuration while considering these constraints. 
 
-\begin{figure}[t]
+\begin{figure}[]
     \centering
-    \includegraphics[width=0.8\linewidth]{../fig/module.png}
+    \includegraphics[width=9cm]{../fig/module.png}
     \caption{PV array, string, module and panel}
     \label{model}
 \end{figure}
 
 \begin{figure}
      \centering
-    \begin{subfigure}[b]{0.3\linewidth}
+    \begin{subfigure}[b]{2.7cm}
         \centering
         \includegraphics[width=\linewidth]{../fig/m_1.png}
         \caption{PV module 1}
      \end{subfigure}
-     \begin{subfigure}[b]{0.3\linewidth}
+     \begin{subfigure}[b]{2.7cm}
         \centering
         \includegraphics[width=\linewidth]{../fig/m_2.png}
         \caption{PV module 2}
      \end{subfigure}
-     \begin{subfigure}[b]{0.3\linewidth}
+     \begin{subfigure}[b]{2.7cm}
         \centering
         \includegraphics[width=\linewidth]{../fig/m_3.png}
         \caption{PV module 3}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[b]{\linewidth}
+    \begin{subfigure}[b]{9cm}
         \centering
         \vspace{3mm}
-        \includegraphics[width=\linewidth]{../fig/panel.png}
+        \includegraphics[width=9cm]{../fig/panel.png}
         \caption{PV panel}
     \end{subfigure}
     \caption{I-V characteristics}
@@ -252,7 +258,9 @@ The method utilizes information of MPPs of every PV panel that is extracted usin
 % \caption{EXTRACTED CURRENTS OF MPPS}
 % \label{tab:monitored}
 \centering
-\caption{EXTRACTED CURRENTS OF MPPS}
+\caption{}
+\centerline{EXTRACTED CURRENTS OF MPPS}
+\vskip5pt
 \begin{tabular}{c|rrrr}
 \hline\hline
        &    	\multicolumn{4}{c}{Panels}								\\
@@ -269,7 +277,9 @@ MPP3	&	1.55A	&	2.48A	&	0.46A	&	0.48A	\\ \hline
 % \caption{APPROXIMATED CURRENTS OF MPPS}
 % \label{tab:approximated}
 \centering
-\caption{APPROXIMATED CURRENTS OF MPPS}
+\caption{}
+\centerline{APPROXIMATED CURRENTS OF MPPS}
+\vskip5pt
 \begin{tabular}{c|rrrr}	
 \hline\hline
        &    	\multicolumn{4}{c}{Panels}	\\
@@ -286,7 +296,9 @@ MPP3	&	1.5A	&	2.5A	&	0.5A	&	0.5A	\\ \hline
 % \caption{MAXIMUM NUMBER OF ACTIVE MODULES}
 % \label{tab:modules}
 \centering
-\caption{MAXIMUM NUMBER OF ACTIVE MODULES}
+\caption{}
+\centerline{MAXIMUM NUMBER OF ACTIVE MODULES}
+\vskip5pt
 \begin{tabular}{c|rrrr|r}	
 \hline\hline
        &    	\multicolumn{4}{c|}{Panels}	& \\									
@@ -328,7 +340,9 @@ The method finds the largest power value from possible candidate configurations 
 
 \begin{table*}[t]
 % \caption{Approximated power}
-\caption{APPROXIMATED POWER}
+  \caption{}
+  \centerline{APPROXIMATED POWER}
+  \vskip5pt
 \label{tab:powers}
 \centering
 \begin{tabular}{c|rrrrrrrrrrr}
@@ -404,7 +418,9 @@ PV panels are selected for each loss level. First, $P1$ is selected, then panels
 
 \begin{table}[t]
 % \caption{An example of the proposed method ($m = 5$)}
-\caption{AN EXAMPLE OF THE PROPOSED METHOD ($ m = 5$)}
+  \caption{}
+  \centerline{AN EXAMPLE OF THE PROPOSED METHOD ($ m = 5$)}
+  \vskip5pt
 \begin{center}
 \begin{tabular}{c|c|ccccc|c}\hline \hline
                                & \multicolumn{7}{c}{Panels}  \\
@@ -459,7 +475,9 @@ This swap procedure \michiko{keeps the number of active modules while reducing t
 
 \begin{table}[ht]
 % \caption{Swap rule}
-\caption{SWAP RULE}
+  \caption{}
+  \centerline{SWAP RULE}
+  \vskip5pt
 \label{tab:swap}
 \centering
 \begin{tabular}{c|c}

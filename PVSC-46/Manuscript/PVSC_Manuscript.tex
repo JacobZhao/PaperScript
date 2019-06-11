@@ -192,7 +192,7 @@ In that case, the current flow in the panel is determined by current of module w
 The generated power at MPPs can be roughly estimated. 
 In Fig.\ref{fig:IV}(d), one PV panel has three PV modules with different irradiance levels. 
 \michiko{Current levels at MPPs} for these modules are 4.3A, 3.0A, and 1.5A, respectively. 
-\michiko{Voltage levels} at MPPs are roughly 20V, 44V, \michiko{and} 66V in Fig.\ref{fig:IV}(d), those are roughly multiples of a voltage of MPP for one PV module (around 22V in this case). 
+\michiko{Voltage levels} at MPPs are roughly 20V, 44V, \michiko{and} 66V in Fig.\ref{fig:IV}(d), those are roughly multiples of a voltage of MPP for one PV module (around 20V in this case). 
 At the first MPP (MPP1), only one PV module with \michiko{a current of 4.3A} is active at a control voltage of 22V, so the generated power is 94.6W. 
 At the second MPP (MPP2), two PV modules with currents of 4.3A and 3.0A are active at a control voltage of 44V. 
 In this case, the current level of the PV panel is 3.0A since two PV panels are connected in series and they have to have the same current level, and the generated power is 132W.
@@ -248,9 +248,11 @@ Orozco-Guierrez et al. proposed an efficient reconfiguration algorithm for misma
 The method utilizes information of MPPs of every PV panel that is extracted using an online monitoring \cite{carotenuto2014online} and a power estimation \cite{orozco2015fast}.
 
 \begin{table}[t]
-\caption{Extracted currents of MPPs}
-\label{tab:monitored}
+% \caption{Extracted currents of MPPs}
+% \caption{EXTRACTED CURRENTS OF MPPS}
+% \label{tab:monitored}
 \centering
+\caption{EXTRACTED CURRENTS OF MPPS}
 \begin{tabular}{c|rrrr}
 \hline\hline
        &    	\multicolumn{4}{c}{Panels}								\\
@@ -259,12 +261,15 @@ MPP1	&	3.10A	&	3.09A	&	0.52A	&	2.47A	\\ \hline
 MPP2	&	2.98A	&	2.55A	&	0.50A	&	1.53A	\\ \hline
 MPP3	&	1.55A	&	2.48A	&	0.46A	&	0.48A	\\ \hline
 \end{tabular}
+\label{tab:monitored}
 \end{table}
 
 \begin{table}[t]
-\caption{Approximated currents of MPPs}
-\label{tab:approximated}
+% \caption{Approximated currents of MPPs}
+% \caption{APPROXIMATED CURRENTS OF MPPS}
+% \label{tab:approximated}
 \centering
+\caption{APPROXIMATED CURRENTS OF MPPS}
 \begin{tabular}{c|rrrr}	
 \hline\hline
        &    	\multicolumn{4}{c}{Panels}	\\
@@ -273,12 +278,15 @@ MPP1	&	3A	&	3A	&	0.5A	&	2.5A	\\ \hline
 MPP2	&	3A	&	2.5A	&	0.5A	&	1.5A	\\ \hline
 MPP3	&	1.5A	&	2.5A	&	0.5A	&	0.5A	\\ \hline
 \end{tabular}
+\label{tab:approximated}
 \end{table}
 
 \begin{table}[t]
-\caption{Maximum number of active modules}
-\label{tab:modules}
+% \caption{Maximum number of active modules}
+% \caption{MAXIMUM NUMBER OF ACTIVE MODULES}
+% \label{tab:modules}
 \centering
+\caption{MAXIMUM NUMBER OF ACTIVE MODULES}
 \begin{tabular}{c|rrrr|r}	
 \hline\hline
        &    	\multicolumn{4}{c|}{Panels}	& \\									
@@ -288,6 +296,7 @@ MPP3	&	1.5A	&	2.5A	&	0.5A	&	0.5A	\\ \hline
 1.5A	&	3	&	3	&	0	&	2 & 8	\\ \hline
 0.5A	&	3	&	3	&	3	&	3 & 12	\\ \hline
 \end{tabular}
+\label{tab:modules}
 \end{table}
 
 
@@ -318,7 +327,8 @@ The method finds the largest power value from possible candidate configurations 
 
 
 \begin{table*}[t]
-\caption{Approximated power}
+% \caption{Approximated power}
+\caption{APPROXIMATED POWER}
 \label{tab:powers}
 \centering
 \begin{tabular}{c|rrrrrrrrrrr}
@@ -393,7 +403,8 @@ In the example, panels $P2$ to $P6$ are at the same loss level $(1,0)$.
 PV panels are selected for each loss level. First, $P1$ is selected, then panels at the second loss level are selected in the order of $P2$, $P3$, $\ldots$. After selecting until $P5$, the number of active modules exceed $m (=5)$. In this case, if some redundant panels exist, these panels are canceled. In the example, $P4$ is canceled. Finally, if some of selected PV panels can be swapped with less number of unselected panels, they are swapped. In the example, $P2$ and $P3$ are swapped with $P6$. Consequently, three panels $P1$, $P5$ and $P6$ are selected. 
 
 \begin{table}[t]
-\caption{An example of the proposed method ($m = 5$)}
+% \caption{An example of the proposed method ($m = 5$)}
+\caption{AN EXAMPLE OF THE PROPOSED METHOD ($ m = 5$)}
 \begin{center}
 \begin{tabular}{c|c|ccccc|c}\hline \hline
                                & \multicolumn{7}{c}{Panels}  \\
@@ -447,7 +458,8 @@ This swap procedure \michiko{keeps the number of active modules while reducing t
 %\textbf{\textit{Algorithm 1}} shows a pseudo code of the proposed algorithm.
 
 \begin{table}[ht]
-\caption{Swap rule}
+% \caption{Swap rule}
+\caption{SWAP RULE}
 \label{tab:swap}
 \centering
 \begin{tabular}{c|c}

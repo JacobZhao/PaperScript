@@ -86,9 +86,18 @@ PV reconfiguration, partial-shading, mismatch, feasibility, heuristic
 Photovoltaic (PV) energy is one of the most promising emerging technologies.
 PV market growth by improvements of converting unlimited solar energy into electrical energy as well as the cost reductions of PV panels.
 
+The use of PV systems for power generation brings many challenges.
+Due to the nature of PV cell, which is the basic component of PV array.
+PV system easily suffers from various forms of system faults, which include physical damage, temperature in-homogeneity, or partial shading.
+Unlike cell damage or other system faults, partial shading sources from cloud, dust or snow are very hard to prevent and predict.
+Thus, when PV cell could not uniformly generate power when they experience different irradiance or been damaged.
+This unbalanced working scenario will lead whole system mismatch.
+Mismatch condition might accelerate heating or aging of PV cells and furthermore hinder operation of maximum power point tracking (MPPT) algorithm, especially when the PV array output P-V curve becomes non-convex\cite{islam2018performance}.
 
-
-
+For several series connected PV cells, shaded or damaged cell causing normal cells to produce higher voltages that may reverse bias of ``bad'' cells.
+When a large number of series connected cells cause a huge reverse bias across shaded cells, leading to large dissipation of energy in the ``bad'' cells.
+This huge energy dissipation occurring in a small area might get overheating or burning of PV cells, or ``hot-spots''.
+To protect PV cells from ``hot-spots'', bypass diode is used to circumvent concentrated energy dissipation.
 
 \section{Conclusion}
 The conclusion goes here.
@@ -114,8 +123,14 @@ The authors would like to thank...
 
 % Can use something like this to put references on a page
 % by themselves when using endfloat and the captionsoff option.
-
-
+\section*{Temp}
+It is well known that mismatch due to partial shading, soiling, or ageing causes significant losses
+in the energy yield of photovoltaic (PV) systems [1,2]. Furthermore, mismatches may hinder operation
+of maximum power point (MPP) tracking algorithms, especially if the power versus output voltage
+characteristic becomes nonconvex [3]. It has also been shown that, even with commonly used bypass
+diodes, mismatched cells may become reverse-biased and dissipate power, producing an undesired
+cell temperature rise or hot spot [4,5]. This may lead to accelerated ageing and reduced reliability of
+the PV system
 
 
 \bibliographystyle{ieeetr}

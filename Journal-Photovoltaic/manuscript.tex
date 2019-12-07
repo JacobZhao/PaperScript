@@ -124,6 +124,13 @@ However, optimal configuration requires differences between ``row'' irradiance l
 They proposed algorithm that calculate all possible configurations and stored as look-up table locally.
 Then, the ``best'' configuration for real-time shading scenario will be chosen from look-up table.
 There is no doubt that the number of possible configurations will increase from the size of the PV array and it will be more difficult to determine the optimal configuration with limited time.
+Though there are several reconfiguration methods have been proposed, most works consider reconfiguration in PV cell or PV module level.
+However, those reconfiguration requires a significantly high computation time or a large number of switches to implement reconfiguration.
+In addition, they require special PV panels with the capability of switching, and cannot be applied to the system constructed with standard PV panels.
+% From a practical view, reconfiguration of connections among PV panels is a realistic solution since a PV panel is manufactured as a physical one panel with two terminals and PV panels can be flexibly interconnected.
+
+% The main challenge in the reconfiguration of PV arrays concerns a large number of possibilities that must be evaluated to find the best solution.
+This paper proposes an optimization algorithm to check possibilities of configurations for reconfiguring PV arrays, which uses an approach that 
 \section{Conclusion}
 The conclusion goes here.
 

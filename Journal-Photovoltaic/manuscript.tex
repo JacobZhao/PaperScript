@@ -153,12 +153,60 @@ When considering reconfiguration of PV panel, we should find out the best config
 
 As addressed in section~\ref{sec:introduction}, Orozco-Guierrez et al. proposed an efficient reconfiguration algorithm for mismatched PV arrays.
 The method utilizes information of MPPs of every PV panel that is extracted using an online monitoring\cite{Carotenuto2014} and a power estimation\cite{Orozco-Gutierrez2015}.
-Firstly, PV panel characteristics (current values, voltage values) are extracted and closed values are grouped.
 
+Firstly, maximum power points of PV panels are extracted by using online monitoring from\cite{Carotenuto2014}.
+Then the current and voltage levels of maximum power point for each PV module $s$, $I_{mpp_{s}}$and $V_{mpp_{s}}$, are estimated from maximum power points of PV panels using the method in\cite{Orozco-Gutierrez2015}.
 
+Estimated maximum power point current values ($I_{mpp_s}$) are approximated and close values are grouped into a small number of classes so that the number of possible combinations, in other words, search space is reduced.
+Estimated maximum power point voltage values ($V_{mpp_s}$) are averaged and the mean value $\Bar{V}_{mpp}$ of all PV modules is used to approximate MPP voltage in the string.
+MPP voltage is approximated by $m \times \Bar{V}_{mpp} $ where $m$ is the number of active modules at the MPP.
+Then possible combination of configurations are enumerated.
 
-\section{Feasibility Problem}\label{sec:feasibility-problem}
-\subsection{Problem setting}\label{sec:problem-setting}
+For furthermore power simulation and configuration implementation, the current sequence and number of activating PV modules pre-string (it is called $feasibility$) are examined for each configuration.
+A simple feasibility checking method provided in \cite{Orozco-Gutierrez2016} are described as follow.
+
+\textbf{(Feasibility 1)}\footnote{In \cite{Orozco-Gutierrez2016}, only the case of $n=2$ is considered, and we extended the condition to general $n$. }
+For each $n$-th highest current level $I_{n}$ in a current sequence for strings,
+it is required that the number of active modules in a configuration is $N(I_{n}) / n$ or less, where $N(I)$ is the total number of active modules for a current level $I$. 
+The maximum number $M$ of active modules for a PV array is given as
+\begin{equation}
+    M=\mbox{min}\begin{Bmatrix}
+N(I),\frac{N(I_2)}{2},\frac{N(I_3)}{3},\cdots,\frac{N(I_{n})}{n}
+\end{Bmatrix}.
+\label{eq:1}
+\end{equation}
+Thus, approximated power $P$ can be calculated as follow.
+\begin{equation}
+\label{eq:2}
+P=\sum{I_{n}}\times M \times \Bar{V}_{mpp}
+\end{equation}
+
+Approximated power values with and only with \textbf{Feasibility 1} is satisfied are listed into a power matrix like Table~\ref{tab:power-matrix}.
+The configuration with  maximum power value and configurations whose powers are more than 77\% of maximum power are selected as configuration candidates\cite{Orozco-Gutierrez2016}.
+
+\section{Feasibility}
+From Orozco $et$ $al.$ method, to complete reconfiguration, we need to assign panels into strings to realize a candidate configuration.
+For example, consider a candidate configuration for a current sequence (2.5A, 2.5A) with 3 active modules per string as shown in Table~\ref{tab:power-matrix}
+
+\begin{table*}[t]
+  \caption{}
+  \centerline{APPROXIMATED POWER}
+  \vskip5pt
+\label{tab:power-matrix}
+\centering
+\begin{tabular}{c|rrrrrrrrrrr}
+\hline\hline	
+\# modules & 	\multicolumn{10}{c}{currents sequence for strings (A)} \\ 																
+per string		&	\multicolumn{1}{c}{(3,3)}	&	\multicolumn{1}{c}{(3,2.5)}	&	\multicolumn{1}{c}{(3,1.5)}	&	\multicolumn{1}{c}{(3,0.5)}	&	\multicolumn{1}{c}{(2.5,2.5)}	&	\multicolumn{1}{c}{(2.5,1.5)}	&	\multicolumn{1}{c}{(2.5,0.5)}	&	\multicolumn{1}{c}{(1.5,1.5)}	&	\multicolumn{1}{c}{(1.5,0.5)}	&	\multicolumn{1}{c}{(0.5,0.5)}	\\ \hline
+	1	&	120W	&	110W	&	90W	&	70W	&	100W	&	80W	&	60W	&	60W	&	40W	&	20W	\\ \hline
+	2	&	-	&	220W	&	180W	&	140W	&	200W	&	160W	&	120W	&	120W	&	80W	&	40W	\\ \hline	3	&	-	&\textbf{330W}&	270W	&	210W	&	\textbf{300W}	&	240W	&	180W	&	180W	&	120W	&	60W	\\ \hline
+4	&	-	&	-	&	-	&	-	&	-	&	\textbf{320W}	&	240W	&	240W	&	160W	&	80W	\\ \hline
+	 5	&	-	&	-	&	-	&	-	&	-	&	-	&	\textbf{300W}	&	-	&	200W	&	100W	\\ \hline
+	6	&	-	&	-	&	-	&	-	&	-	&	-	&	-	&	-	&	240W	&	120W	\\ \hline
+\end{tabular}
+\end{table*}
+\section{Algorithm to identify feasibility}\label{sec:algor-ident-feas}
+\subsection{Feasibility problem}\label{sec:feasibility-problem}
 \subsection{Outline of the algorithm}\label{sec:outline-algorithm}
 \subsection{Algorithm}\label{sec:algorithm}
 \section{Experiment Results}\label{sec:experiment-results}

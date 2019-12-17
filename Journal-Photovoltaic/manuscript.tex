@@ -166,7 +166,7 @@ For furthermore power simulation and configuration implementation, the current s
 A simple feasibility checking method provided in \cite{Orozco-Gutierrez2016} are described as follow.
 
 \textbf{(Feasibility 1)}\footnote{In \cite{Orozco-Gutierrez2016}, only the case of $n=2$ is considered, and we extended the condition to general $n$. }
-For each $n$-th highest current level $I_{n}$ in a current sequence for strings,
+For each $n$-th highest current level $I_{n}$ in a current sequence $Q$ for strings,
 it is required that the number of active modules in a configuration is $N(I_{n}) / n$ or less, where $N(I)$ is the total number of active modules for a current level $I$. 
 The maximum number $M$ of active modules for a PV array is given as
 \begin{equation}
@@ -178,15 +178,14 @@ N(I),\frac{N(I_2)}{2},\frac{N(I_3)}{3},\cdots,\frac{N(I_{n})}{n}
 Thus, approximated power $P$ can be calculated as follow.
 \begin{equation}
 \label{eq:2}
-P=\sum{I_{n}}\times M \times \Bar{V}_{mpp}
+P=\sum{Q}\times M \times \Bar{V}_{mpp}
 \end{equation}
 
 Approximated power values with and only with \textbf{Feasibility 1} is satisfied are listed into a power matrix like Table~\ref{tab:power-matrix}.
 The configuration with  maximum power value and configurations whose powers are more than 77\% of maximum power are selected as configuration candidates\cite{Orozco-Gutierrez2016}.
 
 \section{Feasibility}
-From Orozco $et$ $al.$ method, to complete reconfiguration, we need to assign panels into strings to realize a candidate configuration.
-For example, consider a candidate configuration for a current sequence (2.5A, 2.5A) with 3 active modules per string as shown in Table~\ref{tab:power-matrix}
+
 
 \begin{table*}[t]
   \caption{}
@@ -205,8 +204,40 @@ per string		&	\multicolumn{1}{c}{(3,3)}	&	\multicolumn{1}{c}{(3,2.5)}	&	\multico
 	6	&	-	&	-	&	-	&	-	&	-	&	-	&	-	&	-	&	240W	&	120W	\\ \hline
 \end{tabular}
 \end{table*}
+
+From Orozco $et$ $al.$ method, to complete reconfiguration, we need to assign panels into strings to realize a candidate configuration.
+For example, consider a candidate configuration for a current sequence (2.5A, 2.5A) with 3 active modules per string as shown in Table~\ref{tab:power-matrix}
+It can be realized by assigning panel P2 to the first string and panel P1 and P4 to the second string as shown in Figure~\ref{fig:feasibleassign}.
+However, for another current sequence (2.5A, 1.5A), there is no feasible assignment for 4 active modules per string, even though this configuration is listed in Table~\ref{tab:power-matrix} by method in\cite{Orozco-Gutierrez2016}.
+It is same for a configuration candidate with current sequence (3A, 2.5A) for 3 active modules per string.
+That is, the condition \textbf{Feasibility 1} is necessary but not sufficient to give an actual feasibility result.
+
+For a PV array $A$ with $s$ strings, let $M_{A,i}(I)$ denotes the number of modules that can be activated with a current level $I$ in the $i$-th string.
+Let $Q = (Q_1,Q_2,\dots,Q_s)$ be the sequence of current required for strings.
+We define the feasibility as follows: A sequence of current $Q$ is feasible with $m$ modules if and only if it is possible to form a PV array $A$ such that
+\begin{equation}
+  M_{A,i}(Q_i)\geq m
+  \label{eq:3}
+\end{equation}
+holds for each string $i$ (1$\leq i \leq s$).
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{fig/feasible-configuration.pdf}
+    \caption{Feasible configuration for a current sequence (2.5A, 2.5A) with 3 active modules.}
+    \label{fig:feasibleassign}
+\end{figure}
+
 \section{Algorithm to identify feasibility}\label{sec:algor-ident-feas}
 \subsection{Feasibility problem}\label{sec:feasibility-problem}
+In this section, we introduce an algorithm to identify feasibility for a configuration.
+First we will formulate the feasibility problem that identifies the feasibility for a given current sequence and the number of active modules per string as follows.
+
+\textit{Definition 1} (\textit{Feasibility Problem}):\\
+\textbf{Input}: Information of MPPs (approximated values), a current sequence $Q$, the number of $m$ of active modules per-string.\\
+%\newline
+\textbf{Output}: Whether $Q$ with $m$ modules is feasible or not.
+
 \subsection{Outline of the algorithm}\label{sec:outline-algorithm}
 \subsection{Algorithm}\label{sec:algorithm}
 \section{Experiment Results}\label{sec:experiment-results}
@@ -224,14 +255,14 @@ The authors would like to thank...
 
 % Can use something like this to put references on a page
 % by themselves when using endfloat and the captionsoff option.
-\section*{Temp}
-It is well known that mismatch due to partial shading, soiling, or ageing causes significant losses
-in the energy yield of photovoltaic (PV) systems [1,2]. Furthermore, mismatches may hinder operation
-of maximum power point (MPP) tracking algorithms, especially if the power versus output voltage
-characteristic becomes nonconvex [3]. It has also been shown that, even with commonly used bypass
-diodes, mismatched cells may become reverse-biased and dissipate power, producing an undesired
-cell temperature rise or hot spot [4,5]. This may lead to accelerated ageing and reduced reliability of
-the PV system
+% \section*{Temp}
+% It is well known that mismatch due to partial shading, soiling, or ageing causes significant losses
+% in the energy yield of photovoltaic (PV) systems [1,2]. Furthermore, mismatches may hinder operation
+% of maximum power point (MPP) tracking algorithms, especially if the power versus output voltage
+% characteristic becomes nonconvex [3]. It has also been shown that, even with commonly used bypass
+% diodes, mismatched cells may become reverse-biased and dissipate power, producing an undesired
+% cell temperature rise or hot spot [4,5]. This may lead to accelerated ageing and reduced reliability of
+% the PV system
 
 
 \bibliographystyle{ieeetr}

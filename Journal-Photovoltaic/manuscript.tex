@@ -239,8 +239,54 @@ First we will formulate the feasibility problem that identifies the feasibility 
 \textbf{Output}: Whether $Q$ with $m$ modules is feasible or not.
 
 \subsection{Outline of the algorithm}\label{sec:outline-algorithm}
+In a PV array with $s$ PV strings.
 For a given current sequence $Q = (Q_{1},Q_{2},\ldots ,Q_{s})$ $(Q_{i} \geq Q_{j} \mbox{\ if\ } i \leq j)$, we will assign PV panels to strings in the order of $Q_{1},Q_{2},\ldots ,Q_{s}$.
 In this step, we will consider how much we lose an opportunity that the panel is more effectively used for the next current level.
+For example, as the PV panel shown in Table~\ref{tab:NumofModules} which contain three PV modules.
+2 of 3 modules are able to working at current level of $Q_{1}$ and $Q_{2}$.
+All 3 modules are able to activate at current level $Q_{3}$.
+Thus, if this panel been selected working for a PV string at current level $Q_{1 or 2}$ , two-third of modules are able to deliver energy while the remaining one module been bypassed.
+We consider the ``$loss$'' that how many PV modules we fail to use in other current level and the ``$gain$'' that how many PV modules we can activate in the target current level together.
+Since two parameter are considered in the selection process, they can minimize ``$loss$'' while minimizing the number of selected PV panels.
+% In this algorithm, we select PV panels as so to minimize the $loss$ and maximize the $gain$.
+\begin{table}[tbp]
+  \caption[]{}
+  \label{tab:NumofModules} 
+  \centerline{Maximum number of activate PV modules}
+  \vskip5pt
+  \begin{center}
+  \begin{tabular}{c|c|c|c}
+    \hline
+    Current level                 & $Q_{1}$ & $Q_{2}$ & $Q_{3}$  \\ \hline
+    Number of activate PV modules & 2  & 2    & 3        \\ \hline
+  \end{tabular}
+  \end{center}
+\end{table}
+In this algorithm, we choose $Loss-rate$ to give selection priority.
+The $Loss$-$rate$ is the difference of active modules in panel $p$ for the target current level $Q_n$  in current sequence $Q$ with other current levels per module.
+Let $M_{p}(I)$ denote the number of PV modules that can be active at current level $I$ in panel $p$.
+In a $s$ strings PV array, $Loss-rate$ for panel $p$ of target current level $n$ on $k$-th current level $Q_{k}$ ($2 \leq k \leq s$) is shown as follow.
+\begin{equation}\label{eq:4}
+    Loss\mbox{-}rate(p,n,k) =
+    \begin{cases}
+    \frac{M_{p}(Q_{k})-M_{p}(Q_{n})}{M_{p}(Q_{n})} & \mbox{if } M_{p}(Q_{n}) \neq 0 \\
+    \infty & \mbox{if } M_{p}(Q_{n}) = 0
+  \end{cases}
+\end{equation}
+
+For example, as the panel $p$ in Table~\ref{tab:NumofModules} $Loss-rate(p,Q_{1},Q_{2})=0$, $Loss-rate(p,Q_{1},Q_{3})=0.5$, that is, for target current level $Q_{1}$ there is no ``$loss$'' for current level $Q_{2}$ and only loss ``0.5'' active module for current level $Q_{3}$.
+
+To assign panels of target current level $n$ to $n$-th string, the following step are applied.
+Let $m$ be the required number of active modules per-string.
+\begin{enumerate}
+\item\label{step:1} Sort un-selected panels in a lexicographically ascending order of $Loss$-$rate(p,n,n+1)$, $Loss$-$rate(p,n,n+2)$,$\dots,$ $Loss$-$rate(p,n,s)$ and  lexicographically descending order of $M_p(Q_n)$.
+\item\label{step:2} Selects sorted panels one by one until reaching the required number of active modules $m$.
+  In step 2, panel with no active modules is skipped.
+\item\label{step:3} Optimize the number of active modules.
+  In step 3, if the number of selected active modules exceeds the required number $m$, redundant panels will be removed if exist.
+\end{enumerate}
+
+
 \subsection{Algorithm}\label{sec:algorithm}
 \section{Experiment Results}\label{sec:experiment-results}
 \section{Conclusion}\label{sec:conclusion}

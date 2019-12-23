@@ -274,20 +274,79 @@ In a $s$ strings PV array, $Loss-rate$ for panel $p$ of target current level $n$
   \end{cases}
 \end{equation}
 
-For example, as the panel $p$ in Table~\ref{tab:NumofModules} $Loss-rate(p,Q_{1},Q_{2})=0$, $Loss-rate(p,Q_{1},Q_{3})=0.5$, that is, for target current level $Q_{1}$ there is no ``$loss$'' for current level $Q_{2}$ and only loss ``0.5'' active module for current level $Q_{3}$.
+For example, as the panel $p$ in Table~\ref{tab:NumofModules} $Loss-rate(p,Q_{1},Q_{2})=0$, $Loss-rate(p,Q_{1},Q_{3})=0.5$, that is, for target current level $Q_{1}$ there is no ``$losses$'' for current level $Q_{2}$ and only ``$loss$'' 0.5 active module for current level $Q_{3}$.
 
 To assign panels of target current level $n$ to $n$-th string, the following step are applied.
 Let $m$ be the required number of active modules per-string.
 \begin{enumerate}
-\item\label{step:1} Sort un-selected panels in a lexicographically ascending order of $Loss$-$rate(p,n,n+1)$, $Loss$-$rate(p,n,n+2)$,$\dots,$ $Loss$-$rate(p,n,s)$ and  lexicographically descending order of $M_p(Q_n)$.
+  \item\label{step:1} Sort un-selected panels with ``$loss$'' and ``$gain$''.
+% \item\label{step:1} Sort un-selected panels in a lexicographically ascending order of $Loss$-$rate(p,n,n+1)$, $Loss$-$rate(p,n,n+2)$,$\dots,$ $Loss$-$rate(p,n,s)$ and  lexicographically descending order of $M_p(Q_n)$.
 \item\label{step:2} Selects sorted panels one by one until reaching the required number of active modules $m$.
-  In step 2, panel with no active modules is skipped.
+  % In step 2, panel with no active modules is skipped.
 \item\label{step:3} Optimize the number of active modules.
   In step 3, if the number of selected active modules exceeds the required number $m$, redundant panels will be removed if exist.
 \end{enumerate}
+% \begin{table*}[h]
+%   \caption[]{ \label{tab:Exampleofalgo}}
+%   \centerline{EXAMPLE OF PROPOSED ALGORITHM}
+%   \vskip5pt
+%   \centering
+%   \begin{tabular}{c|c|l|ccccccc}
+%     \hline
+%     \hline
+%     \multicolumn{3}{c|}{\multirow{2}{*}{}}                                    & \multicolumn{7}{c}{Panels}                                                      \\ \cline{4-10} 
+% \multicolumn{3}{c|}{}                                                     & P1  & P4  & P5                       & P2 & P3 & P7                     & P6     \\ \hline
+% \multirow{3}{*}{Current Levels} & Q1 & \multirow{3}{*}{Number of modules} & 2   & 2   & 2                        & 1  & 1  & 1                      & 0      \\ \cline{2-2}
+%                                 & Q2 &                                    & 2   & 2   & 2                        & 1  & 1  & 1                      & 1      \\ \cline{2-2}
+%                                 & Q3 &                                    & 3   & 3   & 3                        & 2  & 2  & 2                      & 2      \\ \hline
+% \multirow{2}{*}{Loss-rate}      & \multicolumn{2}{c|}{Loss-rate(p,Q1,Q2)} & 0   & 0   & \multicolumn{1}{c|}{0}   & 0  & 0  & \multicolumn{1}{c|}{0} & $\infty$ \\ \cline{2-3}
+%                                 & \multicolumn{2}{c|}{Loss-rate(p,Q1,Q3)} & 0.5 & 0.5 & \multicolumn{1}{c|}{0.5} & 1  & 1  & \multicolumn{1}{c|}{1} & 1      \\ \hline
+% \multicolumn{3}{c|}{Algorithm  priority}                                  & 1   & 2   & 3                        & 4  & 5  & 6                      & 7      \\ \hline
+% \end{tabular}
+% \end{table*}
 
-
+As shown in Table~\ref{tab:exampleofalgo} ,there is an example that demonstrate how to select PV panel for a string on current level $Q_{1}$ where required active module per string $m$ is 4.
+Panels are sorted by $Loss-rate$ which seen as ``$loss$'' and $M_{p}(Q_{1})$ which seen as ``$gain$''.
+In this example, panel P1, P4 and P5 have the same $Loss-rate$ is (0, 0.5) which is smaller than other panels.
+Thus, those three panels are grouped into the \textbf{First} ``$loss$'' level.
+Similarly, panel P2, P3, and P7 are in the \textbf{Second} ``$loss$'' level and panel p6is in the \textbf{last} ``$loss$'' level because it does not contain any module that is able to activate on the target current level.
+Panel selection started from the \textbf{First} ``$loss$'' level, after selected panels active PV modules exceed $m$ ($m=4$ in this example) selection procedure will terminate.
+If some redundant panels exist, those panels are removed.
+In this example, no redundant panel exist and panel P1 and P4 are selected for target current level $Q_{1}$ PV string.
+\begin{table}[htbp]
+  \caption[]{\label{tab:exampleofalgo}}
+  \centerline{EXAMPLE OF PROPOSED ALGORITHM}
+  \vskip5pt
+  \begin{tabular}{c|c|ccccccc}
+  \hline
+  \hline
+\multicolumn{2}{c|}{\multirow{2}{*}{}}  & \multicolumn{7}{c}{Panels}                                                      \\ \cline{3-9} 
+\multicolumn{2}{c|}{}                   & P1  & P4  & P5                       & P2 & P3 & P7                     & P6     \\ \hline
+\multirow{3}{*}{Number of modules} & Q1 & 2   & 2   & 2                        & 1  & 1  & 1                      & 0      \\ \cline{2-2}
+                                   & Q2 & 2   & 2   & 2                        & 1  & 1  & 1                      & 1      \\ \cline{2-2}
+                                   & Q3 & 3   & 3   & 3                        & 2  & 2  & 2                      & 2      \\ \hline
+\multicolumn{2}{c|}{Loss-rate(p,Q1,Q2)} & 0   & 0   & \multicolumn{1}{c|}{0}   & 0  & 0  & \multicolumn{1}{c|}{0} & $\infty$ \\ \cline{1-2}
+\multicolumn{2}{c|}{Loss-rate(p,Q1,Q3)} & 0.5 & 0.5 & \multicolumn{1}{c|}{0.5} & 1  & 1  & \multicolumn{1}{c|}{1} & 1      \\ \hline
+\multicolumn{2}{c|}{Priority}           & 1   & 2   & 3                        & 4  & 5  & 6                      & 7      \\ \hline
+\end{tabular}
+\end{table}
 \subsection{Algorithm}\label{sec:algorithm}
+Proposed algorithm assigns PV panels of given configuration in order of target current level $Q_{1}, Q_{2},\dots, Q_{s}$.
+Where $Q_{i}\geq Q_{j}$ ($i \leq j$) holds for configurations current sequence $Q = (Q_{1},Q_{2},\dots,Q_{s})$.
+Pseudo code of proposed algorithm as shown below.
+
+In the step~\ref{step:1}, un-selected PV panels are sorted  in a lexicographically  ascending order of $Loss$-$rate(p,n,n+1)$, $Loss$-$rate(p,n,n+2)$,$\dots,$ $Loss$-$rate(p,n,s)$ and  lexicographically descending order of $M_{p}(Q_{n})$.
+This sorting procedure gives a basic priority for all un-selected PV panels.
+A panel with less ``$loss$'' and more modules for target current level are preferred.
+The last sorting index $M_{p}(Q_{n})$ aim to minimize the number of selected PV modules for target current level, and it will be described in step~\ref{step:3}.
+Moreover, according to equation~(\ref{eq:4}), the $Loss-rate$ is infinity for those PV panels who have no active modules.
+
+In the step~\ref{step:2}, sorted PV panels are selected one by one until reaching $m$, the required number of active modules per-string.
+
+In the step~\ref{step:3}, the number of active PV modules and the number of selected panels are optimized.
+
+
+\section{Evaluation}\label{sec:evaluation}
 \section{Experiment Results}\label{sec:experiment-results}
 \section{Conclusion}\label{sec:conclusion}
 The conclusion goes here.

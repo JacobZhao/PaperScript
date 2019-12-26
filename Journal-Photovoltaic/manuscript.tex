@@ -309,7 +309,7 @@ As shown in Table~\ref{tab:exampleofalgo} ,there is an example that demonstrate 
 Panels are sorted by $Loss-rate$ which seen as ``$loss$'' and $M_{p}(Q_{1})$ which seen as ``$gain$''.
 In this example, panel P1, P4 and P5 have the same $Loss-rate$ is (0, 0.5) which is smaller than other panels.
 Thus, those three panels are grouped into the \textbf{First} ``$loss$'' level.
-Similarly, panel P2, P3, and P7 are in the \textbf{Second} ``$loss$'' level and panel p6is in the \textbf{last} ``$loss$'' level because it does not contain any module that is able to activate on the target current level.
+Similarly, panel P2, P3, and P7 are in the \textbf{Second} ``$loss$'' level and panel P6 is in the \textbf{last} ``$loss$'' level because it does not contain any module that is able to activate on the target current level.
 Panel selection started from the \textbf{First} ``$loss$'' level, after selected panels active PV modules exceed $m$ ($m=4$ in this example) selection procedure will terminate.
 If some redundant panels exist, those panels are removed.
 In this example, no redundant panel exist and panel P1 and P4 are selected for target current level $Q_{1}$ PV string.
@@ -338,14 +338,54 @@ Pseudo code of proposed algorithm as shown below.
 In the step~\ref{step:1}, un-selected PV panels are sorted  in a lexicographically  ascending order of $Loss$-$rate(p,n,n+1)$, $Loss$-$rate(p,n,n+2)$,$\dots,$ $Loss$-$rate(p,n,s)$ and  lexicographically descending order of $M_{p}(Q_{n})$.
 This sorting procedure gives a basic priority for all un-selected PV panels.
 A panel with less ``$loss$'' and more modules for target current level are preferred.
-The last sorting index $M_{p}(Q_{n})$ aim to minimize the number of selected PV modules for target current level, and it will be described in step~\ref{step:3}.
+The last sorting index $M_{p}(Q_{n})$ aim to minimize the number of selected PV modules for target current level $Q_{n}$, and it will be described in step~\ref{step:3}.
 Moreover, according to equation~(\ref{eq:4}), the $Loss-rate$ is infinity for those PV panels who have no active modules.
 
 In the step~\ref{step:2}, sorted PV panels are selected one by one until reaching $m$, the required number of active modules per-string.
 
 In the step~\ref{step:3}, the number of active PV modules and the number of selected panels are optimized.
+As if selected PV panels contain active PV modules exceed required amount $m$, redundant panels will be removed if existed.
+A PV panel is redundant if and only if the number of active PV module still meet requirement or more even if this panel has been removed.
+This remove procedure starting from the last ``$loss$'' level, proposed algorithm will check $M_{p}Q_{n}$ for each panel $p$.
+If the number of active modules still exceed $m$ after panel $p$ is removed, the same procedure will repeat until all redundant panels are removed or every panel have been checked.
 
 
+\begin{algorithm}[htbp]
+  \caption{Feasibility Problem}
+  \label{sec:algorithm-1}
+  \LinesNumbered
+  \SetKwInOut{Input}{Input}
+  \Input{
+    \textit{$Q = (Q_{1}, Q_{2}, \ldots ,Q_{s}$)}: current sequence for given configuration; \\
+    \textit{$m$}: the number of required active modules per-string;\\
+    \textit{$M_{p}$}: the number of active modules in each panel \textit{p};\\
+    \textit{s}: the number of strings;
+  }
+  \SetKwInOut{Output}{Output}
+  \Output{
+    Feasibility Result;
+  }
+  \For{\textup{each string} $ k (2 \leq k \leq s)$ \textup{and panel} $p$}{$Loss(p,k) = M_{p}(Q_{k}) - M_{p}(Q_{k-1})$}
+  \For{j = 1 to s}
+  {{\If{$\sum M_{p}(Q_{j})$ \textup{for unselected panels} $< m$}
+      {\textup{\textbf{return :}} Feasibility = NO}}
+    $PS$ = a set of unselected panels with $M_{p}(Q_{j}) > 0$;\\
+     // \textbf{step \ref{step3}}\\
+     sort $PS$ in a lexicographically ascending order of $Loss(p,j+1)$, $Loss(p,j+2)$, $\ldots$, $Loss(p,s)$, $M_{p}(Q_{j})$;\\
+     // \textbf{step \ref{step4}}\\
+     select panels in the order in $PS$ until $\sum M_{p}(Q_{j})$ for selected panels $\geq m$;\\
+     // \textbf{step \ref{step5}}\\
+     group selected panels $LV_{1}$, $LV_{2}$,$\ldots$, $LV_{h}$ with loss level ($LV_{1}$ is the lowest level);\\
+     \For{i = h to 1}
+     {find and cancel redundant panels in $LV_{i}$ in the order in $PS$}
+     // \textbf{step \ref{step6}}\\
+     \For{i = h to 1}
+     {apply swap rules for selected panels in $LV_{i}$ and an unselected panel in the same loss level}
+    }
+    \textup{\textbf{return :}} Feasibility = YES
+  \end{algorithm}
+
+  
 \section{Evaluation}\label{sec:evaluation}
 \section{Experiment Results}\label{sec:experiment-results}
 \section{Conclusion}\label{sec:conclusion}

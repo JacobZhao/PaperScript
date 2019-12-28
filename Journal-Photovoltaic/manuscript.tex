@@ -263,20 +263,20 @@ Since two parameter are considered in the selection process, they can minimize `
   \end{center}
 \end{table}
 In this algorithm, we choose $Loss-rate$ to give selection priority.
-The $Loss$-$rate$ is the difference of active modules in panel $p$ for the target current level $Q_n$  in current sequence $Q$ with other current levels per module.
+The $Loss$-$rate$ is the difference of active modules in panel $p$ for the target current level $Q_{k^{'}}$  in current sequence $Q$ with other current levels per module.
 Let $M_{p}(I)$ denote the number of PV modules that can be active at current level $I$ in panel $p$.
-In a $s$ strings PV array, $Loss-rate$ for panel $p$ of target current level $n$ on $k$-th current level $Q_{k}$ ($2 \leq k \leq s$) is shown as follow.
+In a $s$ strings PV array, $Loss-rate$ for panel $p$ of target current level $k^{'}$ on $k$-th current level $Q_{k}$ ($2 \leq k \leq s$) is shown as follow.
 \begin{equation}\label{eq:4}
-    Loss\mbox{-}rate(p,n,k) =
+    Loss\mbox{-}rate(p,k^{'},k) =
     \begin{cases}
-    \frac{M_{p}(Q_{k})-M_{p}(Q_{n})}{M_{p}(Q_{n})} & \mbox{if } M_{p}(Q_{n}) \neq 0 \\
-    \infty & \mbox{if } M_{p}(Q_{n}) = 0
+    \frac{M_{p}(Q_{k})-M_{p}(Q_{k^{'}})}{M_{p}(Q_{k^{'}})} & \mbox{if } M_{p}(Q_{k^{'}}) \neq 0 \\
+    \infty & \mbox{if } M_{p}(Q_{k^{'}}) = 0
   \end{cases}
 \end{equation}
 
 For example, as the panel $p$ in Table~\ref{tab:NumofModules} $Loss-rate(p,Q_{1},Q_{2})=0$, $Loss-rate(p,Q_{1},Q_{3})=0.5$, that is, for target current level $Q_{1}$ there is no ``$losses$'' for current level $Q_{2}$ and only ``$loss$'' 0.5 active module for current level $Q_{3}$.
 
-To assign panels of target current level $n$ to $n$-th string, the following step are applied.
+To assign panels of target current level $k^{'}$ to $k^{'}$-th string, the following step are applied.
 Let $m$ be the required number of active modules per-string.
 \begin{enumerate}
   \item\label{step:1} Sort un-selected panels with ``$loss$'' and ``$gain$''.
@@ -335,10 +335,10 @@ Proposed algorithm assigns PV panels of given configuration in order of target c
 Where $Q_{i}\geq Q_{j}$ ($i \leq j$) holds for configurations current sequence $Q = (Q_{1},Q_{2},\dots,Q_{s})$.
 Pseudo code of proposed algorithm as shown below.
 
-In the step~\ref{step:1}, un-selected PV panels are sorted  in a lexicographically  ascending order of $Loss$-$rate(p,n,n+1)$, $Loss$-$rate(p,n,n+2)$,$\dots,$ $Loss$-$rate(p,n,s)$ and  lexicographically descending order of $M_{p}(Q_{n})$.
+In the step~\ref{step:1}, un-selected PV panels are sorted  in a lexicographically  ascending order of $Loss$-$rate(p,n,n+1)$, $Loss$-$rate(p,n,n+2)$,$\dots,$ $Loss$-$rate(p,n,s)$ and  lexicographically descending order of $M_{p}(Q_{k^{'}})$.
 This sorting procedure gives a basic priority for all un-selected PV panels.
 A panel with less ``$loss$'' and more modules for target current level are preferred.
-The last sorting index $M_{p}(Q_{n})$ aim to minimize the number of selected PV modules for target current level $Q_{n}$, and it will be described in step~\ref{step:3}.
+The last sorting index $M_{p}(Q_{k^{'}})$ aim to minimize the number of selected PV modules for target current level $Q_{k^{'}}$, and it will be described in step~\ref{step:3}.
 Moreover, according to equation~(\ref{eq:4}), the $Loss-rate$ is infinity for those PV panels who have no active modules.
 
 In the step~\ref{step:2}, sorted PV panels are selected one by one until reaching $m$, the required number of active modules per-string.
@@ -346,7 +346,7 @@ In the step~\ref{step:2}, sorted PV panels are selected one by one until reachin
 In the step~\ref{step:3}, the number of active PV modules and the number of selected panels are optimized.
 As if selected PV panels contain active PV modules exceed required amount $m$, redundant panels will be removed if existed.
 A PV panel is redundant if and only if the number of active PV module still meet requirement or more even if this panel has been removed.
-This remove procedure starting from the last ``$loss$'' level, proposed algorithm will check $M_{p}Q_{n}$ for each panel $p$.
+This remove procedure starting from the last ``$loss$'' level, proposed algorithm will check $M_{p}Q_{k^{'}}$ for each panel $p$.
 If the number of active modules still exceed $m$ after panel $p$ is removed, the same procedure will repeat until all redundant panels are removed or every panel have been checked.
 
 
@@ -358,35 +358,59 @@ If the number of active modules still exceed $m$ after panel $p$ is removed, the
   \Input{
     \textit{$Q = (Q_{1}, Q_{2}, \ldots ,Q_{s}$)}: current sequence for given configuration; \\
     \textit{$m$}: the number of required active modules per-string;\\
-    \textit{$M_{p}$}: the number of active modules in each panel \textit{p};\\
+    \textit{$M_{p}$}: the number of active modules in each panel $p$;\\
     \textit{s}: the number of strings;
   }
   \SetKwInOut{Output}{Output}
   \Output{
     Feasibility Result;
   }
-  \For{\textup{each string} $ k (2 \leq k \leq s)$ \textup{and panel} $p$}{$Loss(p,k) = M_{p}(Q_{k}) - M_{p}(Q_{k-1})$}
-  \For{j = 1 to s}
-  {{\If{$\sum M_{p}(Q_{j})$ \textup{for unselected panels} $< m$}
-      {\textup{\textbf{return :}} Feasibility = NO}}
-    $PS$ = a set of unselected panels with $M_{p}(Q_{j}) > 0$;\\
-     // \textbf{step \ref{step3}}\\
-     sort $PS$ in a lexicographically ascending order of $Loss(p,j+1)$, $Loss(p,j+2)$, $\ldots$, $Loss(p,s)$, $M_{p}(Q_{j})$;\\
-     // \textbf{step \ref{step4}}\\
+  \For{\textup{each target current level} $Q_{k}$ $(1 \leq k \leq s)$ \textup{and each panel} $p$}
+  {
+    \uIf{$\sum M_{p}(Q_{k})$ $<$ $m$}
+    {\textup{\textbf{return :}} Feasibility = NO\\
+    \tcc{Not enough active modules to meet requirement}}
+    \Else{$Loss-rate(p,k,k+1) = (M_{p}(Q_{k+1}) - M_{p}(Q_{k}))/M_{p}(Q_{k})$}
+  }
+
+  \For{\textup{each} target current level $Q_{k}$}
+  {
+    % {\If{$\sum M_{p}(Q_{j})$ \textup{for unselected panels} $< m$}
+    %   {\textup{\textbf{return :}} Feasibility = NO}}
+    $P$ = a set of un-selected panels with $M_{p}(Q_{k})$;\\
+     \tcp{\textbf{step~\ref{step:1}}}
+     Sort $PS$ in a lexicographically ascending order of $Loss-rate$ and descending order of $M_{P}(Q_{j})$\\
+     % $Loss(p,j+2)$, $\ldots$, $Loss(p,s)$, $M_{p}(Q_{j})$;\\
+     \tcp{\textbf{step~\ref{step:2}}}
      select panels in the order in $PS$ until $\sum M_{p}(Q_{j})$ for selected panels $\geq m$;\\
-     // \textbf{step \ref{step5}}\\
-     group selected panels $LV_{1}$, $LV_{2}$,$\ldots$, $LV_{h}$ with loss level ($LV_{1}$ is the lowest level);\\
+     % \If{$\sum M_{p}(Q_{j})$ \textup{for selected panels} = $m$}
+     % {\textup{\textbf{return :}} Feasibility = YES}
+     \tcp{\textbf{step~\ref{step:3}}}
+     group selected panels into ``$loss$'' levels ($LV_{1}$, $LV_{2}$,$\ldots$, $LV_{h}$) based on $Loss-rate$ ascending order.\\
      \For{i = h to 1}
-     {find and cancel redundant panels in $LV_{i}$ in the order in $PS$}
-     // \textbf{step \ref{step6}}\\
-     \For{i = h to 1}
-     {apply swap rules for selected panels in $LV_{i}$ and an unselected panel in the same loss level}
+     {
+       find and remove redundant panels in ``$loss$'' level $LV_{i}$
+     }
+     % // \textbf{step \ref{step6}}\\b
+     % \For{i = h to 1}
+     % {apply swap rules for selected panels in $LV_{i}$ and an unselected panel in the same loss level}
     }
     \textup{\textbf{return :}} Feasibility = YES
   \end{algorithm}
 
   
 \section{Evaluation}\label{sec:evaluation}
+\subsection{Algorithm time complexity}
+In proposed algorithm, first, $Loss-rate(p,k^{'},k)$ is evaluated for all PV panel $p$ and target current level $Q_{k^{'}}$ with other current level $Q_{k}$.
+This step takes $O(sn)$ where is $n$ is the number of panels and $s$ is the number of PV strings.
+Then the algorithm iterate as follows:
+\begin{enumerate}
+\item\label{item:1} Sort panels by $Loss-rate$ and $M_{P}(Q_{k^{'}})$
+\item\label{item:2} Select initial panels
+\item\label{item:3} Remove redundant panels
+\end{enumerate}
+
+
 \section{Experiment Results}\label{sec:experiment-results}
 \section{Conclusion}\label{sec:conclusion}
 The conclusion goes here.

@@ -400,7 +400,7 @@ If the number of active modules still exceed $m$ after panel $p$ is removed, the
 
   
 \section{Evaluation}\label{sec:evaluation}
-\subsection{Algorithm time complexity}
+\subsection{Algorithm time complexity}\label{sec:algor-time-compl}
 In proposed algorithm, first, $Loss-rate(p,k^{'},k)$ is evaluated for all PV panel $p$ and target current level $Q_{k^{'}}$ with other current level $Q_{k}$.
 This step takes $O(sn)$ where is $n$ is the number of panels and $s$ is the number of PV strings.
 Then the algorithm iterate as follows:
@@ -410,8 +410,29 @@ Then the algorithm iterate as follows:
 \item\label{item:3} Remove redundant panels
 \end{enumerate}
 
+When selecting panels for target current level PV string, to sort panels, we use a lexicographically order of $Loss-rate$ and $M_{P}(Q_{k_{'}})$.
+It can be done by sort panels recursively from the first component, that is, we sort panels by $Loss-rate(p,k^{'},k)$, then, sort panels with same level by $Loss-rate(p,k^{'},k+1)$ and so on.
+Since values of $Loss-rate$ and $M_{P}(Q_{k^{'}})$ are related to the number of modules of PV panel and typically there are three PV modules in a commercial PV panel.
+Thus,we can use a bucket sort with 4 buckets.
+Therefore, it takes $O(n)$ for each bucket sort and $O(sn)$ for a lexicographical sorting in total.
+For initial selection, we check the panels in the sorted order, and we check panels again in reverse order to find and remove redundant panels.
+Therefore, these two steps take $Q(n)$.
+Since it takes $O(sn)$ for each PV string in addition to $O(sn)$ to obtain ``$loss$'' levels, the proposed algorithm takes $Q(s^{2}n)$ in total.
+% $\dots$,$Loss-rate(p,k^{'},s)$, M$_{p}(Q_{k^{'}})$.
+\subsection{Experimental setup}\label{sec:experimental-setup}
+To evaluate proposed methods, we prepared MPP information of 100 mismatched PV arrays and applied algorithms.
+Exhaustive searching algorithm is also applied for comparison.
+MPP information is setup as follows for each PV array.
+Each PV array has 4 - 20 PV panels and the number of panels is randomly determined.
+Three current values are randomly assigned to the three PV modules in each panel from 2 - 20 current values, where the number of possible current values are also randomly determined for each PV array.
+The number of strings is 2 - 8 and it is randomly determined for each PV array.
 
-\section{Experiment Results}\label{sec:experiment-results}
+We first applied the method in~\cite{Orozco-Gutierrez2016} to select configuration candidates.
+% as shown in step 1 and step 2.
+Condition \textbf{Feasibility 1} is applied to exclude a part of infeasible configurations, and then configurations that generate more than 77\% of maximum power are selected from the remaining candidates as mentioned in~\cite{Orozco-Gutierrez2016}.
+In the experiments, 384 candidates are selected from 100 PV arrays as shown in Table.
+That is, for each PV array, 3 - 4 candidates are selected in average.
+\subsection{Experimental results}\label{sec:experimental-results}
 \section{Conclusion}\label{sec:conclusion}
 The conclusion goes here.
 

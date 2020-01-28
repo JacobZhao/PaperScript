@@ -430,14 +430,46 @@ The number of strings is 2 - 8 and it is randomly determined for each PV array.
 We first applied the method in~\cite{Orozco-Gutierrez2016} to select configuration candidates.
 % as shown in step 1 and step 2.
 Condition \textbf{Feasibility 1} is applied to exclude a part of infeasible configurations, and then configurations that generate more than 77\% of maximum power are selected from the remaining candidates as mentioned in~\cite{Orozco-Gutierrez2016}.
-In the experiments, 384 candidates are selected from 100 PV arrays as shown in Table.
+In the experiments, 384 candidates are selected from 100 PV arrays as shown in Table~\ref{tab:result}.
 That is, for each PV array, 3 - 4 candidates are selected in average.
+
 \subsection{Experimental results}\label{sec:experimental-results}
+Table~\ref{tab:result} shows the results of feasibility checking by proposed algorithm and the exhaustive search algorithm.
+Since the exhaustive search checks all the combinations of panel connections for each configuration candidate.
+Though the exhaustive search identified total 268 feasible configurations, proposed algorithm identified 266 feasible configurations, only 2 configurations are misidentified.
+The proposed algorithms had a few false negative cases, but its rate was less than 1\%.
+That is, it can correctly identify feasibility for most cases. Indeed, the proposed algorithm found at least one candidate configuration as feasible among 3 - 4 candidates for each PV arrays.
+
+The calculation was performed using an Intel i7-4770 Quad-Core processor and 16 GB RAM.
+The time used by proposed algorithm is 1ms, which is significantly lower than 59s needed by the exhaustive search algorithm.
+
+In conclusion, the proposed algorithms provide a solution for checking the feasibility of PV configurations with an error lower than 1\% but execution speed are significantly faster than the one required by exhaustive search algorithm(about 49,000X).
+\begin{table}[htbp]
+\caption[]{\label{tab:result} }
+\centerline{COMPARISON BETWEEN EXHAUSTIVE SEARCH}
+\centerline{AND PROPOSED ALGORITHM}
+  \vskip5pt
+\begin{tabular}{c|c|c}
+  \hline
+  \hline
+                         & Proposed Algorithm & Exhaustive Search \\ \hline
+Number of PV array       & \multicolumn{2}{c}{100}               \\ \hline
+Number of MPP candidates & \multicolumn{2}{c}{384}               \\ \hline
+Feasible candidates      & 266                & 268               \\ \hline
+Infeasible candidates    & 118                & 116               \\ \hline
+Error rate (\%)          & 0.5                & 0                 \\ \hline
+Ave. time pre candidate  & 0.0012s            & 59s               \\ \hline
+\end{tabular}
+\end{table}
 \section{Conclusion}\label{sec:conclusion}
-The conclusion goes here.
+Power generation of mismatched PV arrays can be recovered by reconfiguring connection of PV panels.
+In this paper, a feasibility check problem to configure PV panel connections from PV module connections is introduced and an algorithm that efficiently and effectively solve the problem are proposed.
+The experimental results show that the proposed algorithm can identify feasible configurations more than 49,000X faster than the exhaustive search with around 0.5\% errors.
 
-
-
+The proposed algorithm is useful to identify or configure actual PV panel connections from PV module level specifications or connections.
+Since there are many works of PV module level reconfiguration and PV panel level reconfiguration using PV module level optimization as an intermediate solution, the proposed
+algorithm is useful to actually find PV panel connections from PV module level solutions.
+PV panel level reconfiguration is a practical and realistic solution for PV arrays composed of standard PV panels, and the proposed algorithms contribute to finding an efficient and effective solution for PV panel level reconfiguration.
 \appendices
 \section*{Acknowledgment}
 
